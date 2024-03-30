@@ -44,7 +44,7 @@ public class ExpenditureList {
             System.out.println("Expenses for the month & year " + monthYear + ":");
             int count = 1;
             for (Expenditure exp : filteredExpenses) {
-                System.out.println(count + ". " + exp);
+                System.out.println(count++ + ". " + exp);
             }
         }
         return filteredExpenses;
@@ -73,7 +73,7 @@ public class ExpenditureList {
             System.out.println("Expenses for the year " + year + ":");
             int count = 1;
             for (Expenditure exp : filteredExpenses) {
-                System.out.println(count + ". " + exp);
+                System.out.println(count++ + ". " + exp);
             }
         }
 
@@ -95,7 +95,7 @@ public class ExpenditureList {
             System.out.println("Expenses for " + type);
             int count = 1;
             for (Expenditure exp: filteredExpenses) {
-                System.out.println(count + ". " + exp.toString());
+                System.out.println(count++ + ". " + exp.toString());
             }
         }
 
