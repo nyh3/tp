@@ -49,4 +49,13 @@ public class ExpenditureListTest {
         List<Expenditure> expensesByMonth = ExpenditureList.listExpensesByMonth("02.2022");
         assertEquals(1, expensesByMonth.size());
     }
+
+    @Test
+    public void testListExpensesByType() {
+        ExpenditureList.addExpenditure("e/ add/ d/ Lunch t/ food amt/10.12 date/02.02.2023", true);
+        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.04.2022", true);
+        ExpenditureList.addExpenditure("e/ add/ d/ Lunch t/ book amt/10.12 date/02.03.2022", true);
+        List<Expenditure> expensesByType = ExpenditureList.listExpensesByType("FOOD");
+        assertEquals(1, expensesByType.size());
+    }
 }
