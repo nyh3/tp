@@ -18,7 +18,31 @@ public class TimetableList {
 
     public TimetableList() {
         mon = new ArrayList<>();
+        tue = new ArrayList<>();
+        wed = new ArrayList<>();
+        thurs = new ArrayList<>();
+        fri = new ArrayList<>();
         classCount = 0;
+    }
+
+    public ArrayList<Days> getMon() {
+        return mon;
+    }
+
+    public ArrayList<Days> getTue() {
+        return tue;
+    }
+
+    public ArrayList<Days> getWed() {
+        return wed;
+    }
+
+    public ArrayList<Days> getThurs() {
+        return thurs;
+    }
+
+    public ArrayList<Days> getFri() {
+        return fri;
     }
 
     public static void addClass(String schedule, Boolean userAdded) {
@@ -30,11 +54,18 @@ public class TimetableList {
             // Description part directly after "d/"
             String classDayPart = parts[1].trim();
 
-            parts = classDayPart.split(" time/", 2);
+            parts = classDayPart.split(" code/", 2);
+            if (parts.length < 2) {
+                throw new InvalidInputFormatException("Invalid input format for class code.");
+            }
+            String classDay = parts[0].trim();
+            String classCodePart = parts[1].trim();
+
+            parts = classCodePart.split(" time/", 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class time.");
             }
-            String classDay = parts[0].trim();
+            String classCode = parts[0].trim();
             String classTimePart = parts[1].trim();
 
             parts = classTimePart.split(" duration/", 2);
@@ -46,17 +77,35 @@ public class TimetableList {
 
             parts = classDurationPart.split(" location/", 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for class duration.");
+                throw new InvalidInputFormatException("Invalid input format for class location.");
             }
             String classDuration = parts[0].trim();
             String classLocation = parts[1].trim();
 
-            mon.add(new Days(classDay, classTime, classDuration, classLocation));
+            switch (classDay) {
+            case "mon":
+                mon.add(new Days(classCode, classTime, classDuration, classLocation));
+                break;
+            case "tue":
+                tue.add(new Days(classCode, classTime, classDuration, classLocation));
+                break;
+            case "wed":
+                wed.add(new Days(classCode, classTime, classDuration, classLocation));
+                break;
+            case "thurs":
+                thurs.add(new Days(classCode, classTime, classDuration, classLocation));
+                break;
+            case "fri":
+                fri.add(new Days(classCode, classTime, classDuration, classLocation));
+                break;
+            default:
+                System.out.println("Day of the week does not exist");
+                break;
+            }
             userAddedMessage(userAdded);
             classCount++;
         } catch (InvalidInputFormatException e) {
             System.out.println(e.getMessage());
-
         }
     }
 
@@ -69,7 +118,7 @@ public class TimetableList {
     public static void deleteClass(int index) {
         assert index > 0 && index <= mon.size() : "Index out of bounds.";
         Days day = mon.get(index - 1);
-        System.out.println("deleted: " + day.getClassDescription() +
+        System.out.println("deleted: " + day.getClassCode() +
                 " | Time: " + day.getClassTime() +
                 " | Duration: " + day.getClassDuration() +
                 " | Location: " + day.getClassLocation());
