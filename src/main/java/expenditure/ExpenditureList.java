@@ -165,7 +165,7 @@ public class ExpenditureList {
         assert index > 0 && index <= expenditureList.size() : "Index out of bounds.";
         Expenditure expenditure = expenditureList.get(index - 1);
         System.out.println("deleted: " + expenditure.getDescription() +
-                " | type: " + expenditure.getType() +
+                " | " + expenditure.getType() +
                 " | Cost: $" + expenditure.getAmount() +
                 " | date: " + expenditure.getDate());
         expenditureList.remove(index - 1);
@@ -197,7 +197,7 @@ public class ExpenditureList {
         for (int i = 0; i < expenditureList.size(); i++) {
             Expenditure expenditure = expenditureList.get(i);
             System.out.println((i + 1) + ". " + expenditure.getDescription() +
-                    " | type: " + expenditure.getType() +
+                    " | " + expenditure.getType() +
                     " | Cost: $" + expenditure.getAmount() +
                     " | date: " + expenditure.getDate());
         }

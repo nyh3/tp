@@ -68,7 +68,7 @@ public class ExpenditureTest {
 
         Expenditure expenditure = new Expenditure(description, type, amount, date);
 
-        String expectedToString = "food | Cost: $50.0 | date: 01.01.2024";
+        String expectedToString = "food | FOOD | Cost: $50.0 | date: 01.01.2024";
         assertEquals(expectedToString, expenditure.toString());
     }
 
@@ -81,7 +81,7 @@ public class ExpenditureTest {
 
         Expenditure expenditure = new Expenditure(description, type, amount, date);
 
-        String expectedToStringStorage = "food | 50.0 | 01.01.2024";
+        String expectedToStringStorage = "food | FOOD | 50.0 | 01.01.2024";
 
         assertEquals(expectedToStringStorage, expenditure.toStringStorage());
     }

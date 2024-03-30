@@ -1,5 +1,5 @@
 package seedu.duke;
-import motivationalquotes.MotivationalQuotes;
+import motivationalquote.MotivationalQuotes;
 import java.util.Scanner;
 
 public class UI {
