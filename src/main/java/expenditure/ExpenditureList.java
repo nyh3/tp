@@ -80,6 +80,28 @@ public class ExpenditureList {
         return filteredExpenses;
     }
 
+    public static List<Expenditure> listExpensesByType(String type) {
+        List<Expenditure> filteredExpenses = new ArrayList<>();
+        for (Expenditure exp: expenditureList) {
+            String expensesType = exp.getType();
+            if (expensesType.equals(type)) {
+                filteredExpenses.add(exp);
+            }
+        }
+
+        if (filteredExpenses.isEmpty()) {
+            System.out.println("No expenses found for type:" + type);
+        } else {
+            System.out.println("Expenses for " + type);
+            int count = 1;
+            for (Expenditure exp: filteredExpenses) {
+                System.out.println(count + ". " + exp.toString());
+            }
+        }
+
+        return filteredExpenses;
+    }
+
 
     public static void addExpenditure(String expenditure, Boolean userAdded) {
         try {
