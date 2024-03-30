@@ -23,6 +23,9 @@ public class UITest {
                 + "To view saved expenses by year, use format:\n<< view -y <yyyy> >>\n"
                 + "To view saved expenses by type, use format:\n<< view -t <type> >>\n"
                 + " -------------------------------------------------------------\n"
+                + "To input class to timetable, use format:\n"
+                + "<< tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location> >>\n"
+                + " -------------------------------------------------------------\n"
                 + "To Use gpa calculator, type 'gpa' to continue\n"
                 + "To end the program, type 'exit'";
 
