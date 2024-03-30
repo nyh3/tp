@@ -90,11 +90,25 @@ public class ExpenditureList {
             // Description part directly after "d/"
             String descriptionPart = parts[1].trim();
 
+            parts = descriptionPart.split(" t/", 2);
+            String description = "";
+            String type = "";
+            if (parts.length < 2) {
+                type = "NA";
+            } else {
+                description = parts[0].trim();
+                descriptionPart = parts[1].trim();
+            }
+
             parts = descriptionPart.split(" amt/", 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for amount.");
             }
-            String description = parts[0].trim();
+            if (type.isEmpty()) {
+                type = parts[0].trim().toUpperCase();
+            } else {
+                description = parts[0].trim();
+            }
             String amountAndDate = parts[1].trim();
 
             parts = amountAndDate.split(" date/", 2);
@@ -107,7 +121,7 @@ public class ExpenditureList {
             float amountValue = Float.parseFloat(amount);
             // Ensure that the expenditureList is initialized somewhere before thi
             if ( isValidDate(date) && isValidAmount(amountValue) ) {
-                expenditureList.add(new Expenditure(description, amountValue, date));
+                expenditureList.add(new Expenditure(description, type, amountValue, date));
                 expenditureCount += 1;
                 userAddedMessage(userAdded);
             }
@@ -129,6 +143,7 @@ public class ExpenditureList {
         assert index > 0 && index <= expenditureList.size() : "Index out of bounds.";
         Expenditure expenditure = expenditureList.get(index - 1);
         System.out.println("deleted: " + expenditure.getDescription() +
+                " | type: " + expenditure.getType() +
                 " | Cost: $" + expenditure.getAmount() +
                 " | date: " + expenditure.getDate());
         expenditureList.remove(index - 1);
@@ -160,6 +175,7 @@ public class ExpenditureList {
         for (int i = 0; i < expenditureList.size(); i++) {
             Expenditure expenditure = expenditureList.get(i);
             System.out.println((i + 1) + ". " + expenditure.getDescription() +
+                    " | type: " + expenditure.getType() +
                     " | Cost: $" + expenditure.getAmount() +
                     " | date: " + expenditure.getDate());
         }
