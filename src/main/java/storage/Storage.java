@@ -53,7 +53,7 @@ public class Storage {
 
     private static String processLine(String line) {
         String[] parts = line.split("\\|");
-        return ("d/ " + parts[0] + "amt/" + parts[1] + "date/" + parts[2]);
+        return ("d/ " + parts[0] + "t/" + parts[1] + "amt/" + parts[2] + "date/" + parts[3]);
     }
 
     public static void writeToFile(ExpenditureList expenses) {

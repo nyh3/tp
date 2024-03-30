@@ -92,6 +92,10 @@ public class ProcessCommand {
                 } else {
                     System.out.println("Please provide a year in YYYY format after 'view -y'.");
                 }
+            } else if (input.startsWith("view -t ")) {
+                int index = input.indexOf("-t");
+                String type = input.substring(index + 2).toUpperCase().trim();
+                ExpenditureList.listExpensesByType(type);
             } else {
                 System.out.println("Unknown command. Please try again! Type 'help' for more information!");
             }

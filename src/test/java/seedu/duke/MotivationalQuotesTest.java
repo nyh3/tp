@@ -1,6 +1,6 @@
 package seedu.duke;
 
-import motivationalquotes.MotivationalQuotes;
+import motivationalquote.MotivationalQuotes;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertFalse;
