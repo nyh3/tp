@@ -56,7 +56,7 @@ public class ProcessCommand {
             GC.main();
             break;
         case "exit":
-            System.out.println("Shutting down... Goodbye!!");
+            UI.printExitMessage();
             Storage.writeToFile(expenses, timetable);
             return true;
         case "list":
