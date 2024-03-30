@@ -9,10 +9,11 @@ public class ExpenditureTest {
     public void testExpenditureConstructor() {
 
         String description = "food";
+        String type = "FOOD";
         Float amount = 50.0f;
         String date = "01.01.2024";
 
-        Expenditure expenditure = new Expenditure(description, amount, date);
+        Expenditure expenditure = new Expenditure(description, type, amount, date);
 
         assertEquals(description, expenditure.getDescription());
         assertEquals(amount, expenditure.getAmount());
@@ -22,10 +23,11 @@ public class ExpenditureTest {
     @Test
     public void getDescription() {
         String description = "food";
+        String type = "FOOD";
         Float amount = 50.0f;
         String date = "01.01.2024";
 
-        Expenditure expenditure = new Expenditure(description, amount, date);
+        Expenditure expenditure = new Expenditure(description, type, amount, date);
 
         String storedDescription = expenditure.getDescription();
         assertEquals(description,storedDescription);
@@ -34,34 +36,37 @@ public class ExpenditureTest {
     @Test
     public void getAmount() {
         String description = "food";
+        String type = "FOOD";
         Float amount = 50.0f;
         String date = "01.01.2024";
 
-        Expenditure expenditure = new Expenditure(description, amount, date);
+        Expenditure expenditure = new Expenditure(description, type, amount, date);
 
-        float storedAmount = expenditure.getAmount();;
+        float storedAmount = expenditure.getAmount();
         assertEquals(amount, storedAmount);
     }
 
     @Test
     public void getDate() {
         String description = "food";
+        String type = "FOOD";
         Float amount = 50.0f;
         String date = "01.01.2024";
 
-        Expenditure expenditure = new Expenditure(description, amount, date);
+        Expenditure expenditure = new Expenditure(description, type, amount, date);
 
-        String storedDate = expenditure.getDate();;
+        String storedDate = expenditure.getDate();
         assertEquals(date, storedDate);
     }
 
     @Test
     public void testToString() {
         String description = "food";
+        String type = "FOOD";
         Float amount = 50.0f;
         String date = "01.01.2024";
 
-        Expenditure expenditure = new Expenditure(description, amount, date);
+        Expenditure expenditure = new Expenditure(description, type, amount, date);
 
         String expectedToString = "food | Cost: $50.0 | date: 01.01.2024";
         assertEquals(expectedToString, expenditure.toString());
@@ -70,10 +75,11 @@ public class ExpenditureTest {
     @Test
      public void toStringStorage() {
         String description = "food";
+        String type = "FOOD";
         Float amount = 50.0f;
         String date = "01.01.2024";
 
-        Expenditure expenditure = new Expenditure(description, amount, date);
+        Expenditure expenditure = new Expenditure(description, type, amount, date);
 
         String expectedToStringStorage = "food | 50.0 | 01.01.2024";
 
