@@ -51,7 +51,6 @@ public class TimetableList {
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class day.");
             }
-            // Description part directly after "d/"
             String classDayPart = parts[1].trim();
 
             parts = classDayPart.split(" code/", 2);
@@ -115,15 +114,69 @@ public class TimetableList {
         }
     }
 
-    public static void deleteClass(int index) {
-        assert index > 0 && index <= mon.size() : "Index out of bounds.";
-        Days day = mon.get(index - 1);
-        System.out.println("deleted: " + day.getClassCode() +
-                " | Time: " + day.getClassTime() +
-                " | Duration: " + day.getClassDuration() +
-                " | Location: " + day.getClassLocation());
-        mon.remove(index - 1);
-        classCount--;
+    public static void deleteClass(String details) {
+        try {
+            String[] parts = details.split("day/", 2);
+            if (parts.length < 2) {
+                throw new InvalidInputFormatException("Invalid input format for class day.");
+            }
+            String classDayPart = parts[1].trim();
+
+            parts = classDayPart.split(" code/", 2);
+            if (parts.length < 2) {
+                throw new InvalidInputFormatException("Invalid input format for class code.");
+            }
+            String classDay = parts[0].trim();
+            String classCodePart = parts[1].trim();
+
+            parts = classCodePart.split(" time/", 2);
+            if (parts.length < 2) {
+                throw new InvalidInputFormatException("Invalid input format for class time.");
+            }
+            String classCode = parts[0].trim();
+            String classTime = parts[1].trim();
+
+            ArrayList<Days> dayList = getDayList(classDay);
+            if (dayList == null) {
+                System.out.println("Invalid day of the week.");
+                return;
+            }
+
+            Days classToRemove = null;
+            for (Days day : dayList) {
+                if (day.getClassCode().equals(classCode) && day.getClassTime().equals(classTime)) {
+                    classToRemove = day;
+                    break;
+                }
+            }
+
+            if (classToRemove != null) {
+                dayList.remove(classToRemove);
+                classCount--;
+                System.out.println("Class removed successfully.");
+            } else {
+                System.out.println("Class not found.");
+            }
+        } catch (InvalidInputFormatException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    private static ArrayList<Days> getDayList(String dayOfWeek) {
+        switch (dayOfWeek.toLowerCase()) {
+        case "mon":
+            return mon;
+        case "tue":
+            return tue;
+        case "wed":
+            return wed;
+        case "thurs":
+            return thurs;
+        case "fri":
+            return fri;
+        default:
+            return null;
+        }
     }
 
 }

@@ -17,12 +17,7 @@ public class TimetableParser {
             TimetableList.addClass(details, true);
             break;
         case "del":
-            try {
-                int index = Integer.parseInt(details);
-                TimetableList.deleteClass(index);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid index format for deletion.");
-            }
+            TimetableList.deleteClass(details);
             break;
         case "list":
             System.out.println("Timetable listed here");
