@@ -80,19 +80,19 @@ public class StorageTest {
 
     @Test
     public void testCreateNewFile() {
-        boolean ExpenditureFileExistsBefore = Files.exists(EXPENDITURE_FILE_PATH);
-        boolean TimetableFileExistsBefore = Files.exists(TIMETABLE_FILE_PATH);
+        boolean expenditureFileExistsBefore = Files.exists(EXPENDITURE_FILE_PATH);
+        boolean timetableFileExistsBefore = Files.exists(TIMETABLE_FILE_PATH);
 
         Storage.createNewFile("expenditure");
         Storage.createNewFile("timetable");
 
-        boolean ExpenditureFileExistsAfter = Files.exists(EXPENDITURE_FILE_PATH);
-        boolean TimetableExistsAfter = Files.exists(TIMETABLE_FILE_PATH);
+        boolean expenditureFileExistsAfter = Files.exists(EXPENDITURE_FILE_PATH);
+        boolean timetableExistsAfter = Files.exists(TIMETABLE_FILE_PATH);
 
-        assertTrue(ExpenditureFileExistsBefore);
-        assertTrue(ExpenditureFileExistsAfter);
-        assertTrue(TimetableFileExistsBefore);
-        assertTrue(TimetableExistsAfter);
+        assertTrue(expenditureFileExistsBefore);
+        assertTrue(expenditureFileExistsAfter);
+        assertTrue(timetableFileExistsBefore);
+        assertTrue(timetableExistsAfter);
     }
 
 
