@@ -90,7 +90,7 @@ public class ExpenditureList {
         }
 
         if (filteredExpenses.isEmpty()) {
-            System.out.println("No expenses found for type:" + type);
+            System.out.println("No expenses found for type: " + type);
         } else {
             System.out.println("Expenses for " + type);
             int count = 1;

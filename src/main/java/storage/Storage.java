@@ -16,7 +16,7 @@ public class Storage {
     private static final String EXPENDITURE_FILE_PATH = "./data/expenditure.txt";
     private static final String TIMETABLE_FILE_PATH = "./data/timetable.txt";
 
-    private static void createNewFile(String type) {
+    static void createNewFile(String type) {
         File file = null;
         if (type.equals("expenditure")) {
             file = new File(EXPENDITURE_FILE_PATH);
