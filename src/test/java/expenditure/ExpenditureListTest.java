@@ -1,6 +1,4 @@
 package expenditure;
-import expenditure.Expenditure;
-import expenditure.ExpenditureList;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
