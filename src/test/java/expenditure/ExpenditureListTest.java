@@ -117,8 +117,9 @@ public class ExpenditureListTest {
         outContent.reset();
         ExpenditureList.listExpenses();
         String expectedOutput = "Current Expenses:" + System.lineSeparator() +
-                "1. Expense 1 | NA | Cost: $100.0 | date: 01.01.2022" + System.lineSeparator()+
-                "2. Expense 2 | NA | Cost: $200.0 | date: 02.01.2022";
+                "1. Expense 1 | NA | Cost: $100.0 | date: 01.01.2022" + System.lineSeparator() +
+                "2. Expense 2 | NA | Cost: $200.0 | date: 02.01.2022" + System.lineSeparator() +
+                "Total expenses: $300.0";
         String printedOutput = outContent.toString().trim();
         assertEquals(expectedOutput, printedOutput);
 
