@@ -38,6 +38,7 @@ public class ExpenditureList {
             }
         }
 
+        Float totalExpenses = 0.0F;
         if (filteredExpenses.isEmpty()) {
             System.out.println("No expenses found for " + monthYear);
         } else {
@@ -45,7 +46,9 @@ public class ExpenditureList {
             int count = 1;
             for (Expenditure exp : filteredExpenses) {
                 System.out.println(count++ + ". " + exp);
+                totalExpenses += exp.getAmount();
             }
+            System.out.println("Total expenses for " + monthYear + ": $" + totalExpenses);
         }
         return filteredExpenses;
     }
@@ -67,6 +70,7 @@ public class ExpenditureList {
             }
         }
 
+        Float totalExpenses = 0.0F;
         if (filteredExpenses.isEmpty()) {
             System.out.println("No expenses found for year " + year);
         } else {
@@ -74,7 +78,9 @@ public class ExpenditureList {
             int count = 1;
             for (Expenditure exp : filteredExpenses) {
                 System.out.println(count++ + ". " + exp);
+                totalExpenses += exp.getAmount();
             }
+            System.out.println("Total expenses for " + year + ": $" + totalExpenses);
         }
 
         return filteredExpenses;
@@ -88,7 +94,7 @@ public class ExpenditureList {
                 filteredExpenses.add(exp);
             }
         }
-
+        Float totalExpenses = 0.0F;
         if (filteredExpenses.isEmpty()) {
             System.out.println("No expenses found for type: " + type);
         } else {
@@ -96,9 +102,10 @@ public class ExpenditureList {
             int count = 1;
             for (Expenditure exp: filteredExpenses) {
                 System.out.println(count++ + ". " + exp.toString());
+                totalExpenses += exp.getAmount();
             }
+            System.out.println("Total expenses for " + type + ": $" + totalExpenses);
         }
-
         return filteredExpenses;
     }
 
@@ -191,7 +198,7 @@ public class ExpenditureList {
             System.out.println("No expenses to display.");
             return;
         }
-
+        Float totalExpenses = 0.0F;
         System.out.println("Current Expenses:");
         assert !expenditureList.isEmpty();
         for (int i = 0; i < expenditureList.size(); i++) {
@@ -200,7 +207,9 @@ public class ExpenditureList {
                     " | " + expenditure.getType() +
                     " | Cost: $" + expenditure.getAmount() +
                     " | date: " + expenditure.getDate());
+            totalExpenses += expenditure.getAmount();
         }
+        System.out.println("Total expenses: $" + totalExpenses);
     }
 
     public Expenditure getExpenditure(int index) {
