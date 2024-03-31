@@ -1,4 +1,4 @@
-package seedu.duke;
+package expenditure;
 import expenditure.Expenditure;
 import expenditure.ExpenditureList;
 import org.junit.jupiter.api.Test;
