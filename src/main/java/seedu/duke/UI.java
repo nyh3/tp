@@ -33,6 +33,7 @@ public class UI {
                 + "To input expenses with type, use format:\n"
                 + "<< e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy> >>\n"
                 + "To delete saved expenses, use format:\n<< e/ del/ <index> >>\n"
+                + "To clear the entire expenditure list, use format: \n<< clearlist >>\n"
                 + "To List saved expenses, use format:\n<< list >>\n"
                 + "To view saved expenses by month, use format:\n<< view -m <mm.yyyy> >>\n"
                 + "To view saved expenses by year, use format:\n<< view -y <yyyy> >>\n"

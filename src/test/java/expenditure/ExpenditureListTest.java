@@ -28,7 +28,8 @@ public class ExpenditureListTest {
     @Test
     public void testAddExpenditureValidInput() {
         int initialCount = ExpenditureList.expenditureCount;
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.02.2022", true);
+        ExpenditureList.addExpenditure("d/ Grocery Shopping t/ Food amt/ " +
+                "45.75 date/ 15.04.2024", true);
         assertEquals(initialCount + 1, ExpenditureList.expenditureCount);
     }
 
@@ -73,7 +74,7 @@ public class ExpenditureListTest {
     @Test
     public void testDeleteExpenditureValidInput() {
         int initialCount = ExpenditureList.expenditureCount;
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.02.2022", true);
+        ExpenditureList.addExpenditure("d/ Lunch amt/10.12 date/02.02.2022", true);
         assertEquals(initialCount + 1, ExpenditureList.expenditureCount);
         ExpenditureList.deleteExpenditure(1);
         assertEquals(initialCount, ExpenditureList.expenditureCount);
@@ -128,18 +129,18 @@ public class ExpenditureListTest {
 
     @Test
     public void testListExpensesByYearValidYear() {
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.02.2023", true);
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.04.2022", true);
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.03.2022", true);
+        ExpenditureList.addExpenditure("d/ Lunch amt/10.12 date/02.02.2023", true);
+        ExpenditureList.addExpenditure("d/ Lunch amt/10.12 date/02.04.2022", true);
+        ExpenditureList.addExpenditure("d/ Lunch amt/10.12 date/02.03.2022", true);
         List<Expenditure> expensesByYear = ExpenditureList.listExpensesByYear("2022");
         assertEquals(2, expensesByYear.size());
     }
 
     @Test
     public void testListExpensesByYearValidMonth() {
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.02.2022", true);
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.04.2022", true);
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.03.2022", true);
+        ExpenditureList.addExpenditure("d/ Lunch amt/10.12 date/02.02.2022", true);
+        ExpenditureList.addExpenditure("d/ Lunch amt/10.12 date/02.04.2022", true);
+        ExpenditureList.addExpenditure("d/ Lunch amt/10.12 date/02.03.2022", true);
         List<Expenditure> expensesByMonth = ExpenditureList.listExpensesByMonth("02.2022");
         assert expensesByMonth != null;
         assertEquals(1, expensesByMonth.size());
@@ -147,9 +148,9 @@ public class ExpenditureListTest {
 
     @Test
     public void testListExpensesByType() {
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch t/ food amt/10.12 date/02.02.2023", true);
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch amt/10.12 date/02.04.2022", true);
-        ExpenditureList.addExpenditure("e/ add/ d/ Lunch t/ book amt/10.12 date/02.03.2022", true);
+        ExpenditureList.addExpenditure("d/ Lunch t/ food amt/10.12 date/02.02.2023", true);
+        ExpenditureList.addExpenditure("d/ Lunch amt/10.12 date/02.04.2022", true);
+        ExpenditureList.addExpenditure("d/ Lunch t/ book amt/10.12 date/02.03.2022", true);
         List<Expenditure> expensesByType = ExpenditureList.listExpensesByType("FOOD");
         assertEquals(1, expensesByType.size());
     }
