@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Storage {
@@ -97,7 +96,7 @@ public class Storage {
                 "time/" + parts[2] + "duration/" + parts[3] + "location/" + parts[4]);
     }
 
-    public static void writeToFile(ExpenditureList expenses, TimetableList timetable) {
+    public static void writeToFile(ExpenditureList expenses) {
         try {
             PrintWriter fw = new PrintWriter(EXPENDITURE_FILE_PATH);
             for (int i = 0; i < ExpenditureList.expenditureCount; i++) {
@@ -105,20 +104,23 @@ public class Storage {
             }
             fw.close();
             fw = new PrintWriter(TIMETABLE_FILE_PATH);
-            writeTimetableToFIle(fw, timetable.getMon(), "mon");
-            writeTimetableToFIle(fw, timetable.getTue(), "tue");
-            writeTimetableToFIle(fw, timetable.getWed(), "wed");
-            writeTimetableToFIle(fw, timetable.getThurs(), "thurs");
-            writeTimetableToFIle(fw, timetable.getFri(), "fri");
+            writeTimetableToFIle(fw, TimetableList.getTimetable());
             fw.close();
         } catch (IOException e) {
             System.out.println("Error writing file" + e.getMessage());
         }
     }
 
-    private static void writeTimetableToFIle(PrintWriter fw, ArrayList<Days> timetable, String day) {
-        for (Days classDetails : timetable) {
-            fw.println(day + " | " + classDetails.toStringStorage());
+    private static void writeTimetableToFIle(PrintWriter fw, Days[][] timetable) {
+        for (int i = 0; i < 5; i++) {
+            for (int j = 0; j < 24; j++) {
+                if (timetable[i][j] != null) {
+                    fw.println((i + 1) + " | " + timetable[i][j].getClassCode() +
+                            " | " + timetable[i][j].getClassTime() +
+                            " | " + timetable[i][j].getClassDuration() +
+                            " | " + timetable[i][j].getClassLocation());
+                }
+            }
         }
     }
 }
