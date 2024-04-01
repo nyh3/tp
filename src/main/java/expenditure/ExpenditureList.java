@@ -9,7 +9,7 @@ import java.util.List;
 
 public class ExpenditureList {
     public static int expenditureCount;
-    private static ArrayList<Expenditure> expenditureList;
+    private static ArrayList<Expenditure> expenditureList = new ArrayList<>();
 
     public ExpenditureList() {
         expenditureList = new ArrayList<>();
@@ -148,7 +148,7 @@ public class ExpenditureList {
             String date = parts[1].trim();
 
             float amountValue = Float.parseFloat(amount);
-            // Ensure that the expenditureList is initialized somewhere before thi
+
             if ( isValidDate(date) && isValidAmount(amountValue) ) {
                 expenditureList.add(new Expenditure(description, type, amountValue, date));
                 expenditureCount += 1;
