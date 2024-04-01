@@ -26,18 +26,22 @@ public class Storage {
         assert file != null;
         File directory = new File(file.getParent());
         try {
-            if (!directory.exists()) {
-                if (!directory.mkdirs()) {
-                    System.out.println("Failed to create directory: " + directory.getAbsolutePath());
-                }
-            }
-            if (!file.createNewFile()) {
-                System.out.println("Failed to create new file: " + file.getAbsolutePath());
-            }
+            createDirectoryAndFile(directory, file);
         } catch (IOException e) {
             System.out.println("Error creating new file: " + e.getMessage());
         }
         assert directory.exists();
+    }
+
+    private static void createDirectoryAndFile(File directory, File file) throws IOException {
+        if (!directory.exists()) {
+            if (!directory.mkdirs()) {
+                System.out.println("Failed to create directory: " + directory.getAbsolutePath());
+            }
+        }
+        if (!file.createNewFile()) {
+            System.out.println("Failed to create new file: " + file.getAbsolutePath());
+        }
     }
 
     public static ExpenditureList readExpenditureFile() {
