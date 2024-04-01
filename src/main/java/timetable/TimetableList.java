@@ -7,6 +7,10 @@ import java.util.ArrayList;
 
 public class TimetableList {
 
+    public enum Day {
+        MON, TUE, WED, THURS, FRI
+    }
+
     public static int classCount;
 
     private static ArrayList<Days> mon;
@@ -57,7 +61,7 @@ public class TimetableList {
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class code.");
             }
-            String classDay = parts[0].trim();
+            Day classDay = Day.valueOf(parts[0].trim().toUpperCase());
             String classCodePart = parts[1].trim();
 
             parts = classCodePart.split(" time/", 2);
@@ -112,7 +116,7 @@ public class TimetableList {
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class code.");
             }
-            String classDay = parts[0].trim();
+            Day classDay = Day.valueOf(parts[0].trim().toUpperCase());
             String classCodePart = parts[1].trim();
 
             parts = classCodePart.split(" time/", 2);
@@ -148,17 +152,17 @@ public class TimetableList {
         }
     }
 
-    private static ArrayList<Days> getDayList(String dayOfWeek) {
-        switch (dayOfWeek.toLowerCase()) {
-        case "mon":
+    private static ArrayList<Days> getDayList(Day dayOfWeek) {
+        switch (dayOfWeek) {
+        case MON:
             return mon;
-        case "tue":
+        case TUE:
             return tue;
-        case "wed":
+        case WED:
             return wed;
-        case "thurs":
+        case THURS:
             return thurs;
-        case "fri":
+        case FRI:
             return fri;
         default:
             return null;
