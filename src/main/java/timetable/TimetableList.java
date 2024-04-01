@@ -1,25 +1,14 @@
 package timetable;
 
 import seedu.duke.InvalidInputFormatException;
-
-import java.util.ArrayList;
-
+import seedu.duke.UI;
 
 public class TimetableList {
-
-    public enum Day {
-        MON, TUE, WED, THURS, FRI
-    }
-
     public static int classCount;
-
-    private static ArrayList<Days> mon;
-    private static ArrayList<Days> tue;
-    private static ArrayList<Days> wed;
-
-    private static ArrayList<Days> thurs;
-    private static ArrayList<Days> fri;
-
+    public static int[] classCountDay;
+    public static final int NUM_DAYS = 5;
+    public static final int HOURS_PER_DAY = 24;
+    private static Days[][] timetable;
     private static final String DAY_KEYWORD = "day/";
     private static final String CODE_KEYWORD = " code/";
     private static final String TIME_KEYWORD = " time/";
@@ -27,32 +16,13 @@ public class TimetableList {
     private static final String LOCATION_KEYWORD = " location/";
 
     public TimetableList() {
-        mon = new ArrayList<>();
-        tue = new ArrayList<>();
-        wed = new ArrayList<>();
-        thurs = new ArrayList<>();
-        fri = new ArrayList<>();
+        timetable = new Days[NUM_DAYS][HOURS_PER_DAY];
+        classCountDay = new int[NUM_DAYS];
         classCount = 0;
     }
 
-    public ArrayList<Days> getMon() {
-        return mon;
-    }
-
-    public ArrayList<Days> getTue() {
-        return tue;
-    }
-
-    public ArrayList<Days> getWed() {
-        return wed;
-    }
-
-    public ArrayList<Days> getThurs() {
-        return thurs;
-    }
-
-    public ArrayList<Days> getFri() {
-        return fri;
+    public static Days[][] getTimetable() {
+        return timetable;
     }
 
     public static void addClass(String schedule, Boolean userAdded) {
@@ -67,7 +37,7 @@ public class TimetableList {
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class code.");
             }
-            Day classDay = Day.valueOf(parts[0].trim().toUpperCase());
+            int classDay = Integer.parseInt(parts[0].trim());
             String classCodePart = parts[1].trim();
 
             parts = classCodePart.split(TIME_KEYWORD, 2);
@@ -81,26 +51,40 @@ public class TimetableList {
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class duration.");
             }
-            String classTime = parts[0].trim();
+            int classTime = Integer.parseInt(parts[0].trim());
             String classDurationPart = parts[1].trim();
 
             parts = classDurationPart.split(LOCATION_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class location.");
             }
-            String classDuration = parts[0].trim();
+            int classDuration = Integer.parseInt(parts[0].trim());
             String classLocation = parts[1].trim();
 
-            ArrayList<Days> dayList = getDayList(classDay);
-            if (dayList == null) {
+            if (classDay < 1 || classDay > NUM_DAYS) {
                 System.out.println("Day of the week does not exist");
                 return;
             }
-            dayList.add(new Days(classCode, classTime, classDuration, classLocation));
+            if (classTime < 1 || classTime >= HOURS_PER_DAY) {
+                System.out.println("Time of the day does not exist");
+                return;
+            }
+            if (classDuration < 1 || classDuration > (HOURS_PER_DAY - classTime)) {
+                System.out.println("Invalid class duration");
+                return;
+            }
+            while(classDuration > 0) {
+                timetable[classDay - 1][classTime - 1] = new Days(classCode, classTime, classDuration, classLocation);
+                classCountDay[classDay - 1]++;
+                classDuration--;
+                classTime++;
+                classCount++;
+            }
             userAddedMessage(userAdded);
-            classCount++;
         } catch (InvalidInputFormatException e) {
             System.out.println(e.getMessage());
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage() + " Must be an integer");
         }
     }
 
@@ -118,36 +102,23 @@ public class TimetableList {
             }
             String classDayPart = parts[1].trim();
 
-            parts = classDayPart.split(CODE_KEYWORD, 2);
-            if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for class code.");
-            }
-            Day classDay = Day.valueOf(parts[0].trim().toUpperCase());
-            String classCodePart = parts[1].trim();
-
-            parts = classCodePart.split(TIME_KEYWORD, 2);
+            parts = classDayPart.split(TIME_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class time.");
             }
-            String classCode = parts[0].trim();
-            String classTime = parts[1].trim();
+            int classDay = Integer.parseInt(parts[0].trim());
+            int classTime = Integer.parseInt(parts[1].trim());
 
-            ArrayList<Days> dayList = getDayList(classDay);
-            if (dayList == null) {
-                System.out.println("Invalid day of the week.");
+            if (classDay < 1 || classDay > NUM_DAYS) {
+                System.out.println("Day of the week does not exist");
                 return;
             }
-
-            Days classToRemove = null;
-            for (Days day : dayList) {
-                if (day.getClassCode().equals(classCode) && day.getClassTime().equals(classTime)) {
-                    classToRemove = day;
-                    break;
-                }
+            if (classTime < 1 || classTime >= HOURS_PER_DAY) {
+                System.out.println("Time of the day does not exist");
             }
-
-            if (classToRemove != null) {
-                dayList.remove(classToRemove);
+            if (timetable[classDay - 1][classTime - 1] != null) {
+                timetable[classDay - 1][classTime - 1] = null;
+                classCountDay[classDay - 1]--;
                 classCount--;
                 System.out.println("Class removed successfully.");
             } else {

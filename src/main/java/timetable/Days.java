@@ -3,11 +3,11 @@ package timetable;
 public class Days {
 
     protected String classCode;
-    protected String classTime;
-    protected String classDuration;
+    protected int classTime;
+    protected int classDuration;
     protected String classLocation;
 
-    public Days(String classCode, String classTime, String classDuration, String classLocation) {
+    public Days(String classCode, int classTime, int classDuration, String classLocation) {
         this.classCode = classCode;
         this.classTime = classTime;
         this.classDuration = classDuration;
@@ -18,12 +18,12 @@ public class Days {
         return classCode;
     }
 
-    public String getClassTime() {
-        return classTime;
+    public int getClassDuration() {
+        return classDuration;
     }
 
-    public String getClassDuration() {
-        return classDuration;
+    public int getClassTime() {
+        return classTime;
     }
 
     public String getClassLocation() {
@@ -31,7 +31,7 @@ public class Days {
     }
 
     public String toStringStorage() {
-        return classCode + " | " + classTime + " | " + classDuration + " | " + classLocation;
+        return classCode + " | " + classDuration + " | " + classLocation;
     }
 
 }
