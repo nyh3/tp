@@ -81,26 +81,12 @@ public class TimetableList {
             String classDuration = parts[0].trim();
             String classLocation = parts[1].trim();
 
-            switch (classDay) {
-            case "mon":
-                mon.add(new Days(classCode, classTime, classDuration, classLocation));
-                break;
-            case "tue":
-                tue.add(new Days(classCode, classTime, classDuration, classLocation));
-                break;
-            case "wed":
-                wed.add(new Days(classCode, classTime, classDuration, classLocation));
-                break;
-            case "thurs":
-                thurs.add(new Days(classCode, classTime, classDuration, classLocation));
-                break;
-            case "fri":
-                fri.add(new Days(classCode, classTime, classDuration, classLocation));
-                break;
-            default:
+            ArrayList<Days> dayList = getDayList(classDay);
+            if (dayList == null) {
                 System.out.println("Day of the week does not exist");
-                break;
+                return;
             }
+            dayList.add(new Days(classCode, classTime, classDuration, classLocation));
             userAddedMessage(userAdded);
             classCount++;
         } catch (InvalidInputFormatException e) {
