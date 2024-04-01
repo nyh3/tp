@@ -36,9 +36,9 @@ public class StorageTest {
 
         // Create sample timetable file for testing
         List<String> timetableLines = Arrays.asList(
-                "mon | cg2023 | 9pm | 1 | c1",
-                "tue | ee2026 | 10am | 10 | e9",
-                "fri | cs2113 | 12:00 | 4 | 12"
+                "1 | cg2023 | 1 | 1 | c1",
+                "2 | ee2026 | 1 | 7 | e9",
+                "1 | cs2113 | 1 | 4 | 12"
         );
         Files.write(TIMETABLE_FILE_PATH, timetableLines);
     }
@@ -55,7 +55,6 @@ public class StorageTest {
         TimetableList timetable = Storage.readTimetableFile();
         assertNotNull(timetable);
         assertEquals(1, TimetableList.classCount);
-        assertEquals(1, timetable.getMon().size());
     }
 
     @Test
@@ -64,16 +63,15 @@ public class StorageTest {
         ExpenditureList.addExpenditure(
                 "d/ movie t/ ENTERTAINMENT amt/ 15.0 date/ 01.01.2014", true);
 
-        TimetableList timetableList = new TimetableList();
+        new TimetableList();
         TimetableList.addClass(
-                "day/ mon code/ cde2501 time/ 12.12 duration/ 12 location/ room 1", true);
-        Storage.writeToFile(expenditureList, timetableList);
+                "day/ 1 code/ cde2501 time/ 12 duration/ 1 location/ room 1", true);
+        Storage.writeToFile(expenditureList);
 
         ExpenditureList readExpenditureList = Storage.readExpenditureFile();
         assertNotNull(readExpenditureList);
         assertEquals(1, ExpenditureList.expenditureCount);
         assertEquals(1, TimetableList.classCount);
-        assertEquals(1, timetableList.getMon().size());
         assertEquals("movie | ENTERTAINMENT | 15.0 | 01.01.2014",
                 readExpenditureList.getExpenditure(0).toStringStorage());
     }

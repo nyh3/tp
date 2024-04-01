@@ -26,7 +26,7 @@ public class UITest {
                 + "To input class to timetable, use format:\n"
                 + "<< tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location> >>\n"
                 + "To delete saved class, use format:\n"
-                + "<< tt/ del/ day/ <day> code/ <classCode> time/ <hh> >>\n"
+                + "<< tt/ del/ day/ <day> time/ <hh> >>\n"
                 + " -------------------------------------------------------------\n"
                 + "To Use gpa calculator, type 'gpa' to continue\n"
                 + "To end the program, type 'exit'";

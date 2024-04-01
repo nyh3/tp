@@ -1,5 +1,7 @@
 package seedu.duke;
 import motivationalquote.MotivationalQuotes;
+import timetable.Days;
+
 import java.util.Scanner;
 
 public class UI {
@@ -39,7 +41,7 @@ public class UI {
                 + "To input class to timetable, use format:\n"
                 + "<< tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location> >>\n"
                 + "To delete saved class, use format:\n"
-                + "<< tt/ del/ day/ <day> code/ <classCode> time/ <hh> >>\n"
+                + "<< tt/ del/ day/ <day> time/ <hh> >>\n"
                 + " -------------------------------------------------------------\n"
                 + "To Use gpa calculator, type 'gpa' to continue\n"
                 + "To end the program, type 'exit'");
@@ -58,6 +60,16 @@ public class UI {
 
     public static void printLineBreak() {
         System.out.println(" -------------------------------------------------------------\n");
+    }
+
+    public static void printTimetableByDay(Days[] timetable) {
+        for (int i = 0; i < 24; i ++) {
+            if (timetable[i] != null) {
+                System.out.println(timetable[i].getClassTime() +
+                        " | " + timetable[i].getClassCode() +
+                        " | " + timetable[i].getClassLocation());
+            }
+        }
     }
 
 }
