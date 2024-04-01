@@ -20,6 +20,12 @@ public class TimetableList {
     private static ArrayList<Days> thurs;
     private static ArrayList<Days> fri;
 
+    private static final String DAY_KEYWORD = "day/";
+    private static final String CODE_KEYWORD = " code/";
+    private static final String TIME_KEYWORD = " time/";
+    private static final String DURATION_KEYWORD = " duration/";
+    private static final String LOCATION_KEYWORD = " location/";
+
     public TimetableList() {
         mon = new ArrayList<>();
         tue = new ArrayList<>();
@@ -51,34 +57,34 @@ public class TimetableList {
 
     public static void addClass(String schedule, Boolean userAdded) {
         try {
-            String[] parts = schedule.split("day/", 2);
+            String[] parts = schedule.split(DAY_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class day.");
             }
             String classDayPart = parts[1].trim();
 
-            parts = classDayPart.split(" code/", 2);
+            parts = classDayPart.split(CODE_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class code.");
             }
             Day classDay = Day.valueOf(parts[0].trim().toUpperCase());
             String classCodePart = parts[1].trim();
 
-            parts = classCodePart.split(" time/", 2);
+            parts = classCodePart.split(TIME_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class time.");
             }
             String classCode = parts[0].trim();
             String classTimePart = parts[1].trim();
 
-            parts = classTimePart.split(" duration/", 2);
+            parts = classTimePart.split(DURATION_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class duration.");
             }
             String classTime = parts[0].trim();
             String classDurationPart = parts[1].trim();
 
-            parts = classDurationPart.split(" location/", 2);
+            parts = classDurationPart.split(LOCATION_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class location.");
             }
@@ -106,20 +112,20 @@ public class TimetableList {
 
     public static void deleteClass(String details) {
         try {
-            String[] parts = details.split("day/", 2);
+            String[] parts = details.split(DAY_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class day.");
             }
             String classDayPart = parts[1].trim();
 
-            parts = classDayPart.split(" code/", 2);
+            parts = classDayPart.split(CODE_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class code.");
             }
             Day classDay = Day.valueOf(parts[0].trim().toUpperCase());
             String classCodePart = parts[1].trim();
 
-            parts = classCodePart.split(" time/", 2);
+            parts = classCodePart.split(TIME_KEYWORD, 2);
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class time.");
             }
