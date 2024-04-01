@@ -22,6 +22,9 @@ public class TimetableParser {
         case "list":
             System.out.println("Timetable listed here");
             break;
+        case "list -d":
+            TimetableList.listByDay(details);
+            break;
         default:
             System.out.println("Unknown command " + details);
             break;

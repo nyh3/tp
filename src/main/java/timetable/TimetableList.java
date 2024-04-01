@@ -126,23 +126,25 @@ public class TimetableList {
             }
         } catch (InvalidInputFormatException e) {
             System.out.println(e.getMessage());
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage() + " Must be an integer");
         }
     }
 
-    private static ArrayList<Days> getDayList(Day dayOfWeek) {
-        switch (dayOfWeek) {
-        case MON:
-            return mon;
-        case TUE:
-            return tue;
-        case WED:
-            return wed;
-        case THURS:
-            return thurs;
-        case FRI:
-            return fri;
-        default:
-            return null;
+    public static void listByDay(String day) {
+        try {
+            int classDay = Integer.parseInt(day);
+            if (classDay < 1 || classDay > NUM_DAYS) {
+                System.out.println("Day of the week does not exist");
+                return;
+            }
+            if (classCountDay[classDay - 1] == 0) {
+                System.out.println("No class on that day");
+            } else {
+                UI.printTimetableByDay(timetable[classDay - 1]);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println(e.getMessage() + "Must be an integer");
         }
     }
 

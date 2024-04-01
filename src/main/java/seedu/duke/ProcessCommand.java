@@ -57,7 +57,7 @@ public class ProcessCommand {
             break;
         case "exit":
             UI.printExitMessage();
-            Storage.writeToFile(expenses, timetable);
+            Storage.writeToFile(expenses);
             return true;
         case "list":
             ExpenditureList.listExpenses();
