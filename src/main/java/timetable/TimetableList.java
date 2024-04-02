@@ -61,12 +61,7 @@ public class TimetableList {
             int classDuration = Integer.parseInt(parts[0].trim());
             String classLocation = parts[1].trim();
 
-            if (classDay < 1 || classDay > NUM_DAYS) {
-                System.out.println("Day of the week does not exist");
-                return;
-            }
-            if (classTime < 1 || classTime >= HOURS_PER_DAY) {
-                System.out.println("Time of the day does not exist");
+            if (!isValidClassTime(classTime) || !isValidDay(classDay)) {
                 return;
             }
             if (classDuration < 1 || classDuration > (HOURS_PER_DAY - classTime)) {
@@ -101,25 +96,26 @@ public class TimetableList {
                 throw new InvalidInputFormatException("Invalid input format for class day.");
             }
             String classDayPart = parts[1].trim();
-
             parts = classDayPart.split(TIME_KEYWORD, 2);
+
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for class time.");
             }
             int classDay = Integer.parseInt(parts[0].trim());
             int classTime = Integer.parseInt(parts[1].trim());
 
-            if (classDay < 1 || classDay > NUM_DAYS) {
-                System.out.println("Day of the week does not exist");
+            if (!isValidDay(classDay) || !isValidClassTime(classTime)) {
                 return;
             }
-            if (classTime < 1 || classTime >= HOURS_PER_DAY) {
-                System.out.println("Time of the day does not exist");
-            }
+
             if (timetable[classDay - 1][classTime - 1] != null) {
+                String classCode = timetable[classDay - 1][classTime - 1].getClassCode();
                 timetable[classDay - 1][classTime - 1] = null;
                 classCountDay[classDay - 1]--;
                 classCount--;
+
+                // Move down the current spot and remove that class code
+                deleteClassOccurrences(classTime, classDay, classCode);
                 System.out.println("Class removed successfully.");
             } else {
                 System.out.println("Class not found.");
@@ -129,6 +125,57 @@ public class TimetableList {
         } catch (NumberFormatException e) {
             System.out.println(e.getMessage() + " Must be an integer");
         }
+    }
+
+    /**
+     * used with deleteClass method
+     *  iterates through from the specified time
+     *  and deletes classes with the same code,
+     *  stops when a different class code is reached
+     *
+     * @param classTime start time of class
+     * @param classDay day of class 1-5 for monday-friday
+     * @param classCode module code of class
+     */
+    private static void deleteClassOccurrences(int classTime, int classDay, String classCode) {
+        for (int hour = classTime; hour < HOURS_PER_DAY; hour++) {
+            if (timetable[classDay - 1][hour] != null
+                    && timetable[classDay - 1][hour].getClassCode().equals(classCode)) {
+                timetable[classDay - 1][hour] = null;
+                classCountDay[classDay - 1]--;
+                classCount--;
+            } else {
+                break;  // Stop iterating once a different class is encountered
+            }
+        }
+    }
+
+    /**
+     * Check if day input by user is valid
+     *
+     * @param classDay day of class 1-5 for monday-friday
+     * @return True if valid day or False if not valid
+     */
+    private static boolean isValidDay(int classDay) {
+        if (classDay < 1 || classDay > NUM_DAYS) {
+            System.out.println("Day of the week does not exist");
+            return false;
+        }
+        return true;
+    }
+
+    /**
+     * checks if classTime input by user is valid
+     *
+     * @param classTime start time of class
+     * @return True if valid day or False if not valid
+     */
+    private static boolean isValidClassTime(int classTime) {
+        if (classTime < 1 || classTime >= HOURS_PER_DAY) {
+            System.out.println("Time of the day does not exist");
+            return false;
+        }
+        return true;
     }
 
     public static void listByDay(String day) {
