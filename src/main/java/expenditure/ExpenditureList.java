@@ -250,6 +250,5 @@ public class ExpenditureList {
         return true;
     }
 
-
 }
 
