@@ -196,8 +196,9 @@ public class TimetableList {
     }
 
     public static void listTimetableByOrderOfDays() {
+        String[] daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
         for (int day = 0; day < NUM_DAYS; day++) {
-            System.out.println("Day " + (day + 1) + ":");
+            System.out.println(daysOfWeek[day] + ":");
             boolean hasClasses = false;
             for (int hour = 0; hour < HOURS_PER_DAY; hour++) {
                 Days classAtTime = timetable[day][hour];
