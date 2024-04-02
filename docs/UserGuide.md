@@ -3,6 +3,7 @@
 ## Introduction
 
 # Welcome to CantVas!
+![unnamed.png](..%2F..%2Funnamed.png)
 
 Congratulations on taking the first step towards smarter, more organized 
 student life! CantVas is your ultimate companion for managing your academic 
@@ -33,14 +34,25 @@ expenses.
 The features include:
 - Adding of new expenditures. To do so, key in with the following
   format: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.
+  
+  example: `e/ add/ d/ self-help book amt/ 19.99 date/ 15.03.2024`
+
 - Viewing of saved expenditures without filters. To do so, key in 
   with the following format: `list`.
 - Viewing of saved expenditures by month and year. To do so, key in 
   with the following format: `view -m <mm.yyyy>`.
+
+  example: `view -m 03.2024`
+
 - Viewing of saved expenditures by year. To do so, key in with the
   following format: `view -y <yyyy>`.
+-
+  example: `view -y 2024`
+
 - Viewing of saved expenditures by type. To do so, key in with the
   following format: `view -t <type>`.
+
+  example: `view -t FOOD`
 
 ### GPA Calculator
 ~~Having LOW GPA? Use GPA calculator
@@ -60,13 +72,17 @@ E.g. `4/A+` `2/b+`
 ### Timetable
 
 ### Daily Motivational Quotes
-Feeling Down? Dred looking at your packed timetable?
+Feeling Down? Dread looking at your packed timetable?
 CantVas is here to save your day and uplift your spirits whenever you need it most(when looking at expenses and timetable)
 
 Everytime you start CantVas, we will provide you with a motivational quote to give you energy and
 encouragement to get through your day
 
 ## FAQ
+
+**Q**: What if I key in the wrong expenditure?
+
+**A**: Editing the table is not possible, in the event of erroneous input, please delete and input the correct expense
 
 **Q**: What kind of timetable is the app able to display? Is it for the whole semester, one month or one week?
 
@@ -75,6 +91,4 @@ encouragement to get through your day
 
 ## Command Summary
 
-{Give a 'cheat sheet' of commands here}
 
-* Add todo `todo n/TODO_NAME d/DEADLINE`
