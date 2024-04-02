@@ -8,8 +8,8 @@ public class TimetableList {
     public static int[] classCountDay;
     public static final int NUM_DAYS = 5;
     public static final int HOURS_PER_DAY = 24;
-    private static Days[][] timetable;
     private static final String DAY_KEYWORD = "day/";
+    private static Days[][] timetable;
     private static final String CODE_KEYWORD = " code/";
     private static final String TIME_KEYWORD = " time/";
     private static final String DURATION_KEYWORD = " duration/";
@@ -145,6 +145,24 @@ public class TimetableList {
             }
         } catch (NumberFormatException e) {
             System.out.println(e.getMessage() + "Must be an integer");
+        }
+    }
+
+    public static void listTimetableByOrderOfDays() {
+        for (int day = 0; day < NUM_DAYS; day++) {
+            System.out.println("Day " + (day + 1) + ":");
+            boolean hasClasses = false;
+            for (int hour = 0; hour < HOURS_PER_DAY; hour++) {
+                Days classAtTime = timetable[day][hour];
+                if (classAtTime != null) {
+                    hasClasses = true;
+                    System.out.println(" - " + classAtTime.toString());
+                }
+            }
+            if (!hasClasses) {
+                System.out.println(" No classes scheduled.");
+            }
+            System.out.println();
         }
     }
 

@@ -34,4 +34,9 @@ public class Days {
         return classCode + " | " + classDuration + " | " + classLocation;
     }
 
+    @Override
+    public String toString() {
+        return "Code: " + classCode + ", Class Time: " + classTime + ", Duration: " + classDuration +
+                ", Location: " + classLocation;
+    }
 }
