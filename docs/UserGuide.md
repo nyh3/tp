@@ -14,12 +14,34 @@ Congratulations on taking the first step towards smarter, more organized student
 5. Run `java -jar CantVas.jar` to run the application.
 
 ## Features 
+CantVas includes the following 
+features:
+- Expenditure Tracker 
+- GPA Calculator
+- Timetable Tracker
+- Daily Motivational Quotes
 
-## Expenditure Tracker
+### Expenditure Tracker
 
-## Timetable
+### GPA Calculator
+~~Having LOW GPA? Use GPA calculator
+to make you feel better XD~~
+> [!TIP]
+> You can access this function simply typing `gpa` at 
+> main page.
+1. Type `GPA` (Regardless of caps) to proceed to start the function.
+2. Type Your Current_GPA / Numbers_of_MCs_Taken.
+E.g. `4.00/30`
+3. Type the numbers of modules taken for this semester.
+E.g. `4` $${\color{blue}4}$$
+4. Type in the Modular_Credit/Expected grade for each module taken.
+E.g. `4/A+` `2/b+`
+5. Your GPA will be automatically calculated ! Yeahhh!
 
-## Daily Motivational Quotes
+### Timetable
+
+### Daily Motivational Quotes
+
 
 ## FAQ
 
