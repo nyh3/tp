@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Welcome to CantVas!
+#Welcome to CantVas!
 
 Congratulations on taking the first step towards smarter, more organized 
 student life! CantVas is your ultimate companion for managing your academic 
