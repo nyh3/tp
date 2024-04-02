@@ -1,11 +1,11 @@
-package seedu.duke;
+package ProcessUserCommands;
 
+import CantvasUI.UI;
 import expenditure.ExpenditureList;
 import storage.Storage;
 import gpa.GPACommand;
 import gc.GC;
 import timetable.TimetableList;
-import timetable.TimetableParser;
 
 public class ProcessCommand {
 
