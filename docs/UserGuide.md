@@ -60,7 +60,11 @@ E.g. `4/A+` `2/b+`
 ### Timetable
 
 ### Daily Motivational Quotes
+Feeling Down? Dred looking at your packed timetable?
+CantVas is here to save your day and uplift your spirits whenever you need it most(when looking at expenses and timetable)
 
+Everytime you start CantVas, we will provide you with a motivational quote to give you energy and
+encouragement to get through your day
 
 ## FAQ
 
