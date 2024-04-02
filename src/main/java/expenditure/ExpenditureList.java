@@ -234,12 +234,11 @@ public class ExpenditureList {
         String amtStr = String.valueOf(amt);
         String[] parts = amtStr.split("\\.");
 
-        if (amt >= 0 && is2DecimalPlaces(parts)) {
-
-            return true;
+        if (amt <= 0 ) {
+            System.out.println("Please enter a positive amount");
+            return false;
         }
-        System.out.println("Please enter a positive amount");
-        return false;
+        return is2DecimalPlaces(parts);
     }
 
     private static boolean is2DecimalPlaces(String[] parts) {
