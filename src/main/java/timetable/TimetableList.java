@@ -61,11 +61,9 @@ public class TimetableList {
             int classDuration = Integer.parseInt(parts[0].trim());
             String classLocation = parts[1].trim();
 
-            if (classDay < 1 || classDay > NUM_DAYS) {
-                System.out.println("Day of the week does not exist");
+            if (!isValidClassTime(classTime) || !isValidDay(classDay)) {
                 return;
             }
-            if (isValidClassTime(classTime)) return;
             if (classDuration < 1 || classDuration > (HOURS_PER_DAY - classTime)) {
                 System.out.println("Invalid class duration");
                 return;
