@@ -1,4 +1,4 @@
-package seedu.duke;
+package CantvasUI;
 import motivationalquote.MotivationalQuotes;
 import timetable.Days;
 

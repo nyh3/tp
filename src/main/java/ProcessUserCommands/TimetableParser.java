@@ -1,4 +1,6 @@
-package timetable;
+package ProcessUserCommands;
+
+import timetable.TimetableList;
 
 public class TimetableParser {
 
