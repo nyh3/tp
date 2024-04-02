@@ -9,7 +9,6 @@ public class TimetableMain {
     private static ArrayList<Days> mon;
     private static ArrayList<Days> tue;
     private static ArrayList<Days> wed;
-
     private static ArrayList<Days> thurs;
     private static ArrayList<Days> fri;
 
