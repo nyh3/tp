@@ -106,8 +106,9 @@ public class TimetableList {
             int classDay = Integer.parseInt(parts[0].trim());
             int classTime = Integer.parseInt(parts[1].trim());
 
-            if (isValidDay(classDay)) return;
-            if (isValidClassTime(classTime)) return;
+            if (!isValidDay(classDay) || !isValidClassTime(classTime)) {
+                return;
+            }
 
             if (timetable[classDay - 1][classTime - 1] != null) {
                 String classCode = timetable[classDay - 1][classTime - 1].getClassCode();
@@ -128,7 +129,8 @@ public class TimetableList {
         }
     }
 
-    /** used with deleteClass method
+    /**
+     * used with deleteClass method
      *  iterates through from the specified time
      *  and deletes classes with the same code,
      *  stops when a different class code is reached
@@ -150,7 +152,8 @@ public class TimetableList {
         }
     }
 
-    /** Check if day input by user is valid
+    /**
+     * Check if day input by user is valid
      *
      * @param classDay day of class 1-5 for monday-friday
      * @return True if valid day or False if not valid
@@ -158,12 +161,13 @@ public class TimetableList {
     private static boolean isValidDay(int classDay) {
         if (classDay < 1 || classDay > NUM_DAYS) {
             System.out.println("Day of the week does not exist");
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
-    /** checks if classTime input by user is valid
+    /**
+     * checks if classTime input by user is valid
      *
      * @param classTime start time of class
      * @return True if valid day or False if not valid
@@ -171,9 +175,9 @@ public class TimetableList {
     private static boolean isValidClassTime(int classTime) {
         if (classTime < 1 || classTime >= HOURS_PER_DAY) {
             System.out.println("Time of the day does not exist");
-            return true;
+            return false;
         }
-        return false;
+        return true;
     }
 
     public static void listByDay(String day) {
