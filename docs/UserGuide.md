@@ -13,21 +13,11 @@
 
 ## Features 
 
-{Give detailed description of each feature}
+## Expenditure Tracker
 
-### Adding a todo: `todo`
-Adds a new item to the list of todo items.
+## Timetable
 
-Format: `todo n/TODO_NAME d/DEADLINE`
-
-* The `DEADLINE` can be in a natural language format.
-* The `TODO_NAME` cannot contain punctuation.  
-
-Example of usage: 
-
-`todo n/Write the rest of the User Guide d/next week`
-
-`todo n/Refactor the User Guide to remove passive voice d/13/04/2020`
+## Daily Motivational Quotes
 
 ## FAQ
 
