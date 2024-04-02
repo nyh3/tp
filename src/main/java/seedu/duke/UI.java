@@ -13,7 +13,11 @@ public class UI {
     }
 
     public String getUserCommand() {
-        return in.nextLine();
+        String input;
+        do {
+            input = in.nextLine();
+        } while (input.trim().isEmpty()); // Checks if the input is not just whitespace
+        return input;
     }
 
     public static void printLogo() {

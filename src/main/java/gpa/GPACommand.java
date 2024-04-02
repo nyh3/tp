@@ -19,58 +19,104 @@ public class GPACommand {
                 continue;
             }
 
-            System.out.println("Enter your current GPA and the number of MCs taken" +
-                    " (format: GPA_SCORE /NUMBER_OF_MCS):");
-            String gpaInput = ui.getUserCommand();
-            if ("exit".equalsIgnoreCase(gpaInput.trim())) {
-                System.out.println("Exiting the GPA calculator. Thank you for using it!");
-                break;
+            double currentGPA;
+            int totalAccumulatedCredits;
+
+            while (true) {
+                System.out.println("Enter your current GPA and the number of MCs taken  " +
+                        " (format: GPA_SCORE /NUMBER_OF_MCS):");
+                String gpaInput = ui.getUserCommand();
+                if ("exit".equalsIgnoreCase(gpaInput.trim())) {
+                    System.out.println("Exiting the GPA calculator. Thank you for using it!");
+                    return; // Use return to exit the method immediately
+                }
+
+                try {
+                    String[] parts = gpaInput.split("/");
+                    if (parts.length != 2) {
+                        throw new IllegalArgumentException("Input does not match expected format.");
+                    }
+
+                    currentGPA = Double.parseDouble(parts[0].trim());
+                    totalAccumulatedCredits = Integer.parseInt(parts[1].trim());
+
+                    if (currentGPA < 0 || currentGPA > 5 || totalAccumulatedCredits < 0) {
+                        System.out.println("Invalid input: GPA score should be between 0 and 5," +
+                                " and MCs should not be negative.");
+                        continue; // This continues the inner while-loop for re-input
+                    }
+                    break; // Breaks the inner while-loop if input is valid
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input detected!!!! \n" +
+                            "Please ensure your input matches the format:" +
+                            "GPA_SCORE / NUMBER_OF_MCS.\n" +
+                            "Example: 4.5 / 30");
+                }
             }
 
-            double currentGPA = Double.parseDouble(gpaInput.split("/")[0].trim());
-            int totalAccumulatedCredits = Integer.parseInt(gpaInput.split("/")[1].trim());
-
-            // Input validation for negative numbers
-            if (currentGPA < 0 || currentGPA > 5 || totalAccumulatedCredits < 0) {
-                System.out.println("Invalid input: GPA score should be between 0 and 5," +
-                        " and MCs should not be negative.");
-                continue; // Skip the rest of the loop iteration and prompt again
-            }
 
             // Assertions for additional validation
             assert currentGPA >= 0 && currentGPA <= 5 : "GPA should be between 0 and 5.";
             assert totalAccumulatedCredits >= 0 : "MCs should not be negative.";
 
-            System.out.println("Enter the number of mods you want to add (format: NUMBER_OF_MODS):");
-            String modsInput = ui.getUserCommand();
-            if ("exit".equalsIgnoreCase(modsInput.trim())) {
-                System.out.println("Exiting the GPA calculator. Thank you for using it!");
-                break;
-            }
 
-            int numOfModules = Integer.parseInt(modsInput.trim());
-            if (numOfModules < 0) {
-                System.out.println("Invalid input: Number of modules cannot be negative.");
-                continue;
-            }
+            int numOfModules = 0;
+            boolean validNumOfModules = false;
+            while (!validNumOfModules) {
+                System.out.println("Enter the number of mods you want to add (format: NUMBER_OF_MODS):");
+                String modsInput = ui.getUserCommand();
+                if ("exit".equalsIgnoreCase(modsInput.trim())) {
+                    System.out.println("Exiting the GPA calculator. Thank you for using it!");
+                    return; // Use return to exit the method immediately
+                }
 
-            // Assertion for the number of modules
-            assert numOfModules >= 0 : "Number of modules should not be negative.";
+                try {
+                    numOfModules = Integer.parseInt(modsInput.trim());
+                    if (numOfModules < 0) {
+                        System.out.println("Invalid input: Number of modules cannot be negative.");
+                    } else {
+                        validNumOfModules = true; // Input is valid, proceed to the next step
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("Invalid input detected!!!! \n" +
+                            "Please enter a valid integer for the number of modules!");
+                }
+            }
 
             int[] moduleCredits = new int[numOfModules];
             String[] moduleGrades = new String[numOfModules];
 
             for (int i = 0; i < numOfModules; i++) {
-                System.out.println("Enter modular credit and expected grade for module " + (i + 1)
-                        + " (format: MODULAR_CREDIT /EXPECTED_GRADE):");
-                String modInput = ui.getUserCommand();
-                if ("exit".equalsIgnoreCase(modInput.trim())) {
-                    System.out.println("Exiting the GPA calculator. Thank you for using it!");
-                    return;
-                }
+                boolean validModuleInput = false;
+                while (!validModuleInput) {
+                    System.out.println("Enter modular credit and expected grade for module " + (i + 1) +
+                            " (format: MODULAR_CREDIT / EXPECTED_GRADE):");
+                    String modInput = ui.getUserCommand();
+                    if ("exit".equalsIgnoreCase(modInput.trim())) {
+                        System.out.println("Exiting the GPA calculator. Thank you for using it!");
+                        return;
+                    }
 
-                moduleCredits[i] = Integer.parseInt(modInput.split("/")[0].trim());
-                moduleGrades[i] = modInput.split("/")[1].trim().toUpperCase();
+                    try {
+                        String[] parts = modInput.split("/");
+                        if (parts.length != 2) {
+                            throw new IllegalArgumentException("Input does not match expected format.");
+                        }
+
+                        int credit = Integer.parseInt(parts[0].trim());
+                        String grade = parts[1].trim().toUpperCase();
+                        // Optionally validate grade format here if there's a known pattern
+
+                        moduleCredits[i] = credit;
+                        moduleGrades[i] = grade;
+                        validModuleInput = true; // Input is valid, proceed to the next module
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Invalid input detected!!!! \n" +
+                                "Please ensure your input matches the format: " +
+                                "MODULAR_CREDIT /EXPECTED_GRADE. \n" +
+                                "Example: 4 / A+");
+                    }
+                }
             }
 
             double updatedGPA = GPAMain.calculateNewGPA(currentGPA,
