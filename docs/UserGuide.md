@@ -2,7 +2,9 @@
 
 ## Introduction
 
-{Give a product intro}
+Welcome to CantVas!
+
+Congratulations on taking the first step towards smarter, more organized student life! CantVas is your ultimate companion for managing your academic and financial responsibilities with ease. Designed with students in mind, our app offers a comprehensive suite of tools to help you stay on top of your expenses, organize your timetable and track your grades.
 
 ## Quick Start
 1. Ensure you have `Java-11` or above installed on your computer.
@@ -43,9 +45,10 @@ E.g. `4/A+` `2/b+`
 
 ## FAQ
 
-**Q**: How do I transfer my data to another computer? 
+**Q**: What kind of timetable is the app able to display? Is it for the whole semester, one month or one week?
 
-**A**: {your answer here}
+**A**: CantVas is able to display your timetable from Monday to Friday.
+
 
 ## Command Summary
 
