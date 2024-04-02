@@ -4,7 +4,11 @@
 
 Welcome to CantVas!
 
-Congratulations on taking the first step towards smarter, more organized student life! CantVas is your ultimate companion for managing your academic and financial responsibilities with ease. Designed with students in mind, our app offers a comprehensive suite of tools to help you stay on top of your expenses, organize your timetable and track your grades.
+Congratulations on taking the first step towards smarter, more organized 
+student life! CantVas is your ultimate companion for managing your academic 
+and financial responsibilities with ease. Designed with students in mind, our 
+app offers a comprehensive suite of tools to help you stay on top of your 
+expenses, organize your timetable and track your grades.
 
 ## Quick Start
 1. Ensure you have `Java-11` or above installed on your computer.
@@ -22,6 +26,21 @@ features:
 - Daily Motivational Quotes
 
 ### Expenditure Tracker
+The expenditure tracker allows you to store, view, and filter the 
+expenditures you have entered. Making it a good way to track your 
+expenses.
+
+The features include:
+- Adding of new expenditures. To do so, key in with the following
+  format: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.
+- Viewing of saved expenditures without filters. To do so, key in 
+  with the following format: `list`.
+- Viewing of saved expenditures by month and year. To do so, key in 
+  with the following format: `view -m <mm.yyyy>`.
+- Viewing of saved expenditures by year. To do so, key in with the
+  following format: `view -y <yyyy>`.
+- Viewing of saved expenditures by type. To do so, key in with the
+  following format: `view -t <type>`.
 
 ### GPA Calculator
 ~~Having LOW GPA? Use GPA calculator
