@@ -231,21 +231,23 @@ public class ExpenditureList {
     }
 
     public static boolean isValidAmount(float amt) {
-        if (amt >= 0) {
-            String amtStr = String.valueOf(amt);
+        String amtStr = String.valueOf(amt);
+        String[] parts = amtStr.split("\\.");
 
-            // Split the string at the decimal point
-            String[] parts = amtStr.split("\\.");
-
-            // Check if there are more than two characters after the decimal point
-            if (parts[1].length() > 2) {
-                System.out.println("Invalid amount format! Please ensure the amount has at most two decimal places.");
-                return false;
-            }
-            return true;
+        if (amt <= 0 ) {
+            System.out.println("Please enter a positive amount");
+            return false;
         }
-        System.out.println("Please enter a positive amount");
-        return false;
+        return is2DecimalPlaces(parts);
     }
+
+    private static boolean is2DecimalPlaces(String[] parts) {
+        if (parts[1].length() > 2) {
+            System.out.println("Invalid amount format! Please ensure the amount has at most two decimal places.");
+            return false;
+        }
+        return true;
+    }
+
 }
 
