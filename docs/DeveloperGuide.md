@@ -6,13 +6,14 @@
 
 ## Design & implementation
 
-{Describe the design and implementation of the product. Use UML diagrams and short code snippets where applicable.}
+The sequence diagrams for our main class, CantVasMain and its interactions with
+other classes.
 ![img.png](img.png)
 ![img_1.png](img_1.png)
 
 ## Product scope
 ### Target user profile
-NUS Students
+NUS Students.
 
 ### Value proposition
 
