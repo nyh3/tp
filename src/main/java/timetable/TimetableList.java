@@ -94,6 +94,10 @@ public class TimetableList {
         if (!isValidClassTime(classTime) || !isValidDay(classDay)) {
             return true;
         }
+        if (classTime + classDuration >= HOURS_PER_DAY) {
+            System.out.println("Classes should not last overnight.");
+            return true;
+        }
         if (classDuration < 1 || classDuration > (HOURS_PER_DAY - classTime)) {
             System.out.println("Invalid class duration");
             return true;
