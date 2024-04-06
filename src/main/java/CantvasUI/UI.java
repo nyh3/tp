@@ -31,7 +31,7 @@ public class UI {
     }
 
     public static void printHelpMessage() {
-        System.out.println("Cantvas Help");
+        System.out.println("Cantvas Help\n");
         expenditureHelpMessage();
         printLineBreak();
         timetableHelpMessage();
