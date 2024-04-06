@@ -1,6 +1,6 @@
 package processUserCommands;
 
-import cantvasUI.UI;
+import CantvasUI.UI;
 import expenditure.ExpenditureList;
 import storage.Storage;
 import gpa.GPACommand;

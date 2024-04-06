@@ -1,6 +1,6 @@
 package seedu.duke;
 
-import cantvasUI.UI;
+import CantvasUI.UI;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
