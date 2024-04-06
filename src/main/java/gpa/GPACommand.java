@@ -44,11 +44,20 @@ public class GPACommand {
                         System.out.println("Invalid input: GPA score should be between 0 and 5," +
                                 " and MCs should not be negative.");
                         continue; // This continues the inner while-loop for re-input
+                    } else if (totalAccumulatedCredits >= 999999) {
+                        System.out.println("You have input a tooooo large value" +
+                                "for your MCs");
+                        continue;
                     }
                     break; // Breaks the inner while-loop if input is valid
                 } catch (NumberFormatException e) {
                     System.out.println("Invalid input detected!!!! \n" +
                             "Please ensure your input matches the format:" +
+                            "GPA_SCORE / NUMBER_OF_MCS.\n" +
+                            "Example: 4.5 / 30");
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Invalid input detected!!!! \n" +
+                            "Please ensure your input matches the format: " +
                             "GPA_SCORE / NUMBER_OF_MCS.\n" +
                             "Example: 4.5 / 30");
                 }
@@ -74,6 +83,8 @@ public class GPACommand {
                     numOfModules = Integer.parseInt(modsInput.trim());
                     if (numOfModules < 0) {
                         System.out.println("Invalid input: Number of modules cannot be negative.");
+                    } else if (numOfModules >=999) {
+                        System.out.println("You have input too many modules!");
                     } else {
                         validNumOfModules = true; // Input is valid, proceed to the next step
                     }
@@ -82,9 +93,12 @@ public class GPACommand {
                             "Please enter a valid integer for the number of modules!");
                 }
             }
+            assert numOfModules <= 999 && numOfModules >= 0 :"" +
+                    "Numbers of Modules input should be between 0 and 999";
 
             int[] moduleCredits = new int[numOfModules];
             String[] moduleGrades = new String[numOfModules];
+
 
             for (int i = 0; i < numOfModules; i++) {
                 boolean validModuleInput = false;
