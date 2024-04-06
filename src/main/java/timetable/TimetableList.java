@@ -1,7 +1,7 @@
 package timetable;
 
-import exceptions.InvalidInputFormatException;
-import cantvasUI.UI;
+import Exceptions.InvalidInputFormatException;
+import CantvasUI.UI;
 
 public class TimetableList {
     public static int classCount;
