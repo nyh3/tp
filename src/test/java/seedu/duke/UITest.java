@@ -40,7 +40,7 @@ public class UITest {
         System.setOut(new PrintStream(outputStreamCaptor));
         UI.printMotivationQuote();
         String output = outputStreamCaptor.toString().trim();
-        assertTrue(output.contains("Here is your motivational quote of the day:"));
+        assertTrue(output.contains("Here is your motivational quote of the day :D"));
     }
 
 }
