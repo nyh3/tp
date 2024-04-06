@@ -6,6 +6,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
+import java.text.DecimalFormat;
 
 public class ExpenditureList {
     public static int expenditureCount;
@@ -48,7 +49,8 @@ public class ExpenditureList {
                 System.out.println(count++ + ". " + exp);
                 totalExpenses += exp.getAmount();
             }
-            System.out.println("Total expenses for " + monthYear + ": $" + totalExpenses);
+            DecimalFormat df = new DecimalFormat("#.##");
+            System.out.println("Total expenses for " + monthYear + ": $" + df.format(totalExpenses));
         }
         return filteredExpenses;
     }
@@ -80,7 +82,8 @@ public class ExpenditureList {
                 System.out.println(count++ + ". " + exp);
                 totalExpenses += exp.getAmount();
             }
-            System.out.println("Total expenses for " + year + ": $" + totalExpenses);
+            DecimalFormat df = new DecimalFormat("#.##");
+            System.out.println("Total expenses for " + year + ": $" + df.format(totalExpenses));
         }
 
         return filteredExpenses;
@@ -213,7 +216,9 @@ public class ExpenditureList {
                     " | date: " + expenditure.getDate());
             totalExpenses += expenditure.getAmount();
         }
-        System.out.println("Total expenses: $" + totalExpenses);
+        DecimalFormat df = new DecimalFormat("#.00"); // Define the decimal format
+        String formattedTotal = df.format(totalExpenses); // Format the total expenses
+        System.out.println("Total expenses: $" + formattedTotal);
     }
 
     public Expenditure getExpenditure(int index) {
