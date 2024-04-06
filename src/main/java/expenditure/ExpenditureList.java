@@ -144,6 +144,7 @@ public class ExpenditureList {
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for date.");
             }
+
             String amount = parts[0].trim();
             String date = parts[1].trim();
 
@@ -217,15 +218,19 @@ public class ExpenditureList {
     }
 
     public static boolean isValidDate(String date) {
+        if (date.length() != 10) {
+            System.out.println("Invalid date format. Please use the format dd.MM.yyyy");
+            return false;
+        }
+
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
         dateFormat.setLenient(false);
         try {
-            //if user inputs a valid date but YEARS ahead, it will still be valid, ie 12.12.20202020
-            // only checks if date and month and whether month has those dates
             dateFormat.parse(date);
             return true;
         } catch (ParseException e) {
-            System.out.println("Invalid date.");
+            System.out.println("Invalid date. Please ensure the date is correct and " +
+                    "matches the format dd.MM.yyyy");
             return false;
         }
     }
