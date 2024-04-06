@@ -31,25 +31,43 @@ public class UI {
     }
 
     public static void printHelpMessage() {
-        System.out.println("CantVas Help\n"
-                + "To input expenses, use format:\n"
+        System.out.println("Cantvas Help");
+        expenditureHelpMessage();
+        printLineBreak();
+        timetableHelpMessage();
+        printLineBreak();
+        gpaHelpMessage();
+        printLineBreak();
+    }
+
+    private static void expenditureHelpMessage() {
+        System.out.println("Expenditure help:\n"
+                + "\nTo input expenses, use format:\n"
                 + "<< e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy> >>\n"
-                + "To input expenses with type, use format:\n"
+                + "\nTo input expenses with type, use format:\n"
                 + "<< e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy> >>\n"
-                + "To delete saved expenses, use format:\n<< e/ del/ <index> >>\n"
-                + "To clear the entire expenditure list, use format: \n<< clearlist >>\n"
-                + "To List saved expenses, use format:\n<< list >>\n"
-                + "To view saved expenses by month, use format:\n<< e/ view/ m/ <mm.yyyy> >>\n"
-                + "To view saved expenses by year, use format:\n<< e/ view/ y/ <yyyy> >>\n"
-                + "To view saved expenses by type, use format:\n<< e/ view/ t/ <type> >>\n"
-                + " -------------------------------------------------------------\n"
-                + "To input class to timetable, use format:\n"
+                + "\nTo delete saved expenses, use format:\n<< e/ del/ <index> >>\n"
+                + "\nTo clear the entire expenditure list, use format: \n<< clearlist >>\n"
+                + "\nTo List saved expenses, use format:\n<< list >>\n"
+                + "\nTo view saved expenses by month, use format:\n<< e/ view/ m/ <mm.yyyy> >>\n"
+                + "\nTo view saved expenses by year, use format:\n<< e/ view/ y/ <yyyy> >>\n"
+                + "\nTo view saved expenses by type, use format:\n<< e/ view/ t/ <type> >>\n");
+    }
+
+    private static void timetableHelpMessage() {
+        System.out.println("\nTimetable help:\n"
+                + "\nTo input class to timetable, use format:\n"
                 + "<< tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location> >>\n"
-                + "To delete saved class, use format:\n"
+                + "\nTo delete saved class, use format:\n"
                 + "<< tt/ del/ day/ <day> time/ <hh> >>\n"
-                + " -------------------------------------------------------------\n"
-                + "To Use gpa calculator, type 'gpa' to continue\n"
-                + "To end the program, type 'exit'");
+                + "\nTo view you timetable, use format\n"
+                + "tt/ list/\n");
+    }
+
+    private static void gpaHelpMessage() {
+        System.out.println("\nGPA help:\n"
+                + "\nTo Use gpa calculator, type 'gpa' to continue\n"
+                + "\nTo end the program, type 'exit'\n");
     }
 
     public static void printExitMessage() {
@@ -58,13 +76,13 @@ public class UI {
 
     public static void printMotivationQuote() {
         String quote = MotivationalQuotes.getQuote();
-        System.out.println("Here is your motivational quote of the day:");
+        System.out.println("Here is your motivational quote of the day:\n");
         System.out.println(quote);
         printLineBreak();
     }
 
     public static void printLineBreak() {
-        System.out.println(" -------------------------------------------------------------\n");
+        System.out.println("-------------------------------------------------------------");
     }
 
     public static void printTimetableByDay(Days[] timetable) {
