@@ -35,6 +35,10 @@ The features include:
   key in with the following format: `e/ add/ d/ <description> amt/ 
   <cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help book amt/ 
   19.99 date/ 15.03.2024`.
+
+> Doing so will leave the 'type' field empty and thus defaulting to 'NA'.
+When viewed using any list or view functions, the second column will be 'NA'.
+
 - Adding new expenditures with type of expenditure specified. To
   do so, key in with the following format: `e/ add/ d/ <description> t/ 
   <type> amt/ <cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help
