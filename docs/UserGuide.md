@@ -3,7 +3,6 @@
 ## Introduction
 
 # Welcome to CantVas!
-![unnamed.png](..%2F..%2Funnamed.png)
 
 Congratulations on taking the first step towards smarter, more organized 
 student life! CantVas is your ultimate companion for managing your academic 
@@ -90,5 +89,16 @@ encouragement to get through your day
 
 
 ## Command Summary
-
+- For addition of expenditure without type: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.
+- For addition of expenditure with type: `e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`.
+- For deletion of saved expenditure: `e/ del/ <index>`.
+- For clearing of all expenditures: `clearlist`.
+- For listing of all expenditures: `list`.
+- For viewing of expenditures filtered by month: `e/ view/ m/ <mm.yyyy>`.
+- For viewing of expenditures filtered by year: `e/ view/ y/ <yyyy>`.
+- For viewing of expenditures filtered by type: `e/ view/ t/ <type>`.
+- For inputting of timetable classes: `tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> 
+location/ <location>`.
+- For deletion of saved timetable classes: `tt/ del/ day/ <day> time/ <hh>`.
+- For using GPA calculator: `gpa`.
 
