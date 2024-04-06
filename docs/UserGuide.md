@@ -31,10 +31,14 @@ expenditures you have entered. Making it a good way to track your
 expenses.
 
 The features include:
-- Adding of new expenditures. To do so, key in with the following
-  format: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.
-Example: `e/ add/ d/ self-help book amt/ 19.99 date/ 15.03.2024`.
-
+- Adding of new expenditures without specifying the type. To do so, 
+key in with the following format: `e/ add/ d/ <description> amt/ 
+<cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help book amt/ 
+19.99 date/ 15.03.2024`.
+- Adding of new expenditures with type of expenditure specified. To
+do so, key in with the following format: `e/ add/ d/ <description> t/ 
+<type> amt/ <cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help
+book t/ book amt/ 19.99 date/ 06.04.2024`.
 - Viewing of saved expenditures without filters. To do so, key in 
   with the following format: `list`.
 - Viewing of saved expenditures by month and year. To do so, key in 
@@ -62,21 +66,42 @@ Example: `4/A+` and `2/b+`.
 
 ### Daily Motivational Quotes
 Feeling Down? Dread looking at your packed timetable?
-CantVas is here to save your day and uplift your spirits whenever you need it most(when looking at expenses and timetable)
+CantVas is here to save your day and uplift your spirits whenever you need it most
+(when looking at expenses and timetable)
 
-Everytime you start CantVas, we will provide you with a motivational quote to give you energy and
-encouragement to get through your day
+Everytime you start CantVas, we will provide you with a motivational quote to give 
+you energy and encouragement to get through your day!
 
 ## FAQ
 
 **Q**: What if I key in the wrong expenditure?
 
-**A**: Editing the table is not possible, in the event of erroneous input, please delete and input the correct expense
+**A**: Editing the table is not possible, in the event of erroneous input, please delete 
+and input the correct expense.
 
-**Q**: What kind of timetable is the app able to display? Is it for the whole semester, one month or one week?
+**Q**: Why can't I find the expenditure I inputted via the `e/ view/ t/` function?
 
-**A**: CantVas is able to display your timetable from Monday to Friday.
+**A**: Double check if you have inputted in the type of expenditure by using the list command 
+to check if there exists an `NA` after the expenditure description. If so, amend accordingly 
+and then `e/ view/ t/` should work as expected.
 
+**Q**: What kind of timetable is the app able to display? Is it for the whole semester, one month 
+or one week?
+
+**A**: CantVas is able to display your timetable from Monday to Friday using a list format for each
+day, arranged based on the time of the day. For example, if we have a 3-hour CG2023 from 1pm on monday
+at E4-03-07 and a 2-hour EE2026 from 9am on monday at LT6, the list will output:
+> Monday:
+> - Code: ee2026, Class Time: 9, Duration: 3, Location: LT6
+> - ode: ee2026, Class Time: 10, Duration: 2, Location: LT6
+> - Code: ee2026, Class Time: 11, Duration: 1, Location: LT6
+> - Code: cg2023, Class Time: 13, Duration: 3, Location: E4-03-07
+> - Code: cg2023, Class Time: 14, Duration: 2, Location: E4-03-07
+> - Code: cg2023, Class Time: 15, Duration: 1, Location: E4-03-07
+
+Take note that each hour is listed out as an individual row. Hence, for any classes lasting more than an
+hour, there will be more than one rows for such classes. But each row will have `total hours -1` value
+for the duration.
 
 ## Command Summary
 - For addition of expenditure without type: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.
