@@ -62,7 +62,7 @@ public class TimetableList {
             String classLocation = parts[1].trim();
 
             // check if all requirements met to add class
-            if (AbleToAddClass(classTime, classDay, classDuration)) {
+            if (isAbleToAddClass(classTime, classDay, classDuration)) {
                 return;
             }
 
@@ -90,7 +90,7 @@ public class TimetableList {
      * @param classDuration Number of hours of class
      * @return true valid input, false if unable to add
      */
-    private static boolean AbleToAddClass(int classTime, int classDay, int classDuration) {
+    private static boolean isAbleToAddClass(int classTime, int classDay, int classDuration) {
         if (!isValidClassTime(classTime) || !isValidDay(classDay)) {
             return true;
         }
