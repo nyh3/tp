@@ -61,13 +61,12 @@ public class TimetableList {
             int classDuration = Integer.parseInt(parts[0].trim());
             String classLocation = parts[1].trim();
 
-            if (!isValidClassTime(classTime) || !isValidDay(classDay)) {
+            // check if all requirements met to add class
+            if (AbleToAddClass(classTime, classDay, classDuration)) {
                 return;
             }
-            if (classDuration < 1 || classDuration > (HOURS_PER_DAY - classTime)) {
-                System.out.println("Invalid class duration");
-                return;
-            }
+
+            //add class
             while(classDuration > 0) {
                 timetable[classDay - 1][classTime - 1] = new Days(classCode, classTime, classDuration, classLocation);
                 classCountDay[classDay - 1]++;
@@ -83,6 +82,29 @@ public class TimetableList {
         }
     }
 
+    /**
+     * Combines all checks to verify if the class, time and duration
+     * is a valid input with not timetableclashes
+     * @param classTime Start time of class
+     * @param classDay Day of class
+     * @param classDuration Number of hours of class
+     * @return true valid input, false if unable to add
+     */
+    private static boolean AbleToAddClass(int classTime, int classDay, int classDuration) {
+        if (!isValidClassTime(classTime) || !isValidDay(classDay)) {
+            return true;
+        }
+        if (classDuration < 1 || classDuration > (HOURS_PER_DAY - classTime)) {
+            System.out.println("Invalid class duration");
+            return true;
+        }
+        if (!isSlotAvailable(classDay, classTime, classDuration)) {
+            System.out.println("There's already a class scheduled at this time.");
+            return true;
+        }
+        return false;
+    }
+    
     private static void userAddedMessage(Boolean userAdded) {
         if (userAdded){
             System.out.println("Class added successfully.");
@@ -174,6 +196,15 @@ public class TimetableList {
         if (classTime < 1 || classTime >= HOURS_PER_DAY) {
             System.out.println("Time of the day does not exist");
             return false;
+        }
+        return true;
+    }
+
+    private static boolean isSlotAvailable(int classDay, int classTime, int classDuration) {
+        for (int i = classTime - 1 ; i < classTime + classDuration - 1 ; i++) {
+            if (timetable[classDay-1][i] != null) {
+                return false;
+            }
         }
         return true;
     }
