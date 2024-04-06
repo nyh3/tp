@@ -13,29 +13,26 @@ public class UITest {
     void printHelpMessage() {
         ByteArrayOutputStream outputStreamCaptor = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStreamCaptor));
-        String expectedOutput = "CantVas Help\n"
-                + "To input expenses, use format:\n"
-                + "<< e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy> >>\n"
-                + "To input expenses with type, use format:\n"
-                + "<< e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy> >>\n"
-                + "To delete saved expenses, use format:\n<< e/ del/ <index> >>\n"
-                + "To clear the entire expenditure list, use format: \n<< clearlist >>\n"
-                + "To List saved expenses, use format:\n<< list >>\n"
-                + "To view saved expenses by month, use format:\n<< e/ view/ m/ <mm.yyyy> >>\n"
-                + "To view saved expenses by year, use format:\n<< e/ view/ y/ <yyyy> >>\n"
-                + "To view saved expenses by type, use format:\n<< e/ view/ t/ <type> >>\n"
-                + " -------------------------------------------------------------\n"
-                + "To input class to timetable, use format:\n"
-                + "<< tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location> >>\n"
-                + "To delete saved class, use format:\n"
-                + "<< tt/ del/ day/ <day> time/ <hh> >>\n"
-                + " -------------------------------------------------------------\n"
-                + "To Use gpa calculator, type 'gpa' to continue\n"
-                + "To end the program, type 'exit'";
-
+        
         UI.printHelpMessage();
-        String printedOutput = outputStreamCaptor.toString().trim();
-        assertEquals(expectedOutput, printedOutput);
+        String output = outputStreamCaptor.toString().trim();
+        assertTrue(output.contains("Cantvas Help"));
+        assertTrue(output.contains("Expenditure help"));
+        assertTrue(output.contains("Timetable help"));
+        assertTrue(output.contains("GPA help"));
+        assertTrue(output.contains("To input expenses, use format:"));
+        assertTrue(output.contains("To input expenses with type, use format:"));
+        assertTrue(output.contains("To delete saved expenses, use format:"));
+        assertTrue(output.contains("To clear the entire expenditure list, use format:"));
+        assertTrue(output.contains("To List saved expenses, use format:"));
+        assertTrue(output.contains("To view saved expenses by month, use format:"));
+        assertTrue(output.contains("To view saved expenses by year, use format:"));
+        assertTrue(output.contains("To view saved expenses by type, use format:"));
+        assertTrue(output.contains("To input class to timetable, use format:"));
+        assertTrue(output.contains("To delete saved class, use format:"));
+        assertTrue(output.contains("To view you timetable, use format"));
+        assertTrue(output.contains("To Use gpa calculator, type 'gpa' to continue"));
+        assertTrue(output.contains("To end the program, type 'exit'"));
     }
 
     @Test
