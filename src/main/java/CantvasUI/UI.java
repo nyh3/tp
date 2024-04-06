@@ -58,6 +58,7 @@ public class UI {
         System.out.println("\nTimetable help:\n"
                 + "\nTo input class to timetable, use format:\n"
                 + "<< tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location> >>\n"
+                + "Range for day is 1 <= day <= 5; range for time is 1 <= time <= 23."
                 + "\nTo delete saved class, use format:\n"
                 + "<< tt/ del/ day/ <day> code/ <code> >>\n"
                 + "\nTo view you timetable, use format\n"

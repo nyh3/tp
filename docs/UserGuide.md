@@ -88,7 +88,8 @@ The features include:
 > will have a day input of `3`.
 > 
 > `time` refers to 24-hours in 2 digit integer format. For example, 1pm will 
-> be inputted as `13` and 9am will be inputted as `09`. 
+> be inputted as `13` and 9am will be inputted as `09`. Note that there will be no classes
+that cut across midnight. Hence `0` and `24` are not accepted values.
 > 
 >`duration` refers to how long the class lasts. For example, if a class lasts for 3
 > hours, the duration input will be `3`. 
