@@ -1,7 +1,7 @@
 package seedu.duke;
 
-import CantvasUI.UI;
-import ProcessUserCommands.ProcessCommand;
+import cantvasUI.UI;
+import processUserCommands.ProcessCommand;
 import expenditure.ExpenditureList;
 import timetable.TimetableList;
 

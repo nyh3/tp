@@ -1,4 +1,4 @@
-package CantvasUI;
+package cantvasUI;
 import motivationalquote.MotivationalQuotes;
 import timetable.Days;
 

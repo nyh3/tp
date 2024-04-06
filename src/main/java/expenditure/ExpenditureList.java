@@ -1,6 +1,6 @@
 package expenditure;
 
-import Exceptions.InvalidInputFormatException;
+import exceptions.InvalidInputFormatException;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

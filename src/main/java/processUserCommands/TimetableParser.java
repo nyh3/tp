@@ -1,4 +1,4 @@
-package ProcessUserCommands;
+package processUserCommands;
 
 import timetable.TimetableList;
 
