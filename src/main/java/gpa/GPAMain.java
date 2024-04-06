@@ -44,7 +44,9 @@ public class GPAMain {
             return 0.00;
 
         default:
-            System.out.println("Invalid grade input.");
+            System.out.println("Invalid grade input." +
+                    "I assumed your invalid grade as F grade \n" +
+                    "Which is 0.00 !");
             return 0.00;
         }
     }

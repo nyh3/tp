@@ -2,6 +2,7 @@ package gpa;
 
 import static seedu.duke.CantVasMain.ui;
 
+
 public class GPACommand {
 
     public static void processGPACommand() {
