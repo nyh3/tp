@@ -118,26 +118,33 @@ public class TimetableList {
                 throw new InvalidInputFormatException("Invalid input format for class day.");
             }
             String classDayPart = parts[1].trim();
-            parts = classDayPart.split(TIME_KEYWORD, 2);
-
+            parts = classDayPart.split(CODE_KEYWORD, 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for class time.");
+                throw new InvalidInputFormatException("Invalid input format for class code.");
             }
             int classDay = Integer.parseInt(parts[0].trim());
-            int classTime = Integer.parseInt(parts[1].trim());
+            String classCode = parts[1].trim();
 
-            if (!isValidDay(classDay) || !isValidClassTime(classTime)) {
+            if (!isValidDay(classDay)) {
                 return;
             }
 
-            if (timetable[classDay - 1][classTime - 1] != null) {
-                String classCode = timetable[classDay - 1][classTime - 1].getClassCode();
-                timetable[classDay - 1][classTime - 1] = null;
-                classCountDay[classDay - 1]--;
-                classCount--;
+            boolean classDeleted = false;
 
-                // Move down the current spot and remove that class code
-                deleteClassOccurrences(classTime, classDay, classCode);
+            // Iterate over the timetable for the specified day
+            for (int hour = 0; hour < HOURS_PER_DAY; hour++) {
+                if (timetable[classDay - 1][hour] != null) {
+                    if (timetable[classDay - 1][hour].getClassCode().equals(classCode)) {
+                        // Found a class with the same class code on the specified day, delete it
+                        timetable[classDay - 1][hour] = null;
+                        classCountDay[classDay - 1]--;
+                        classCount--;
+                        classDeleted = true;
+                    }
+                }
+            }
+
+            if (classDeleted) {
                 System.out.println("Class removed successfully.");
             } else {
                 System.out.println("Class not found.");
