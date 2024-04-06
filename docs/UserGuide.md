@@ -33,40 +33,30 @@ expenses.
 The features include:
 - Adding of new expenditures. To do so, key in with the following
   format: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.
-  
-  example: `e/ add/ d/ self-help book amt/ 19.99 date/ 15.03.2024`
+Example: `e/ add/ d/ self-help book amt/ 19.99 date/ 15.03.2024`.
 
 - Viewing of saved expenditures without filters. To do so, key in 
   with the following format: `list`.
 - Viewing of saved expenditures by month and year. To do so, key in 
-  with the following format: `view -m <mm.yyyy>`.
-
-  example: `view -m 03.2024`
+  with the following format: `e/ view/ m/ <mm.yyyy>`. 
+Example:`e/ view/ m/ 03.2024`.
 
 - Viewing of saved expenditures by year. To do so, key in with the
-  following format: `view -y <yyyy>`.
--
-  example: `view -y 2024`
+  following format: `e/ view/ y/ <yyyy>`. Example: `e/ view/ y/ 2024`.
 
 - Viewing of saved expenditures by type. To do so, key in with the
-  following format: `view -t <type>`.
-
-  example: `view -t FOOD`
+  following format: `e/ view/ t/ <type>`. Example: `e/ view/ t/ FOOD`.
 
 ### GPA Calculator
-~~Having LOW GPA? Use GPA calculator
-to make you feel better XD~~
-> [!TIP]
-> You can access this function simply typing `gpa` at 
-> main page.
+> Tip:
+> 
+> You can access this function simply typing `gpa` at main page.
 1. Type `GPA` (Regardless of caps) to proceed to start the function.
-2. Type Your Current_GPA / Numbers_of_MCs_Taken.
-E.g. `4.00/30`
-3. Type the numbers of modules taken for this semester.
-E.g. `4` $${\color{blue}4}$$
+2. Type Your `Current_GPA / Numbers_of_MCs_Taken`. Example: `4.00/24`
+3. Type the numbers of modules taken for this semester. Example: `4`
 4. Type in the Modular_Credit/Expected grade for each module taken.
-E.g. `4/A+` `2/b+`
-5. Your GPA will be automatically calculated ! Yeahhh!
+Example: `4/A+` and `2/b+`.
+5. Your GPA will be automatically calculated afterwards.
 
 ### Timetable
 
