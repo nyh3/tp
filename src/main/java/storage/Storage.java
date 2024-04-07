@@ -113,14 +113,22 @@ public class Storage {
 
     private static void writeTimetableToFIle(PrintWriter fw, Days[][] timetable) {
         for (int i = 0; i < 5; i++) {
-            for (int j = 0; j < 24; j++) {
-                if (timetable[i][j] != null) {
-                    fw.println((i + 1) + " | " + timetable[i][j].getClassCode() +
-                            " | " + timetable[i][j].getClassTime() +
-                            " | " + timetable[i][j].getClassDuration() +
-                            " | " + timetable[i][j].getClassLocation());
-                }
-            }
+            writeDayTimetableToFile(fw, timetable[i], i);
+        }
+    }
+
+    private static void writeDayTimetableToFile(PrintWriter fw, Days[] timetable, int day) {
+        for (int j = 0; j < 24; j++) {
+            writeHourTimetableToFIle(fw, timetable[j], day);
+        }
+    }
+
+    private static void writeHourTimetableToFIle(PrintWriter fw, Days timetable, int day) {
+        if (timetable != null) {
+            fw.println((day + 1) + " | " + timetable.getClassCode() +
+                    " | " + timetable.getClassTime() +
+                    " | " + timetable.getClassDuration() +
+                    " | " + timetable.getClassLocation());
         }
     }
 }
