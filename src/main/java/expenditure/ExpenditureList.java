@@ -2,8 +2,10 @@ package expenditure;
 
 import Exceptions.InvalidInputFormatException;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.List;
 import java.text.DecimalFormat;
@@ -153,7 +155,6 @@ public class ExpenditureList {
 
             String amount = parts[0].trim();
             String date = parts[1].trim();
-
             float amountValue = Float.parseFloat(amount);
 
             if (isValidDate(date) && isValidAmount(amountValue)) {
@@ -234,16 +235,23 @@ public class ExpenditureList {
             return false;
         }
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-        dateFormat.setLenient(false);
-        try {
-            dateFormat.parse(date);
-            return true;
-        } catch (ParseException e) {
+        try{
+            LocalDate dateFormat = LocalDate.parse(date, DateTimeFormatter
+                    .ofPattern("dd.MM.yyyy")
+                    .withResolverStyle(ResolverStyle.STRICT));
+            LocalDate currentDate = LocalDate.now();
+            if (dateFormat.isAfter(currentDate)) {
+                throw new InvalidInputFormatException("Future dates are not allowed");
+            }
+        } catch (DateTimeParseException e) {
             System.out.println("Invalid date. Please ensure the date is correct and " +
                     "matches the format dd.MM.yyyy");
             return false;
+        } catch (InvalidInputFormatException e) {
+            System.out.println(e.getMessage());
+            return false;
         }
+        return true;
     }
 
     private static boolean isValidMonth(String input) {
