@@ -1,6 +1,6 @@
 package expenditure;
 
-import Exceptions.InvalidInputFormatException;
+import exceptions.InvalidInputFormatException;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
