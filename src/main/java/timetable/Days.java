@@ -31,7 +31,7 @@ public class Days {
     }
 
     public String toStringStorage() {
-        return classCode + " | " + classDuration + " | " + classLocation;
+        return classCode + " | " + classTime + " | " + classDuration + " | " + classLocation;
     }
 
     @Override

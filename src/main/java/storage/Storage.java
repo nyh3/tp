@@ -125,10 +125,7 @@ public class Storage {
 
     private static void writeHourTimetableToFIle(PrintWriter fw, Days timetable, int day) {
         if (timetable != null) {
-            fw.println((day + 1) + " | " + timetable.getClassCode() +
-                    " | " + timetable.getClassTime() +
-                    " | " + timetable.getClassDuration() +
-                    " | " + timetable.getClassLocation());
+            fw.println((day + 1) + " | " + timetable.toStringStorage());
         }
     }
 }

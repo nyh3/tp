@@ -14,6 +14,7 @@ public class TimetableList {
     private static final String TIME_KEYWORD = " time/";
     private static final String DURATION_KEYWORD = " duration/";
     private static final String LOCATION_KEYWORD = " location/";
+    private static final String[] daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
 
     public TimetableList() {
         timetable = new Days[NUM_DAYS][HOURS_PER_DAY];
@@ -221,13 +222,13 @@ public class TimetableList {
     public static void listByDay(String day) {
         try {
             int classDay = Integer.parseInt(day);
-            if (classDay < 1 || classDay > NUM_DAYS) {
-                System.out.println("Day of the week does not exist");
+            if (!isValidDay(classDay)) {
                 return;
             }
             if (classCountDay[classDay - 1] == 0) {
                 System.out.println("No class on that day");
             } else {
+                System.out.println(daysOfWeek[classDay - 1]);
                 UI.printTimetableByDay(timetable[classDay - 1]);
             }
         } catch (NumberFormatException e) {
@@ -236,7 +237,6 @@ public class TimetableList {
     }
 
     public static void listTimetableByOrderOfDays() {
-        String[] daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
         for (int day = 0; day < NUM_DAYS; day++) {
             System.out.println(daysOfWeek[day] + ":");
             boolean hasClasses = false;
