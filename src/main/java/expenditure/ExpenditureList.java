@@ -26,6 +26,9 @@ public class ExpenditureList {
 
         String[] monthYearParts = monthYear.split("\\.");
         String targetMonth = monthYearParts[0];
+        if (!isValidMonth(targetMonth)) {
+            return null;
+        }
         String targetYear = monthYearParts[1];
         List<Expenditure> filteredExpenses = new ArrayList<>();
 
@@ -153,7 +156,7 @@ public class ExpenditureList {
 
             float amountValue = Float.parseFloat(amount);
 
-            if ( isValidDate(date) && isValidAmount(amountValue) ) {
+            if (isValidDate(date) && isValidAmount(amountValue)) {
                 expenditureList.add(new Expenditure(description, type, amountValue, date));
                 expenditureCount += 1;
                 userAddedMessage(userAdded);
@@ -243,7 +246,16 @@ public class ExpenditureList {
         }
     }
 
-    public static boolean isValidAmount(float amt) {
+    private static boolean isValidMonth(String input) {
+        int month = Integer.parseInt(input);
+        if (month > 12 ||  month < 1) {
+            System.out.println("Month must be between 1 and 12");
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean isValidAmount(float amt) {
         String amtStr = String.valueOf(amt);
         String[] parts = amtStr.split("\\.");
 
