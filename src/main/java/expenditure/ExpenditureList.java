@@ -237,7 +237,7 @@ public class ExpenditureList {
 
         try{
             LocalDate dateFormat = LocalDate.parse(date, DateTimeFormatter
-                    .ofPattern("dd.MM.yyyy")
+                    .ofPattern("dd.MM.uuuu")
                     .withResolverStyle(ResolverStyle.STRICT));
             LocalDate currentDate = LocalDate.now();
             if (dateFormat.isAfter(currentDate)) {
