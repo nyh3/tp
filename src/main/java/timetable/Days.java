@@ -31,12 +31,18 @@ public class Days {
     }
 
     public String toStringStorage() {
-        return classCode + " | " + classDuration + " | " + classLocation;
+        return classCode + " | " + classTime + " | " + classDuration + " | " + classLocation;
     }
 
     @Override
     public String toString() {
         return "Code: " + classCode + ", Class Time: " + classTime + ", Duration: " + classDuration +
                 ", Location: " + classLocation;
+    }
+
+    public String toStringDay() {
+        String time24Hour = String.format("%02d", classTime);
+        time24Hour += ":00";
+        return " | " + time24Hour + " | " + classCode + " | " + classLocation + " | ";
     }
 }

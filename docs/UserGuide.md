@@ -68,7 +68,7 @@ perform the following steps.
 4. Type in the Modular_Credit/Expected grade for each module taken.
 Example: `4/A+` and `2/b+`. Modular credit should be a non-negative integer value between
 0 and 12.
-5. Your GPA will be automatically calculated afterwards.
+5. Your GPA will be automatically calculated afterward.
 
 ### Timetable
 The timetable tracker allows you to store, view and delete classes you
@@ -89,7 +89,7 @@ The features include:
 > 
 > `time` refers to 24-hours in 2 digit integer format. For example, 1pm will 
 > be inputted as `13` and 9am will be inputted as `09`. Note that there will be no classes
-that cut across midnight. Hence `0` and `24` are not accepted values.
+that cut across midnight. Hence `24` is not an accepted value.
 > 
 >`duration` refers to how long the class lasts. For example, if a class lasts for 3
 > hours, the duration input will be `3`. 
@@ -98,6 +98,8 @@ that cut across midnight. Hence `0` and `24` are not accepted values.
   <day> code/ <code>`. Example: `tt/ del/ day/ 3 code/ cs2113`.
 - Viewing saved classes according the days in the week, arranged in ascending order of
   time. To do so, key in with the following format: `tt/ list/`.
+- To view classes for the specific day of the week key in the following:
+  `tt/ list -d/ <day>`
 
 ### Daily Motivational Quotes
 Feeling Down? Dread looking at your packed timetable?

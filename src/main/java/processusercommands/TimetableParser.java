@@ -22,7 +22,6 @@ public class TimetableParser {
             TimetableList.deleteClass(details);
             break;
         case "list":
-            System.out.println("Timetable listed here");
             TimetableList.listTimetableByOrderOfDays();
             break;
         case "list -d":
