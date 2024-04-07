@@ -1,9 +1,11 @@
 package expenditure;
 
-import Exceptions.InvalidInputFormatException;
+import exceptions.InvalidInputFormatException;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.List;
 import java.text.DecimalFormat;
@@ -26,6 +28,9 @@ public class ExpenditureList {
 
         String[] monthYearParts = monthYear.split("\\.");
         String targetMonth = monthYearParts[0];
+        if (!isValidMonth(targetMonth)) {
+            return null;
+        }
         String targetYear = monthYearParts[1];
         List<Expenditure> filteredExpenses = new ArrayList<>();
 
@@ -150,10 +155,9 @@ public class ExpenditureList {
 
             String amount = parts[0].trim();
             String date = parts[1].trim();
-
             float amountValue = Float.parseFloat(amount);
 
-            if ( isValidDate(date) && isValidAmount(amountValue) ) {
+            if (isValidDate(date) && isValidAmount(amountValue)) {
                 expenditureList.add(new Expenditure(description, type, amountValue, date));
                 expenditureCount += 1;
                 userAddedMessage(userAdded);
@@ -231,19 +235,35 @@ public class ExpenditureList {
             return false;
         }
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-        dateFormat.setLenient(false);
-        try {
-            dateFormat.parse(date);
-            return true;
-        } catch (ParseException e) {
+        try{
+            LocalDate dateFormat = LocalDate.parse(date, DateTimeFormatter
+                    .ofPattern("dd.MM.uuuu")
+                    .withResolverStyle(ResolverStyle.STRICT));
+            LocalDate currentDate = LocalDate.now();
+            if (dateFormat.isAfter(currentDate)) {
+                throw new InvalidInputFormatException("Future dates are not allowed");
+            }
+        } catch (DateTimeParseException e) {
             System.out.println("Invalid date. Please ensure the date is correct and " +
                     "matches the format dd.MM.yyyy");
             return false;
+        } catch (InvalidInputFormatException e) {
+            System.out.println(e.getMessage());
+            return false;
         }
+        return true;
     }
 
-    public static boolean isValidAmount(float amt) {
+    private static boolean isValidMonth(String input) {
+        int month = Integer.parseInt(input);
+        if (month > 12 ||  month < 1) {
+            System.out.println("Month must be between 1 and 12");
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean isValidAmount(float amt) {
         String amtStr = String.valueOf(amt);
         String[] parts = amtStr.split("\\.");
 
