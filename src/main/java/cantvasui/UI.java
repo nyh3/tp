@@ -90,6 +90,7 @@ public class UI {
     }
 
     public static void printTimetableByDay(Days[] timetable) {
+        System.out.println(" | Time  |  Code  | location |");
         for (int i = 0; i < 24; i ++) {
             printTimetableByHour(timetable[i]);
         }
@@ -97,9 +98,7 @@ public class UI {
 
     private static void printTimetableByHour(Days timetable) {
         if (timetable != null) {
-            System.out.println(timetable.getClassTime() +
-                    " | " + timetable.getClassCode() +
-                    " | " + timetable.getClassLocation());
+            System.out.println(timetable.toStringDay());
         }
     }
 

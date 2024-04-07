@@ -69,7 +69,7 @@ public class TimetableList {
 
             //add class
             while(classDuration > 0) {
-                timetable[classDay - 1][classTime - 1] = new Days(classCode, classTime, classDuration, classLocation);
+                timetable[classDay - 1][classTime] = new Days(classCode, classTime, classDuration, classLocation);
                 classCountDay[classDay - 1]++;
                 classDuration--;
                 classTime++;
@@ -203,7 +203,7 @@ public class TimetableList {
      * @return True if valid day or False if not valid
      */
     private static boolean isValidClassTime(int classTime) {
-        if (classTime < 1 || classTime >= HOURS_PER_DAY) {
+        if (classTime < 0 || classTime >= HOURS_PER_DAY) {
             System.out.println("Time of the day does not exist");
             return false;
         }
@@ -211,7 +211,7 @@ public class TimetableList {
     }
 
     private static boolean isSlotAvailable(int classDay, int classTime, int classDuration) {
-        for (int i = classTime - 1 ; i < classTime + classDuration - 1 ; i++) {
+        for (int i = classTime; i < classTime + classDuration; i++) {
             if (timetable[classDay-1][i] != null) {
                 return false;
             }
