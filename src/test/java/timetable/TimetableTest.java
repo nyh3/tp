@@ -64,8 +64,13 @@ public class TimetableTest {
 
         outContent.reset();
 
-        TimetableList.addClass("day/1 code/CG2027 time/23 duration/-2 location/Room 101", false);
-        assertTrue(outContent.toString().contains("Invalid class duration."));
+        TimetableList.addClass("day/1 code/CG2027 time/233333 duration/2 location/Room 101", false);
+        assertTrue(outContent.toString().contains("Time of the day does not exist."));
+
+        outContent.reset();
+
+        TimetableList.addClass("day/1 code/CG2027 time/-233333 duration/2 location/Room 101", false);
+        assertTrue(outContent.toString().contains("Time of the day does not exist."));
     }
 
     @Test
@@ -87,7 +92,7 @@ public class TimetableTest {
     @Test
     public void testAddClassWithClash() {
         TimetableList.addClass("day/1 code/CDE2501 time/10 duration/2 location/Room 101", true);
-        outContent.reset(); // Clear the output stream before the next operation
+        outContent.reset();
         TimetableList.addClass("day/1 code/CG2111A time/10 duration/1 location/Room 102", false);
         assertTrue(outContent.toString().contains("There's already a class scheduled at this time."));
     }
@@ -95,7 +100,7 @@ public class TimetableTest {
     @Test
     public void testDeleteClassValidInput() {
         TimetableList.addClass("day/2 code/LAG2101 time/12 duration/1 location/AS4-06-09", true);
-        outContent.reset(); // Clear the output stream before the next delete operation
+        outContent.reset();
         TimetableList.deleteClass("day/2 code/LAG2101");
         assertTrue(outContent.toString().contains("Class removed successfully."));
     }
