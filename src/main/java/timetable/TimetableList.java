@@ -79,7 +79,7 @@ public class TimetableList {
         } catch (InvalidInputFormatException e) {
             System.out.println(e.getMessage());
         } catch (NumberFormatException e) {
-            System.out.println(e.getMessage() + " Must be an integer");
+            System.out.println(e.getMessage() + " Must be an integer.");
         }
     }
 
@@ -100,7 +100,7 @@ public class TimetableList {
             return true;
         }
         if (classDuration < 1 || classDuration > (HOURS_PER_DAY - classTime)) {
-            System.out.println("Invalid class duration");
+            System.out.println("Invalid class duration.");
             return true;
         }
         if (!isSlotAvailable(classDay, classTime, classDuration)) {
@@ -144,7 +144,7 @@ public class TimetableList {
         } catch (InvalidInputFormatException e) {
             System.out.println(e.getMessage());
         } catch (NumberFormatException e) {
-            System.out.println(e.getMessage() + " Must be an integer");
+            System.out.println(e.getMessage() + " Must be an integer.");
         }
     }
 
@@ -177,7 +177,7 @@ public class TimetableList {
         if (classDeleted) {
             System.out.println("Class removed successfully.");
         } else {
-            System.out.println("Class not found. Please ensure day and class code has already been saved");
+            System.out.println("Class not found. Please ensure day and class code has already been saved.");
         }
     }
 
@@ -190,7 +190,7 @@ public class TimetableList {
      */
     private static boolean isValidDay(int classDay) {
         if (classDay < 1 || classDay > NUM_DAYS) {
-            System.out.println("Day of the week does not exist");
+            System.out.println("Day of the week does not exist.");
             return false;
         }
         return true;
@@ -204,7 +204,7 @@ public class TimetableList {
      */
     private static boolean isValidClassTime(int classTime) {
         if (classTime < 0 || classTime >= HOURS_PER_DAY) {
-            System.out.println("Time of the day does not exist");
+            System.out.println("Time of the day does not exist.");
             return false;
         }
         return true;
@@ -226,13 +226,13 @@ public class TimetableList {
                 return;
             }
             if (classCountDay[classDay - 1] == 0) {
-                System.out.println("No class on that day");
+                System.out.println("No class on that day.");
             } else {
                 System.out.println(daysOfWeek[classDay - 1]);
                 UI.printTimetableByDay(timetable[classDay - 1]);
             }
         } catch (NumberFormatException e) {
-            System.out.println(e.getMessage() + "Must be an integer");
+            System.out.println(e.getMessage() + "Must be an integer.");
         }
     }
 
