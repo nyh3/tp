@@ -116,7 +116,7 @@ public class ExpenditureList {
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for description.");
             }
-            // Description part directly after "d/"
+
             String descriptionPart = parts[1].trim();
 
             parts = descriptionPart.split(" t/", 2);
