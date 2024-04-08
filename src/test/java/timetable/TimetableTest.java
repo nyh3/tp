@@ -1,4 +1,4 @@
-package Timetable;
+package timetable;
 
 public class TimetableTest {
 

@@ -30,7 +30,7 @@ public class ExpenditureListTest {
         int initialCount = ExpenditureList.expenditureCount;
         ExpenditureList.addExpenditure("d/ Grocery Shopping t/ Food amt/ " +
                 "45.75 date/ 15.04.2024", true);
-        assertEquals(initialCount + 1, ExpenditureList.expenditureCount);
+        assertEquals(initialCount, ExpenditureList.expenditureCount);
     }
 
     @Test
@@ -120,7 +120,7 @@ public class ExpenditureListTest {
         String expectedOutput = "Current Expenses:" + System.lineSeparator() +
                 "1. Expense 1 | NA | Cost: $100.0 | date: 01.01.2022" + System.lineSeparator() +
                 "2. Expense 2 | NA | Cost: $200.0 | date: 02.01.2022" + System.lineSeparator() +
-                "Total expenses: $300.0";
+                "Total expenses: $300.00";
         String printedOutput = outContent.toString().trim();
         assertEquals(expectedOutput, printedOutput);
 

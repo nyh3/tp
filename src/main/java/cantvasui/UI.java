@@ -1,4 +1,4 @@
-package CantvasUI;
+package cantvasui;
 import motivationalquote.MotivationalQuotes;
 import timetable.Days;
 
@@ -62,7 +62,10 @@ public class UI {
                 + "\nTo delete saved class, use format:\n"
                 + "<< tt/ del/ day/ <day> code/ <code> >>\n"
                 + "\nTo view you timetable, use format\n"
-                + "tt/ list/\n");
+                + "tt/ list/\n"
+                + "\nTo view you timetable for the day, use format\n"
+                + "Range for day is 1 <= day <= 5\n"
+                + "tt/ list -d/ <day>\n");
     }
 
     private static void gpaHelpMessage() {
@@ -87,12 +90,15 @@ public class UI {
     }
 
     public static void printTimetableByDay(Days[] timetable) {
+        System.out.println(" | Time  |  Code  | location |");
         for (int i = 0; i < 24; i ++) {
-            if (timetable[i] != null) {
-                System.out.println(timetable[i].getClassTime() +
-                        " | " + timetable[i].getClassCode() +
-                        " | " + timetable[i].getClassLocation());
-            }
+            printTimetableByHour(timetable[i]);
+        }
+    }
+
+    private static void printTimetableByHour(Days timetable) {
+        if (timetable != null) {
+            System.out.println(timetable.toStringDay());
         }
     }
 
