@@ -197,4 +197,21 @@ public class ExpenditureListTest {
 
         System.setOut(System.out);
     }
+
+    @Test
+    public void testAddExpenditureInvalidFormat() {
+
+        new ExpenditureList();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        String input = "e/ add/ d/ my fav book t/food amt/ 9999999.0 date/ 15.04.2024e/ add/ " +
+                "d/ my fav book t/food amt/ 9999999.0 date/ 15.04.2024";
+        ExpenditureList.addExpenditure(input, false);
+
+        String expectedErrorMessage = "Invalid date format. Please use the format dd.MM.yyyy";
+        assertTrue(outContent.toString().trim().contains(expectedErrorMessage));
+    }
+
+
+
 }
