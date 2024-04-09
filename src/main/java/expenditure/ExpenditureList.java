@@ -44,17 +44,21 @@ public class ExpenditureList {
             }
         }
 
-        Float totalExpenses = 0.0F;
+        DecimalFormat df = new DecimalFormat("#.00");
         if (filteredExpenses.isEmpty()) {
             System.out.println("No expenses found for " + monthYear);
         } else {
             System.out.println("Expenses for the month & year " + monthYear + ":");
             int count = 1;
-            for (Expenditure exp : filteredExpenses) {
-                System.out.println(count++ + ". " + exp);
+            Float totalExpenses = 0.0F;
+            for (Expenditure exp: filteredExpenses) {
+                Expenditure expenditure = filteredExpenses.get(count - 1);
+                System.out.println(count++ + ". " + expenditure.getDescription() +
+                        " | " + expenditure.getType() +
+                        " | Cost: $" + df.format(expenditure.getAmount()) +
+                        " | date: " + expenditure.getDate());
                 totalExpenses += exp.getAmount();
             }
-            DecimalFormat df = new DecimalFormat("#.00");
             System.out.println("Total expenses for " + monthYear + ": $" + df.format(totalExpenses));
         }
         return filteredExpenses;
@@ -77,17 +81,21 @@ public class ExpenditureList {
             }
         }
 
-        Float totalExpenses = 0.0F;
+        DecimalFormat df = new DecimalFormat("#.00");
         if (filteredExpenses.isEmpty()) {
             System.out.println("No expenses found for year " + year);
         } else {
             System.out.println("Expenses for the year " + year + ":");
             int count = 1;
-            for (Expenditure exp : filteredExpenses) {
-                System.out.println(count++ + ". " + exp);
+            Float totalExpenses = 0.0F;
+            for (Expenditure exp: filteredExpenses) {
+                Expenditure expenditure = filteredExpenses.get(count - 1);
+                System.out.println(count++ + ". " + expenditure.getDescription() +
+                        " | " + expenditure.getType() +
+                        " | Cost: $" + df.format(expenditure.getAmount()) +
+                        " | date: " + expenditure.getDate());
                 totalExpenses += exp.getAmount();
             }
-            DecimalFormat df = new DecimalFormat("#.00");
             System.out.println("Total expenses for " + year + ": $" + df.format(totalExpenses));
         }
 
@@ -110,7 +118,11 @@ public class ExpenditureList {
             int count = 1;
             Float totalExpenses = 0.0F;
             for (Expenditure exp: filteredExpenses) {
-                System.out.println(count++ + ". " + exp.toString());
+                Expenditure expenditure = filteredExpenses.get(count - 1);
+                System.out.println(count++ + ". " + expenditure.getDescription() +
+                        " | " + expenditure.getType() +
+                        " | Cost: $" + df.format(expenditure.getAmount()) +
+                        " | date: " + expenditure.getDate());
                 totalExpenses += exp.getAmount();
             }
             System.out.println("Total expenses for " + type + ": $" + df.format(totalExpenses));
