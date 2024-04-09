@@ -11,13 +11,13 @@ import java.util.List;
 import java.text.DecimalFormat;
 
 public class ExpenditureList {
+    public static int expenditureCount;
     private static final double MINIMUM_AMOUNT = 0.00F;
     private static final float MAX_AMOUNT = 9999999.99F;
     private static final int MONTHYEARINPUTLENGTH = 7;
     private static final int MAX_DESCRIPTION_LENGTH = 100;
     private static final int MAX_TYPE_LENGTH = 20;
     private static ArrayList<Expenditure> expenditureList = new ArrayList<>();
-    public static int expenditureCount;
 
     public ExpenditureList() {
         expenditureList = new ArrayList<>();
