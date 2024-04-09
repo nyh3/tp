@@ -6,7 +6,9 @@ import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class TimetableTest {
 
@@ -94,7 +96,7 @@ public class TimetableTest {
         TimetableList.addClass("day/1 code/CDE2501 time/10 duration/2 location/Room 101", true);
         outContent.reset();
         TimetableList.addClass("day/1 code/CG2111A time/10 duration/1 location/Room 102", false);
-        assertTrue(outContent.toString().contains("There's already a class scheduled at this time."));
+        assertTrue(outContent.toString().contains("There's already a class scheduled during this time period."));
     }
 
     @Test
