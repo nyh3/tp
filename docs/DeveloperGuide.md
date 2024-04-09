@@ -8,8 +8,8 @@
 
 The sequence diagrams for our main class, CantVasMain and its interactions with
 other classes.
-![img.png](img.png)
-![img_1.png](img_1.png)
+![img.png](images/img.png)
+![img_1.png](images/img_1.png)
 
 ## Product scope
 ### Target user profile

@@ -3,7 +3,7 @@
 # Introduction
 
 ## Welcome to CantVas!
-![logo.png](logo.png)
+![logo.png](images/logo.png)
 Congratulations on taking the first step towards smarter, more organized 
 student life! CantVas is your ultimate companion for managing your academic 
 and financial responsibilities with ease. Designed with students in mind, our 
@@ -163,7 +163,7 @@ typing `del` to delete specific module or to delete the whole list.
 >
 > `exit` : Go back to the previous page.
 
-![img_gpalist.png](illustration_gpalist.png)
+![img_gpalist.png](images/illustration_gpalist.png)
 
 ### Timetable
 The timetable tracker allows you to store, view and delete classes you
