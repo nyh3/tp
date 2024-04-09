@@ -103,8 +103,12 @@ perform the following steps.
 1. Type `GPA` (Regardless of caps) to proceed to start the function.
 2. Type Your `Current_GPA / Numbers_of_MCs_Taken`. Example: `4.00/24`
 3. Type the numbers of modules taken for this semester. Example: `4`
-4. Type in the Modular_Credit/Expected grade for each module taken.
-Example: `4/A+` and `2/b+`. Modular credit should be a non-negative integer value between
+4. Type in the details
+for each module taken.
+In the format of: 
+n/<Module_Name> mc/<Module_Credit> gr/<Expected_Grade>.
+Example: `n/CS1010 mc/4 gr/A+` or  `n/CS2113 mc/4 gr/F`
+> Modular credit should be a non-negative integer value between
 0 and 12.
 5. Your GPA will be automatically calculated afterward.
 

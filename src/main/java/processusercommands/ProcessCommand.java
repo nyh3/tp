@@ -6,6 +6,7 @@ import storage.Storage;
 import gpa.GPACommand;
 import gc.GC;
 import timetable.TimetableList;
+import gpa.ProcessListCommand;
 
 public class ProcessCommand {
 
@@ -97,7 +98,7 @@ public class ProcessCommand {
      * Main method to split user commands into
      * @param input command input by user
      * @param expenses expenditure to add
-     * @param timetable class to add
+     * @param timetable class to addg
      * @return does this while true
      */
     public boolean userCommand(String input, ExpenditureList expenses, TimetableList timetable) {
@@ -110,7 +111,7 @@ public class ProcessCommand {
             command = input.trim().toLowerCase();
         }
         switch (command) {
-        case "gpa":
+        case "gpastep":
             GPACommand.processGPACommand();
             UI.printHelpMessage();
             break;
@@ -133,6 +134,13 @@ public class ProcessCommand {
         case "e/":
             processExpenditureUserCommand(input);
             break;
+        case "gpalist":
+            ProcessListCommand listCommand = new ProcessListCommand();
+            listCommand.processModuleListCommand();
+            System.out.println("Back to main menu.");
+            break;
+
+
 
         default:
             System.out.println("Unknown command. Please try again! Type 'help' for more information!");

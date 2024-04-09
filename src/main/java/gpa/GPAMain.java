@@ -3,7 +3,7 @@ package gpa;
 
 public class GPAMain {
 
-    // Method to calculate new GPA with inputs provided as parameters
+
     public static double calculateNewGPA(double currentGPA, int totalAccumulatedCredits, ModuleList moduleList) {
         double totalPoints = currentGPA * totalAccumulatedCredits;
         int newCredits = 0;
@@ -16,6 +16,22 @@ public class GPAMain {
 
         return totalPoints / (totalAccumulatedCredits + newCredits);
     }
+
+    public static double calculateUpdatedGPA(double currentGPA, int totalCredits, ModuleList modules) {
+        double totalGradePoints = currentGPA * totalCredits;
+        int newTotalCredits = totalCredits;
+
+        for (Module module : modules.getModules()) {
+            double gradePoints = calculatePointsForGrade(module.getExpectedGrade());
+            totalGradePoints += gradePoints * module.getModularCredit();
+            newTotalCredits  += module.getModularCredit();
+        }
+
+        return totalGradePoints / newTotalCredits;
+    }
+
+
+
 
     static double calculatePointsForGrade(String grade) {
         // Define GPA points for grades
@@ -44,7 +60,7 @@ public class GPAMain {
 
         default:
             System.out.println("Invalid grade input! \n" +
-                    "You have input: " + grade + "which is invalid! \n" +
+                    "You have input: " + grade + " which is invalid! \n" +
                     "I have assumed your invalid grade as F grade \n" +
                     "Which is 0.00 !");
             return 0.00;
