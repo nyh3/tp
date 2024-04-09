@@ -1,1 +1,4 @@
-CS1010|4|A+
+Module1|4|A
+Module2|4|A
+Module3|4|A
+Module4|2|A

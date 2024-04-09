@@ -81,6 +81,23 @@ public class ExpenditureListTest {
     }
 
     @Test
+    public void testDeleteExpenditureInvalidInput() {
+        new ExpenditureList();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+
+        ExpenditureList.deleteExpenditure(100);
+        assertEquals("Invalid number, please enter a valid number", outContent.toString().trim());
+
+        outContent.reset();
+
+        ExpenditureList.deleteExpenditure(-10);
+        assertEquals("Invalid number, please enter a valid number", outContent.toString().trim());
+
+        System.setOut(System.out);
+    }
+
+    @Test
     public void testClearList() {
         new ExpenditureList();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -199,17 +216,43 @@ public class ExpenditureListTest {
     }
 
     @Test
-    public void testAddExpenditureInvalidFormat() {
+    public void testAddExpenditureExtremeTestCases() {
 
         new ExpenditureList();
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
+
         String input = "e/ add/ d/ my fav book t/food amt/ 9999999.0 date/ 15.04.2024e/ add/ " +
                 "d/ my fav book t/food amt/ 9999999.0 date/ 15.04.2024";
         ExpenditureList.addExpenditure(input, false);
+        assertEquals("Invalid date format. Please use the format dd.MM.yyyy",outContent.toString().
+                trim());
 
-        String expectedErrorMessage = "Invalid date format. Please use the format dd.MM.yyyy";
-        assertTrue(outContent.toString().trim().contains(expectedErrorMessage));
+        outContent.reset();
+
+        input = "d/ Grocery Shopping t/ Food amt/" + "9".repeat(2000) + " date/ 15.04.2022";
+        ExpenditureList.addExpenditure(input, false);
+        assertEquals("Please enter an amount less than or equal to 9999999.99."
+                ,outContent.toString().trim());
+
+        outContent.reset();
+
+        input = "d/ Grocery Shopping t/" + "a".repeat(2000) + " amt/ 45.75 date/ 15.04.2022";
+        ExpenditureList.addExpenditure(input, false);
+        assertEquals("Type should be one word of maximum 20 characters."
+                ,outContent.toString().trim());
+
+        outContent.reset();
+
+        input = "d/" + "G".repeat(2000) + "t/ food amt/ 45.75 date/ 15.04.2022";
+        ExpenditureList.addExpenditure(input, false);
+        assertEquals("Description of expenditure should not be longer than 100 characters.",
+                outContent.toString().trim());
+
+        outContent.reset();
+
+        System.setOut(System.out);
+
     }
 
 
