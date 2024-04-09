@@ -4,7 +4,7 @@ import cantvasui.UI;
 import expenditure.ExpenditureList;
 import storage.Storage;
 import gpa.GPACommand;
-import gc.GC;
+import gc.ProcessGCCommand;
 import timetable.TimetableList;
 import gpa.ProcessListCommand;
 
@@ -116,7 +116,8 @@ public class ProcessCommand {
             UI.printHelpMessage();
             break;
         case "gc":
-            GC.main();
+            ProcessGCCommand gcCommand = new ProcessGCCommand();
+            gcCommand.processGCCommand(input);
             break;
         case "exit":
             UI.printExitMessage();
