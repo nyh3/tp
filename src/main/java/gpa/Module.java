@@ -1,6 +1,6 @@
 package gpa;
 
-class Module {
+public class Module {
     private String moduleName; // New field for storing module name
     private int modularCredit;
     private String expectedGrade;
