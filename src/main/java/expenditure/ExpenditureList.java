@@ -1,11 +1,14 @@
 package expenditure;
 
-import Exceptions.InvalidInputFormatException;
+import exceptions.InvalidInputFormatException;
 
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
+import java.time.format.ResolverStyle;
 import java.util.ArrayList;
 import java.util.List;
+import java.text.DecimalFormat;
 
 public class ExpenditureList {
     public static int expenditureCount;
@@ -25,6 +28,9 @@ public class ExpenditureList {
 
         String[] monthYearParts = monthYear.split("\\.");
         String targetMonth = monthYearParts[0];
+        if (!isValidMonth(targetMonth)) {
+            return null;
+        }
         String targetYear = monthYearParts[1];
         List<Expenditure> filteredExpenses = new ArrayList<>();
 
@@ -48,7 +54,8 @@ public class ExpenditureList {
                 System.out.println(count++ + ". " + exp);
                 totalExpenses += exp.getAmount();
             }
-            System.out.println("Total expenses for " + monthYear + ": $" + totalExpenses);
+            DecimalFormat df = new DecimalFormat("#.##");
+            System.out.println("Total expenses for " + monthYear + ": $" + df.format(totalExpenses));
         }
         return filteredExpenses;
     }
@@ -80,7 +87,8 @@ public class ExpenditureList {
                 System.out.println(count++ + ". " + exp);
                 totalExpenses += exp.getAmount();
             }
-            System.out.println("Total expenses for " + year + ": $" + totalExpenses);
+            DecimalFormat df = new DecimalFormat("#.##");
+            System.out.println("Total expenses for " + year + ": $" + df.format(totalExpenses));
         }
 
         return filteredExpenses;
@@ -116,7 +124,7 @@ public class ExpenditureList {
             if (parts.length < 2) {
                 throw new InvalidInputFormatException("Invalid input format for description.");
             }
-            // Description part directly after "d/"
+
             String descriptionPart = parts[1].trim();
 
             parts = descriptionPart.split(" t/", 2);
@@ -147,10 +155,9 @@ public class ExpenditureList {
 
             String amount = parts[0].trim();
             String date = parts[1].trim();
-
             float amountValue = Float.parseFloat(amount);
 
-            if ( isValidDate(date) && isValidAmount(amountValue) ) {
+            if (isValidDate(date) && isValidAmount(amountValue)) {
                 expenditureList.add(new Expenditure(description, type, amountValue, date));
                 expenditureCount += 1;
                 userAddedMessage(userAdded);
@@ -170,7 +177,10 @@ public class ExpenditureList {
     }
 
     public static void deleteExpenditure(int index) {
-        assert index > 0 && index <= expenditureList.size() : "Index out of bounds.";
+        if (index < 1 || index > expenditureList.size() ) {
+            System.out.println("Invalid number, please enter a valid number\n");
+            return;
+        }
         Expenditure expenditure = expenditureList.get(index - 1);
         System.out.println("deleted: " + expenditure.getDescription() +
                 " | " + expenditure.getType() +
@@ -210,7 +220,9 @@ public class ExpenditureList {
                     " | date: " + expenditure.getDate());
             totalExpenses += expenditure.getAmount();
         }
-        System.out.println("Total expenses: $" + totalExpenses);
+        DecimalFormat df = new DecimalFormat("#.00"); // Define the decimal format
+        String formattedTotal = df.format(totalExpenses); // Format the total expenses
+        System.out.println("Total expenses: $" + formattedTotal);
     }
 
     public Expenditure getExpenditure(int index) {
@@ -223,19 +235,35 @@ public class ExpenditureList {
             return false;
         }
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM.yyyy");
-        dateFormat.setLenient(false);
-        try {
-            dateFormat.parse(date);
-            return true;
-        } catch (ParseException e) {
+        try{
+            LocalDate dateFormat = LocalDate.parse(date, DateTimeFormatter
+                    .ofPattern("dd.MM.uuuu")
+                    .withResolverStyle(ResolverStyle.STRICT));
+            LocalDate currentDate = LocalDate.now();
+            if (dateFormat.isAfter(currentDate)) {
+                throw new InvalidInputFormatException("Future dates are not allowed");
+            }
+        } catch (DateTimeParseException e) {
             System.out.println("Invalid date. Please ensure the date is correct and " +
                     "matches the format dd.MM.yyyy");
             return false;
+        } catch (InvalidInputFormatException e) {
+            System.out.println(e.getMessage());
+            return false;
         }
+        return true;
     }
 
-    public static boolean isValidAmount(float amt) {
+    private static boolean isValidMonth(String input) {
+        int month = Integer.parseInt(input);
+        if (month > 12 ||  month < 1) {
+            System.out.println("Month must be between 1 and 12");
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean isValidAmount(float amt) {
         String amtStr = String.valueOf(amt);
         String[] parts = amtStr.split("\\.");
 

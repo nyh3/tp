@@ -18,7 +18,7 @@ public class GPAMain {
         return totalPoints / (totalAccumulatedCredits + newCredits);
     }
 
-    private static double calculatePointsForGrade(String grade) {
+    static double calculatePointsForGrade(String grade) {
         // Define GPA points for grades
         switch (grade) {
         case "A+":
@@ -43,12 +43,13 @@ public class GPAMain {
         case "F":
             return 0.00;
 
-        default:
+       default:
             System.out.println("Invalid grade input! \n" +
-                    "You have input: " + grade + "which is invalid! \n"
+                    "You have input: " + grade + "which is invalid! \n" +
                     "I have assumed your invalid grade as F grade \n" +
                     "Which is 0.00 !");
             return 0.00;
+        
         }
     }
 }

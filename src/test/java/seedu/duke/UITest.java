@@ -1,6 +1,6 @@
 package seedu.duke;
 
-import CantvasUI.UI;
+import cantvasui.UI;
 import org.junit.jupiter.api.Test;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
@@ -40,7 +40,7 @@ public class UITest {
         System.setOut(new PrintStream(outputStreamCaptor));
         UI.printMotivationQuote();
         String output = outputStreamCaptor.toString().trim();
-        assertTrue(output.contains("Here is your motivational quote of the day:"));
+        assertTrue(output.contains("Here is your motivational quote of the day :D"));
     }
 
 }

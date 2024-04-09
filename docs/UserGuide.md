@@ -35,6 +35,10 @@ The features include:
   key in with the following format: `e/ add/ d/ <description> amt/ 
   <cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help book amt/ 
   19.99 date/ 15.03.2024`.
+
+> Doing so will leave the 'type' field empty and thus defaulting to 'NA'.
+When viewed using any list or view functions, the second column will be 'NA'.
+
 - Adding new expenditures with type of expenditure specified. To
   do so, key in with the following format: `e/ add/ d/ <description> t/ 
   <type> amt/ <cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help
@@ -62,8 +66,9 @@ perform the following steps.
 2. Type Your `Current_GPA / Numbers_of_MCs_Taken`. Example: `4.00/24`
 3. Type the numbers of modules taken for this semester. Example: `4`
 4. Type in the Modular_Credit/Expected grade for each module taken.
-Example: `4/A+` and `2/b+`.
-5. Your GPA will be automatically calculated afterwards.
+Example: `4/A+` and `2/b+`. Modular credit should be a non-negative integer value between
+0 and 12.
+5. Your GPA will be automatically calculated afterward.
 
 ### Timetable
 The timetable tracker allows you to store, view and delete classes you
@@ -83,15 +88,18 @@ The features include:
 > will have a day input of `3`.
 > 
 > `time` refers to 24-hours in 2 digit integer format. For example, 1pm will 
-> be inputted as `13` and 9am will be inputted as `09`. 
+> be inputted as `13` and 9am will be inputted as `09`. Note that there will be no classes
+that cut across midnight. Hence `24` is not an accepted value.
 > 
 >`duration` refers to how long the class lasts. For example, if a class lasts for 3
 > hours, the duration input will be `3`. 
 
 - Deleting saved classes. To do so, key in with the following format: `tt/ del/ day/ 
-  <day> time/ <hh>`. Example: `tt/ del/ day/ 3 time/ 09`.
+  <day> code/ <code>`. Example: `tt/ del/ day/ 3 code/ cs2113`.
 - Viewing saved classes according the days in the week, arranged in ascending order of
   time. To do so, key in with the following format: `tt/ list/`.
+- To view classes for the specific day of the week key in the following:
+  `tt/ list -d/ <day>`
 
 ### Daily Motivational Quotes
 Feeling Down? Dread looking at your packed timetable?

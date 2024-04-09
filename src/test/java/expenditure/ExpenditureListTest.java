@@ -30,7 +30,7 @@ public class ExpenditureListTest {
         int initialCount = ExpenditureList.expenditureCount;
         ExpenditureList.addExpenditure("d/ Grocery Shopping t/ Food amt/ " +
                 "45.75 date/ 15.04.2024", true);
-        assertEquals(initialCount + 1, ExpenditureList.expenditureCount);
+        assertEquals(initialCount, ExpenditureList.expenditureCount);
     }
 
     @Test
@@ -120,7 +120,7 @@ public class ExpenditureListTest {
         String expectedOutput = "Current Expenses:" + System.lineSeparator() +
                 "1. Expense 1 | NA | Cost: $100.0 | date: 01.01.2022" + System.lineSeparator() +
                 "2. Expense 2 | NA | Cost: $200.0 | date: 02.01.2022" + System.lineSeparator() +
-                "Total expenses: $300.0";
+                "Total expenses: $300.00";
         String printedOutput = outContent.toString().trim();
         assertEquals(expectedOutput, printedOutput);
 
@@ -197,4 +197,21 @@ public class ExpenditureListTest {
 
         System.setOut(System.out);
     }
+
+    @Test
+    public void testAddExpenditureInvalidFormat() {
+
+        new ExpenditureList();
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outContent));
+        String input = "e/ add/ d/ my fav book t/food amt/ 9999999.0 date/ 15.04.2024e/ add/ " +
+                "d/ my fav book t/food amt/ 9999999.0 date/ 15.04.2024";
+        ExpenditureList.addExpenditure(input, false);
+
+        String expectedErrorMessage = "Invalid date format. Please use the format dd.MM.yyyy";
+        assertTrue(outContent.toString().trim().contains(expectedErrorMessage));
+    }
+
+
+
 }

@@ -1,4 +1,4 @@
-package CantvasUI;
+package cantvasui;
 import motivationalquote.MotivationalQuotes;
 import timetable.Days;
 
@@ -31,7 +31,7 @@ public class UI {
     }
 
     public static void printHelpMessage() {
-        System.out.println("Cantvas Help");
+        System.out.println("Cantvas Help\n");
         expenditureHelpMessage();
         printLineBreak();
         timetableHelpMessage();
@@ -58,10 +58,14 @@ public class UI {
         System.out.println("\nTimetable help:\n"
                 + "\nTo input class to timetable, use format:\n"
                 + "<< tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location> >>\n"
+                + "Range for day is 1 <= day <= 5; range for time is 1 <= time <= 23."
                 + "\nTo delete saved class, use format:\n"
-                + "<< tt/ del/ day/ <day> time/ <hh> >>\n"
+                + "<< tt/ del/ day/ <day> code/ <code> >>\n"
                 + "\nTo view you timetable, use format\n"
-                + "tt/ list/\n");
+                + "tt/ list/\n"
+                + "\nTo view you timetable for the day, use format\n"
+                + "Range for day is 1 <= day <= 5\n"
+                + "tt/ list -d/ <day>\n");
     }
 
     private static void gpaHelpMessage() {
@@ -76,7 +80,7 @@ public class UI {
 
     public static void printMotivationQuote() {
         String quote = MotivationalQuotes.getQuote();
-        System.out.println("Here is your motivational quote of the day:\n");
+        System.out.println("Here is your motivational quote of the day :D\n");
         System.out.println(quote);
         printLineBreak();
     }
@@ -86,12 +90,15 @@ public class UI {
     }
 
     public static void printTimetableByDay(Days[] timetable) {
+        System.out.println(" | Time  |  Code  | location |");
         for (int i = 0; i < 24; i ++) {
-            if (timetable[i] != null) {
-                System.out.println(timetable[i].getClassTime() +
-                        " | " + timetable[i].getClassCode() +
-                        " | " + timetable[i].getClassLocation());
-            }
+            printTimetableByHour(timetable[i]);
+        }
+    }
+
+    private static void printTimetableByHour(Days timetable) {
+        if (timetable != null) {
+            System.out.println(timetable.toStringDay());
         }
     }
 
