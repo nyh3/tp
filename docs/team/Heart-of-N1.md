@@ -98,3 +98,4 @@ jointly with other teammates.
   [#42](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/42)
 - Assigned improvement tasks of different features to group members.
 - Refactored codes or other members to adhere to more OOP approaches.
+- Active debugging for source-tree related problems that are encountered by other teammates.
