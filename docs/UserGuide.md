@@ -253,7 +253,7 @@ for the duration.
 - For viewing of expenditures filtered by type: `e/ view/ t/ <type>`.
 - For inputting of timetable classes: `tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration>
   location/ <location>`.
-- For deletion of saved timetable classes: `tt/ del/ day/ <day> time/ <hh>`.
+- For deletion of saved timetable classes: `tt/ del/ day/ <day> code/ <code>`.
 - For listing of timetable for all days: `tt/ list/`.
 - For listing of timetable for a particular day: `tt/ list -d/ <day>`.
 - For using GPA calculator: `gpa`.
