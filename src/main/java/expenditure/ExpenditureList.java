@@ -54,7 +54,7 @@ public class ExpenditureList {
                 System.out.println(count++ + ". " + exp);
                 totalExpenses += exp.getAmount();
             }
-            DecimalFormat df = new DecimalFormat("#.##");
+            DecimalFormat df = new DecimalFormat("#.00");
             System.out.println("Total expenses for " + monthYear + ": $" + df.format(totalExpenses));
         }
         return filteredExpenses;
@@ -87,7 +87,7 @@ public class ExpenditureList {
                 System.out.println(count++ + ". " + exp);
                 totalExpenses += exp.getAmount();
             }
-            DecimalFormat df = new DecimalFormat("#.##");
+            DecimalFormat df = new DecimalFormat("#.00");
             System.out.println("Total expenses for " + year + ": $" + df.format(totalExpenses));
         }
 
@@ -102,17 +102,18 @@ public class ExpenditureList {
                 filteredExpenses.add(exp);
             }
         }
-        Float totalExpenses = 0.0F;
+        DecimalFormat df = new DecimalFormat("#.00");
         if (filteredExpenses.isEmpty()) {
             System.out.println("No expenses found for type: " + type);
         } else {
             System.out.println("Expenses for " + type);
             int count = 1;
+            Float totalExpenses = 0.0F;
             for (Expenditure exp: filteredExpenses) {
                 System.out.println(count++ + ". " + exp.toString());
                 totalExpenses += exp.getAmount();
             }
-            System.out.println("Total expenses for " + type + ": $" + totalExpenses);
+            System.out.println("Total expenses for " + type + ": $" + df.format(totalExpenses));
         }
         return filteredExpenses;
     }
