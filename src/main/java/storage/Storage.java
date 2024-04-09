@@ -1,6 +1,8 @@
 package storage;
 
 import expenditure.ExpenditureList;
+import gpa.ModuleList;
+import gpa.Module;
 import timetable.Days;
 import timetable.TimetableList;
 
@@ -14,6 +16,7 @@ import java.util.Scanner;
 public class Storage {
     private static final String EXPENDITURE_FILE_PATH = "./data/expenditure.txt";
     private static final String TIMETABLE_FILE_PATH = "./data/timetable.txt";
+    private static final String GPA_FILE_PATH = "./data/gpa.txt";
 
     static void createNewFile(String type) {
         File file = null;
@@ -21,6 +24,8 @@ public class Storage {
             file = new File(EXPENDITURE_FILE_PATH);
         } else if (type.equals("timetable")){
             file = new File(TIMETABLE_FILE_PATH);
+        } else if (type.equals("gpa")){
+            file = new File(GPA_FILE_PATH);
         }
         assert file != null;
         File directory = new File(file.getParent());
@@ -63,6 +68,27 @@ public class Storage {
         }
         return expenses;
     }
+    public static ModuleList readGPAFile() {
+        ModuleList modules = new ModuleList();
+        File file = new File(GPA_FILE_PATH);
+        if (!file.exists()) {
+            createNewFile("gpa");
+            return modules;
+        }
+        try {
+            Scanner scanner = new Scanner(file);
+            while (scanner.hasNextLine()) {
+                String line = scanner.nextLine();
+                Module module = processModule(line);
+                if (module != null) {
+                    modules.addModule(module.getModuleName(), module.getModularCredit(), module.getExpectedGrade());
+                }
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Error reading GPA file: " + e.getMessage());
+        }
+        return modules;
+    }
 
     public static TimetableList readTimetableFile() {
         TimetableList timetable = new TimetableList();
@@ -90,6 +116,21 @@ public class Storage {
         return ("d/" + parts[0] + "t/" + parts[1] + "amt/" + parts[2] + "date/" + parts[3]);
     }
 
+    private static Module processModule(String line) {
+        String[] parts = line.split("\\|");
+        if (parts.length >= 3) {
+            try {
+                String moduleName = parts[0];
+                int modularCredit = Integer.parseInt(parts[1]);
+                String expectedGrade = parts[2];
+                return new Module(moduleName, modularCredit, expectedGrade);
+            } catch (NumberFormatException e) {
+                System.out.println("Error parsing module credit: " + e.getMessage());
+                return null;
+            }
+        }
+        return null;
+    }
     private static String processTimetable(String line) {
         String[] parts = line.split("\\|");
         return ("day/" + parts[0] + "code/" + parts[1] +
@@ -126,6 +167,17 @@ public class Storage {
     private static void writeHourTimetableToFIle(PrintWriter fw, Days timetable, int day) {
         if (timetable != null) {
             fw.println((day + 1) + " | " + timetable.toStringStorage());
+        }
+    }
+    public static void writeModuleListToFile(ModuleList moduleList) {
+        try {
+            PrintWriter writer = new PrintWriter(GPA_FILE_PATH);
+            for (Module module : moduleList.getModules()) {
+                writer.println(module.getModuleName() + "|" + module.getModularCredit() + "|" + module.getExpectedGrade());
+            }
+            writer.close();
+        } catch (IOException e) {
+            System.out.println("Error writing to GPA file: " + e.getMessage());
         }
     }
 }
