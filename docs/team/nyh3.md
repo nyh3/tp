@@ -50,6 +50,7 @@ format allowing users to keep track of their schedule.
 ### Contributions to User Guide
 
 Wrote Quick Start for the User Guide. [#92](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/92)
+Wrote Table of Contents for User Guide.
 
 ### Contributions to Developer Guide
 

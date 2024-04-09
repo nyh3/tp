@@ -1,14 +1,37 @@
 # User Guide
 
-## Introduction
+# Introduction
 
-# Welcome to CantVas!
+## Welcome to CantVas!
 
 Congratulations on taking the first step towards smarter, more organized 
 student life! CantVas is your ultimate companion for managing your academic 
 and financial responsibilities with ease. Designed with students in mind, our 
 app offers a comprehensive suite of tools to help you stay on top of your 
 expenses, organize your timetable and track your grades.
+
+# Table of Contents
+- [Introduction](#introduction)
+- [Quick Start](#quick-start)
+- [Features](#features-)
+  - [Expenditure Tracker](#expenditure-tracker)
+    - [Adding expenditure without type](#adding-expenditure-without-type)
+    - [Adding expenditure with type](#adding-expenditure-with-type)
+    - [View all expenditure](#view-all-expenditure)
+    - [View expenditure by month and year](#view-expenditure-by-month-and-year)
+    - [View expenditure by year](#view-expenditure-by-year)
+    - [View expenditure by type](#view-expenditure-by-type)
+    - [Delete all expenditure](#delete-all-expenditure)
+    - [Delete expenditure by index](#delete-expenditure-by-index)
+  - [GPA Calculator](#gpa-calculator)
+  - [Timetable](#timetable)
+    - [Add class](#add-class)
+    - [Delete class](#delete-class)
+    - [View all class for the week](#view-all-class-for-the-week)
+    - [View class for the day](#view-class-for-the-day)
+  - [Motivational Quotes](#daily-motivational-quotes)
+- [FAQ](#faq)
+- [Command Summary](#command-summary)
 
 ## Quick Start
 1. Ensure you have `Java-11` or above installed on your computer.
@@ -31,6 +54,8 @@ expenditures you have entered. Making it a good way to track your
 expenses.
 
 The features include:
+
+#### Adding expenditure without type
 - Adding new expenditures without specifying the type. To do so, 
   key in with the following format: `e/ add/ d/ <description> amt/ 
   <cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help book amt/ 
@@ -39,23 +64,36 @@ The features include:
 > Doing so will leave the 'type' field empty and thus defaulting to 'NA'.
 When viewed using any list or view functions, the second column will be 'NA'.
 
+#### Adding expenditure with type
 - Adding new expenditures with type of expenditure specified. To
   do so, key in with the following format: `e/ add/ d/ <description> t/ 
   <type> amt/ <cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help
   book t/ book amt/ 19.99 date/ 06.04.2024`.
+
+#### View all expenditure
 - Viewing saved expenditures without filters. To do so, key in 
   with the following format: `list`.
+
+#### View expenditure by month and year
 - Viewing saved expenditures by month and year. To do so, key in 
   with the following format: `e/ view/ m/ <mm.yyyy>`. Example:
   `e/ view/ m/ 03.2024`.
+
+#### View expenditure by year
 - Viewing saved expenditures by year. To do so, key in with the
   following format: `e/ view/ y/ <yyyy>`. Example: `e/ view/ y/ 2024`.
+
+#### View expenditure by type
 - Viewing saved expenditures by type. To do so, key in with the
   following format: `e/ view/ t/ <type>`. Example: `e/ view/ t/ FOOD`.
-- Deleting saved expenditures. To do so, key in with the following format:
-  `e/ del/ <index>`. Example: `e/ del/ 2`.
+
+#### Delete all expenditure
 - Deleting the entire saved expenditure list. To do so, key in with the
   following format: `clearlist`.
+
+#### Delete expenditure by index
+- Deleting saved expenditures. To do so, key in with the following format:
+  `e/ del/ <index>`. Example: `e/ del/ 2`.
 
 ### GPA Calculator
 The GPA calculator allows you to calculate your GPA, based on your previous GPA
@@ -77,6 +115,8 @@ are the classes, where are the classes and the class durations from monday
 to friday respectively.
 
 The features include:
+
+#### Add class
 - Adding new classes. To do so, key in with the following format: `tt/
   add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ 
   <location>`. Example: `tt/ add/ day/ 3 code/ EE2026 time/ 09 duration/ 3 location/
@@ -94,10 +134,15 @@ that cut across midnight. Hence `24` is not an accepted value.
 >`duration` refers to how long the class lasts. For example, if a class lasts for 3
 > hours, the duration input will be `3`. 
 
+#### Delete class
 - Deleting saved classes. To do so, key in with the following format: `tt/ del/ day/ 
   <day> code/ <code>`. Example: `tt/ del/ day/ 3 code/ cs2113`.
+
+#### View all class for the week
 - Viewing saved classes according the days in the week, arranged in ascending order of
   time. To do so, key in with the following format: `tt/ list/`.
+
+#### View class for the day
 - To view classes for the specific day of the week key in the following:
   `tt/ list -d/ <day>`
 
@@ -152,5 +197,9 @@ for the duration.
 - For inputting of timetable classes: `tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration>
   location/ <location>`.
 - For deletion of saved timetable classes: `tt/ del/ day/ <day> time/ <hh>`.
+- For listing of timetable for all days: `tt/ list/`.
+- For listing of timetable for a particular day: `tt/ list -d/ <day>`.
 - For using GPA calculator: `gpa`.
+- To view the help message: `help`.
+- To exit CantVas: `exit`.
 
