@@ -3,7 +3,7 @@
 # Introduction
 
 ## Welcome to CantVas!
-
+![logo.png](logo.png)
 Congratulations on taking the first step towards smarter, more organized 
 student life! CantVas is your ultimate companion for managing your academic 
 and financial responsibilities with ease. Designed with students in mind, our 
@@ -97,16 +97,69 @@ When viewed using any list or view functions, the second column will be 'NA'.
 
 ### GPA Calculator
 The GPA calculator allows you to calculate your GPA, based on your previous GPA
-and your new modules' grades and module credit numbers. To use the GPA calculator,
-perform the following steps.
+and your new modules' grades and module credit numbers.
 
-1. Type `GPA` (Regardless of caps) to proceed to start the function.
-2. Type Your `Current_GPA / Numbers_of_MCs_Taken`. Example: `4.00/24`
-3. Type the numbers of modules taken for this semester. Example: `4`
-4. Type in the Modular_Credit/Expected grade for each module taken.
-Example: `4/A+` and `2/b+`. Modular credit should be a non-negative integer value between
+In CantVas, we provide 2 methods of GPA calculation.
+
+#### Method 1: Step by Step GPA Calculator
+Quick Start:
+
+1. Starting from the main menu.
+2. Type `GPASTEP` (Regardless of caps) to proceed to start the function.
+3. Type Your `Current_GPA / Numbers_of_MCs_Taken`. Example: `4.00/24`
+4. Type the numbers of modules taken for this semester. Example: `4`
+5. Type in the details for each module taken.
+In the format of: 
+n/<Module_Name> mc/<Module_Credit> gr/<Expected_Grade>.
+Example: `n/CS1010 mc/4 gr/A+` or  `n/CS2113 mc/4 gr/F`
+6. Your GPA will be automatically calculated afterward.
+> Modular credit should be a non-negative integer value between
 0 and 12.
-5. Your GPA will be automatically calculated afterward.
+
+
+#### Method 2: Calculation of GPA by ModuleList
+This method is for user who are more familiar with GPA calculation mechanism or 
+they have too many modules to enter. This method provides them with the ease to 
+edit their module list.
+
+Quick Start:
+
+1. Starting from the main menu.
+2. Type 'GPALIST' (Regardless of caps) to proceed to start the function.
+3. You will enter GPA Calculation by list mode.
+4. First you are recommended to enter modules into the list by typing 
+`add`.
+5. After which you can input the numbers of modules that you would like to record
+into the list by inputting an integer.
+6. Type in the details for each module taken.
+   In the format of:
+   n/<Module_Name> mc/<Module_Credit> gr/<Expected_Grade>.
+   Example: `n/CS1010 mc/4 gr/A+` or  `n/CS2113 mc/4 gr/F`.
+7. After done with adding in modules, type `exit` to go back to sub-menu.
+8. Now you can calculate your GPA by typing `gpa`.
+9. Follow the prompt, input your current gpa and modular credits completed
+so far in the format of `Current_GPA / Numbers_of_MCs_Taken`. Example: `4.00/24`.
+10. Your GPA will be automatically calculated !
+11. If you feels like editing the modules information, you can access it by 
+typing `del` to delete specific module or to delete the whole list.
+
+>Commands in GPALIST 
+> 
+> `help` : See the help list.
+> 
+> `del` : Delete specific module result record, or to delete
+> everything.
+> 
+> `add` : Add modules' credit information and expected grade.
+> 
+> `viewlist` :To view what modules are in the list.
+> 
+> `gpa` : To calculate your gpa based on modules recorded in the list. If the module list is 
+> empty, it will just return your current GPA. 
+>
+> `exit` : Go back to the previous page.
+
+![img_gpalist.png](illustration_gpalist.png)
 
 ### Timetable
 The timetable tracker allows you to store, view and delete classes you
@@ -175,7 +228,7 @@ a list format for each day, arranged based on the time of the day. For example, 
 CG2023 from 1pm on monday at E4-03-07 and a 2-hour EE2026 from 9am on monday at LT6, the list will output:
 > Monday:
 > - Code: ee2026, Class Time: 9, Duration: 3, Location: LT6
-> - ode: ee2026, Class Time: 10, Duration: 2, Location: LT6
+> - Code: ee2026, Class Time: 10, Duration: 2, Location: LT6
 > - Code: ee2026, Class Time: 11, Duration: 1, Location: LT6
 > - Code: cg2023, Class Time: 13, Duration: 3, Location: E4-03-07
 > - Code: cg2023, Class Time: 14, Duration: 2, Location: E4-03-07
