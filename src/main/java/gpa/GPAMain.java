@@ -43,9 +43,13 @@ public class GPAMain {
         case "F":
             return 0.00;
 
-        default:
-            throw new IllegalArgumentException("Invalid grade input. " +
-                    "Please enter a valid grade (e.g., A+, A, A-, B+, etc.).");
+       default:
+            System.out.println("Invalid grade input! \n" +
+                    "You have input: " + grade + "which is invalid! \n" +
+                    "I have assumed your invalid grade as F grade \n" +
+                    "Which is 0.00 !");
+            return 0.00;
+        
         }
     }
 }
