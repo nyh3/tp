@@ -9,7 +9,12 @@ import timetable.TimetableList;
 
 public class ProcessCommand {
 
-    public void processUserCommand(String command) {
+    /**
+     * handles the main inputs related to the
+     * expenditure
+     * @param command
+     */
+    public void processExpenditureUserCommand(String command) {
         String[] commandParts = command.substring(2).trim().split("/", 2);
 
         if (commandParts.length < 2) {
@@ -44,6 +49,10 @@ public class ProcessCommand {
         }
     }
 
+    /**
+     * when user wants to view filtered expenditure
+     * @param command user input to parse
+     */
     public void processViewUserCommand(String command) {
         String[] viewCommandParts = command.split("/", 2);
 
@@ -83,6 +92,14 @@ public class ProcessCommand {
             break;
         }
     }
+
+    /**
+     * Main method to split user commands into
+     * @param input command input by user
+     * @param expenses expenditure to add
+     * @param timetable class to add
+     * @return does this while true
+     */
     public boolean userCommand(String input, ExpenditureList expenses, TimetableList timetable) {
         assert input != null;
         String command;
@@ -114,7 +131,7 @@ public class ProcessCommand {
             TimetableParser.parseTimetable(input);
             break;
         case "e/":
-            processUserCommand(input);
+            processExpenditureUserCommand(input);
             break;
 
         default:
