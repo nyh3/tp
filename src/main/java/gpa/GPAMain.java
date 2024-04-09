@@ -4,15 +4,14 @@ package gpa;
 public class GPAMain {
 
     // Method to calculate new GPA with inputs provided as parameters
-    public static double calculateNewGPA(double currentGPA, int totalAccumulatedCredits,
-                                         int numOfModules, int[] moduleCredits, String[] moduleGrades) {
+    public static double calculateNewGPA(double currentGPA, int totalAccumulatedCredits, ModuleList moduleList) {
         double totalPoints = currentGPA * totalAccumulatedCredits;
         int newCredits = 0;
 
-        for (int i = 0; i < numOfModules; i++) {
-            double gradePoints = calculatePointsForGrade(moduleGrades[i]);
-            totalPoints += gradePoints * moduleCredits[i];
-            newCredits += moduleCredits[i];
+        for (Module module : moduleList.getModules()) {
+            double gradePoints = calculatePointsForGrade(module.getExpectedGrade());
+            totalPoints += gradePoints * module.getModularCredit();
+            newCredits += module.getModularCredit();
         }
 
         return totalPoints / (totalAccumulatedCredits + newCredits);
@@ -43,13 +42,13 @@ public class GPAMain {
         case "F":
             return 0.00;
 
-       default:
+        default:
             System.out.println("Invalid grade input! \n" +
                     "You have input: " + grade + "which is invalid! \n" +
                     "I have assumed your invalid grade as F grade \n" +
                     "Which is 0.00 !");
             return 0.00;
-        
+
         }
     }
 }

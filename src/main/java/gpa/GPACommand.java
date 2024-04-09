@@ -23,6 +23,8 @@ public class GPACommand {
             double currentGPA;
             int totalAccumulatedCredits;
 
+
+
             while (true) {
                 System.out.println("Enter your current GPA and the number of MCs taken  " +
                         " (format: GPA_SCORE /NUMBER_OF_MCS):");
@@ -99,48 +101,65 @@ public class GPACommand {
 
             int[] moduleCredits = new int[numOfModules];
             String[] moduleGrades = new String[numOfModules];
+            ModuleList moduleList = new ModuleList();
 
 
             for (int i = 0; i < numOfModules; i++) {
+                // For each module, request details in the new format
                 while (true) {
-                    System.out.println("Enter modular credit and expected grade for module " + (i + 1) +
-                            " (format: MODULAR_CREDIT / EXPECTED_GRADE):");
-                    String modInput = ui.getUserCommand();
-                    if ("exit".equalsIgnoreCase(modInput.trim())) {
-                        System.out.println("Exiting the GPA calculator. Thank you for using!");
-                        return;
+                    System.out.println("Enter details for module " + (i + 1) +
+                            " in the format: n/MODULE_NAME mc/MODULAR_CREDIT gr/EXPECTED_GRADE. \n" +
+                            "Example: n/CS1010 mc/4 gr/A+");
+                    String moduleInput = ui.getUserCommand().trim();
+                    if ("exit".equalsIgnoreCase(moduleInput)) {
+                        System.out.println("Exiting the GPA calculator. Thank you for using it!");
+                        return; // Exit the method
                     }
 
+                    // Splitting the input by spaces to get each part of the input
+                    String[] parts = moduleInput.split("\\s+");
+                    if (parts.length != 3) {
+                        System.out.println("Invalid input: Please ensure your input matches the format.");
+                        continue;
+                    }
+
+                    String moduleName = "";
+                    int modularCredit = -1;
+                    String expectedGrade = "";
+
                     try {
-                        String[] parts = modInput.split("/");
-                        if (parts.length != 2) {
-                            throw new IllegalArgumentException("Input does not match expected format.");
+                        // Extracting module name, credits, and grade from the input
+                        for (String part : parts) {
+                            if (part.startsWith("n/")) {
+                                moduleName = part.substring(2);
+                            } else if (part.startsWith("mc/")) {
+                                modularCredit = Integer.parseInt(part.substring(3));
+                            } else if (part.startsWith("gr/")) {
+                                expectedGrade = part.substring(3).toUpperCase();
+                            }
                         }
 
-                        int credit = Integer.parseInt(parts[0].trim());
-                        if (credit < 0 || credit > 12) {
-                            throw new IllegalArgumentException("Invalid modular credit input: Credit should be " +
-                                    "between 0 and 12.");
+                        // Check if all parts were correctly parsed
+                        if (moduleName.isEmpty() || modularCredit == -1 || expectedGrade.isEmpty()) {
+                            throw new IllegalArgumentException("Missing or incorrect details." +
+                                    " Please ensure all parts are correctly entered.");
                         }
-                        String grade = parts[1].trim().toUpperCase();
 
-                        double gradePoints = GPAMain.calculatePointsForGrade(grade);
-
-                        moduleCredits[i] = credit;
-                        moduleGrades[i] = grade;
-                        break;
+                        // Add the new module to the module list
+                        moduleList.addModule(moduleName, modularCredit, expectedGrade);
+                        break; // Valid input, proceed to the next module
                     } catch (NumberFormatException e) {
-                        System.out.println("Invalid number format. Please ensure you enter an integer for the " +
-                                "modular credit.");
+                        System.out.println("Invalid input: Please ensure the modular credit is an integer.");
                     } catch (IllegalArgumentException e) {
-                        System.out.println(e.getMessage());
+                        System.out.println("Invalid input: " + e.getMessage());
                     }
                 }
             }
 
-            double updatedGPA = GPAMain.calculateNewGPA(currentGPA,
-                    totalAccumulatedCredits, numOfModules, moduleCredits, moduleGrades);
+
+            double updatedGPA = GPAMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, moduleList);
             System.out.printf("Your updated GPA is: %.2f\n", updatedGPA);
         }
     }
+
 }
