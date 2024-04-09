@@ -70,8 +70,21 @@ public class UI {
 
     private static void gpaHelpMessage() {
         System.out.println("\nGPA help:\n"
-                + "\nTo Use gpa calculator, type 'gpa' to continue\n"
+                + "\nTo Use a step by step gpa calculator, " +
+                "type 'gpastep' to continue\n"
+                + "\nTo Use a advanced gpa calculator, type 'gpalist' to continue\n"
                 + "\nTo end the program, type 'exit'\n");
+    }
+
+    public static void gpaListHelpMessage() {
+        System.out.println("\nGPA calculator by list help:\n"
+                + "\nTo calculate gpa of modules that you entered" +
+                ", type 'gpa'\n"
+                + "\nTo end the program, type 'exit'\n"
+                + "\nTo add modules into the list, type 'add'\n" +
+                "\nTo delete modules that you have entered, type 'del'\n" +
+                "\nTo view the Module List that you have input, type 'viewlist'\n" +
+                "\nTo view the available commands, type 'help'\n");
     }
 
     public static void printExitMessage() {

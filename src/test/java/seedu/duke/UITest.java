@@ -30,7 +30,7 @@ public class UITest {
         assertTrue(output.contains("To input class to timetable, use format:"));
         assertTrue(output.contains("To delete saved class, use format:"));
         assertTrue(output.contains("To view you timetable, use format"));
-        assertTrue(output.contains("To Use gpa calculator, type 'gpa' to continue"));
+        assertTrue(output.contains("To Use a step by step gpa calculator, type 'gpastep' to continue"));
         assertTrue(output.contains("To end the program, type 'exit'"));
     }
 
