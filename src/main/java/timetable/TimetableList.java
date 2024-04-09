@@ -6,8 +6,8 @@ import cantvasui.UI;
 public class TimetableList {
     public static int classCount;
     public static int[] classCountDay;
-    public static final int NUM_DAYS = 5;
-    public static final int HOURS_PER_DAY = 24;
+    protected static final int NUM_DAYS = 5;
+    protected static final int HOURS_PER_DAY = 24;
     private static final String DAY_KEYWORD = "day/";
     private static Days[][] timetable;
     private static final String CODE_KEYWORD = " code/";
@@ -104,7 +104,7 @@ public class TimetableList {
             return true;
         }
         if (!isSlotAvailable(classDay, classTime, classDuration)) {
-            System.out.println("There's already a class scheduled at this time.");
+            System.out.println("There's already a class scheduled during this time period.");
             return true;
         }
         return false;
@@ -116,6 +116,11 @@ public class TimetableList {
         }
     }
 
+    /**
+     * Deletes the specified class of the user within the
+     * specified day
+     * @param details String of input from user to process
+     */
     public static void deleteClass(String details) {
         try {
             String[] parts = details.split(DAY_KEYWORD, 2);
@@ -236,6 +241,12 @@ public class TimetableList {
         }
     }
 
+    /**
+     * Main method to list entire timetable
+     * prints classes from monday to friday,
+     * Days with no classes will also be printed
+     * but indicated as "No classes scheduled"
+     */
     public static void listTimetableByOrderOfDays() {
         for (int day = 0; day < NUM_DAYS; day++) {
             System.out.println(daysOfWeek[day] + ":");
