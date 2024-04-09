@@ -209,18 +209,19 @@ public class ExpenditureList {
             System.out.println("No expenses to display.");
             return;
         }
+        DecimalFormat df = new DecimalFormat("#.00"); // Define the decimal format
         Float totalExpenses = 0.0F;
         System.out.println("Current Expenses:");
         assert !expenditureList.isEmpty();
         for (int i = 0; i < expenditureList.size(); i++) {
+
             Expenditure expenditure = expenditureList.get(i);
             System.out.println((i + 1) + ". " + expenditure.getDescription() +
                     " | " + expenditure.getType() +
-                    " | Cost: $" + expenditure.getAmount() +
+                    " | Cost: $" + df.format(expenditure.getAmount()) +
                     " | date: " + expenditure.getDate());
             totalExpenses += expenditure.getAmount();
         }
-        DecimalFormat df = new DecimalFormat("#.00"); // Define the decimal format
         String formattedTotal = df.format(totalExpenses); // Format the total expenses
         System.out.println("Total expenses: $" + formattedTotal);
     }
