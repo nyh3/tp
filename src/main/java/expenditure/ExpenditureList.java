@@ -12,6 +12,11 @@ import java.text.DecimalFormat;
 
 public class ExpenditureList {
     public static int expenditureCount;
+    private static final double MINIMUM_AMOUNT = 0.00F;
+    private static final float MAX_AMOUNT = 9999999.99F;
+    private static final int MONTHYEARINPUTLENGTH = 7;
+    private static final int MAX_DESCRIPTION_LENGTH = 100;
+    private static final int MAX_TYPE_LENGTH = 20;
     private static ArrayList<Expenditure> expenditureList = new ArrayList<>();
 
     public ExpenditureList() {
@@ -20,7 +25,7 @@ public class ExpenditureList {
     }
 
     public static List<Expenditure> listExpensesByMonth(String monthYear) {
-        assert monthYear.length() == 7;
+        assert monthYear.length() == MONTHYEARINPUTLENGTH;
         if (!monthYear.matches("\\d{2}\\.\\d{4}")) {
             System.out.println("Month and year format incorrect! Please use MM.yyyy format.");
             return null;
@@ -282,12 +287,12 @@ public class ExpenditureList {
         String amtStr = String.valueOf(amt);
         String[] parts = amtStr.split("\\.");
 
-        if (amt <= 0 ) {
+        if (amt <= MINIMUM_AMOUNT) {
             System.out.println("Please enter a positive amount");
             return false;
         }
 
-        if (amt > 9999999.99) {
+        if (amt > MAX_AMOUNT) {
             System.out.println("Please enter an amount less than or equal to 9999999.99.");
             return false;
         }
@@ -308,7 +313,7 @@ public class ExpenditureList {
     }
 
     private static boolean isValidType(String type) {
-        if (type.length() > 20) {
+        if (type.length() > MAX_TYPE_LENGTH) {
             System.out.println("Type should be one word of maximum 20 characters.");
             return false;
         }
@@ -316,7 +321,7 @@ public class ExpenditureList {
     }
 
     private static boolean isValidDescription(String description) {
-        if (description.length() > 100) {
+        if (description.length() > MAX_DESCRIPTION_LENGTH) {
             System.out.println("Description of expenditure should not be longer than 100 characters.");
             return false;
         }

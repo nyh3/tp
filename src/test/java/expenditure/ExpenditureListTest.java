@@ -23,6 +23,7 @@ public class ExpenditureListTest {
         assertFalse(ExpenditureList.isValidDate("40.01.2022"));
         assertFalse(ExpenditureList.isValidDate("31.32.2022"));
         assertFalse(ExpenditureList.isValidDate("-1.06.2023"));
+        assertFalse(ExpenditureList.isValidDate("01.01.405070"));
     }
 
     @Test
