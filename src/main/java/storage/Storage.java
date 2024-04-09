@@ -173,7 +173,8 @@ public class Storage {
         try {
             PrintWriter writer = new PrintWriter(GPA_FILE_PATH);
             for (Module module : moduleList.getModules()) {
-                writer.println(module.getModuleName() + "|" + module.getModularCredit() + "|" + module.getExpectedGrade());
+                writer.println(module.getModuleName() + "|" +
+                        module.getModularCredit() + "|" + module.getExpectedGrade());
             }
             writer.close();
         } catch (IOException e) {
