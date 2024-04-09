@@ -1,3 +1,1 @@
 movie | ENTERTAINMENT | 15.0 | 01.01.2014
-self-help book | NA | 19.99 | 15.03.2023
-book | NA | 23.0 | 15.03.2023
