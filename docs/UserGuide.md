@@ -62,7 +62,11 @@ The features include:
   19.99 date/ 15.03.2024`.
 
 > Doing so will leave the 'type' field empty and thus defaulting to 'NA'.
-When viewed using any list or view functions, the second column will be 'NA'.
+  When viewed using any list or view functions, the second column will be 'NA'.
+
+> Note that there are input length restrictions to the expenditures. The description
+  field should not exceed 100 characters and the type field should not exceed 20 
+  characters.
 
 #### Adding expenditure with type
 - Adding new expenditures with type of expenditure specified. To

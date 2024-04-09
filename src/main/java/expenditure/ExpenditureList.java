@@ -170,7 +170,8 @@ public class ExpenditureList {
             String date = parts[1].trim();
             float amountValue = Float.parseFloat(amount);
 
-            if (isValidDate(date) && isValidAmount(amountValue)) {
+            if (isValidDate(date) && isValidAmount(amountValue) && isValidType(type)
+                    && isValidDescription(description)) {
                 expenditureList.add(new Expenditure(description, type, amountValue, date));
                 expenditureCount += 1;
                 userAddedMessage(userAdded);
@@ -285,12 +286,38 @@ public class ExpenditureList {
             System.out.println("Please enter a positive amount");
             return false;
         }
+
+        if (amt > 9999999.99) {
+            System.out.println("Please enter an amount less than or equal to 9999999.99.");
+            return false;
+        }
+
         return is2DecimalPlaces(parts);
     }
 
     private static boolean is2DecimalPlaces(String[] parts) {
+        if (parts.length < 2) {
+            return true;
+        }
         if (parts[1].length() > 2) {
-            System.out.println("Invalid amount format! Please ensure the amount has at most two decimal places.");
+            System.out.println("Invalid amount format! Please ensure the amount has " +
+                    "at most two decimal places.");
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean isValidType(String type) {
+        if (type.length() > 20) {
+            System.out.println("Type should be one word of maximum 20 characters.");
+            return false;
+        }
+        return true;
+    }
+
+    private static boolean isValidDescription(String description) {
+        if (description.length() > 100) {
+            System.out.println("Description of expenditure should not be longer than 100 characters.");
             return false;
         }
         return true;
