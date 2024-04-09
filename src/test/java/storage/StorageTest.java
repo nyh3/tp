@@ -92,6 +92,4 @@ public class StorageTest {
         assertTrue(timetableFileExistsBefore);
         assertTrue(timetableExistsAfter);
     }
-
-
 }

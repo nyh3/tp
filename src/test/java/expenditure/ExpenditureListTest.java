@@ -252,6 +252,11 @@ public class ExpenditureListTest {
 
         outContent.reset();
 
+        input = "d/ Grocery Shopping t/ food amt/ 45.75 date/ 15.04." + "2".repeat(2000);
+        ExpenditureList.addExpenditure(input, false);
+        assertEquals("Invalid date format. Please use the format dd.MM.yyyy",
+                outContent.toString().trim());
+
         System.setOut(System.out);
 
     }
