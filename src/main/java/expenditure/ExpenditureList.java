@@ -16,8 +16,8 @@ public class ExpenditureList {
     private static final int MONTHYEARINPUTLENGTH = 7;
     private static final int MAX_DESCRIPTION_LENGTH = 100;
     private static final int MAX_TYPE_LENGTH = 20;
-    public static int expenditureCount;
     private static ArrayList<Expenditure> expenditureList = new ArrayList<>();
+    public static int expenditureCount;
 
     public ExpenditureList() {
         expenditureList = new ArrayList<>();
