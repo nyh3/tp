@@ -22,15 +22,37 @@ Students can use this app to calculate their GPA grade
 
 ## User Stories
 
-| Version | As a ...                 | I want to ...                                 | So that I can ...                                    |
-|---------|--------------------------|-----------------------------------------------|------------------------------------------------------|
-| v1.0    | student                  | focus on financial responsibility             | view a breakdown of his expenditures by category     |
-| v1.0    | Proactive business major | calculate my course grades on CantVas         | see which mod I have to SU.                          |
-| v1.0    | careless user            | delete wrong items in the expenditure tracker | add back the correct item in the expenditure tracker |
+| Version | As a ...                                | I want to ...                                                        | So that I can ...                                                                 |
+|---------|-----------------------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| v1.0    | international student on a budget       | use CantVas to add my purchases                                      | meticulously record my expenses                                                   |
+| v1.0    | analytical student                      | view a breakdown of his expenditures                                 | focus on financial responsibility                                                 |
+| v1.0    | budget-conscious student                | view my expenses filtered by specific months and years               | track my progress towards financial goals and identify any trends over time       |
+| v1.0    | long-term planner                       | see an overview of my expenditures grouped by year                   | evaluate my financial health and plan for future expenses accordingly             |
+| v1.0    | student who wants to start fresh        | ability to delete all of my recorded expenditures                    | reset my financial tracking system and begin anew                                 |
+| v1.0    | careless user                           | delete wrong items in the expenditure tracker                        | add back the correct item in the expenditure tracker                              |
+| v1.0    | user who needs assistance               | be able to access help information within the application            | understand how to use its features effectively                                    |
+| v1.0    | user finished with my tasks             | be able to exit the application easily                               | close it and move on to other activities                                          |
+| v1.0    | Proactive business major                | calculate my course grades on CantVas step by step                   | see which mod I have to SU                                                        |
+| v1.0    | user who values user assistance         | access help information and exit the GPA calculator easily           | get assistance if needed and navigate the application seamlessly                  |
+| v2.0    | organized student                       | add my expenses by type                                              | understand where my money is going and make informed financial decisions          |
+| v2.0    | strategic spender                       | categorize and view my expenditures by type                          | identify areas where I can potentially cut costs or adjust my budget.             |
+| v2.0    | user seeking daily inspiration          | see motivational quotes and tips CantVas provides at startup         | stay motivated throughout her academic journey                                    |
+| v2.0    | student trying to organize my schedule  | input my classes into the timetable tracker                          | keep track of the classes I have                                                  |
+| v2.0    | student who needs to adjust my schedule | remove specific classes from my timetable                            | ensure the timetable accurately reflects my current commitments                   |
+| v2.0    | student planning for the upcoming week  | see all my classes scheduled for the week in one place               | plan my study and extracurricular activities efficiently                          |
+| v2.0    | student organizing my daily tasks       | check my classes for a specific day                                  | focus on the tasks and commitments for that day without feeling overwhelmed       |
+| v2.0    | meticulous user                         | add modules to the list by inputting their details                   | maintain a comprehensive record of all the modules I've taken for GPA calculation |
+| v2.0    | detail-oriented student                 | edit the module list, including adding, deleting, or viewing modules | ensure the accuracy of my GPA calculation                                         |
 
 ## Non-Functional Requirements
 
-{Give non-functional requirements}
+1. Should be portable and working on any mainstream OS as long as it has Java 11 or above installed.
+2. Should be able to hold up to 1000 or more expenditure without any change in performance of CantVas.
+3. Should be able to handle exceptions and edge cases for smooth operation.
+4. A user with an average typing speed in regular English text (not code or system admin commands) should find that 
+they can complete most tasks more quickly using text commands rather than relying on the mouse.
+5. Comprehensive unit tests should be implemented within the application to guarantee accurate functionality, 
+streamline maintenance, and facilitate future enhancements.
 
 ## Environment Setup
 Java JDK 8 or above
