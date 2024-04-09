@@ -141,7 +141,8 @@ public class GPACommand {
 
                         // Check if all parts were correctly parsed
                         if (moduleName.isEmpty() || modularCredit == -1 || expectedGrade.isEmpty()) {
-                            throw new IllegalArgumentException("Missing or incorrect details. Please ensure all parts are correctly entered.");
+                            throw new IllegalArgumentException("Missing or incorrect details." +
+                                    " Please ensure all parts are correctly entered.");
                         }
 
                         // Add the new module to the module list
