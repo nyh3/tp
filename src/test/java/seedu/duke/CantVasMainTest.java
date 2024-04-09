@@ -13,7 +13,7 @@ public class CantVasMainTest {
 
     @Test
     public void testInitialization() {
-        CantVasMain cantVasMain = new CantVasMain();
+        new CantVasMain();
         assertNotNull(CantVasMain.ui);
     }
 
