@@ -30,39 +30,80 @@ public class TimetableList {
         try {
             String[] parts = schedule.split(DAY_KEYWORD, 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for class day.");
+                throw new InvalidInputFormatException("Incomplete command. Please refer to the help message " +
+                        "for format.");
             }
+
+            if (parts[1].trim().isEmpty()) {
+                throw new InvalidInputFormatException("Missing <day> and code/ <classCode> " +
+                        "time/ <hh> duration/ <duration> location/ <location>.");
+            }
+
             String classDayPart = parts[1].trim();
 
             parts = classDayPart.split(CODE_KEYWORD, 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for class code.");
+                throw new InvalidInputFormatException("Incomplete command. Please refer to the help message " +
+                        "for format.");
             }
+
+            if (parts[1].trim().isEmpty()) {
+                throw new InvalidInputFormatException("Missing <code> and time/ <hh> " +
+                        "duration/ <duration> location/ <location>.");
+            }
+
             int classDay = Integer.parseInt(parts[0].trim());
             String classCodePart = parts[1].trim();
 
             parts = classCodePart.split(TIME_KEYWORD, 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for class time.");
+                throw new InvalidInputFormatException("Incomplete command. Please refer to the help message " +
+                        "for format.");
             }
+
+            if (parts[1].trim().isEmpty()) {
+                throw new InvalidInputFormatException("Missing <time> and duration/ <duration> " +
+                        "location/ <location>.");
+            }
+
             String classCode = parts[0].trim();
+
+            if (!isValidClassCode(classCode)) {
+                return;
+            }
+
             String classTimePart = parts[1].trim();
 
             parts = classTimePart.split(DURATION_KEYWORD, 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for class duration.");
+                throw new InvalidInputFormatException("Incomplete command. Please refer to the help message " +
+                        "for format.");
             }
+
+            if (parts[1].trim().isEmpty()) {
+                throw new InvalidInputFormatException("Missing <duration> and location/ <location>.");
+            }
+
             int classTime = Integer.parseInt(parts[0].trim());
             String classDurationPart = parts[1].trim();
 
             parts = classDurationPart.split(LOCATION_KEYWORD, 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for class location.");
+                throw new InvalidInputFormatException("Incomplete command. Please refer to the help message " +
+                        "for format.");
             }
+
+            if (parts[1].trim().isEmpty()) {
+                throw new InvalidInputFormatException("Missing <location> details.");
+            }
+
+            if (parts[1].trim().length() > 20) {
+                throw new InvalidInputFormatException("Class location details should be within 20 characters.");
+            }
+
             int classDuration = Integer.parseInt(parts[0].trim());
             String classLocation = parts[1].trim();
 
-            // check if all requirements met to add class
             if (isAbleToAddClass(classTime, classDay, classDuration)) {
                 return;
             }
@@ -81,6 +122,14 @@ public class TimetableList {
         } catch (NumberFormatException e) {
             System.out.println(e.getMessage() + " Must be an integer.");
         }
+    }
+
+    private static boolean isValidClassCode(String classCode) {
+        if (classCode.length() > 7) {
+            System.out.println("Class code should be within 7 characters.");
+            return false;
+        }
+        return true;
     }
 
     /**
