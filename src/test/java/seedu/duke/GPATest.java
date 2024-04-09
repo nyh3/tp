@@ -1,28 +1,24 @@
 package seedu.duke;
 
-
-import org.junit.jupiter.api.Test;
 import gpa.GPAMain;
-
+import gpa.ModuleList;
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class GPATest {
     @Test
     void testCalculateNewGPA_allAs() {
-        GPAMain gpaMain = new GPAMain();
         double currentGPA = 4.0;
         int totalAccumulatedCredits = 120;
-        int numOfModules = 4;
-        int[] moduleCredits = {4, 4, 4, 2};
-        String[] moduleGrades = {"A", "A", "A","A"};
+        ModuleList moduleList = new ModuleList();
+        moduleList.addModule("Module1", 4, "A");
+        moduleList.addModule("Module2", 4, "A");
+        moduleList.addModule("Module3", 4, "A");
+        moduleList.addModule("Module4", 2, "A");
 
-        double expectedGPA = 4.10;
-        double resultGPA = gpaMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, numOfModules,
-                moduleCredits, moduleGrades);
+        double expectedGPA = 4.10; // Ensure this expected value is correct based on your GPA calculation logic
+        double resultGPA = GPAMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, moduleList);
 
         assertEquals(expectedGPA, resultGPA, 0.01, "The GPA calculated for all A's did not match the expected value");
     }
-
 }
-
-
