@@ -1,7 +1,9 @@
 # Developer Guide
+
 ![logo.png](images/logo.png)
 
 ## Table of Contents
+
 - [Acknowledgements](#acknowledgements)
 - [Design](#design)
 - [Implementation](#implementation)
@@ -28,13 +30,15 @@ other classes.
 
 ## Implementation
 
-# Motivational messages
+This section describes some noteworthy details on how certain features are implemented.
+
+## Motivational messages
 The Motivational module prints a randomly generated motivational quote for the user whenever the program starts 
 
-# Expenditure
+### Expenditure
 The expenditure module is comprehensive allows users to key in their expenses to enable them to store all their 
 
-## Overview
+### Overview
 The expenditure module allows users to key in their expenses to enable them to store all their 
 expenses.
 This guide will walk developers through how to use the expenditure function to track their expenses
@@ -176,12 +180,17 @@ Expanded Grade Scale: Allow for customization of the grade to GPA points mapping
 ### Product scope
 
 #### Target user profile
-NUS Students.
+
+- NUS Students
+- Prefers typing
 
 #### Value proposition
 
-Users can use this app to keep track of their expenditures and therefore they can better manage their finances.
-Students can use this app to calculate their GPA grade
+CantVas offers users the ability to efficiently monitor their expenses, enabling them to enhance 
+their financial management skills. Additionally, students can utilize CantVas to calculate their GPA grades, 
+facilitating academic success. With its versatile functionality, CantVas serves as a comprehensive 3-in-1 
+solution for users to manage expenditure, timetable, and GPA, thereby enhancing their overall organizational 
+capabilities and productivity.
 
 ### User Stories
 
@@ -227,6 +236,7 @@ Students can use this app to calculate their GPA grade
 Given below are instructions on how to test the app manually.
 
 ### Launch and Shutdown
+
 1. Initial launch
    1. Download the jar file and copy into an empty folder
    2. Open a terminal and change directory to the folder created with the jar file inside and 
@@ -236,12 +246,14 @@ Given below are instructions on how to test the app manually.
    1. When CantVas is running, type `exit` to close CantVas.
 
 ### Show help
+
 1. Prerequisites: NIL
 2. Test case 1: `help`
 
    Expected: All commands and their format will be shown.
 
 ### Adding expenditure
+
 1. Prerequisites: NIL
 2. Test Case 1: `e/ add/ d/ shopping amt/ 128.00 date/ 31.03.2024`
 
@@ -252,6 +264,7 @@ Given below are instructions on how to test the app manually.
    Expected: A new expenditure with type MOVIE is added successfully.
 
 ### View Expenditure
+
 1. Prerequisites: Added the 2 expenditure in [Adding Expenditure](#adding-expenditure)
 2. Test case 1: `e/ list/`
    
@@ -273,6 +286,7 @@ Given below are instructions on how to test the app manually.
    at least 1 should be the spider-man tickets previously added.
 
 ### Deleting expenditure
+
 1. Prerequisites: List all expenditure using `e/ list/`
 2. Test case 1: `e/ del/ 1`
 
@@ -284,6 +298,7 @@ Given below are instructions on how to test the app manually.
    No expenditure should be shown when `e/ list/` is entered.
 
 ### Adding class
+
 1. Prerequisites: NIL
 2. Test case 1: `tt/ add/ day/ 5 code/ cs2113 time/ 16 duration/ 2 location/ LT16`
 
@@ -294,6 +309,7 @@ Given below are instructions on how to test the app manually.
    Expected: Class is added successfully with the correct day, code, time, duration and location.
 
 ### Viewing classes
+
 1. Prerequisites: Added the 2 classes in [Adding class](#adding-class)
 2. Test case 1: `tt/ list/`
     
@@ -306,6 +322,7 @@ Given below are instructions on how to test the app manually.
     Expected: Friday timetable should be shown with the cs2113 class shown for 16:00 and 17:00.
 
 ### Deleting class
+
 1. Prerequisites: List add classes using `tt/ list/`, there should be cs2113 class on friday.
 2. Test case 1: `tt/ del/ day/ 5 code/ cs2113`
 
