@@ -32,6 +32,9 @@ public class ProcessCommand {
                 System.out.println("Invalid index format for deletion.");
             }
             break;
+        case "list":
+            ExpenditureList.listExpenses();
+            break;
         case "view":
             processViewUserCommand(actionDetails);
             break;
@@ -101,9 +104,6 @@ public class ProcessCommand {
             UI.printExitMessage();
             Storage.writeToFile(expenses);
             return true;
-        case "list":
-            ExpenditureList.listExpenses();
-            break;
         case "clearlist":
             ExpenditureList.clearlist();
             break;

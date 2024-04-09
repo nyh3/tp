@@ -48,7 +48,7 @@ public class UI {
                 + "<< e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy> >>\n"
                 + "\nTo delete saved expenses, use format:\n<< e/ del/ <index> >>\n"
                 + "\nTo clear the entire expenditure list, use format: \n<< clearlist >>\n"
-                + "\nTo List saved expenses, use format:\n<< list >>\n"
+                + "\nTo List saved expenses, use format:\n<< e/ list/ >>\n"
                 + "\nTo view saved expenses by month, use format:\n<< e/ view/ m/ <mm.yyyy> >>\n"
                 + "\nTo view saved expenses by year, use format:\n<< e/ view/ y/ <yyyy> >>\n"
                 + "\nTo view saved expenses by type, use format:\n<< e/ view/ t/ <type> >>\n");
