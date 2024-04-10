@@ -9,7 +9,7 @@ public class TimetableList {
     protected static final int NUM_DAYS = 5;
     protected static final int HOURS_PER_DAY = 24;
     private static final String DAY_KEYWORD = "day/";
-    private static Days[][] timetable;
+    private static Class[][] timetable;
     private static final String CODE_KEYWORD = " code/";
     private static final String TIME_KEYWORD = " time/";
     private static final String DURATION_KEYWORD = " duration/";
@@ -17,12 +17,12 @@ public class TimetableList {
     private static final String[] daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
 
     public TimetableList() {
-        timetable = new Days[NUM_DAYS][HOURS_PER_DAY];
+        timetable = new Class[NUM_DAYS][HOURS_PER_DAY];
         classCountDay = new int[NUM_DAYS];
         classCount = 0;
     }
 
-    public static Days[][] getTimetable() {
+    public static Class[][] getTimetable() {
         return timetable;
     }
 
@@ -110,7 +110,7 @@ public class TimetableList {
 
             //add class
             while(classDuration > 0) {
-                timetable[classDay - 1][classTime] = new Days(classCode, classTime, classDuration, classLocation);
+                timetable[classDay - 1][classTime] = new Class(classCode, classTime, classDuration, classLocation);
                 classCountDay[classDay - 1]++;
                 classDuration--;
                 classTime++;
@@ -301,7 +301,7 @@ public class TimetableList {
             System.out.println(daysOfWeek[day] + ":");
             boolean hasClasses = false;
             for (int hour = 0; hour < HOURS_PER_DAY; hour++) {
-                Days classAtTime = timetable[day][hour];
+                Class classAtTime = timetable[day][hour];
                 if (classAtTime != null) {
                     hasClasses = true;
                     System.out.println(" - " + classAtTime);

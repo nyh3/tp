@@ -1,6 +1,6 @@
 package cantvasui;
 import motivationalquote.MotivationalQuotes;
-import timetable.Days;
+import timetable.Class;
 
 import java.util.Scanner;
 
@@ -104,14 +104,14 @@ public class UI {
         System.out.println("-------------------------------------------------------------");
     }
 
-    public static void printTimetableByDay(Days[] timetable) {
+    public static void printTimetableByDay(Class[] timetable) {
         System.out.println(" | Time  |  Code  | location |");
         for (int i = 0; i < 24; i ++) {
             printTimetableByHour(timetable[i]);
         }
     }
 
-    private static void printTimetableByHour(Days timetable) {
+    private static void printTimetableByHour(Class timetable) {
         if (timetable != null) {
             System.out.println(timetable.toStringDay());
         }

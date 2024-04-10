@@ -59,6 +59,7 @@ Wrote Table of Contents for User Guide. [#206](https://github.com/AY2324S2-CS211
 
 Wrote User Stories, Storage class and delete expenditure function for the Developer Guide.
 [#69](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/69)
+
 Wrote Table of contents and appendix for Developer Guide and reorganized the structure.
 
 ### Contributions to team-based tasks

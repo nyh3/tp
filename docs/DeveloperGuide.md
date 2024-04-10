@@ -57,7 +57,7 @@ How `UI` works:
 2. Prints an output based on user input. 
 3. Reads in user input for steps in GPA calculator.
 
-#### Diagrams
+**Diagrams**
 
 
 
@@ -73,7 +73,7 @@ How `ProcessCommand` works:
    2. `GPACommand` or `ProcessListCommand` for GPA calculator to receive more user inputs.
 3. Returns true to `CantVAsMain` when the `exit` command is entered, ends CantVas.
 
-#### Diagrams
+**Diagrams**
 
 
 
@@ -93,7 +93,7 @@ How `Storage` works:
 5. `PrintWriter` and `File` and `Scanner` classes are responsible 
    for the writing, opening and reading from files respectively.
 
-#### Diagrams
+**Diagrams**
 
 
 
@@ -106,7 +106,7 @@ How `Exceptions` work:
    has the wrong format and the user will be informed about their wrong format.
 2. Takes in an error message when thrown that can be printed.
 
-#### Diagrams
+**Diagrams**
 
 
 
@@ -115,34 +115,71 @@ How `Exceptions` work:
 ## Implementation
 
 ### Expenditure Tracker
-The expenditure module is comprehensive allows users to key in their expenses to enable them to store all their 
 
-#### Overview
-The expenditure module allows users to key in their expenses to enable them to store all their 
-expenses.
-This guide will walk developers through how to use the expenditure function to track their expenses
+The Expenditure Tracker simplifies expense tracking, allowing users
+to log daily spending. With filters for month, year, and type, it 
+aims to promote financial awareness, aiding informed decision-making
+for better financial health.
 
-#### List of Operations:
-#### Deleting an expenditure:
-Deleting an expenditure in numerical form, by referencing its index in the array.
-Format: e/ del/ INDEX
-Example: e/ del/ 3
-#### Adding an expenditure:
+The `ExpenditureList` class is responsible for managing a collection of
+expenditures. It provides methods for adding, deleting and listing expenditures.
+
+The `Expenditure` class represents individual expenditure instance within the system.
+Each expenditure object contains key attributes such as description, type, amount and date.
+
+**Class Diagram**
+
+
+
+#### Add expenditure
+
+How `add expenditure` behaves:
+1. 
+
 Adding an expenditure in numerical form.
 Format: add n/DOLLARS_AND_CENTS d/DD.MM.YYYY
 Example: add n/3.22 d/31.01.2024
-#### Viewing expenditures by month:
-Viewing an expenditure in numerical form, filtered by month.
-Format: view -m MM.YYYY
-Example: view -m 01.2023
-#### View expenditure by year:
-Viewing an expenditure in numerical form, filtered by year.
-Format: view -y YEAR
-Example: view -y 2023
+
+**SequenceDiagram**
+
+![AddExpenditure.png](images/AddExpenditure.png)
+
 #### Viewing expenditures:
 Viewing an expenditure in numerical form, in sequence of when they are added.
 Format: list
 Example: list
+
+**SequenceDiagram**
+
+
+
+#### Viewing expenditures by month:
+Viewing an expenditure in numerical form, filtered by month.
+Format: view -m MM.YYYY
+Example: view -m 01.2023
+
+**SequenceDiagram**
+
+
+
+#### View expenditure by year:
+Viewing an expenditure in numerical form, filtered by year.
+Format: view -y YEAR
+Example: view -y 2023
+
+**SequenceDiagram**
+
+
+
+#### Delete expenditure:
+Deleting an expenditure in numerical form, by referencing its index in the array.
+Format: e/ del/ INDEX
+Example: e/ del/ 3
+
+**SequenceDiagram**
+
+![DeleteExpenditure.png](images/DeleteExpenditure.png)
+
 
 #### Class: Expenditure
 This class is responsible for processing expenditure related commands and storing all expenses input by the user
@@ -152,22 +189,11 @@ This class is responsible for processing expenditure related commands and storin
 Takes in the string input by the user and splits it into the respective parts. "userAdded" checks if the method is called by
 the user or called when reading from a storage file.
 
-### deleteExpenditure(int index)
-Takes in an index and deletes the respective expenditure from the expenditure list.
-
-
 
 ### GPA Calculator
 The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
 of a user's updated GPA based on their current academic standing and projected module grades. 
 This guide will walk developers through the architecture, functionality, and core components of the module.
-
-------------------------------------------------------------------------------------------
-
-#### Overview
-The module is divided into two primary classes:
-
-------------------------------------------------------------------------------------------
 
 #### GPACommand: 
 Handles user interactions, input collection, and directs the flow of the GPA calculation process.
@@ -195,7 +221,6 @@ Calls GPAMain.calculateNewGPA to compute the updated GPA based on inputs.
 #### Display Updated GPA: 
 Displays the calculated updated GPA to the user.
 
-
 #### Class: GPAMain
 Contains the core logic for calculating the new GPA given the user's current GPA, 
 total accumulated credits, and details of modules being added.
@@ -216,6 +241,14 @@ For each new module, add to the total points based on the grade and credits.
 Divide the total points by the new total credits (accumulated + new modules) to get the updated GPA.
 
 ### Timetable Tracker
+
+
+
+#### Add Class
+
+#### View Class
+
+#### Delete Class
 
 ### Motivational Quotes
 The Motivational module prints a randomly generated motivational quote for the user whenever the program starts
@@ -290,7 +323,7 @@ capabilities and productivity.
 ## Glossary
 
 * *glossary item* - Definition
-* *Mainstream OS*: Windows, Linux, Unix, MacOS
+* *Mainstream OS*: Windows, Linux, Unix, macOS
 
 ## Instructions for manual testing
 

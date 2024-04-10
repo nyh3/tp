@@ -3,7 +3,7 @@ package storage;
 import expenditure.ExpenditureList;
 import gpa.ModuleList;
 import gpa.Module;
-import timetable.Days;
+import timetable.Class;
 import timetable.TimetableList;
 
 
@@ -152,19 +152,19 @@ public class Storage {
         }
     }
 
-    private static void writeTimetableToFIle(PrintWriter fw, Days[][] timetable) {
+    private static void writeTimetableToFIle(PrintWriter fw, Class[][] timetable) {
         for (int i = 0; i < 5; i++) {
             writeDayTimetableToFile(fw, timetable[i], i);
         }
     }
 
-    private static void writeDayTimetableToFile(PrintWriter fw, Days[] timetable, int day) {
+    private static void writeDayTimetableToFile(PrintWriter fw, Class[] timetable, int day) {
         for (int j = 0; j < 24; j++) {
             writeHourTimetableToFIle(fw, timetable[j], day);
         }
     }
 
-    private static void writeHourTimetableToFIle(PrintWriter fw, Days timetable, int day) {
+    private static void writeHourTimetableToFIle(PrintWriter fw, Class timetable, int day) {
         if (timetable != null) {
             fw.println((day + 1) + " | " + timetable.toStringStorage());
         }
