@@ -179,47 +179,81 @@ Takes in the string input by the user and splits it into the respective parts. "
 the user or called when reading from a storage file.
 
 
+### deleteExpenditure(int index)
+Takes in an index and deletes the respective expenditure from the expenditure list.
+
+------------------------------------------------------------------------------------------
+
+
 ### GPA Calculator
 The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
-of a user's updated GPA based on their current academic standing and projected module grades. 
+of a user's updated GPA based on their current academic standing and projected module grades.
 This guide will walk developers through the architecture, functionality, and core components of the module.
+
+
+
+#### Overview
+The module is divided into 5 classes dealing with 2 different calculation methods.
+
+
+#### Module
+Handles user input of module information: module name, module weightage and module grade.
+
+#### ModuleList
+This extends Module class, which is used to execute actions like add/delete/view regarding the 
+module list.
+
 
 #### GPACommand: 
 Handles user interactions, input collection, and directs the flow of the GPA calculation process.
-#### GPAMain: 
-Contains the logic for calculating the updated GPA.
 
-#### Class: GPACommand
+#### GPAMain: 
+Contains the logic for calculating the GPA.
+
+#### GPACommand
 This class is responsible for interacting with the user, collecting inputs, 
 and managing the flow of the GPA calculation process. It operates within a loop, 
 allowing the user to perform multiple calculations or exit at any point.
 
-#### GPACommand Key Methods
-#### processGPACommand(): 
-Orchestrates the overall process, including collecting user inputs and displaying the updated GPA.
+#### ProcessListCommand
+This class is in charge of calculation of GPA by Module List method by identifying user's input.
 
-### Workflow
+
+### Workflow for step-by-step GPA calculator
 #### Start/Exit Prompt: 
 Prompt the user to start the calculation or exit.
 #### GPA and MCs Input: 
 Collect the user's current GPA and the number of Modular Credits (MCs) taken.
 #### Module Details Input: 
-For each module the user wants to add, collect the modular credit and the expected grade.
+For each module the user wants to add, collect the module name ,modular credit and the expected grade.
 #### GPA Calculation: 
 Calls GPAMain.calculateNewGPA to compute the updated GPA based on inputs.
 #### Display Updated GPA: 
 Displays the calculated updated GPA to the user.
 
-#### Class: GPAMain
-Contains the core logic for calculating the new GPA given the user's current GPA, 
-total accumulated credits, and details of modules being added.
+
+### Workflow for module list GPA calculator
+#### Adding module 
+User can access this via `add` command.
+#### Store Module information into txt file
+Modules information will be stored into the `gpa.txt` file in data folder.
+#### Delete/Edit modules list
+User can access this function via `del` command. User will be prompt to either delete specific module
+information, or to clear the whole module list.
+#### View Current Module List
+Can be accessed via `viewlist` command. Current module list information will be printed out 1 by 1.
+#### GPA calculation
+Can be accessed via `gpa` command.
+After prompted to input current GPA and numbers of MC taken.
+The program will automatically output the GPA based on the information store in the Module List.
+User is prompt to edit the module list first before proceed with calculation.
+
 
 #### Key Methods
 #### calculateNewGPA()
 input: double currentGPA, int totalAccumulatedCredits, int numOfModules, int[] moduleCredits, String[] moduleGrades
 Calculates and returns the updated GPA.
-#### calculatePointsForGrade(String grade): 
-Translates a letter grade into its corresponding GPA points.
+
 
 #### GPA Calculation Logic
 #### Total Points Calculation: 
@@ -228,6 +262,16 @@ Calculates the total points achieved so far by multiplying the current GPA by th
 For each new module, add to the total points based on the grade and credits.
 #### Calculate Updated GPA: 
 Divide the total points by the new total credits (accumulated + new modules) to get the updated GPA.
+
+------------------------------------------------------------------------------------------
+### Graph Demo
+
+#### Overview
+The Graph Demo function uses JPanel , which is a simple GUI tool in javax.swing package.
+With pre-written formula and defined size of parameters, therefore we can demonstrate the 
+mathematical formula with illustration.
+
+------------------------------------------------------------------------------------------
 
 ### Timetable Tracker
 
