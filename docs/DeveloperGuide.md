@@ -42,22 +42,65 @@ other classes.
 ![img.png](images/img.png)
 ![img_1.png](images/img_1.png)
 
+### UI
+
+**API:** [`UI.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/cantvasui/UI.java)
+
+How `UI` works:
+1. Reads in user input and send the command to `CantVasMain` for parsing and execution. 
+2. Prints an output based on user input. 
+3. Reads in user input for steps in GPA calculator.
+
+#### Diagrams
+
+
+
+### ProcessCommand
+
+**API:** [`ProcessCommand.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/processusercommands/ProcessCommand.java)
+
+How `ProcessCommand` works:
+1. `CantVasMain` receive the user input from `UI` and passes it to `ProcessCommand`.
+2. Depending on the type of command, `ProcessCommand` passes the command to
+   1. `processExpenditureUserCommand` or `TimetableParser` if the command is for expenditure 
+   and timetable to further parse the command.
+   2. `GPACommand` or `ProcessListCommand` for GPA calculator to receive more user inputs.
+3. Returns true to `CantVAsMain` when the `exit` command is entered, ends CantVas.
+
+#### Diagrams
+
+
+
+### Storage
+
+**API:** [`Storage.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/storage/Storage.java)
+
+How `Storage` works:
+1. 
+
+#### Diagrams
+
+
+
+### InvalidInputFormatException
+
+Throws an error message when the user enters an input that has the wrong format and the user will be informed about their wrong format
+
+#### Usages
+This exception is thrown in addExpenditure()
+
+
 ## Implementation
 
-This section describes some noteworthy details on how certain features are implemented.
-
-## Motivational messages
-The Motivational module prints a randomly generated motivational quote for the user whenever the program starts 
-
-### Expenditure
+### Expenditure Tracker
 The expenditure module is comprehensive allows users to key in their expenses to enable them to store all their 
 
-### Overview
+#### Overview
 The expenditure module allows users to key in their expenses to enable them to store all their 
 expenses.
 This guide will walk developers through how to use the expenditure function to track their expenses
 
-### List of Operations:
+#### List of Operations:
 #### Deleting an expenditure:
 Deleting an expenditure in numerical form, by referencing its index in the array.
 Format: e/ del/ INDEX
