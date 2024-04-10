@@ -39,6 +39,8 @@ We referenced [AddressBook_Level3](https://github.com/se-edu/addressbook-level3)
 
 We used [PlantUML integration](https://plantuml.com/starting) plugin to help us create our diagrams.
 
+We used [PlantUML webpage](https://plantuml.com/) to understand PlantUML syntax
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Design
@@ -59,7 +61,9 @@ How `UI` works:
 
 **Diagrams**
 
+*Class Diagram*
 
+![UIClassDiagram](images/classimage/UI.png)
 
 ### ProcessCommand
 
@@ -142,25 +146,17 @@ Example: add n/3.22 d/31.01.2024
 
 **SequenceDiagram**
 
-![AddExpenditure.png](images/AddExpenditure.png)
+![AddExpenditure.png](images/sequenceimage/AddExpenditure.png)
 
 #### Viewing expenditures:
 Viewing an expenditure in numerical form, in sequence of when they are added.
 Format: list
 Example: list
 
-**SequenceDiagram**
-
-
-
 #### Viewing expenditures by month:
 Viewing an expenditure in numerical form, filtered by month.
 Format: view -m MM.YYYY
 Example: view -m 01.2023
-
-**SequenceDiagram**
-
-
 
 #### View expenditure by year:
 Viewing an expenditure in numerical form, filtered by year.
@@ -169,17 +165,14 @@ Example: view -y 2023
 
 **SequenceDiagram**
 
-
+Use 1 diagram for all view expenditure
 
 #### Delete expenditure:
 Deleting an expenditure in numerical form, by referencing its index in the array.
 Format: e/ del/ INDEX
 Example: e/ del/ 3
 
-**SequenceDiagram**
-
-![DeleteExpenditure.png](images/DeleteExpenditure.png)
-
+![DeleteExpenditure.png](images/sequenceimage/DeleteExpenditure.png)
 
 #### Class: Expenditure
 This class is responsible for processing expenditure related commands and storing all expenses input by the user
@@ -194,7 +187,7 @@ the user or called when reading from a storage file.
 Takes in an index and deletes the respective expenditure from the expenditure list.
 
 ------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------
+
 
 ### GPA Calculator
 The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
@@ -275,7 +268,6 @@ For each new module, add to the total points based on the grade and credits.
 Divide the total points by the new total credits (accumulated + new modules) to get the updated GPA.
 
 ------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------
 ### Graph Demo
 
 #### Overview
@@ -284,24 +276,51 @@ With pre-written formula and defined size of parameters, therefore we can demons
 mathematical formula with illustration.
 
 ------------------------------------------------------------------------------------------
-------------------------------------------------------------------------------------------
 
 ### Timetable Tracker
+
+The timetable tracker facilitates the management of class schedules. It aims to provide users with a 
+convenient way to organize and track their classes throughout the week. Users can add, delete, 
+and view classes based on specific days, enabling efficient scheduling and time management 
+enhancing the overall productivity and organization of users.
+
+The `TimetableParser` class is responsible for parsing commands related
+to timetable tracker and calling the respective methods in `timetableList`.
+
+The `timetableList` class is responsible for managing a collection of classes.
+It provides methods for adding, deleting and listing timetable.
+
+The `class` class represents individual class instance within the system.
+Each class object contains key attributes such as code, time, duration and location.
+
+**Class Diagram**
 
 
 
 #### Add Class
 
+**SequenceDiagram**
+
+![AddClass](images/sequenceimage/AddClass.png)
+
 #### View Class
+
+**SequenceDiagram**
+
+
+
+#### View Class by day
+
 
 #### Delete Class
 
+**SequenceDiagram**
+
+![DeleteClass](images/sequenceimage/DeleteClass.png)
 
 ### Motivational Quotes
 The Motivational module prints a randomly generated motivational quote for the user whenever the program starts
 
-
-------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------
 
 ## Development Notes
