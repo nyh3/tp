@@ -95,10 +95,13 @@ How `Storage` works:
 
 **API:** [`InvalidInputFormatException.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/exceptions/InvalidInputFormatException.java)
 
-Throws an error message when the user enters an input that has the wrong format and the user will be informed about their wrong format
+How `Exceptions` work:
+1. Throws an error message when the user enters an input that 
+   has the wrong format and the user will be informed about their wrong format.
+2. Takes in an error message when thrown that can be printed.
 
-#### Usages
-This exception is thrown in addExpenditure()
+#### Diagrams
+
 
 
 ## Implementation
