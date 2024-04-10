@@ -39,6 +39,8 @@ We referenced [AddressBook_Level3](https://github.com/se-edu/addressbook-level3)
 
 We used [PlantUML integration](https://plantuml.com/starting) plugin to help us create our diagrams.
 
+We used [PlantUML webpage](https://plantuml.com/) to understand PlantUML syntax
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Design
@@ -59,7 +61,9 @@ How `UI` works:
 
 **Diagrams**
 
+*Class Diagram*
 
+![UIClassDiagram](images/classimage/UI.png)
 
 ### ProcessCommand
 
@@ -142,7 +146,7 @@ Example: add n/3.22 d/31.01.2024
 
 **SequenceDiagram**
 
-![AddExpenditure.png](images/AddExpenditure.png)
+![AddExpenditure.png](images/sequenceimage/AddExpenditure.png)
 
 #### Viewing expenditures:
 Viewing an expenditure in numerical form, in sequence of when they are added.
@@ -168,7 +172,7 @@ Deleting an expenditure in numerical form, by referencing its index in the array
 Format: e/ del/ INDEX
 Example: e/ del/ 3
 
-![DeleteExpenditure.png](images/DeleteExpenditure.png)
+![DeleteExpenditure.png](images/sequenceimage/DeleteExpenditure.png)
 
 #### Class: Expenditure
 This class is responsible for processing expenditure related commands and storing all expenses input by the user
@@ -297,7 +301,7 @@ Each class object contains key attributes such as code, time, duration and locat
 
 **SequenceDiagram**
 
-![AddClass](images/AddClass.png)
+![AddClass](images/sequenceimage/AddClass.png)
 
 #### View Class
 
@@ -312,7 +316,7 @@ Each class object contains key attributes such as code, time, duration and locat
 
 **SequenceDiagram**
 
-![DeleteClass](images/DeleteClass.png)
+![DeleteClass](images/sequenceimage/DeleteClass.png)
 
 ### Motivational Quotes
 The Motivational module prints a randomly generated motivational quote for the user whenever the program starts

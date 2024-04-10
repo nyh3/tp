@@ -1,0 +1,52 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide circle
+skinparam classAttributeIconSize 0
+
+package cantvasui {
+    class UI {
+        - in: Scanner
+        + getUserCommand()
+        + {static} printLogo()
+        + {static} printHelpMessage()
+        + {static} gcIntroMessage()
+        + {static} gpaListHelpMessage()
+        + {static} gcHelpMessage()
+        + {static} printExitMessage()
+        + {static} printMotivationQuote()
+        + {static} printLineBreak()
+        + {static} printTimetableByDay(timetable: class[])
+        - {static} printTimetableByHour(timetable: class)
+        - {static} expenditureHelpMessage()
+        - {static} timetableHelpMessage()
+        - {static} gpaHelpMessage()
+    }
+}
+
+package processusercommands {
+    class ProcessCommand {
+    }
+}
+
+package gpa {
+    class ProcessListCommand{
+    }
+}
+
+package gc {
+    class ProcessGCCommand{
+    }
+}
+
+package timetable {
+    class TimetableList {
+    }
+}
+
+ProcessCommand ..> UI: uses
+ProcessListCommand ..> UI: uses
+ProcessGCCommand ..> UI: uses
+TimetableList ..> UI: uses
+
+@enduml
