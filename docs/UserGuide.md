@@ -31,9 +31,9 @@ expenses, organize your timetable and track your grades.
     - [Method 2](#method-2-calculation-of-gpa-by-modulelist)
   - [Timetable](#timetable-tracker)
     - [Add class](#add-class)
-    - [Delete class](#delete-class)
     - [View all class for the week](#view-all-class-for-the-week)
     - [View class for the day](#view-class-for-the-day)
+    - [Delete class](#delete-class)
   - [Motivational Quotes](#daily-motivational-quotes)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
@@ -198,11 +198,7 @@ The features include:
 that cut across midnight. Hence `24` is not an accepted value.
 > 
 >`duration` refers to how long the class lasts. For example, if a class lasts for 3
-> hours, the duration input will be `3`. 
-
-#### Delete class
-- Deleting saved classes. To do so, key in with the following format: `tt/ del/ day/ 
-  <day> code/ <code>`. Example: `tt/ del/ day/ 3 code/ cs2113`.
+> hours, the duration input will be `3`.
 
 #### View all class for the week
 - Viewing saved classes according the days in the week, arranged in ascending order of
@@ -211,6 +207,10 @@ that cut across midnight. Hence `24` is not an accepted value.
 #### View class for the day
 - To view classes for the specific day of the week key in the following:
   `tt/ list -d/ <day>`
+
+#### Delete class
+- Deleting saved classes. To do so, key in with the following format: `tt/ del/ day/
+  <day> code/ <code>`. Example: `tt/ del/ day/ 3 code/ cs2113`.
 
 ### Daily Motivational Quotes
 Feeling Down? Dread looking at your packed timetable?

@@ -136,13 +136,40 @@ Each expenditure object contains key attributes such as description, type, amoun
 How `add expenditure` behaves:
 1. 
 
+Adding an expenditure in numerical form.
+Format: add n/DOLLARS_AND_CENTS d/DD.MM.YYYY
+Example: add n/3.22 d/31.01.2024
+
 **SequenceDiagram**
 
 ![AddExpenditure.png](images/AddExpenditure.png)
 
-Adding an expenditure in numerical form.
-Format: add n/DOLLARS_AND_CENTS d/DD.MM.YYYY
-Example: add n/3.22 d/31.01.2024
+#### Viewing expenditures:
+Viewing an expenditure in numerical form, in sequence of when they are added.
+Format: list
+Example: list
+
+**SequenceDiagram**
+
+
+
+#### Viewing expenditures by month:
+Viewing an expenditure in numerical form, filtered by month.
+Format: view -m MM.YYYY
+Example: view -m 01.2023
+
+**SequenceDiagram**
+
+
+
+#### View expenditure by year:
+Viewing an expenditure in numerical form, filtered by year.
+Format: view -y YEAR
+Example: view -y 2023
+
+**SequenceDiagram**
+
+
 
 #### Delete expenditure:
 Deleting an expenditure in numerical form, by referencing its index in the array.
@@ -153,18 +180,6 @@ Example: e/ del/ 3
 
 ![DeleteExpenditure.png](images/DeleteExpenditure.png)
 
-#### Viewing expenditures by month:
-Viewing an expenditure in numerical form, filtered by month.
-Format: view -m MM.YYYY
-Example: view -m 01.2023
-#### View expenditure by year:
-Viewing an expenditure in numerical form, filtered by year.
-Format: view -y YEAR
-Example: view -y 2023
-#### Viewing expenditures:
-Viewing an expenditure in numerical form, in sequence of when they are added.
-Format: list
-Example: list
 
 #### Class: Expenditure
 This class is responsible for processing expenditure related commands and storing all expenses input by the user
@@ -179,13 +194,6 @@ the user or called when reading from a storage file.
 The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
 of a user's updated GPA based on their current academic standing and projected module grades. 
 This guide will walk developers through the architecture, functionality, and core components of the module.
-
-------------------------------------------------------------------------------------------
-
-#### Overview
-The module is divided into two primary classes:
-
-------------------------------------------------------------------------------------------
 
 #### GPACommand: 
 Handles user interactions, input collection, and directs the flow of the GPA calculation process.
@@ -213,7 +221,6 @@ Calls GPAMain.calculateNewGPA to compute the updated GPA based on inputs.
 #### Display Updated GPA: 
 Displays the calculated updated GPA to the user.
 
-
 #### Class: GPAMain
 Contains the core logic for calculating the new GPA given the user's current GPA, 
 total accumulated credits, and details of modules being added.
@@ -234,6 +241,14 @@ For each new module, add to the total points based on the grade and credits.
 Divide the total points by the new total credits (accumulated + new modules) to get the updated GPA.
 
 ### Timetable Tracker
+
+
+
+#### Add Class
+
+#### View Class
+
+#### Delete Class
 
 ### Motivational Quotes
 The Motivational module prints a randomly generated motivational quote for the user whenever the program starts
