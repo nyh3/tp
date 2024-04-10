@@ -57,7 +57,7 @@ How `UI` works:
 2. Prints an output based on user input. 
 3. Reads in user input for steps in GPA calculator.
 
-#### Diagrams
+**Diagrams**
 
 
 
@@ -73,7 +73,7 @@ How `ProcessCommand` works:
    2. `GPACommand` or `ProcessListCommand` for GPA calculator to receive more user inputs.
 3. Returns true to `CantVAsMain` when the `exit` command is entered, ends CantVas.
 
-#### Diagrams
+**Diagrams**
 
 
 
@@ -93,7 +93,7 @@ How `Storage` works:
 5. `PrintWriter` and `File` and `Scanner` classes are responsible 
    for the writing, opening and reading from files respectively.
 
-#### Diagrams
+**Diagrams**
 
 
 
@@ -106,7 +106,7 @@ How `Exceptions` work:
    has the wrong format and the user will be informed about their wrong format.
 2. Takes in an error message when thrown that can be printed.
 
-#### Diagrams
+**Diagrams**
 
 
 
@@ -115,22 +115,40 @@ How `Exceptions` work:
 ## Implementation
 
 ### Expenditure Tracker
-The expenditure module is comprehensive allows users to key in their expenses to enable them to store all their 
 
-#### Overview
-The expenditure module allows users to key in their expenses to enable them to store all their 
-expenses.
-This guide will walk developers through how to use the expenditure function to track their expenses
+The Expenditure Tracker simplifies expense tracking, allowing users
+to log daily spending. With filters for month, year, and type, it 
+aims to promote financial awareness, aiding informed decision-making
+for better financial health.
 
-#### List of Operations:
-#### Deleting an expenditure:
-Deleting an expenditure in numerical form, by referencing its index in the array.
-Format: e/ del/ INDEX
-Example: e/ del/ 3
-#### Adding an expenditure:
+The `ExpenditureList` class is responsible for managing a collection of
+expenditures. It provides methods for adding, deleting and listing expenditures.
+
+The `Expenditure` class represents individual expenditure instance within the system.
+Each expenditure object contains key attributes such as description, type, amount and date.
+
+**Class Diagram**
+
+
+
+#### Add expenditure
+
+How `add expenditure` behaves:
+1. 
+
+**SequenceDiagram**
+
+![AddExpenditure.png](images/AddExpenditure.png)
+
 Adding an expenditure in numerical form.
 Format: add n/DOLLARS_AND_CENTS d/DD.MM.YYYY
 Example: add n/3.22 d/31.01.2024
+
+#### Delete expenditure:
+Deleting an expenditure in numerical form, by referencing its index in the array.
+Format: e/ del/ INDEX
+Example: e/ del/ 3
+
 #### Viewing expenditures by month:
 Viewing an expenditure in numerical form, filtered by month.
 Format: view -m MM.YYYY
@@ -290,7 +308,7 @@ capabilities and productivity.
 ## Glossary
 
 * *glossary item* - Definition
-* *Mainstream OS*: Windows, Linux, Unix, MacOS
+* *Mainstream OS*: Windows, Linux, Unix, macOS
 
 ## Instructions for manual testing
 
