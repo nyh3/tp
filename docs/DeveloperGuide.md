@@ -6,19 +6,33 @@
 
 - [Acknowledgements](#acknowledgements)
 - [Design](#design)
+  - [UI](#ui)
+  - [ProcessCommand](#processcommand)
+  - [Storage](#storage)
+  - [Exceptions](#invalidinputformatexception)
 - [Implementation](#implementation)
+  - [Expenditure Tracker](#expenditure-tracker)
+  - [GPA Calculator](#gpa-calculator)
+  - [Timetable Tracker](#timetable-tracker)
+  - [Motivational Quotes](#motivational-quotes)
 - [Appendix](#appendix)
   - [Product Scope](#product-scope)
   - [User Stories](#user-stories)
   - [Non-Functional Requirements](#non-functional-requirements)
   - [Glossary](#glossary)
   - [Instructions for Manual Testing](#instructions-for-manual-testing)
+    - [Launch and Shutdown](#launch-and-shutdown)
+    - [Help](#show-help)
+    - [Expenditure Tracker](#expenditure-tracker-1)
+    - [GPA Calculator](#gpa-calculator-1)
+    - [Timetable Tracker](#timetable-tracker-1)
 
 ## Acknowledgements
 
 We referenced [AddressBook_Level3](https://github.com/se-edu/addressbook-level3) by using their 
 [User Guide](https://github.com/AY2324S2-CS2113T-T09-4/tp/blob/master/docs/UserGuide.md) and
 [Developer Guide](https://github.com/se-edu/addressbook-level3/blob/master/docs/DeveloperGuide.md) to help us structure our own documents.
+
 We used [PlantUML integration](https://plantuml.com/starting) plugin to help us create our diagrams.
 
 ## Design
@@ -65,24 +79,10 @@ Viewing an expenditure in numerical form, in sequence of when they are added.
 Format: list
 Example: list
 
-
-
-# GPA Function
-The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
-of a user's updated GPA based on their current academic standing and projected module grades. 
-This guide will walk developers through the architecture, functionality, and core components of the module.
-
-------------------------------------------------------------------------------------------
-
-## Overview
-The module is divided into two primary classes:
-
-------------------------------------------------------------------------------------------
-
-## Class: Expenditure
+#### Class: Expenditure
 This class is responsible for processing expenditure related commands and storing all expenses input by the user
 
-### ExpenditureList Key Method
+#### ExpenditureList Key Method
 #### addExpenditure(String expenditure, Boolean userAdded)
 Takes in the string input by the user and splits it into the respective parts. "userAdded" checks if the method is called by
 the user or called when reading from a storage file.
@@ -90,17 +90,31 @@ the user or called when reading from a storage file.
 ### deleteExpenditure(int index)
 Takes in an index and deletes the respective expenditure from the expenditure list.
 
-### GPACommand: 
+
+
+### GPA Calculator
+The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
+of a user's updated GPA based on their current academic standing and projected module grades. 
+This guide will walk developers through the architecture, functionality, and core components of the module.
+
+------------------------------------------------------------------------------------------
+
+#### Overview
+The module is divided into two primary classes:
+
+------------------------------------------------------------------------------------------
+
+#### GPACommand: 
 Handles user interactions, input collection, and directs the flow of the GPA calculation process.
-### GPAMain: 
+#### GPAMain: 
 Contains the logic for calculating the updated GPA.
 
-## Class: GPACommand
+#### Class: GPACommand
 This class is responsible for interacting with the user, collecting inputs, 
 and managing the flow of the GPA calculation process. It operates within a loop, 
 allowing the user to perform multiple calculations or exit at any point.
 
-### GPACommand Key Methods
+#### GPACommand Key Methods
 #### processGPACommand(): 
 Orchestrates the overall process, including collecting user inputs and displaying the updated GPA.
 
@@ -117,18 +131,18 @@ Calls GPAMain.calculateNewGPA to compute the updated GPA based on inputs.
 Displays the calculated updated GPA to the user.
 
 
-## Class: GPAMain
+#### Class: GPAMain
 Contains the core logic for calculating the new GPA given the user's current GPA, 
 total accumulated credits, and details of modules being added.
 
-### Key Methods
+#### Key Methods
 #### calculateNewGPA()
 input: double currentGPA, int totalAccumulatedCredits, int numOfModules, int[] moduleCredits, String[] moduleGrades
 Calculates and returns the updated GPA.
 #### calculatePointsForGrade(String grade): 
 Translates a letter grade into its corresponding GPA points.
 
-### GPA Calculation Logic
+#### GPA Calculation Logic
 #### Total Points Calculation: 
 Calculates the total points achieved so far by multiplying the current GPA by the total accumulated credits.
 #### Add Points for New Modules: 
@@ -136,32 +150,12 @@ For each new module, add to the total points based on the grade and credits.
 #### Calculate Updated GPA: 
 Divide the total points by the new total credits (accumulated + new modules) to get the updated GPA.
 
+### Timetable Tracker
+
+### Motivational Quotes
+The Motivational module prints a randomly generated motivational quote for the user whenever the program starts
+
 ------------------------------------------------------------------------------------------
-## Sub-Classes
-
-## Class: ProcessCommand
-This class identifies the userinput type and passes the command into the relevant classes to exceute the command
-
-## Class: InvalidInputFormatException
-
-### InvalidInputFormatException()
-Throws an error message when the user enters an input that has the wrong format and the user will be informed about their wrong format
-
-### Usages 
-This exception is thrown in addExpenditure()
-
-## Class: Storage
-Handles reading from and writing to the expenditure file.
-
-### Key Methods
-#### createNewFile(): 
-Creates a new expenditure file if it doesn't exist.
-#### readExpenditureFile(): 
-Reads expenditure data from the file and returns an ExpenditureList object containing the data.
-#### processLine(String line): 
-Processes a line read from the file and extracts expenditure information.
-#### writeToFile(ExpenditureList expenses): 
-Writes expenditure data from an ExpenditureList object to the file.
 
 ## Development Notes
 Input Validation: Ensure that GPA scores and credit numbers are within valid ranges. This module expects a GPA between 0 and 5, and non-negative numbers for credits.
@@ -252,7 +246,9 @@ Given below are instructions on how to test the app manually.
 
    Expected: All commands and their format will be shown.
 
-### Adding expenditure
+### Expenditure Tracker
+
+#### Adding expenditure
 
 1. Prerequisites: NIL
 2. Test Case 1: `e/ add/ d/ shopping amt/ 128.00 date/ 31.03.2024`
@@ -263,7 +259,7 @@ Given below are instructions on how to test the app manually.
 
    Expected: A new expenditure with type MOVIE is added successfully.
 
-### View Expenditure
+#### View Expenditure
 
 1. Prerequisites: Added the 2 expenditure in [Adding Expenditure](#adding-expenditure)
 2. Test case 1: `e/ list/`
@@ -285,7 +281,7 @@ Given below are instructions on how to test the app manually.
    Expected: The expenditure list for type movie will be shown,
    at least 1 should be the spider-man tickets previously added.
 
-### Deleting expenditure
+#### Deleting expenditure
 
 1. Prerequisites: List all expenditure using `e/ list/`
 2. Test case 1: `e/ del/ 1`
@@ -297,7 +293,13 @@ Given below are instructions on how to test the app manually.
    Expected: The whole expenditure list should be cleared.
    No expenditure should be shown when `e/ list/` is entered.
 
-### Adding class
+### GPA Calculator
+
+
+
+### Timetable Tracker
+
+#### Adding class
 
 1. Prerequisites: NIL
 2. Test case 1: `tt/ add/ day/ 5 code/ cs2113 time/ 16 duration/ 2 location/ LT16`
@@ -308,7 +310,7 @@ Given below are instructions on how to test the app manually.
 
    Expected: Class is added successfully with the correct day, code, time, duration and location.
 
-### Viewing classes
+#### Viewing classes
 
 1. Prerequisites: Added the 2 classes in [Adding class](#adding-class)
 2. Test case 1: `tt/ list/`
@@ -321,14 +323,12 @@ Given below are instructions on how to test the app manually.
 
     Expected: Friday timetable should be shown with the cs2113 class shown for 16:00 and 17:00.
 
-### Deleting class
+#### Deleting class
 
 1. Prerequisites: List add classes using `tt/ list/`, there should be cs2113 class on friday.
 2. Test case 1: `tt/ del/ day/ 5 code/ cs2113`
 
    Expected: The cs2113 class on friday should be deleted. 
    No cs2113 class should be shown when `tt/ list -d/ 5` is entered.
-
-### GPA
 
 {Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}
