@@ -149,18 +149,10 @@ Viewing an expenditure in numerical form, in sequence of when they are added.
 Format: list
 Example: list
 
-**SequenceDiagram**
-
-
-
 #### Viewing expenditures by month:
 Viewing an expenditure in numerical form, filtered by month.
 Format: view -m MM.YYYY
 Example: view -m 01.2023
-
-**SequenceDiagram**
-
-
 
 #### View expenditure by year:
 Viewing an expenditure in numerical form, filtered by year.
@@ -169,17 +161,14 @@ Example: view -y 2023
 
 **SequenceDiagram**
 
-
+Use 1 diagram for all view expenditure
 
 #### Delete expenditure:
 Deleting an expenditure in numerical form, by referencing its index in the array.
 Format: e/ del/ INDEX
 Example: e/ del/ 3
 
-**SequenceDiagram**
-
 ![DeleteExpenditure.png](images/DeleteExpenditure.png)
-
 
 #### Class: Expenditure
 This class is responsible for processing expenditure related commands and storing all expenses input by the user
@@ -270,6 +259,9 @@ Each class object contains key attributes such as code, time, duration and locat
 
 **SequenceDiagram**
 
+
+
+#### View Class by day
 
 
 #### Delete Class
