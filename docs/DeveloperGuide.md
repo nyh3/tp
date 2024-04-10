@@ -149,6 +149,10 @@ Deleting an expenditure in numerical form, by referencing its index in the array
 Format: e/ del/ INDEX
 Example: e/ del/ 3
 
+**SequenceDiagram**
+
+![DeleteExpenditure.png](images/DeleteExpenditure.png)
+
 #### Viewing expenditures by month:
 Viewing an expenditure in numerical form, filtered by month.
 Format: view -m MM.YYYY
@@ -169,10 +173,6 @@ This class is responsible for processing expenditure related commands and storin
 #### addExpenditure(String expenditure, Boolean userAdded)
 Takes in the string input by the user and splits it into the respective parts. "userAdded" checks if the method is called by
 the user or called when reading from a storage file.
-
-### deleteExpenditure(int index)
-Takes in an index and deletes the respective expenditure from the expenditure list.
-
 
 
 ### GPA Calculator

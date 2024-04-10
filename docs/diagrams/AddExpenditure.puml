@@ -4,6 +4,7 @@
 autonumber
 participant "processCommand:ProcessCommand" as processCommand
 participant ":ExpenditureList" as expenditureList
+participant "expenditureList: ArrayList<>" as arrayList
 participant ":Expenditure" as expenditure
 
 [-> processCommand: userCommand(command, expenseList, timetableList)
@@ -39,12 +40,18 @@ activate expenditureList
 expenditureList --> expenditureList: boolean
 deactivate expenditureList
 
+expenditureList -> arrayList: add()
+activate arrayList
+
 create expenditure
-expenditureList -> expenditure: new Expenditure(description, type, amountValue, date)
+arrayList -> expenditure: new Expenditure(description, type, amountValue, date)
 activate expenditure
 
-expenditure --> expenditureList:
+arrayList <-- expenditure:
 deactivate expenditure
+
+arrayList --> expenditureList:
+deactivate arrayList
 
 expenditureList -> expenditureList: userAddedMessage(userAdded)
 activate expenditureList
