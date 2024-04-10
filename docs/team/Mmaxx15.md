@@ -13,5 +13,58 @@ and productivity.
 
 ### Features implemented
 **1. base structure for expenditure**
-**2. Motivational Quotes on program start-up**
-**3. Processing commands for expenditure**
+[#20](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/20)
+#### What it does:
+Allows the user to add expenses that they would like to track. User can input the description of their expenses, the amount and the date of purchase for comprehensive tracking.
+
+**2. Processing commands for expenditure**
+[#20](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/20)
+#### What it does:
+Splits the user command into individual components passes it to the corresponding methods to fulfill them.
+Also included a basic help function to guide users on how to input commands
+
+**3. Motivational Quotes on program start-up**
+[#49](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/49)
+#### What it does:
+Provides users with a randomly generated motivation quote whenever CantVas program begins
+
+**4. Timetable Feature**
+[#49](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/49)
+#### What it does:
+
+### Contributions to User Guide
+
+- Wrote Introduction to Motivational Quotes functionality. [#111](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/111)
+- Provided examples of how to use Expenditure tracker. [#116](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/116)
+
+### Contributions to Developer Guide
+- Wrote introduction to the Expenditure class and related methods. [#66](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/66) 
+- Wrote introduction to the Motivational Quotes class and related methods. [#65](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/65)
+
+### Contributions to team-based tasks
+
+- Manage the adding of due date and closing of milestones.
+  - Finalising and Closing of V2.0
+- Fit Java Coding Standards by refactoring into packages, removing magic numbers, adding JavaDocs, reducing nesting 
+  - [#218](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/218)
+    [#209](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/209)
+    [#115](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/115)
+    [#194](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/107)
+    [#73](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/73)
+
+- Fixed bugs in CantVas
+  - [#197](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/197)
+    [#194](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/194)
+    [#190](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/190)
+    [#180](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/180)
+    [#176](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/176)
+    [#170](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/170)
+    [#133](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/133) 
+    [#110](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/110)
+    [#51](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/51)
+  
+- JUNIT testing
+  - [#219](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/219)
+    [#88](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/88)
+    [#86](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/86)
+    [#85](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/85)
