@@ -69,3 +69,4 @@ Wrote Table of contents and appendix for Developer Guide and reorganized the str
 - Removed text-ui-test due to conflict with motivational quotes.
 [#53](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/53)
 - Uploaded V2.0 User Guide in pdf form to V2.0 release.
+- Contributed to JUNIT testing. [#91](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/91)
