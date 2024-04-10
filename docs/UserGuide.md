@@ -1,8 +1,8 @@
 # User Guide
 
-# Introduction
+## Introduction
 
-## Welcome to CantVas!
+### Welcome to CantVas!
 ![logo.png](images/logo.png)
 Congratulations on taking the first step towards smarter, more organized 
 student life! CantVas is your ultimate companion for managing your academic 
@@ -10,10 +10,10 @@ and financial responsibilities with ease. Designed with students in mind, our
 app offers a comprehensive suite of tools to help you stay on top of your 
 expenses, organize your timetable and track your grades.
 
-# Table of Contents
+## Table of Contents
 - [Introduction](#introduction)
 - [Quick Start](#quick-start)
-- [Features](#features-)
+- [Features](#features)
   - [Expenditure Tracker](#expenditure-tracker)
     - [Adding expenditure without type](#adding-expenditure-without-type)
     - [Adding expenditure with type](#adding-expenditure-with-type)
@@ -24,7 +24,9 @@ expenses, organize your timetable and track your grades.
     - [Delete all expenditure](#delete-all-expenditure)
     - [Delete expenditure by index](#delete-expenditure-by-index)
   - [GPA Calculator](#gpa-calculator)
-  - [Timetable](#timetable)
+    - [Method 1](#method-1-step-by-step-gpa-calculator)
+    - [Method 2](#method-2-calculation-of-gpa-by-modulelist)
+  - [Timetable](#timetable-tracker)
     - [Add class](#add-class)
     - [Delete class](#delete-class)
     - [View all class for the week](#view-all-class-for-the-week)
@@ -40,7 +42,7 @@ expenses, organize your timetable and track your grades.
 4. Open a command prompt in the same directory as the jar file.
 5. Run `java -jar CantVas.jar` to run the application.
 
-## Features 
+## Features
 CantVas includes the following 
 features:
 - Expenditure Tracker 
@@ -165,7 +167,7 @@ typing `del` to delete specific module or to delete the whole list.
 
 ![img_gpalist.png](images/illustration_gpalist.png)
 
-### Timetable
+### Timetable Tracker
 The timetable tracker allows you to store, view and delete classes you
 have entered for the current semester. Making it a good way to track what
 are the classes, where are the classes and the class durations from monday
