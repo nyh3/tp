@@ -38,6 +38,8 @@ public class UI {
         printLineBreak();
         gpaHelpMessage();
         printLineBreak();
+        gcIntroMessage();
+        printLineBreak();
     }
 
     private static void expenditureHelpMessage() {
@@ -78,6 +80,11 @@ public class UI {
                 + "\nTo end the program, type 'exit'\n");
     }
 
+    public static void gcIntroMessage() {
+        System.out.println("\nTo Use our Mathematical Graph Demo\n" +
+                "\nType `gc` in the main Screen to enter!");
+    }
+
     public static void gpaListHelpMessage() {
         System.out.println("\nGPA calculator by list help:\n"
                 + "\nTo calculate gpa of modules that you entered" +
@@ -87,6 +94,16 @@ public class UI {
                 "\nTo delete modules that you have entered, type 'del'\n" +
                 "\nTo view the Module List that you have input, type 'viewlist'\n" +
                 "\nTo view the available commands, type 'help'\n");
+    }
+
+
+    public static void gcHelpMessage() {
+        System.out.println("Mathematical Graph Demo help:\n" +
+                        "\nCurrently we have implemented 3 graphs for you to view! \n" +
+                        "\nTo view Graph of Y = X , type 'YX`.\n" +
+                        "\nTo view Graph of Y = log(X), type `YlogX`.\n" +
+                        "\nTo view Graph of Y = X^2, type `YXsq`.\n" +
+                        "\nTo exit the Graph Demo,type `exit`.\n");
     }
 
     public static void printExitMessage() {

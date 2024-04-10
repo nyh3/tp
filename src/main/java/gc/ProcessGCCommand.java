@@ -1,12 +1,14 @@
 package gc;
 
+import cantvasui.UI;
+
 import static seedu.duke.CantVasMain.ui;
 
 public class ProcessGCCommand {
 
     public boolean processGCCommand(String input) {
-        System.out.println("Welcome to the Mathematics Graphing Demo page!");
-
+        System.out.println("Welcome to the Mathematics Graph Demo page!\n");
+        UI.gcHelpMessage();
         while (true) {
             System.out.println("Please enter a command (or type 'exit' to return):");
             String command = ui.getUserCommand().trim().toLowerCase();
@@ -17,13 +19,15 @@ public class ProcessGCCommand {
             case "ylogx":
                 YlogX.main();
                 break;
+            case "yxsq":
+                YXsq.main();
+                break;
             case "exit":
                 System.out.println("Roger! Brining you back to the main window now. \n" +
                         "You can type 'help' again to view commands available!");
                 return true;
             case "help":
                 System.out.println("YX or YlogX");
-
                 break;
 
             default:
