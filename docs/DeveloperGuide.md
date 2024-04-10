@@ -9,7 +9,7 @@
   - [UI](#ui)
   - [ProcessCommand](#processcommand)
   - [Storage](#storage)
-  - [Exceptions](#invalidinputformatexception)
+  - [Exceptions](#exceptions)
 - [Implementation](#implementation)
   - [Expenditure Tracker](#expenditure-tracker)
   - [GPA Calculator](#gpa-calculator)
@@ -76,13 +76,24 @@ How `ProcessCommand` works:
 **API:** [`Storage.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/storage/Storage.java)
 
 How `Storage` works:
-1. 
+1. Saves expenditure list, timetable list and gpa list in its respective text file.
+   All text will be in a folder called data for easy location.
+2. When `ProcessCommand` receives the `exit` command, `Storage` writes expenditure and
+   timetable lists to their respective text file for saving.
+3. Reads in data from text file and process the data into strings to pass into
+   `addExpenditure`, `addModule` and `addClass` methods. 
+4. If a text file or the data directory is not found when trying to read,
+   `Storage` will create a new file/ directory and return an empty list to the caller.
+5. `PrintWriter` and `File` and `Scanner` classes are responsible 
+   for the writing, opening and reading from files respectively.
 
 #### Diagrams
 
 
 
-### InvalidInputFormatException
+### Exceptions
+
+**API:** [`InvalidInputFormatException.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/exceptions/InvalidInputFormatException.java)
 
 Throws an error message when the user enters an input that has the wrong format and the user will be informed about their wrong format
 
