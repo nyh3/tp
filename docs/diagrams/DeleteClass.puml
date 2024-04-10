@@ -1,0 +1,54 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant "processCommand:ProcessCommand" as processCommand
+participant ":TimetableParser" as timetableParser
+participant ":TimetableList" as timetableList
+participant ":Class" as class
+
+[-> processCommand: userCommand(command, expenseList, timetableList)
+activate processCommand
+
+processCommand -> timetableParser: parseTimetable(input)
+activate timetableParser
+
+timetableParser -> timetableList: deleteClass(details)
+activate timetableList
+
+timetableList -> timetableList: isValidDay(classDay)
+activate timetableList
+
+timetableList --> timetableList: boolean
+deactivate timetableList
+
+timetableList -> timetableList: isClassDeleted(classDay, classCode, classDeleted)
+activate timetableList
+
+timetableList -> class: getClassCode()
+activate class
+
+timetableList <-- class: classCode
+deactivate class
+
+timetableList -> class !! : deleted
+
+timetableList --> timetableList: classDeleted
+deactivate timetableList
+
+timetableList -> timetableList: classDeletedMessage(classDeleted)
+activate timetableList
+
+timetableList --> timetableList:
+deactivate timetableList
+
+timetableList --> timetableParser
+deactivate timetableList
+
+timetableParser --> processCommand
+deactivate timetableParser
+
+processCommand -->[: false
+deactivate processCommand
+
+@enduml

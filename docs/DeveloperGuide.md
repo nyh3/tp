@@ -242,13 +242,41 @@ Divide the total points by the new total credits (accumulated + new modules) to 
 
 ### Timetable Tracker
 
+The timetable tracker facilitates the management of class schedules. It aims to provide users with a 
+convenient way to organize and track their classes throughout the week. Users can add, delete, 
+and view classes based on specific days, enabling efficient scheduling and time management 
+enhancing the overall productivity and organization of users.
+
+The `TimetableParser` class is responsible for parsing commands related
+to timetable tracker and calling the respective methods in `timetableList`.
+
+The `timetableList` class is responsible for managing a collection of classes.
+It provides methods for adding, deleting and listing timetable.
+
+The `class` class represents individual class instance within the system.
+Each class object contains key attributes such as code, time, duration and location.
+
+**Class Diagram**
+
 
 
 #### Add Class
 
+**SequenceDiagram**
+
+![AddClass](images/AddClass.png)
+
 #### View Class
 
+**SequenceDiagram**
+
+
+
 #### Delete Class
+
+**SequenceDiagram**
+
+![DeleteClass](images/DeleteClass.png)
 
 ### Motivational Quotes
 The Motivational module prints a randomly generated motivational quote for the user whenever the program starts
