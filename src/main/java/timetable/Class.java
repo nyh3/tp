@@ -1,13 +1,13 @@
 package timetable;
 
-public class Days {
+public class Class {
 
     protected String classCode;
     protected int classTime;
     protected int classDuration;
     protected String classLocation;
 
-    public Days(String classCode, int classTime, int classDuration, String classLocation) {
+    public Class(String classCode, int classTime, int classDuration, String classLocation) {
         this.classCode = classCode;
         this.classTime = classTime;
         this.classDuration = classDuration;

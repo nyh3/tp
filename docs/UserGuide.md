@@ -4,11 +4,14 @@
 
 ### Welcome to CantVas!
 ![logo.png](images/logo.png)
+
 Congratulations on taking the first step towards smarter, more organized 
 student life! CantVas is your ultimate companion for managing your academic 
 and financial responsibilities with ease. Designed with students in mind, our 
 app offers a comprehensive suite of tools to help you stay on top of your 
 expenses, organize your timetable and track your grades.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Table of Contents
 - [Introduction](#introduction)
@@ -29,12 +32,14 @@ expenses, organize your timetable and track your grades.
   - [Math Graph Demo](#mathematical-graph-demo)
   - [Timetable](#timetable-tracker)
     - [Add class](#add-class)
-    - [Delete class](#delete-class)
     - [View all class for the week](#view-all-class-for-the-week)
     - [View class for the day](#view-class-for-the-day)
+    - [Delete class](#delete-class)
   - [Motivational Quotes](#daily-motivational-quotes)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Quick Start
 1. Ensure you have `Java-11` or above installed on your computer.
@@ -42,6 +47,8 @@ expenses, organize your timetable and track your grades.
 3. Copy the jar file to your desired folder.
 4. Open a command prompt in the same directory as the jar file.
 5. Run `java -jar CantVas.jar` to run the application.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Features
 CantVas includes the following 
@@ -213,11 +220,7 @@ The features include:
 that cut across midnight. Hence `24` is not an accepted value.
 > 
 >`duration` refers to how long the class lasts. For example, if a class lasts for 3
-> hours, the duration input will be `3`. 
-
-#### Delete class
-- Deleting saved classes. To do so, key in with the following format: `tt/ del/ day/ 
-  <day> code/ <code>`. Example: `tt/ del/ day/ 3 code/ cs2113`.
+> hours, the duration input will be `3`.
 
 #### View all class for the week
 - Viewing saved classes according the days in the week, arranged in ascending order of
@@ -227,6 +230,10 @@ that cut across midnight. Hence `24` is not an accepted value.
 - To view classes for the specific day of the week key in the following:
   `tt/ list -d/ <day>`
 
+#### Delete class
+- Deleting saved classes. To do so, key in with the following format: `tt/ del/ day/
+  <day> code/ <code>`. Example: `tt/ del/ day/ 3 code/ cs2113`.
+
 ### Daily Motivational Quotes
 Feeling Down? Dread looking at your packed timetable?
 CantVas is here to save your day and uplift your spirits whenever you need it most
@@ -234,6 +241,8 @@ CantVas is here to save your day and uplift your spirits whenever you need it mo
 
 Everytime you start CantVas, we will provide you with a motivational quote to give 
 you energy and encouragement to get through your day!
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## FAQ
 
@@ -265,6 +274,8 @@ CG2023 from 1pm on monday at E4-03-07 and a 2-hour EE2026 from 9am on monday at 
 Take note that each hour is listed out as an individual row. Hence, for any classes lasting more than an
 hour, there will be more than one rows for such classes. But each row will have `total hours -1` value
 for the duration.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
 - For addition of expenditure without type: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.

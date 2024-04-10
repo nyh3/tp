@@ -1,0 +1,71 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant "processCommand:ProcessCommand" as processCommand
+participant ":ExpenditureList" as expenditureList
+participant "expenditureList: ArrayList<>" as arrayList
+participant ":Expenditure" as expenditure
+
+[-> processCommand: userCommand(command, expenseList, timetableList)
+activate processCommand
+
+processCommand -> processCommand: processExpenditureUserCommand(input)
+activate processCommand
+
+processCommand -> expenditureList: addExpenditure(actionDetails, true)
+activate expenditureList
+
+expenditureList -> expenditureList: isValidDate(date)
+activate expenditureList
+
+expenditureList --> expenditureList: boolean
+deactivate expenditureList
+
+expenditureList -> expenditureList: isValidAmount(amountValue)
+activate expenditureList
+
+expenditureList --> expenditureList: boolean
+deactivate expenditureList
+
+expenditureList -> expenditureList: isValidType(type)
+activate expenditureList
+
+expenditureList --> expenditureList: boolean
+deactivate expenditureList
+
+expenditureList -> expenditureList: isValidDescription(description)
+activate expenditureList
+
+expenditureList --> expenditureList: boolean
+deactivate expenditureList
+
+expenditureList -> arrayList: add()
+activate arrayList
+
+create expenditure
+arrayList -> expenditure: new Expenditure(description, type, amountValue, date)
+activate expenditure
+
+arrayList <-- expenditure:
+deactivate expenditure
+
+arrayList --> expenditureList:
+deactivate arrayList
+
+expenditureList -> expenditureList: userAddedMessage(userAdded)
+activate expenditureList
+
+expenditureList --> expenditureList:
+deactivate expenditureList
+
+expenditureList --> processCommand:
+deactivate expenditureList
+
+processCommand --> processCommand:
+deactivate processCommand
+
+[<-- processCommand: false
+deactivate processCommand
+
+@enduml
