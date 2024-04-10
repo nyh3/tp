@@ -4,6 +4,7 @@
 
 ### Welcome to CantVas!
 ![logo.png](images/logo.png)
+
 Congratulations on taking the first step towards smarter, more organized 
 student life! CantVas is your ultimate companion for managing your academic 
 and financial responsibilities with ease. Designed with students in mind, our 
