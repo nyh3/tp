@@ -11,6 +11,8 @@ and financial responsibilities with ease. Designed with students in mind, our
 app offers a comprehensive suite of tools to help you stay on top of your 
 expenses, organize your timetable and track your grades.
 
+--------------------------------------------------------------------------------------------------------------------
+
 ## Table of Contents
 - [Introduction](#introduction)
 - [Quick Start](#quick-start)
@@ -36,12 +38,16 @@ expenses, organize your timetable and track your grades.
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
 
+--------------------------------------------------------------------------------------------------------------------
+
 ## Quick Start
 1. Ensure you have `Java-11` or above installed on your computer.
 2. Download the latest version of `CantVas` from [here](https://github.com/AY2324S2-CS2113-W13-3/tp/releases).
 3. Copy the jar file to your desired folder.
 4. Open a command prompt in the same directory as the jar file.
 5. Run `java -jar CantVas.jar` to run the application.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Features
 CantVas includes the following 
@@ -214,6 +220,8 @@ CantVas is here to save your day and uplift your spirits whenever you need it mo
 Everytime you start CantVas, we will provide you with a motivational quote to give 
 you energy and encouragement to get through your day!
 
+--------------------------------------------------------------------------------------------------------------------
+
 ## FAQ
 
 **Q**: What if I key in the wrong expenditure or timetable class?
@@ -244,6 +252,8 @@ CG2023 from 1pm on monday at E4-03-07 and a 2-hour EE2026 from 9am on monday at 
 Take note that each hour is listed out as an individual row. Hence, for any classes lasting more than an
 hour, there will be more than one rows for such classes. But each row will have `total hours -1` value
 for the duration.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
 - For addition of expenditure without type: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.
