@@ -26,6 +26,7 @@ expenses, organize your timetable and track your grades.
   - [GPA Calculator](#gpa-calculator)
     - [Method 1](#method-1-step-by-step-gpa-calculator)
     - [Method 2](#method-2-calculation-of-gpa-by-modulelist)
+  - [Math Graph Demo](#mathematical-graph-demo)
   - [Timetable](#timetable-tracker)
     - [Add class](#add-class)
     - [Delete class](#delete-class)
@@ -166,6 +167,27 @@ typing `del` to delete specific module or to delete the whole list.
 > `exit` : Go back to the previous page.
 
 ![img_gpalist.png](images/illustration_gpalist.png)
+
+### Mathematical Graph Demo
+To fulfill students' requirement of knowing how mathematical equations are like in graphical form.
+We have implemented a function named `GC` . 
+
+To enter our graph demo, you can simply by typing `GC` in the main window.
+After which you will be brought to the Graph Demo Page.
+
+We have implemented 3 graphs so far.
+Namely: 
+>Y = X 
+> 
+> Y = log(X)
+> 
+> Y = X ^2
+
+You can select  which graph you would like to see by typing  `YX` or `YXsq` or `YlogX` 
+to view them in the pop-up window.
+
+![gcdemo.png](images/gcdemo.png)
+
 
 ### Timetable Tracker
 The timetable tracker allows you to store, view and delete classes you
