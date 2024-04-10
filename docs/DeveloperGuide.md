@@ -2,6 +2,8 @@
 
 ![logo.png](images/logo.png)
 
+--------------------------------------------------------------------------------------------------------------------
+
 ## Table of Contents
 
 - [Acknowledgements](#acknowledgements)
@@ -27,6 +29,8 @@
     - [GPA Calculator](#gpa-calculator-1)
     - [Timetable Tracker](#timetable-tracker-1)
 
+--------------------------------------------------------------------------------------------------------------------
+
 ## Acknowledgements
 
 We referenced [AddressBook_Level3](https://github.com/se-edu/addressbook-level3) by using their 
@@ -34,6 +38,8 @@ We referenced [AddressBook_Level3](https://github.com/se-edu/addressbook-level3)
 [Developer Guide](https://github.com/se-edu/addressbook-level3/blob/master/docs/DeveloperGuide.md) to help us structure our own documents.
 
 We used [PlantUML integration](https://plantuml.com/starting) plugin to help us create our diagrams.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Design
 
@@ -103,6 +109,8 @@ How `Exceptions` work:
 #### Diagrams
 
 
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Implementation
 
@@ -225,6 +233,8 @@ GUI Integration: Consider developing a graphical user interface for easier input
 Persistent Data: Implement functionality to save and retrieve historical GPA calculations.
 
 Expanded Grade Scale: Allow for customization of the grade to GPA points mapping to accommodate different institutions' grading scales.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ## Appendix
 
