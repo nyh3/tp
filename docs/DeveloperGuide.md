@@ -322,11 +322,14 @@ Each class object contains key attributes such as code, time, duration and locat
 
 #### View Class
 
+View classes in order of day and time.
+
 **SequenceDiagram**
-
-
+![ViewTimeTable](diagrams/sequencediagram/ViewTimeTable.png)
 
 #### View Class by day
+
+
 
 
 #### Delete Class
