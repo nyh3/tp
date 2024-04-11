@@ -1,0 +1,47 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autoactivate on
+participant "CantVasMain" as CantVasMain
+participant "UI" as UI
+participant "MotivationalQuotes" as MotivationalQuotes
+
+activate CantVasMain
+
+CantVasMain -> CantVasMain: run()
+activate CantVasMain
+
+CantVasMain -> UI: printLogo()
+return ASCII logo
+
+
+CantVasMain -> UI: printMotivationQuote()
+activate UI
+
+UI -> MotivationalQuotes: getQuote()
+activate MotivationalQuotes
+UI <-- MotivationalQuotes: randomised motivational quote
+destroy MotivationalQuotes
+
+deactivate UI
+
+CantVasMain <-- UI: prints Motivational Quote
+
+CantVasMain -> UI: printHelpMessage()
+activate UI
+UI -> UI:expenditureHelpMessage()
+return expenditure help messages
+UI -> UI:timetableHelpMessage()
+return Timetable help messages
+UI -> UI:gpaHelpMessage()
+return GPA help messages
+UI -> UI:gcIntroMessage()
+return GC Intro help messages
+CantVasMain <-- UI: prints Help Message
+
+deactivate UI
+
+
+
+
+@enduml
