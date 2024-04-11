@@ -1,0 +1,45 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+
+autonumber
+participant "processCommand:ProcessCommand" as processCommand
+participant ":ExpenditureList" as expenditureList
+participant ":Expenditure" as expenditure
+
+[-> processCommand: userCommand(command, expenseList, timetableList)
+activate processCommand
+
+processCommand -> processCommand: processExpenditureUserCommand(input)
+activate processCommand
+
+processCommand -> expenditureList: listExpenditure()
+activate expenditureList
+activate expenditure
+
+alt list is empty
+    expenditureList -> expenditureList: isEmpty()
+    processCommand <- expenditureList
+else list is not empty
+    expenditureList -> expenditureList: size();
+    loop size() times
+    expenditureList -> expenditureList: get(index)
+    expenditureList -> expenditure: getDescription()
+    expenditureList <-- expenditure: dExpenditure description
+    expenditureList -> expenditure: getType()
+    expenditureList <-- expenditure: Expenditure type
+    expenditureList -> expenditure: getAmount()
+    expenditureList <-- expenditure: Expenditure amount
+    expenditureList -> expenditure: getDate()
+    expenditureList <-- expenditure: Expenditure date
+    end
+    processCommand <- expenditureList: String of individual and total expenditures
+end
+
+
+
+[<-- processCommand: false
+deactivate processCommand
+
+@enduml
