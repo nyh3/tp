@@ -1,0 +1,33 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant "User" as user
+participant "TimetableList" as timetableList
+
+user -> timetableList: listTimetableByOrderOfDays()
+activate timetableList
+
+loop day in NUM_DAYS
+    timetableList -> timetableList: printDay(day)
+    activate timetableList
+
+    loop hour in HOURS_PER_DAY
+        timetableList -> timetableList: getClassAtTime(day, hour)
+        activate timetableList
+        timetableList --> timetableList: classAtTime
+        deactivate timetableList
+
+        alt classAtTime is not null
+            timetableList -> user: print(classAtTime)
+        else
+            timetableList -> user: print("No classes scheduled.")
+        end
+    end loop
+
+    timetableList --> user: printNewLine()
+end loop
+
+deactivate timetableList
+
+@enduml
