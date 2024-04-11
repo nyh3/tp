@@ -153,25 +153,33 @@ Viewing an expenditure in numerical form, in sequence of when they are added.
 Format: list
 Example: list
 
+**SequenceDiagram**
+![ViewExpenditure.png](images/sequenceimage/ListExpenditure.png)
+
 #### Viewing expenditures by month:
 Viewing an expenditure in numerical form, filtered by month.
-Format: view -m MM.YYYY
-Example: view -m 01.2023
+Format: e/ view/ m/ MM.YYYY
+Example: e/ view/ m/ 01.2023
 
 #### View expenditure by year:
 Viewing an expenditure in numerical form, filtered by year.
-Format: view -y YEAR
-Example: view -y 2023
+Format: e/ view/ y/ YEAR
+Example: e/ view/ y/ 2023
+
+#### View expenditure by type:
+Viewing an expenditure in numerical form, filtered by type.
+Format: e/ view/ t/ TYPE
+Example: e/ view/ t/ food
 
 **SequenceDiagram**
-
-Use 1 diagram for all view expenditure
+![ViewExpenditure.png](images/sequenceimage/ViewExpenditure.png)
 
 #### Delete expenditure:
 Deleting an expenditure in numerical form, by referencing its index in the array.
 Format: e/ del/ INDEX
 Example: e/ del/ 3
 
+**SequenceDiagram**
 ![DeleteExpenditure.png](images/sequenceimage/DeleteExpenditure.png)
 
 #### Class: Expenditure
