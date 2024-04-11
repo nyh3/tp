@@ -7,7 +7,7 @@ skinparam classAttributeIconSize 0
 package cantvasui {
     class UI {
         - in: Scanner
-        + getUserCommand()
+        + getUserCommand(): String
         + {static} printLogo()
         + {static} printHelpMessage()
         + {static} gcIntroMessage()

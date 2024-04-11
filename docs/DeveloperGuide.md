@@ -295,7 +295,7 @@ Each class object contains key attributes such as code, time, duration and locat
 
 **Class Diagram**
 
-
+![TimetableClassDiagram](images/classimage/Timetable.png)
 
 #### Add Class
 
