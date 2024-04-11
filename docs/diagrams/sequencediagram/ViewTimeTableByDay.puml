@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant "User" as user
+participant "TimetableList" as timetableList
+participant "UI" as ui
+
+user -> timetableList: listByDay(day)
+activate timetableList
+
+timetableList -> timetableList: isValidDay(classDay)
+activate timetableList
+timetableList --> timetableList: isValid
+deactivate timetableList
+
+alt isValid is true and classCountDay[classDay - 1] > 0
+    timetableList -> user: print(daysOfWeek[classDay - 1])
+    timetableList -> ui: printTimetableByDay(timetable[classDay - 1])
+    activate ui
+    ui --> timetableList
+    deactivate ui
+else isValid is true and classCountDay[classDay - 1] == 0
+    timetableList -> user: print("No class on that day.")
+else isValid is false
+    timetableList -> user: print("Invalid day.")
+end
+
+deactivate timetableList
+
+@enduml
