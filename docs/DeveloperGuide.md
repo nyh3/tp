@@ -15,7 +15,7 @@
 - [Implementation](#implementation)
   - [Expenditure Tracker](#expenditure-tracker)
   - [GPA Calculator](#gpa-calculator)
-  - [Graph Demo](#graph-demo)
+  - [Mathematical Graph Demo](#mathematical-graph-demo)
   - [Timetable Tracker](#timetable-tracker)
   - [Motivational Quotes](#motivational-quotes)
 - [Appendix](#appendix)
@@ -60,7 +60,7 @@ How `UI` works:
 
 *Class Diagram*
 
-![UIClassDiagram](images/classimage/UI.png)
+![UIClassDiagram](diagrams/classdiagram/UICD.png)
 
 ### ProcessCommand
 
@@ -163,7 +163,7 @@ Example: add n/3.22 d/31.01.2024
 
 **SequenceDiagram**
 
-![AddExpenditure.png](images/sequenceimage/AddExpenditure.png)
+![AddExpenditure.png](diagrams/sequencediagram/AddExpenditure.png)
 
 #### Viewing expenditures:
 Viewing an expenditure in numerical form, in sequence of when they are added.
@@ -171,7 +171,7 @@ Format: list
 Example: list
 
 **SequenceDiagram**
-![ViewExpenditure.png](images/sequenceimage/ListExpenditure.png)
+![ViewExpenditure.png](diagrams/sequencediagram/ListExpenditure.png)
 
 #### Viewing expenditures by month:
 Viewing an expenditure in numerical form, filtered by month.
@@ -189,7 +189,7 @@ Format: e/ view/ t/ TYPE
 Example: e/ view/ t/ food
 
 **SequenceDiagram**
-![ViewExpenditure.png](images/sequenceimage/ViewExpenditure.png)
+![ViewExpenditure.png](diagrams/sequencediagram/ViewExpenditure.png)
 
 #### Delete expenditure:
 Deleting an expenditure in numerical form, by referencing its index in the array.
@@ -197,21 +197,17 @@ Format: e/ del/ INDEX
 Example: e/ del/ 3
 
 **SequenceDiagram**
-![DeleteExpenditure.png](images/sequenceimage/DeleteExpenditure.png)
+![DeleteExpenditure.png](diagrams/sequencediagram/DeleteExpenditure.png)
 
 ------------------------------------------------------------------------------------------
-
 
 ### GPA Calculator
 The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
 of a user's updated GPA based on their current academic standing and projected module grades.
 This guide will walk developers through the architecture, functionality, and core components of the module.
 
-
-
 #### Overview
 The module is divided into 5 classes dealing with 2 different calculation methods.
-
 
 #### Module
 Handles user input of module information: module name, module weightage and module grade.
@@ -290,9 +286,11 @@ For each new module, add to the total points based on the grade and credits.
 Divide the total points by the new total credits (accumulated + new modules) to get the updated GPA.
 
 ------------------------------------------------------------------------------------------
-### Graph Demo
+
+### Mathematical Graph Demo
 
 #### Overview
+
 The Graph Demo function uses JPanel , which is a simple GUI tool in javax.swing package.
 With pre-written formula and defined size of parameters, therefore we can demonstrate the 
 mathematical formula with illustration.
@@ -317,19 +315,20 @@ Each class object contains key attributes such as code, time, duration and locat
 
 **Class Diagram**
 
-![TimetableClassDiagram](images/classimage/Timetable.png)
+![TimetableClassDiagram](diagrams/classdiagram/TimetableCD.png)
 
 #### Add Class
 
 **SequenceDiagram**
 
-![AddClass](images/sequenceimage/AddClass.png)
+![AddClass](diagrams/sequencediagram/AddClass.png)
 
 #### List Class
 
 View classes in order of day and time.
 
 **SequenceDiagram**
+
 ![ViewTimeTable](diagrams/sequencediagram/ViewTimeTable.png)
 
 #### List Class by day
@@ -337,13 +336,16 @@ View classes in order of day and time.
 View classes for a specific day.
 
 **SequenceDiagram**
+
 ![ViewDay](diagrams/sequencediagram/ViewTimeTableByDay.png)
 
 #### Delete Class
 
 **SequenceDiagram**
 
-![DeleteClass](images/sequenceimage/DeleteClass.png)
+![DeleteClass](diagrams/sequencediagram/DeleteClass.png)
+
+------------------------------------------------------------------------------------------
 
 ### Motivational Quotes
 The Motivational module prints a randomly generated motivational quote for the user whenever the program starts

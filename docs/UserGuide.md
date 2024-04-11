@@ -3,6 +3,7 @@
 ## Introduction
 
 ### Welcome to CantVas!
+
 ![logo.png](images/logo.png)
 
 Congratulations on taking the first step towards smarter, more organized 
@@ -58,6 +59,8 @@ features:
 - Timetable Tracker
 - Daily Motivational Quotes
 
+--------------------------------------------------------------------------------------------------------------------
+
 ### Expenditure Tracker
 The expenditure tracker allows you to store, view, delete and filter the 
 expenditures you have entered. Making it a good way to track your 
@@ -108,6 +111,8 @@ The features include:
 #### Delete expenditure by index
 - Deleting saved expenditures. To do so, key in with the following format:
   `e/ del/ <index>`. Example: `e/ del/ 2`.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ### GPA Calculator
 The GPA calculator allows you to calculate your GPA, based on your previous GPA
@@ -175,6 +180,8 @@ typing `del` to delete specific module or to delete the whole list.
 
 ![img_gpalist.png](images/illustration_gpalist.png)
 
+--------------------------------------------------------------------------------------------------------------------
+
 ### Mathematical Graph Demo
 To fulfill students' requirement of knowing how mathematical equations are like in graphical form.
 We have implemented a function named `GC` . 
@@ -195,6 +202,7 @@ to view them in the pop-up window.
 
 ![gcdemo.png](images/gcdemo.png)
 
+--------------------------------------------------------------------------------------------------------------------
 
 ### Timetable Tracker
 The timetable tracker allows you to store, view and delete classes you
@@ -233,6 +241,8 @@ that cut across midnight. Hence `24` is not an accepted value.
 #### Delete class
 - Deleting saved classes. To do so, key in with the following format: `tt/ del/ day/
   <day> code/ <code>`. Example: `tt/ del/ day/ 3 code/ cs2113`.
+
+--------------------------------------------------------------------------------------------------------------------
 
 ### Daily Motivational Quotes
 Feeling Down? Dread looking at your packed timetable?
@@ -290,7 +300,7 @@ for the duration.
 | Delete expenditure by index  | `e/ del/ <index>`                                                                            |
 | GPA calculator method 1      | `gpa`                                                                                        |
 | GPA calculator method 2      | `gpalist`                                                                                    |
-| GC demo                      | `gc`                                                                                         |
+| Mathematical Graph Demo      | `gc`                                                                                         |
 | Add class                    | `tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location>` |
 | List all class for the week  | `tt/ list/`                                                                                  |
 | List class for the day       | `tt/ list -d/ <day>`                                                                         |
