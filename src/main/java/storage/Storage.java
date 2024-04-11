@@ -25,16 +25,12 @@ public class Storage {
      */
     static void createNewFile(String type) {
         File file = null;
-        switch (type) {
-        case "expenditure":
+        if (type.equals("expenditure")) {
             file = new File(EXPENDITURE_FILE_PATH);
-            break;
-        case "timetable":
+        } else if (type.equals("timetable")){
             file = new File(TIMETABLE_FILE_PATH);
-            break;
-        case "gpa":
+        } else if (type.equals("gpa")){
             file = new File(GPA_FILE_PATH);
-            break;
         }
         assert file != null;
         File directory = new File(file.getParent());

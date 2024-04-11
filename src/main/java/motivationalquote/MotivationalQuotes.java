@@ -44,8 +44,9 @@ public class MotivationalQuotes {
     };
 
     /**
+     * Retrieves a randomly selected motivational quote from the MOTIVATIONALQUOTELIST array.
      *
-     * @return a randomly generated index from the MOTIVATIONALQUOTELIST array
+     * @return A randomly selected motivational quote.
      */
     public static String getQuote() {
         Random rand = new Random();
