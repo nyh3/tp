@@ -47,8 +47,6 @@ We used [PlantUML webpage](https://plantuml.com/) to understand PlantUML syntax
 
 The sequence diagrams for our main class, CantVasMain and its interactions with
 other classes.
-![img.png](images/img.png)
-![img_1.png](images/img_1.png)
 
 ### UI
 
@@ -59,11 +57,33 @@ How `UI` works:
 2. Prints an output based on user input. 
 3. Reads in user input for steps in GPA calculator.
 
-**Diagrams**
-
 *Class Diagram*
 
 ![UIClassDiagram](images/classimage/UI.png)
+
+### Expenditure
+
+**API:** 
+[`Expenditure.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/expenditure/Expenditure.java)
+
+How `Expenditure` works:
+1. When a new expenditure is added, ExpenditureList.java creates a new 
+   Expenditure object with the provided details and adds it to the expenditureList.
+2. When an expenditure is deleted, ExpenditureList.java removes the Expenditure object 
+   at the specified index from the expenditureList.
+3. When expenditures are listed, ExpenditureList.java iterates over the expenditureList 
+   and calls the toString() method of each Expenditure object to get a string representation 
+   of the expenditure.
+4. When expenditures are listed by month, year, or type, ExpenditureList.java filters the 
+   expenditureList based on the specified criteria and returns a new list of Expenditure 
+   objects that match the criteria.
+5. The isValidDate(), isValidMonth(), isValidAmount(), isValidType(), and isValidDescription() 
+   methods in ExpenditureList.java are used to validate the details of an expenditure before it 
+   is added to the expenditureList.
+
+*Class Diagram*
+
+![Expenditure](diagrams/classdiagram/Expenditure.png)
 
 ### ProcessCommand
 
@@ -485,8 +505,6 @@ Given below are instructions on how to test the app manually.
    No expenditure should be shown when `e/ list/` is entered.
 
 ### GPA Calculator
-
-
 
 ### Timetable Tracker
 
