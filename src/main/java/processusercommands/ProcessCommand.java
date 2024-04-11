@@ -6,7 +6,6 @@ import storage.Storage;
 import gpa.GPACommand;
 import gc.ProcessGCCommand;
 import gpa.ProcessListCommand;
-import timetable.TimetableList;
 
 public class ProcessCommand {
 

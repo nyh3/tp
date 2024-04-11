@@ -50,7 +50,8 @@ public class ProcessCommandTest {
         // completely wrong input
         processCommand.userCommand("/e add/ d/ Lunch amt/Food t/10.12 date02.02.2023", expenditureList);
         assertEquals(0, ExpenditureList.expenditureCount);
-        assertEquals("Unknown command. Please try again! Type 'help' for more information!", outContent.toString().trim());
+        assertEquals("Unknown command. Please try again! Type " +
+                "'help' for more information!", outContent.toString().trim());
         outContent.reset();
     }
 
