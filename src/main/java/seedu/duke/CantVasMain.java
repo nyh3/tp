@@ -32,7 +32,7 @@ public class CantVasMain {
         boolean exit;
         do {
             String command = ui.getUserCommand();
-            exit = processCommand.userCommand(command, expenseList, timetableList);
+            exit = processCommand.userCommand(command, expenseList);
         } while (!exit);
     }
 
