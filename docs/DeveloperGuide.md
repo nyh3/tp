@@ -104,7 +104,9 @@ How `Storage` works:
 
 **Diagrams**
 
+*Class Diagram*
 
+![StorageClassDiagram](diagrams/classdiagram/StorageCD.png)
 
 ### Exceptions
 

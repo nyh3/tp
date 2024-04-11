@@ -23,7 +23,7 @@ public class Storage {
      *
      * @param type The type of file to create ("expenditure", "timetable", or "gpa")
      */
-    static void createNewFile(String type) {
+    public static void createNewFile(String type) {
         File file = null;
         if (type.equals("expenditure")) {
             file = new File(EXPENDITURE_FILE_PATH);

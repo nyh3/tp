@@ -17,7 +17,7 @@ activate ui
 ui --> cantVasMain: command
 deactivate ui
 
-cantVasMain -> processCommand: userCommand(command, expenseList, timetableList)
+cantVasMain -> processCommand: userCommand(command, expenseList)
 activate processCommand
 
 alt gpastep

@@ -18,7 +18,7 @@ package processusercommands {
     class ProcessCommand {
         + processExpenditureUserCommand(command: String)
         + processViewUserCommand(command: String)
-        + userCommand)input: String, expenses: ExpenditureList, timetable: TimetableList): boolean
+        + userCommand)input: String, expenses: ExpenditureList): boolean
     }
 
     class TimetableParser {
@@ -30,8 +30,8 @@ class ProcessGCCommand {
     + processGCCommand(input: String): boolean
 }
 
-ProcessCommand ..> TimetableParser: uses
-ProcessCommand ..> GPACommand: uses
-ProcessCommand ..> ProcessGCCommand: uses
-ProcessCommand ..> ProcessListCommand: uses
+ProcessCommand ..> TimetableParser: uses >
+ProcessCommand ..> GPACommand: uses >
+ProcessCommand ..> ProcessGCCommand: uses >
+ProcessCommand ..> ProcessListCommand: uses >
 @enduml
