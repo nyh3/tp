@@ -18,14 +18,23 @@ public class Storage {
     private static final String TIMETABLE_FILE_PATH = "./data/timetable.txt";
     private static final String GPA_FILE_PATH = "./data/gpa.txt";
 
+    /**
+     * Creates a new file of the specified type if it does not exist.
+     *
+     * @param type The type of file to create ("expenditure", "timetable", or "gpa")
+     */
     static void createNewFile(String type) {
         File file = null;
-        if (type.equals("expenditure")) {
+        switch (type) {
+        case "expenditure":
             file = new File(EXPENDITURE_FILE_PATH);
-        } else if (type.equals("timetable")){
+            break;
+        case "timetable":
             file = new File(TIMETABLE_FILE_PATH);
-        } else if (type.equals("gpa")){
+            break;
+        case "gpa":
             file = new File(GPA_FILE_PATH);
+            break;
         }
         assert file != null;
         File directory = new File(file.getParent());
@@ -37,6 +46,13 @@ public class Storage {
         assert directory.exists();
     }
 
+    /**
+     * Creates a directory and a new file if they do not exist.
+     *
+     * @param directory The directory in which the file should be created.
+     * @param file      The file to create.
+     * @throws IOException If an I/O error occurs while creating the directory or file.
+     */
     private static void createDirectoryAndFile(File directory, File file) throws IOException {
         if (!directory.exists()) {
             if (!directory.mkdirs()) {
@@ -48,6 +64,11 @@ public class Storage {
         }
     }
 
+    /**
+     * Reads expenditure data from the expenditure file in startup and returns an ExpenditureList object.
+     *
+     * @return The ExpenditureList object containing the read expenditure data.
+     */
     public static ExpenditureList readExpenditureFile() {
         ExpenditureList expenses = new ExpenditureList();
         File file = new File(EXPENDITURE_FILE_PATH);
@@ -68,6 +89,12 @@ public class Storage {
         }
         return expenses;
     }
+
+    /**
+     * Reads GPA data from the GPA file in startup and returns a ModuleList object.
+     *
+     * @return The ModuleList object containing the read GPA data.
+     */
     public static ModuleList readGPAFile() {
         ModuleList modules = new ModuleList();
         File file = new File(GPA_FILE_PATH);
@@ -90,6 +117,11 @@ public class Storage {
         return modules;
     }
 
+    /**
+     * Reads timetable data from the timetable file and returns a TimetableList object.
+     *
+     * @return The TimetableList object containing the read timetable data.
+     */
     public static TimetableList readTimetableFile() {
         TimetableList timetable = new TimetableList();
         File file = new File(TIMETABLE_FILE_PATH);
@@ -111,11 +143,25 @@ public class Storage {
         return timetable;
     }
 
+    /**
+     * Processes a line of expenditure data and returns the formatted expenditure string.
+     * to be added into the array when loading from data file
+     *
+     * @param line The line of expenditure data to process.
+     * @return The formatted expenditure string.
+     */
     private static String processExpenditure(String line) {
         String[] parts = line.split("\\|");
         return ("d/" + parts[0] + "t/" + parts[1] + "amt/" + parts[2] + "date/" + parts[3]);
     }
 
+    /**
+     * Processes a line of GPA data and returns the corresponding Module object.
+     * to be added into the array when loading from data file
+     *
+     * @param line The line of GPA data to process.
+     * @return The Module object representing the GPA data.
+     */
     private static Module processModule(String line) {
         String[] parts = line.split("\\|");
         if (parts.length >= 3) {
@@ -131,13 +177,26 @@ public class Storage {
         }
         return null;
     }
+
+    /**
+     * Processes a line of timetable data and returns the formatted timetable string.
+     * to be added into the array when loading from data file
+     *
+     * @param line The line of timetable data to process.
+     * @return The formatted timetable string.
+     */
     private static String processTimetable(String line) {
         String[] parts = line.split("\\|");
         return ("day/" + parts[0] + "code/" + parts[1] +
                 "time/" + parts[2] + "duration/" + parts[3] + "location/" + parts[4]);
     }
 
-    public static void writeToFile(ExpenditureList expenses) {
+    /**
+     * Writes expenditure data to the expenditure file.
+     *
+     * @param expenses The ExpenditureList object containing the expenditure data to write.
+     */
+    public static void writeExpenditureToFile(ExpenditureList expenses) {
         try {
             PrintWriter fw = new PrintWriter(EXPENDITURE_FILE_PATH);
             for (int i = 0; i < ExpenditureList.expenditureCount; i++) {
@@ -152,23 +211,48 @@ public class Storage {
         }
     }
 
+    /**
+     * Writes the timetable data to the timetable file.
+     *
+     * @param timetable The 2D array of Class objects representing the timetable data.
+     */
     private static void writeTimetableToFIle(PrintWriter fw, Class[][] timetable) {
         for (int i = 0; i < 5; i++) {
             writeDayTimetableToFile(fw, timetable[i], i);
         }
     }
 
+    /**
+     * Writes the timetable data for a specific day to the timetable file.
+     *
+     * @param fw The PrintWriter object used to write to the file.
+     * @param timetable The array of Class objects representing the timetable data for a specific day.
+     * @param day The index of the day (0-4) for which the timetable data is being written.
+     */
     private static void writeDayTimetableToFile(PrintWriter fw, Class[] timetable, int day) {
         for (int j = 0; j < 24; j++) {
             writeHourTimetableToFIle(fw, timetable[j], day);
         }
     }
 
+    /**
+     * Writes the timetable data for a specific hour to the timetable file.
+     *
+     * @param fw The PrintWriter object used to write to the file.
+     * @param timetable The Class object representing the timetable data for a specific hour.
+     * @param day The index of the day (0-4) for which the timetable data is being written.
+     */
     private static void writeHourTimetableToFIle(PrintWriter fw, Class timetable, int day) {
         if (timetable != null) {
             fw.println((day + 1) + " | " + timetable.toStringStorage());
         }
     }
+
+    /**
+     * Writes module data to the GPA file.
+     *
+     * @param moduleList The ModuleList object containing the module data to write.
+     */
     public static void writeModuleListToFile(ModuleList moduleList) {
         try {
             PrintWriter writer = new PrintWriter(GPA_FILE_PATH);

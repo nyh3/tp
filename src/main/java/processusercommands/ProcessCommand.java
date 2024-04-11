@@ -126,7 +126,7 @@ public class ProcessCommand {
             break;
         case "exit":
             UI.printExitMessage();
-            Storage.writeToFile(expenses);
+            Storage.writeExpenditureToFile(expenses);
             return true;
         case "help":
             UI.printHelpMessage();
