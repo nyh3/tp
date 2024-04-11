@@ -5,7 +5,6 @@ import expenditure.ExpenditureList;
 import storage.Storage;
 import gpa.GPACommand;
 import gc.ProcessGCCommand;
-import timetable.TimetableList;
 import gpa.ProcessListCommand;
 
 public class ProcessCommand {
@@ -103,10 +102,9 @@ public class ProcessCommand {
      *
      * @param input command input by user
      * @param expenses expenditure to add
-     * @param timetable class to addg
      * @return does this while true
      */
-    public boolean userCommand(String input, ExpenditureList expenses, TimetableList timetable) {
+    public boolean userCommand(String input, ExpenditureList expenses) {
         assert input != null;
         String command;
         int index = input.indexOf(" ");
