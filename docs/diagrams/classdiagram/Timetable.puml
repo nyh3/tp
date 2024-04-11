@@ -4,45 +4,47 @@
 hide circle
 skinparam classAttributeIconSize 0
 
-class Class{
-    # classCode:String
-    # classTime: int
-    # classDuration: int
-    # classLocation: String
-    + getClassCode(): String
-    + getClassTime(): int
-    + getClassDuration(): int
-    + getClassLocation(): String
-    + toStringStorage(): String
-    + toString(): String
-    + toStringDay(): String
-}
+package timetable{
+    class Class{
+        # classCode:String
+        # classTime: int
+        # classDuration: int
+        # classLocation: String
+        + getClassCode(): String
+        + getClassTime(): int
+        + getClassDuration(): int
+        + getClassLocation(): String
+        + toStringStorage(): String
+        + toString(): String
+        + toStringDay(): String
+    }
 
-class TimetableList{
-    + {static} classCount: int
-    + {static} classCountDay: int[]
-    # {static} NUM_DAYS: int = 5
-    # {static} HOURS_PER_DAY: int = 24
-    - {static} timetable: Class[][]
-    - {static} DAY_KEYWORD: String = "day/"
-    - {static} CODE_KEYWORD: String = "code/"
-    - {static} TIME_KEYWORD: String = "time/"
-    - {static} DURATION_KEYWORD: String = "duration/"
-    - {static} LOCATION_KEYWORD: String = "location/"
-    - {static} daysOfWeek: String[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"}
-    + {static} getTimetable(): Class[][]
-    + {static} addClass(schedule: String, isUserAdded: boolean)
-    + {static} deleteClass(details: String)
-    + {static} listByDay(day: String)
-    + {static} listTimetableByOrderOfDays()
-    - {static} isValidClassCode(classCode: String): boolean
-    - {static} isAbleToAddClass(classTime: int, classDay: int, classDuration: int): boolean
-    - {static} userAddedMessage(isUserAdded: boolean)
-    - {static} isClassDeleted(classDay: int, classCode: String, isClassDeleted: boolean): boolean
-    - {static} classDeletedMessage(isClassDeleted: boolean)
-    - {static} isValidDay(classDay: int): boolean
-    - {static} isValidClassTime(classTime: int): boolean
-    - {static} isSlotAvailable(classDay: int, classTime: int, classDuration: int): boolean
+    class TimetableList{
+        + {static} classCount: int
+        + {static} classCountDay: int[]
+        # {static} NUM_DAYS: int = 5
+        # {static} HOURS_PER_DAY: int = 24
+        - {static} timetable: Class[][]
+        - {static} DAY_KEYWORD: String = "day/"
+        - {static} CODE_KEYWORD: String = "code/"
+        - {static} TIME_KEYWORD: String = "time/"
+        - {static} DURATION_KEYWORD: String = "duration/"
+        - {static} LOCATION_KEYWORD: String = "location/"
+        - {static} daysOfWeek: String[] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"}
+        + {static} getTimetable(): Class[][]
+        + {static} addClass(schedule: String, isUserAdded: boolean)
+        + {static} deleteClass(details: String)
+        + {static} listByDay(day: String)
+        + {static} listTimetableByOrderOfDays()
+        - {static} isValidClassCode(classCode: String): boolean
+        - {static} isAbleToAddClass(classTime: int, classDay: int, classDuration: int): boolean
+        - {static} userAddedMessage(isUserAdded: boolean)
+        - {static} isClassDeleted(classDay: int, classCode: String, isClassDeleted: boolean): boolean
+        - {static} classDeletedMessage(isClassDeleted: boolean)
+        - {static} isValidDay(classDay: int): boolean
+        - {static} isValidClassTime(classTime: int): boolean
+        - {static} isSlotAvailable(classDay: int, classTime: int, classDuration: int): boolean
+    }
 }
 
 TimetableList "1" --> "*" Class: uses

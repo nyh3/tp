@@ -99,7 +99,8 @@ How `ProcessCommand` works:
 
 **Diagrams**
 
-
+*Sequence Diagram*
+![ProcessCommand](diagrams/sequencediagram/ProcessCommand.png)
 
 ### Storage
 
