@@ -66,7 +66,9 @@ How `UI` works:
 
 ### ProcessCommand
 
-**API:** [`ProcessCommand.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/processusercommands/ProcessCommand.java)
+**API:** 
+[`ProcessCommand.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/processusercommands/ProcessCommand.java), 
+[`TimetableParser.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/processusercommands/TimetableParser.java)
 
 How `ProcessCommand` works:
 1. `CantVasMain` receive the user input from `UI` and passes it to `ProcessCommand`.
@@ -124,7 +126,8 @@ How `Exceptions` work:
 ### Expenditure Tracker
 
 **API:**
-[`Expenditure.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/expenditure/Expenditure.java)
+[`Expenditure.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/expenditure/Expenditure.java), 
+[`ExpenditureList.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/expenditure/ExpenditureList.java)
 
 The Expenditure Tracker simplifies expense tracking, allowing users
 to log daily spending. With filters for month, year, and type, it 
@@ -175,6 +178,7 @@ Format: list
 Example: list
 
 **SequenceDiagram**
+
 ![ViewExpenditure.png](diagrams/sequencediagram/ListExpenditure.png)
 
 #### Viewing expenditures by month:
@@ -193,6 +197,7 @@ Format: e/ view/ t/ TYPE
 Example: e/ view/ t/ food
 
 **SequenceDiagram**
+
 ![ViewExpenditure.png](diagrams/sequencediagram/ViewExpenditure.png)
 
 #### Delete expenditure:
@@ -201,11 +206,20 @@ Format: e/ del/ INDEX
 Example: e/ del/ 3
 
 **SequenceDiagram**
+
 ![DeleteExpenditure.png](diagrams/sequencediagram/DeleteExpenditure.png)
 
 ------------------------------------------------------------------------------------------
 
 ### GPA Calculator
+
+**API:** 
+[`GPACommand.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/GPACommand.java),
+[`GPAMain.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/GPAMain.java),
+[`Module.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/Module.java),
+[`ModuleList`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/ModuleList.java),
+[`ProcessListCommand`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/ProcessListCommand.java)
+
 The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
 of a user's updated GPA based on their current academic standing and projected module grades.
 This guide will walk developers through the architecture, functionality, and core components of the module.
@@ -293,6 +307,12 @@ Divide the total points by the new total credits (accumulated + new modules) to 
 
 ### Mathematical Graph Demo
 
+**API:** 
+[`ProcessGCCommand.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gc/ProcessGCCommand.java),
+[`YX.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gc/YX.java),
+[`YXsq.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gc/YXsq.java),
+[`YlogX.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gc/YlogX.java)
+
 #### Overview
 
 The Graph Demo function uses JPanel , which is a simple GUI tool in javax.swing package.
@@ -302,6 +322,11 @@ mathematical formula with illustration.
 ------------------------------------------------------------------------------------------
 
 ### Timetable Tracker
+
+**API:**
+[`Class.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/timetable/Class.java),
+[`TimetableList.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/timetable/TimetableList.java)
+
 
 The timetable tracker facilitates the management of class schedules. It aims to provide users with a 
 convenient way to organize and track their classes throughout the week. Users can add, delete, 
@@ -352,6 +377,10 @@ View classes for a specific day.
 ------------------------------------------------------------------------------------------
 
 ### Motivational Quotes
+
+**API:** 
+[`MotivationalQuotes.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/motivationalquote/MotivationalQuotes.java)
+
 The Motivational module prints a randomly generated motivational quote for the user whenever the program starts
 
 ------------------------------------------------------------------------------------------
