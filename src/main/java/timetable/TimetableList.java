@@ -26,7 +26,7 @@ public class TimetableList {
         return timetable;
     }
 
-    public static void addClass(String schedule, Boolean userAdded) {
+    public static void addClass(String schedule, Boolean isUserAdded) {
         try {
             String[] parts = schedule.split(DAY_KEYWORD, 2);
             if (parts.length < 2) {
@@ -116,7 +116,7 @@ public class TimetableList {
                 classTime++;
                 classCount++;
             }
-            userAddedMessage(userAdded);
+            userAddedMessage(isUserAdded);
         } catch (InvalidInputFormatException e) {
             System.out.println(e.getMessage());
         } catch (NumberFormatException e) {
@@ -159,8 +159,8 @@ public class TimetableList {
         return false;
     }
     
-    private static void userAddedMessage(Boolean userAdded) {
-        if (userAdded){
+    private static void userAddedMessage(boolean isUserAdded) {
+        if (isUserAdded){
             System.out.println("Class added successfully.");
         }
     }
@@ -209,10 +209,10 @@ public class TimetableList {
      * returns false
      * @param classDay day to search through
      * @param classCode class to delete
-     * @param classDeleted true of deleted, false if not deleted
+     * @param isClassDeleted true of deleted, false if not deleted
      * @return true of deleted, false if not deleted
      */
-    private static boolean isClassDeleted(int classDay, String classCode, boolean classDeleted) {
+    private static boolean isClassDeleted(int classDay, String classCode, boolean isClassDeleted) {
         for (int hour = 0; hour < HOURS_PER_DAY; hour++) {
             if (timetable[classDay - 1][hour] != null) {
                 if (timetable[classDay - 1][hour].getClassCode().equals(classCode)) {
@@ -220,15 +220,15 @@ public class TimetableList {
                     timetable[classDay - 1][hour] = null;
                     classCountDay[classDay - 1]--;
                     classCount--;
-                    classDeleted = true;
+                    isClassDeleted = true;
                 }
             }
         }
-        return classDeleted;
+        return isClassDeleted;
     }
 
-    private static void classDeletedMessage(boolean classDeleted) {
-        if (classDeleted) {
+    private static void classDeletedMessage(boolean isClassDeleted) {
+        if (isClassDeleted) {
             System.out.println("Class removed successfully.");
         } else {
             System.out.println("Class not found. Please ensure day and class code has already been saved.");
