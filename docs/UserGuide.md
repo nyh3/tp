@@ -67,9 +67,10 @@ The features include:
 
 #### Adding expenditure without type
 - Adding new expenditures without specifying the type. To do so, 
-  key in with the following format: `e/ add/ d/ <description> amt/ 
-  <cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help book amt/ 
-  19.99 date/ 15.03.2024`.
+  key in with the following format:  
+  `e/ add/ d/ <description> amt/ 
+  <cost> date/ <dd.mm.yyyy>`. 
+  - Example: `e/ add/ d/ self-help book amt/ 19.99 date/ 15.03.2024`.
 
 > Doing so will leave the 'type' field empty and thus defaulting to 'NA'.
   When viewed using any list or view functions, the second column will be 'NA'.
@@ -80,34 +81,42 @@ The features include:
 
 #### Adding expenditure with type
 - Adding new expenditures with type of expenditure specified. To
-  do so, key in with the following format: `e/ add/ d/ <description> t/ 
-  <type> amt/ <cost> date/ <dd.mm.yyyy>`. Example: `e/ add/ d/ self-help
-  book t/ book amt/ 19.99 date/ 06.04.2024`.
+  do so, key in with the following format:  
+`e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`. 
+  - Example: `e/ add/ d/ self-help book t/ book amt/ 19.99 date/ 06.04.2024`.
 
 #### View all expenditure
 - Viewing saved expenditures without filters. To do so, key in 
-  with the following format: `e/ list/`.
+  with the following format:   
+  `e/ list/`.
 
 #### View expenditure by month and year
 - Viewing saved expenditures by month and year. To do so, key in 
-  with the following format: `e/ view/ m/ <mm.yyyy>`. Example:
-  `e/ view/ m/ 03.2024`.
+  with the following format:  
+  `e/ view/ m/ <mm.yyyy>`. 
+  - Example: `e/ view/ m/ 03.2024`.
 
 #### View expenditure by year
 - Viewing saved expenditures by year. To do so, key in with the
-  following format: `e/ view/ y/ <yyyy>`. Example: `e/ view/ y/ 2024`.
+  following format:   
+`e/ view/ y/ <yyyy>`.
+  - Example: `e/ view/ y/ 2024`.
 
 #### View expenditure by type
 - Viewing saved expenditures by type. To do so, key in with the
-  following format: `e/ view/ t/ <type>`. Example: `e/ view/ t/ FOOD`.
+  following format:   
+  `e/ view/ t/ <type>`. 
+  - Example: `e/ view/ t/ FOOD`.
 
 #### Delete all expenditure
 - Deleting the entire saved expenditure list. To do so, key in with the
-  following format: `e/ clearlist/`.
+  following format:   
+`e/ clearlist/`.
 
 #### Delete expenditure by index
-- Deleting saved expenditures. To do so, key in with the following format:
-  `e/ del/ <index>`. Example: `e/ del/ 2`.
+- Deleting saved expenditures. To do so, key in with the following format:  
+  `e/ del/ <index>`.
+  - Example: `e/ del/ 2`.
 
 ### GPA Calculator
 The GPA calculator allows you to calculate your GPA, based on your previous GPA
@@ -205,10 +214,10 @@ to friday respectively.
 The features include:
 
 #### Add class
-- Adding new classes. To do so, key in with the following format: `tt/
-  add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ 
-  <location>`. Example: `tt/ add/ day/ 3 code/ EE2026 time/ 09 duration/ 3 location/
-  E4-03-07`.
+- Adding new classes. To do so, key in with the following format:   
+`tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ 
+  <location>`. 
+  - Example: `tt/ add/ day/ 3 code/ EE2026 time/ 09 duration/ 3 location/ E4-03-07`.
 > Note that in this command: 
 > 
 > `day` refers to integers from 1 to 5, each mapping a day from monday to friday.
@@ -224,15 +233,17 @@ that cut across midnight. Hence `24` is not an accepted value.
 
 #### View all class for the week
 - Viewing saved classes according the days in the week, arranged in ascending order of
-  time. To do so, key in with the following format: `tt/ list/`.
+  time. To do so, key in with the following format:   
+`tt/ list/`.
 
 #### View class for the day
-- To view classes for the specific day of the week key in the following:
+- To view classes for the specific day of the week key in the following:  
   `tt/ list -d/ <day>`
 
 #### Delete class
-- Deleting saved classes. To do so, key in with the following format: `tt/ del/ day/
-  <day> code/ <code>`. Example: `tt/ del/ day/ 3 code/ cs2113`.
+- Deleting saved classes. To do so, key in with the following format:   
+ `tt/ del/ day/ <day> code/ <code>`. 
+  - Example: `tt/ del/ day/ 3 code/ cs2113`.
 
 ### Daily Motivational Quotes
 Feeling Down? Dread looking at your packed timetable?
@@ -274,6 +285,10 @@ CG2023 from 1pm on monday at E4-03-07 and a 2-hour EE2026 from 9am on monday at 
 Take note that each hour is listed out as an individual row. Hence, for any classes lasting more than an
 hour, there will be more than one rows for such classes. But each row will have `total hours -1` value
 for the duration.
+
+**Q**: What if I have 2 classes with the same code on the same day and I only want to delete 1?
+
+**A**: Deleting that specified class code for the day will delete all instances of the specified class within the day, Users will have to re-enter the class they would like to keep
 
 --------------------------------------------------------------------------------------------------------------------
 
