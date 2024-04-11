@@ -99,6 +99,8 @@ public class ProcessCommand {
 
     /**
      * Main method to split user commands into
+     * the separate CantVas functionalities
+     *
      * @param input command input by user
      * @param expenses expenditure to add
      * @param timetable class to addg
