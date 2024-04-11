@@ -1,0 +1,56 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide circle
+skinparam classAttributeIconSize 0
+
+class Storage {
+    - {static} EXPENDITURE_FILE_PATH: String = "./data/expenditure.txt"
+    - {static} TIMETABLE_FILE_PATH: String = "./data/timetable.txt"
+    - {static} GPA_FILE_PATH: String = "./data/gpa.txt"
+    + {static} createNewFile(type: String)
+    + {static} writeModuleListToFile(moduleList: ModuleList)
+    + {static} writeExpenditureToFile(expenses: ExpenditureList)
+    + {static} readExpenditureFile(): ExpenditureList
+    + {static} readGPAFile(): ModuleList
+    + {static} readTimetableFile(): TimetableList
+    - {static} processExpenditure(line: String): String
+    - {static} processModule(line: String): Module
+    - {static} processTimetable(line: String): String
+    - {static} writeTimetableToFile(fw: PrintWriter, timetable: Class[][])
+    - {static} writeDayTimetableToFile(fw: PrintWriter, timetable: Class[], day: int)
+    - {static} writeHourTimetableToFile(fw: PrintWriter, timetable: Class, day: int)
+    - {static} createDirectoryAndFile(directory: File, file: FIle)
+    }
+
+class CantVasMain {
+}
+
+class ProcessCommand {
+}
+
+package gpa {
+    class ModuleList {
+    }
+
+    class ProcessListCommand {
+    }
+}
+
+class Scanner {
+}
+
+class File {
+}
+
+class PrintWriter {
+}
+
+CantVasMain ..> Storage: uses >
+ProcessCommand ..> Storage: uses >
+ProcessListCommand ..> Storage: uses >
+ModuleList ..> Storage: uses >
+Storage ..> Scanner: uses >
+Storage ..> File: uses >
+Storage ..> PrintWriter: uses >
+@enduml

@@ -15,6 +15,7 @@
 - [Implementation](#implementation)
   - [Expenditure Tracker](#expenditure-tracker)
   - [GPA Calculator](#gpa-calculator)
+  - [Mathematical Graph Demo](#mathematical-graph-demo)
   - [Timetable Tracker](#timetable-tracker)
   - [Motivational Quotes](#motivational-quotes)
 - [Appendix](#appendix)
@@ -57,33 +58,11 @@ How `UI` works:
 2. Prints an output based on user input. 
 3. Reads in user input for steps in GPA calculator.
 
-*Class Diagram*
+**Diagrams**
 
-![UIClassDiagram](images/classimage/UI.png)
+*Sequence Diagram*
 
-### Expenditure
-
-**API:** 
-[`Expenditure.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/expenditure/Expenditure.java)
-
-How `Expenditure` works:
-1. When a new expenditure is added, ExpenditureList.java creates a new 
-   Expenditure object with the provided details and adds it to the expenditureList.
-2. When an expenditure is deleted, ExpenditureList.java removes the Expenditure object 
-   at the specified index from the expenditureList.
-3. When expenditures are listed, ExpenditureList.java iterates over the expenditureList 
-   and calls the toString() method of each Expenditure object to get a string representation 
-   of the expenditure.
-4. When expenditures are listed by month, year, or type, ExpenditureList.java filters the 
-   expenditureList based on the specified criteria and returns a new list of Expenditure 
-   objects that match the criteria.
-5. The isValidDate(), isValidMonth(), isValidAmount(), isValidType(), and isValidDescription() 
-   methods in ExpenditureList.java are used to validate the details of an expenditure before it 
-   is added to the expenditureList.
-
-*Class Diagram*
-
-![Expenditure](diagrams/classdiagram/Expenditure.png)
+![UISequenceDiagram](diagrams/sequencediagram/UISD.png)
 
 ### ProcessCommand
 
@@ -99,8 +78,13 @@ How `ProcessCommand` works:
 
 **Diagrams**
 
+*Class Diagram*
+
+![ProcessCommandClassDiagram](diagrams/classdiagram/ProcessCommandCD.png)
+
 *Sequence Diagram*
-![ProcessCommand](diagrams/sequencediagram/ProcessCommand.png)
+
+![ProcessCommandSequenceDiagram](diagrams/sequencediagram/ProcessCommand.png)
 
 ### Storage
 
@@ -120,7 +104,9 @@ How `Storage` works:
 
 **Diagrams**
 
+*Class Diagram*
 
+![StorageClassDiagram](diagrams/classdiagram/StorageCD.png)
 
 ### Exceptions
 
@@ -131,15 +117,14 @@ How `Exceptions` work:
    has the wrong format and the user will be informed about their wrong format.
 2. Takes in an error message when thrown that can be printed.
 
-**Diagrams**
-
-
-
 --------------------------------------------------------------------------------------------------------------------
 
 ## Implementation
 
 ### Expenditure Tracker
+
+**API:**
+[`Expenditure.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/expenditure/Expenditure.java)
 
 The Expenditure Tracker simplifies expense tracking, allowing users
 to log daily spending. With filters for month, year, and type, it 
@@ -152,9 +137,24 @@ expenditures. It provides methods for adding, deleting and listing expenditures.
 The `Expenditure` class represents individual expenditure instance within the system.
 Each expenditure object contains key attributes such as description, type, amount and date.
 
-**Class Diagram**
+*Class Diagram*
 
+![Expenditure](diagrams/classdiagram/Expenditure.png)
 
+How `Expenditure` works:
+1. When a new expenditure is added, ExpenditureList.java creates a new
+   Expenditure object with the provided details and adds it to the expenditureList.
+2. When an expenditure is deleted, ExpenditureList.java removes the Expenditure object
+   at the specified index from the expenditureList.
+3. When expenditures are listed, ExpenditureList.java iterates over the expenditureList
+   and calls the toString() method of each Expenditure object to get a string representation
+   of the expenditure.
+4. When expenditures are listed by month, year, or type, ExpenditureList.java filters the
+   expenditureList based on the specified criteria and returns a new list of Expenditure
+   objects that match the criteria.
+5. The isValidDate(), isValidMonth(), isValidAmount(), isValidType(), and isValidDescription()
+   methods in ExpenditureList.java are used to validate the details of an expenditure before it
+   is added to the expenditureList.
 
 #### Add expenditure
 
@@ -167,7 +167,7 @@ Example: add n/3.22 d/31.01.2024
 
 **SequenceDiagram**
 
-![AddExpenditure.png](images/sequenceimage/AddExpenditure.png)
+![AddExpenditure.png](diagrams/sequencediagram/AddExpenditure.png)
 
 #### Viewing expenditures:
 Viewing an expenditure in numerical form, in sequence of when they are added.
@@ -175,7 +175,7 @@ Format: list
 Example: list
 
 **SequenceDiagram**
-![ViewExpenditure.png](images/sequenceimage/ListExpenditure.png)
+![ViewExpenditure.png](diagrams/sequencediagram/ListExpenditure.png)
 
 #### Viewing expenditures by month:
 Viewing an expenditure in numerical form, filtered by month.
@@ -193,7 +193,7 @@ Format: e/ view/ t/ TYPE
 Example: e/ view/ t/ food
 
 **SequenceDiagram**
-![ViewExpenditure.png](images/sequenceimage/ViewExpenditure.png)
+![ViewExpenditure.png](diagrams/sequencediagram/ViewExpenditure.png)
 
 #### Delete expenditure:
 Deleting an expenditure in numerical form, by referencing its index in the array.
@@ -201,33 +201,17 @@ Format: e/ del/ INDEX
 Example: e/ del/ 3
 
 **SequenceDiagram**
-![DeleteExpenditure.png](images/sequenceimage/DeleteExpenditure.png)
-
-#### Class: Expenditure
-This class is responsible for processing expenditure related commands and storing all expenses input by the user
-
-#### ExpenditureList Key Method
-#### addExpenditure(String expenditure, Boolean userAdded)
-Takes in the string input by the user and splits it into the respective parts. "userAdded" checks if the method is called by
-the user or called when reading from a storage file.
-
-
-### deleteExpenditure(int index)
-Takes in an index and deletes the respective expenditure from the expenditure list.
+![DeleteExpenditure.png](diagrams/sequencediagram/DeleteExpenditure.png)
 
 ------------------------------------------------------------------------------------------
-
 
 ### GPA Calculator
 The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
 of a user's updated GPA based on their current academic standing and projected module grades.
 This guide will walk developers through the architecture, functionality, and core components of the module.
 
-
-
 #### Overview
 The module is divided into 5 classes dealing with 2 different calculation methods.
-
 
 #### Module
 Handles user input of module information: module name, module weightage and module grade.
@@ -306,9 +290,11 @@ For each new module, add to the total points based on the grade and credits.
 Divide the total points by the new total credits (accumulated + new modules) to get the updated GPA.
 
 ------------------------------------------------------------------------------------------
-### Graph Demo
+
+### Mathematical Graph Demo
 
 #### Overview
+
 The Graph Demo function uses JPanel , which is a simple GUI tool in javax.swing package.
 With pre-written formula and defined size of parameters, therefore we can demonstrate the 
 mathematical formula with illustration.
@@ -333,33 +319,37 @@ Each class object contains key attributes such as code, time, duration and locat
 
 **Class Diagram**
 
-![TimetableClassDiagram](images/classimage/Timetable.png)
+![TimetableClassDiagram](diagrams/classdiagram/TimetableCD.png)
 
 #### Add Class
 
 **SequenceDiagram**
 
-![AddClass](images/sequenceimage/AddClass.png)
+![AddClass](diagrams/sequencediagram/AddClass.png)
 
-#### View Class
+#### List Class
 
 View classes in order of day and time.
 
 **SequenceDiagram**
+
 ![ViewTimeTable](diagrams/sequencediagram/ViewTimeTable.png)
 
-#### View Class by day
+#### List Class by day
 
 View classes for a specific day.
 
 **SequenceDiagram**
+
 ![ViewDay](diagrams/sequencediagram/ViewTimeTableByDay.png)
 
 #### Delete Class
 
 **SequenceDiagram**
 
-![DeleteClass](images/sequenceimage/DeleteClass.png)
+![DeleteClass](diagrams/sequencediagram/DeleteClass.png)
+
+------------------------------------------------------------------------------------------
 
 ### Motivational Quotes
 The Motivational module prints a randomly generated motivational quote for the user whenever the program starts
@@ -368,7 +358,9 @@ The Motivational module prints a randomly generated motivational quote for the u
 
 ## Development Notes
 Input Validation: Ensure that GPA scores and credit numbers are within valid ranges. This module expects a GPA between 0 and 5, and non-negative numbers for credits.
+
 Error Handling: Properly handle invalid inputs, such as non-numeric values for credits or unsupported grade values.
+
 Assertions: Use assertions to catch unexpected values during development. Ensure they are adequately handled or logged.
 
 ## Future Enhancements
@@ -499,12 +491,14 @@ Given below are instructions on how to test the app manually.
 
    Expected: The first expenditure in the list will be deleted and the details will be shown.
 
-3. Test case 2: `clearlist`
+3. Test case 2: `e/ clearlist/`
     
    Expected: The whole expenditure list should be cleared.
    No expenditure should be shown when `e/ list/` is entered.
 
 ### GPA Calculator
+
+### Mathematical Graph Demo
 
 ### Timetable Tracker
 
@@ -540,4 +534,3 @@ Given below are instructions on how to test the app manually.
    Expected: The cs2113 class on friday should be deleted. 
    No cs2113 class should be shown when `tt/ list -d/ 5` is entered.
 
-{Give instructions on how to do a manual product testing e.g., how to load sample data to be used for testing}

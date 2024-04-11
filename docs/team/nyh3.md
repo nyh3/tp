@@ -36,7 +36,7 @@ added or made a mistake when adding.
 
 #### What it does:
 
-Allows user to add type to expenditure so they can categorize their expenditure
+Allows user to add type to expenditure so that they can categorize their expenditure
 into different type. Also allows them to list a specific type of expenditure.
 
 **4. Timetable Feature**
@@ -52,15 +52,20 @@ they have on a specific day.
 
 ### Contributions to User Guide
 
-Wrote Quick Start for the User Guide. [#92](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/92)
-Wrote Table of Contents for User Guide. [#206](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/206)
+- Wrote Quick Start for the User Guide. [#92](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/92)
+- Wrote Table of Contents for User Guide. [#206](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/206)
 
 ### Contributions to Developer Guide
 
-Wrote User Stories, Storage class and delete expenditure function for the Developer Guide.
+- Wrote User Stories, Storage class and delete expenditure function for the Developer Guide.
 [#69](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/69)
-
-Wrote Table of contents and appendix for Developer Guide and reorganized the structure.
+- Wrote Table of contents and appendix for Developer Guide and reorganized the structure.
+[#220](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/220)
+- Created some sequence and class diagrams for developer guide.
+[#225](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/225)
+[#227](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/227)
+[#228](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/228)
+[#237](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/237)
 
 ### Contributions to team-based tasks
 
