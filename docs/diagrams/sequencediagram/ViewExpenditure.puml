@@ -1,0 +1,40 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant "processCommand:ProcessCommand" as processCommand
+participant ":ExpenditureList" as expenditureList
+
+[-> processCommand: userCommand(command, expenseList, timetableList)
+activate processCommand
+
+processCommand -> processCommand: processExpenditureUserCommand(input)
+activate processCommand
+
+alt command is "e/ view/ t/"
+    processCommand -> expenditureList: listExpensesByType(type)
+    activate expenditureList
+
+    expenditureList --> processCommand: filteredExpenses
+    deactivate expenditureList
+else command is "e/ view/ m/"
+    processCommand -> expenditureList: listExpensesByMonth(monthYear)
+    activate expenditureList
+
+    expenditureList --> processCommand: filteredExpenses
+    deactivate expenditureList
+else command is "e/ view/ y/"
+    processCommand -> expenditureList: listExpensesByYear(year)
+    activate expenditureList
+
+    expenditureList --> processCommand: filteredExpenses
+    deactivate expenditureList
+end
+
+processCommand --> processCommand: filteredExpenses
+deactivate processCommand
+
+[<-- processCommand: false
+deactivate processCommand
+
+@enduml
