@@ -288,23 +288,23 @@ for the duration.
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
-| Action                       | Format, Examples                                                                             |
-|------------------------------|----------------------------------------------------------------------------------------------|
-| Add expenditure without type | `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`                                    |
-| Add expenditure with type    | `e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`                          |
-| List expenditure             | `e/ list/`                                                                                   |
-| View expenditure by month    | `e/ view/ m/ <mm.yyyy>`                                                                      |
-| View expenditure by year     | `e/ view/ y/ <yyyy>`                                                                         |
-| View expenditure by type     | `e/ view/ t/ <type>`                                                                         |
-| Clear all expenditure        | `e/ clearlist/`                                                                              |
-| Delete expenditure by index  | `e/ del/ <index>`                                                                            |
-| GPA calculator method 1      | `gpa`                                                                                        |
-| GPA calculator method 2      | `gpalist`                                                                                    |
-| Mathematical Graph Demo      | `gc`                                                                                         |
+| Action                       |                                       Format, Examples                                       |
+|------------------------------|:--------------------------------------------------------------------------------------------:|
+| Add expenditure without type |                  `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`                   |
+| Add expenditure with type    |             `e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`              |
+| List expenditure             |                                          `e/ list/`                                          |
+| View expenditure by month    |                                   `e/ view/ m/ <mm.yyyy>`                                    |
+| View expenditure by year     |                                     `e/ view/ y/ <yyyy>`                                     |
+| View expenditure by type     |                                     `e/ view/ t/ <type>`                                     |
+| Clear all expenditure        |                                       `e/ clearlist/`                                        |
+| Delete expenditure by index  |                                      `e/ del/ <index>`                                       |
+| GPA calculator method 1      |                                            `gpa`                                             |
+| GPA calculator method 2      |                                          `gpalist`                                           |
+| Mathematical Graph Demo      |                                             `gc`                                             |
 | Add class                    | `tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location>` |
-| List all class for the week  | `tt/ list/`                                                                                  |
-| List class for the day       | `tt/ list -d/ <day>`                                                                         |
-| Delete class                 | `tt/ del/ day/ <day> code/ <code>`                                                           |
-| Show help message            | `help`                                                                                       |
-| Exit CantVas                 | `exit`                                                                                       |
+| List all class for the week  |                                         `tt/ list/`                                          |
+| List class for the day       |                                     `tt/ list -d/ <day>`                                     |
+| Delete class                 |                              `tt/ del/ day/ <day> code/ <code>`                              |
+| Show help message            |                                            `help`                                            |
+| Exit CantVas                 |                                            `exit`                                            |
 
