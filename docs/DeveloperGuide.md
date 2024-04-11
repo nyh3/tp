@@ -203,25 +203,34 @@ The module is divided into 5 classes dealing with 2 different calculation method
 #### Module
 Handles user input of module information: module name, module weightage and module grade.
 
+Here we demonstrate the Sequence Diagram with sample input CS1010 with 4 MC and A grade.
+![Module.png](diagrams/sequencediagram/ModuleSD.png)
+
 #### ModuleList
 This extends Module class, which is used to execute actions like add/delete/view regarding the 
 module list.
 
+Here we demonstrate the Sequence Diagram with sample input CS1010 with 4 MC and A grade.
+![ModuleListSD.png](diagrams/sequencediagram/ModuleListSD.png)
 
-#### GPACommand: 
-Handles user interactions, input collection, and directs the flow of the GPA calculation process.
+#### GPACommand
+This class is responsible for interacting with the user, collecting inputs,
+and managing the flow of the GPA calculation process. It operates within a loop,
+allowing the user to perform multiple calculations or exit at any point.
+
+![gpaCommandSD.png](diagrams/sequencediagram/gpaCommandSD.png)
+
 
 #### GPAMain: 
 Contains the logic for calculating the GPA.
 
-#### GPACommand
-This class is responsible for interacting with the user, collecting inputs, 
-and managing the flow of the GPA calculation process. It operates within a loop, 
-allowing the user to perform multiple calculations or exit at any point.
+![gpamainSD.png](diagrams/sequencediagram/gpamainSD.png)
+
 
 #### ProcessListCommand
 This class is in charge of calculation of GPA by Module List method by identifying user's input.
 
+![ProcessModuleList.png](diagrams/sequencediagram/ProcessModuleList.png)
 
 ### Workflow for step-by-step GPA calculator
 #### Start/Exit Prompt: 
