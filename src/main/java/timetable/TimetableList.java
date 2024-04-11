@@ -76,7 +76,7 @@ public class TimetableList {
                         "location/ <location>.");
             }
 
-            String classCode = parts[0].trim();
+            String classCode = parts[0].trim().toUpperCase();
 
             if (!isValidClassCode(classCode)) {
                 return;
@@ -206,7 +206,7 @@ public class TimetableList {
                 throw new InvalidInputFormatException("Invalid input format for class code.");
             }
             int classDay = Integer.parseInt(parts[0].trim());
-            String classCode = parts[1].trim();
+            String classCode = parts[1].trim().toUpperCase();
 
             if (!isValidDay(classDay)) {
                 return;
