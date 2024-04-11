@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/component-diagram
+
+skinparam componentStyle rectangle
+actor User #Red
+
+component {
+    [UI] #Green
+    [CantVasMain] #Grey
+    [Storage] #Gold
+    [ProcessCommand] #LightBlue
+    [Exceptions] #LightGrey
+}
+[Data] #Yellow
+
+User ..> [UI]
+[UI] --> [CantVasMain]
+[CantVasMain] --> [ProcessCommand]
+[Storage] --> [CantVasMain]
+[ProcessCommand] --> [Storage]
+[ProcessCommand] --> [UI]
+[Storage] ..> [Data]
+
+
+@enduml
