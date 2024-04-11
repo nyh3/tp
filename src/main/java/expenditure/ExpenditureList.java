@@ -136,7 +136,7 @@ public class ExpenditureList {
     }
 
 
-    public static void addExpenditure(String expenditure, Boolean userAdded) {
+    public static void addExpenditure(String expenditure, Boolean isUserAdded) {
         try {
             String[] parts = expenditure.split("d/", 2);
             if (parts.length < 2) {
@@ -179,7 +179,7 @@ public class ExpenditureList {
                     && isValidDescription(description)) {
                 expenditureList.add(new Expenditure(description, type, amountValue, date));
                 expenditureCount += 1;
-                userAddedMessage(userAdded);
+                userAddedMessage(isUserAdded);
             }
         } catch (InvalidInputFormatException e) {
             System.out.println(e.getMessage());
@@ -189,8 +189,8 @@ public class ExpenditureList {
         }
     }
 
-    private static void userAddedMessage(Boolean userAdded) {
-        if (userAdded){
+    private static void userAddedMessage(Boolean isUserAdded) {
+        if (isUserAdded){
             System.out.println("Expenditure added successfully.");
         }
     }

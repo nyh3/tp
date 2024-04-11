@@ -26,7 +26,7 @@ public class TimetableList {
         return timetable;
     }
 
-    public static void addClass(String schedule, Boolean userAdded) {
+    public static void addClass(String schedule, Boolean isUserAdded) {
         try {
             String[] parts = schedule.split(DAY_KEYWORD, 2);
             if (parts.length < 2) {
@@ -116,7 +116,7 @@ public class TimetableList {
                 classTime++;
                 classCount++;
             }
-            userAddedMessage(userAdded);
+            userAddedMessage(isUserAdded);
         } catch (InvalidInputFormatException e) {
             System.out.println(e.getMessage());
         } catch (NumberFormatException e) {
@@ -159,8 +159,8 @@ public class TimetableList {
         return false;
     }
     
-    private static void userAddedMessage(Boolean userAdded) {
-        if (userAdded){
+    private static void userAddedMessage(Boolean isUserAdded) {
+        if (isUserAdded){
             System.out.println("Class added successfully.");
         }
     }
