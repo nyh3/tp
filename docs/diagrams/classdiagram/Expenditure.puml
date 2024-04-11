@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide circle
+skinparam classAttributeIconSize 0
+
+class Expenditure {
+    -description: String
+    -type: String
+    -amount: Float
+    -date: String
+
+    +Expenditure(description: String, type: String, amount: Float, date: String)
+    +getDescription(): String
+    +getType(): String
+    +getAmount(): Float
+    +getDate(): String
+    +toString(): String
+    +toStringStorage(): String
+}
+
+class ExpenditureList {
+    -expenditureCount: int
+    -MINIMUM_AMOUNT: double
+    -MAX_AMOUNT: float
+    -MONTHYEARINPUTLENGTH: int
+    -MAX_DESCRIPTION_LENGTH: int
+    -MAX_TYPE_LENGTH: int
+    -expenditureList: ArrayList<Expenditure>
+
+    +ExpenditureList()
+    +listExpensesByMonth(monthYear: String): List<Expenditure>
+    +listExpensesByYear(year: String): List<Expenditure>
+    +listExpensesByType(type: String): List<Expenditure>
+    +addExpenditure(expenditure: String, isUserAdded: Boolean): void
+    +deleteExpenditure(index: int): void
+    +clearlist(): void
+    +listExpenses(): void
+    +getExpenditure(index: int): Expenditure
+}
+
+ExpenditureList "1" -- "0..*" Expenditure
+
+@enduml
