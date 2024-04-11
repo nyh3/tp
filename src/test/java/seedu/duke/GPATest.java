@@ -19,7 +19,8 @@ public class GPATest {
         double expectedGPA = 4.10; // Ensure this expected value is correct based on your GPA calculation logic
         double resultGPA = GPAMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, moduleList);
 
-        assertEquals(expectedGPA, resultGPA, 0.01, "The GPA calculated for all A's did not match the expected value");
+        assertEquals(expectedGPA, resultGPA, 0.01,
+                "The GPA calculated for all A's did not match the expected value");
     }
     void testCalculateNewGPA_allBs() {
         double currentGPA = 4.0;
@@ -33,7 +34,8 @@ public class GPATest {
         double expectedGPA = 3.95; // Ensure this expected value is correct based on your GPA calculation logic
         double resultGPA = GPAMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, moduleList);
 
-        assertEquals(expectedGPA, resultGPA, 0.01, "The GPA calculated for all B's did not match the expected value");
+        assertEquals(expectedGPA, resultGPA, 0.01,
+                "The GPA calculated for all B's did not match the expected value");
     }
 
     @Test
@@ -51,7 +53,8 @@ public class GPATest {
         double expectedGPA = 3.41;
         double resultGPA = GPAMain.calculateUpdatedGPA(currentGPA, totalCredits, moduleList);
 
-        assertEquals(expectedGPA, resultGPA, 0.01, "The GPA calculated for mixed grades did not match the expected value");
+        assertEquals(expectedGPA, resultGPA, 0.01,
+                "The GPA calculated for mixed grades did not match the expected value");
     }
 
     @Test
@@ -62,7 +65,8 @@ public class GPATest {
 
         // Adding modules with valid and invalid (unrecognized) grades
         moduleList.addModule("ValidModule1", 4, "A");
-        moduleList.addModule("InvalidModule1", 4, "Z"); // Unrecognized grade
+        moduleList.addModule("InvalidModule1",
+                4, "Z"); // Unrecognized grade
 
         // Expected GPA calculation considering "Z" as 0.00
         // Ensure this expected value is correct based on your GPA calculation logic,
