@@ -30,6 +30,11 @@ public class UI {
         );
     }
 
+    /**
+     * Main Method to call when user  wants to the help list
+     * calls the other specialised help methods to print an
+     * entire list of all help messages
+     */
     public static void printHelpMessage() {
         System.out.println("Cantvas Help\n");
         expenditureHelpMessage();
@@ -42,6 +47,10 @@ public class UI {
         printLineBreak();
     }
 
+    /**
+     * Method to print help messages related to
+     * expenditure functionalities
+     */
     private static void expenditureHelpMessage() {
         System.out.println("Expenditure help:\n"
                 + "\nTo input expenses, use format:\n"
@@ -58,6 +67,10 @@ public class UI {
                 + "<type> should not be longer than 20 characters.\n");
     }
 
+    /**
+     * Method to print help messages related to
+     * timetable functionalities
+     */
     private static void timetableHelpMessage() {
         System.out.println("\nTimetable help:\n"
                 + "\nTo input class to timetable, use format:\n"
@@ -72,6 +85,10 @@ public class UI {
                 + "Range for day is 1 <= day <= 5\n");
     }
 
+    /**
+     * Method to print help messages related to
+     * GPA functionalities
+     */
     private static void gpaHelpMessage() {
         System.out.println("\nGPA help:\n"
                 + "\nTo Use a step by step gpa calculator, " +
@@ -85,6 +102,10 @@ public class UI {
                 "\nType `gc` in the main Screen to enter!");
     }
 
+    /**
+     * Method to print help messages related to
+     * GPAList functionalities
+     */
     public static void gpaListHelpMessage() {
         System.out.println("\nGPA calculator by list help:\n"
                 + "\nTo calculate gpa of modules that you entered" +

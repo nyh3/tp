@@ -66,7 +66,7 @@ public class StorageTest {
         new TimetableList();
         TimetableList.addClass(
                 "day/ 1 code/ cde2501 time/ 12 duration/ 1 location/ room 1", true);
-        Storage.writeToFile(expenditureList);
+        Storage.writeExpenditureToFile(expenditureList);
 
         ExpenditureList readExpenditureList = Storage.readExpenditureFile();
         assertNotNull(readExpenditureList);

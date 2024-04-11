@@ -26,6 +26,16 @@ public class TimetableList {
         return timetable;
     }
 
+    /**
+     * Method to add a class to the timetable.
+     * splits the user input into specific parts details such as Day, Cass Code,
+     * start time, Duration and location
+     * Uses multiple helper methods and checks to verify if command is valid.
+     * If command is valid, class will be added
+     *
+     * @param schedule The schedule input string.
+     * @param isUserAdded Indicates if the class is added by the user.
+     */
     public static void addClass(String schedule, Boolean isUserAdded) {
         try {
             String[] parts = schedule.split(DAY_KEYWORD, 2);
@@ -124,6 +134,12 @@ public class TimetableList {
         }
     }
 
+    /**
+     * Private method to validate the input class code.
+     *
+     * @param classCode The class code to validate.
+     * @return True if the class code is valid, otherwise False.
+     */
     private static boolean isValidClassCode(String classCode) {
         if (classCode.length() > 7) {
             System.out.println("Class code should be within 7 characters.");
@@ -135,6 +151,7 @@ public class TimetableList {
     /**
      * Combines all checks to verify if the class, time and duration
      * is a valid input with not timetable clashes
+     *
      * @param classTime Start time of class
      * @param classDay Day of class
      * @param classDuration Number of hours of class
@@ -158,7 +175,13 @@ public class TimetableList {
         }
         return false;
     }
-    
+
+    /**
+     * Private method to handle the user-added message.
+     * so that loading from files will not produce a message
+     *
+     * @param isUserAdded Indicates if the class was added by the user.
+     */
     private static void userAddedMessage(boolean isUserAdded) {
         if (isUserAdded){
             System.out.println("Class added successfully.");
@@ -168,6 +191,7 @@ public class TimetableList {
     /**
      * Deletes the specified class of the user within the
      * specified day
+     *
      * @param details String of input from user to process
      */
     public static void deleteClass(String details) {
@@ -207,6 +231,7 @@ public class TimetableList {
      * iterated through the specified day and deletes the class
      * code if found and returns true. if class can't be found,
      * returns false
+     *
      * @param classDay day to search through
      * @param classCode class to delete
      * @param isClassDeleted true of deleted, false if not deleted
@@ -227,6 +252,12 @@ public class TimetableList {
         return isClassDeleted;
     }
 
+    /**
+     * Private method to print messages based on whether
+     * the specified class has/can be deleted
+     *
+     * @param isClassDeleted Indicates if the class was deleted.
+     */
     private static void classDeletedMessage(boolean isClassDeleted) {
         if (isClassDeleted) {
             System.out.println("Class removed successfully.");
@@ -264,6 +295,15 @@ public class TimetableList {
         return true;
     }
 
+    /**
+     * Private helper to check if a slot is available for scheduling
+     * a class on that day and time
+     *
+     * @param classDay The day for which the slot needs to be checked.
+     * @param classTime The start time of the class.
+     * @param classDuration The duration of the class.
+     * @return True if the slot is available, otherwise False.
+     */
     private static boolean isSlotAvailable(int classDay, int classTime, int classDuration) {
         for (int i = classTime; i < classTime + classDuration; i++) {
             if (timetable[classDay-1][i] != null) {
@@ -273,6 +313,13 @@ public class TimetableList {
         return true;
     }
 
+    /**
+     * For when users want to see the timetable for a specific day
+     * takes the "day" as input from user and prints the timetable
+     * for that day
+     *
+     * @param day day of the week to print
+     */
     public static void listByDay(String day) {
         try {
             int classDay = Integer.parseInt(day);

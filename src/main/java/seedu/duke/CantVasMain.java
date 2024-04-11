@@ -21,6 +21,10 @@ public class CantVasMain {
         processCommand = new ProcessCommand();
     }
 
+    /**
+     * Runs the CantVas application, printing the logo, motivation quote,
+     * and help message, and processing user commands until the user chooses to exit.
+     */
     public void run() {
         UI.printLogo();
         UI.printMotivationQuote();
