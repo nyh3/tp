@@ -32,8 +32,8 @@ expenses, organize your timetable and track your grades.
   - [Math Graph Demo](#mathematical-graph-demo)
   - [Timetable](#timetable-tracker)
     - [Add class](#add-class)
-    - [View all class for the week](#view-all-class-for-the-week)
-    - [View class for the day](#view-class-for-the-day)
+    - [List all class for the week](#view-all-class-for-the-week)
+    - [List class for the day](#view-class-for-the-day)
     - [Delete class](#delete-class)
   - [Motivational Quotes](#daily-motivational-quotes)
 - [FAQ](#faq)
@@ -278,20 +278,23 @@ for the duration.
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
-- For addition of expenditure without type: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.
-- For addition of expenditure with type: `e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`.
-- For deletion of saved expenditure: `e/ del/ <index>`.
-- For clearing of all expenditures: `e/ clearlist/`.
-- For listing of all expenditures: `e/ list/`.
-- For viewing of expenditures filtered by month: `e/ view/ m/ <mm.yyyy>`.
-- For viewing of expenditures filtered by year: `e/ view/ y/ <yyyy>`.
-- For viewing of expenditures filtered by type: `e/ view/ t/ <type>`.
-- For inputting of timetable classes: `tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration>
-  location/ <location>`.
-- For deletion of saved timetable classes: `tt/ del/ day/ <day> code/ <code>`.
-- For listing of timetable for all days: `tt/ list/`.
-- For listing of timetable for a particular day: `tt/ list -d/ <day>`.
-- For using GPA calculator: `gpa`.
-- To view the help message: `help`.
-- To exit CantVas: `exit`.
+| Action                       | Format, Examples                                                                             |
+|------------------------------|----------------------------------------------------------------------------------------------|
+| Add expenditure without type | `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`                                    |
+| Add expenditure with type    | `e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`                          |
+| List expenditure             | `e/ list/`                                                                                   |
+| View expenditure by month    | `e/ view/ m/ <mm.yyyy>`                                                                      |
+| View expenditure by year     | `e/ view/ y/ <yyyy>`                                                                         |
+| View expenditure by type     | `e/ view/ t/ <type>`                                                                         |
+| Clear all expenditure        | `e/ clearlist/`                                                                              |
+| Delete expenditure by index  | `e/ del/ <index>`                                                                            |
+| GPA calculator method 1      | `gpa`                                                                                        |
+| GPA calculator method 2      | `gpalist`                                                                                    |
+| GC demo                      | `gc`                                                                                         |
+| Add class                    | `tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location>` |
+| List all class for the week  | `tt/ list/`                                                                                  |
+| List class for the day       | `tt/ list -d/ <day>`                                                                         |
+| Delete class                 | `tt/ del/ day/ <day> code/ <code>`                                                           |
+| Show help message            | `help`                                                                                       |
+| Exit CantVas                 | `exit`                                                                                       |
 
