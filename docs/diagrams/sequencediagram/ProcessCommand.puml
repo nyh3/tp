@@ -1,0 +1,87 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+participant ":CantVasMain" as cantVasMain
+participant "processCommand:ProcessCommand" as processCommand
+participant "ui:UI" as ui
+participant ":GPACommand" as gpaCommand
+participant "gcCommand:ProcessGCCommand" as gcCommand
+participant ":Storage" as storage
+participant ":TimetableParser" as timetableParser
+participant ":ProcessListCommand" as processListCommand
+
+cantVasMain -> ui: getUserCommand()
+activate ui
+
+ui --> cantVasMain: command
+deactivate ui
+
+cantVasMain -> processCommand: userCommand(command, expenseList, timetableList)
+activate processCommand
+
+alt gpastep
+    processCommand -> gpaCommand: processGPACommand()
+    activate gpaCommand
+    processCommand <--gpaCommand
+    deactivate gpaCommand
+    processCommand ->ui: printHelpMessage()
+    activate ui
+    ui --> processCommand
+    deactivate ui
+
+else gc
+    create gcCommand
+    processCommand -> gcCommand: new ProcessGCCommand()
+    activate gcCommand
+    processCommand <-- gcCommand: gcCommand
+    deactivate gcCommand
+    processCommand -> gcCommand: processGCCommand(input)
+    activate gcCommand
+    gcCommand --> processCommand:
+    deactivate gcCommand
+
+else exit
+    processCommand -> ui: printExitMessage()
+    activate ui
+    ui --> processCommand:
+    deactivate ui
+    processCommand -> storage: writeToFile(expenses)
+    activate storage
+    processCommand <-- storage:
+    deactivate storage
+    processCommand --> cantVasMain: true
+
+else help
+    processCommand -> ui: printHelpMessage()
+    activate ui
+    ui --> processCommand:
+    deactivate ui
+
+else tt/
+    processCommand ->timetableParser: parseTimetable(input)
+    activate timetableParser
+    processCommand <--timetableParser:
+    deactivate timetableParser
+
+else e/
+    processCommand -> processCommand: processExpenditureUserCommand(input)
+    activate processCommand
+    processCommand --> processCommand:
+    deactivate processCommand
+
+else gpalist
+    create processListCommand
+    processCommand -> processListCommand: new ProcessListCommand()
+    activate processListCommand
+    processCommand <-- processListCommand:
+    deactivate processListCommand
+    processCommand -> processListCommand: processModuleListCommand()
+    activate processListCommand
+    processCommand <-- processListCommand:
+    deactivate processListCommand
+end
+processCommand --> cantVasMain: false
+deactivate processCommand
+
+@enduml
