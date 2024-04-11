@@ -329,8 +329,10 @@ View classes in order of day and time.
 
 #### View Class by day
 
+View classes for a specific day.
 
-
+**SequenceDiagram**
+![ViewDay](diagrams/sequencediagram/ViewTimeTableByDay.png)
 
 #### Delete Class
 
