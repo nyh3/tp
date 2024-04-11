@@ -8,6 +8,7 @@
 
 - [Acknowledgements](#acknowledgements)
 - [Design](#design)
+  - [Architecture]()
   - [UI](#ui)
   - [ProcessCommand](#processcommand)
   - [Storage](#storage)
@@ -48,6 +49,10 @@ We used [PlantUML webpage](https://plantuml.com/) to understand PlantUML syntax
 
 The sequence diagrams for our main class, CantVasMain and its interactions with
 other classes.
+
+### Architecture
+
+![ArchitectureDiagram](diagrams/Architecture.png)
 
 ### UI
 
