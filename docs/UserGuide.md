@@ -306,7 +306,8 @@ for the duration.
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
-| Action                       |                                       Format, Examples                                       |
+
+| Action                       |                                       Format, Examples                                       |       
 |------------------------------|:--------------------------------------------------------------------------------------------:|
 | Add expenditure without type |                  `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`                   |
 | Add expenditure with type    |             `e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`              |
@@ -325,4 +326,3 @@ for the duration.
 | Delete class                 |                              `tt/ del/ day/ <day> code/ <code>`                              |
 | Show help message            |                                            `help`                                            |
 | Exit CantVas                 |                                            `exit`                                            |
-
