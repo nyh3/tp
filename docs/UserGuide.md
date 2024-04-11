@@ -224,6 +224,9 @@ The features include:
 > For example, monday classes will have a day input of `1` and wednesday classes
 > will have a day input of `3`.
 > 
+> `classCode` refers to the module/course identification code. All class Codes will 
+> be automatically capitalised when saving ( Inputting "CS2113" will be the same as "cs2113" )
+> 
 > `time` refers to 24-hours in 2 digit integer format. For example, 1pm will 
 > be inputted as `13` and 9am will be inputted as `09`. Note that there will be no classes
 that cut across midnight. Hence `24` is not an accepted value.
