@@ -1,22 +1,20 @@
 @startuml
 'https://plantuml.com/sequence-diagram
 
-autonumber
 
 autonumber
+autoactivate on
 participant "processCommand:ProcessCommand" as processCommand
 participant ":ExpenditureList" as expenditureList
 participant ":Expenditure" as expenditure
 
 [-> processCommand: userCommand(command, expenseList, timetableList)
-activate processCommand
+
 
 processCommand -> processCommand: processExpenditureUserCommand(input)
-activate processCommand
+
 
 processCommand -> expenditureList: listExpenditure()
-activate expenditureList
-activate expenditure
 
 alt list is empty
     expenditureList -> expenditureList: isEmpty()
@@ -40,6 +38,6 @@ end
 
 
 [<-- processCommand: false
-deactivate processCommand
+
 
 @enduml
