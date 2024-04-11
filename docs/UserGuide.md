@@ -86,7 +86,7 @@ The features include:
 
 #### View all expenditure
 - Viewing saved expenditures without filters. To do so, key in 
-  with the following format: `list`.
+  with the following format: `e/ list/`.
 
 #### View expenditure by month and year
 - Viewing saved expenditures by month and year. To do so, key in 
@@ -103,7 +103,7 @@ The features include:
 
 #### Delete all expenditure
 - Deleting the entire saved expenditure list. To do so, key in with the
-  following format: `clearlist`.
+  following format: `e/ clearlist/`.
 
 #### Delete expenditure by index
 - Deleting saved expenditures. To do so, key in with the following format:
@@ -281,8 +281,8 @@ for the duration.
 - For addition of expenditure without type: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`.
 - For addition of expenditure with type: `e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`.
 - For deletion of saved expenditure: `e/ del/ <index>`.
-- For clearing of all expenditures: `clearlist`.
-- For listing of all expenditures: `list`.
+- For clearing of all expenditures: `e/ clearlist/`.
+- For listing of all expenditures: `e/ list/`.
 - For viewing of expenditures filtered by month: `e/ view/ m/ <mm.yyyy>`.
 - For viewing of expenditures filtered by year: `e/ view/ y/ <yyyy>`.
 - For viewing of expenditures filtered by type: `e/ view/ t/ <type>`.

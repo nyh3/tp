@@ -38,6 +38,9 @@ public class ProcessCommand {
                 System.out.println("Invalid index format for deletion.");
             }
             break;
+        case "clearlist":
+            ExpenditureList.clearlist();
+            break;
         case "list":
             ExpenditureList.listExpenses();
             break;
@@ -123,9 +126,6 @@ public class ProcessCommand {
             UI.printExitMessage();
             Storage.writeToFile(expenses);
             return true;
-        case "clearlist":
-            ExpenditureList.clearlist();
-            break;
         case "help":
             UI.printHelpMessage();
             break;
@@ -140,9 +140,6 @@ public class ProcessCommand {
             listCommand.processModuleListCommand();
             System.out.println("Back to main menu.");
             break;
-
-
-
         default:
             System.out.println("Unknown command. Please try again! Type 'help' for more information!");
             break;
