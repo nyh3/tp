@@ -47,5 +47,5 @@ package timetable{
     }
 }
 
-TimetableList "1" --> "*" Class: uses
+TimetableList "1" *--> "*" Class: contains
 @enduml

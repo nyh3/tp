@@ -58,9 +58,11 @@ How `UI` works:
 2. Prints an output based on user input. 
 3. Reads in user input for steps in GPA calculator.
 
-*Class Diagram*
+**Diagrams**
 
-![UIClassDiagram](diagrams/classdiagram/UICD.png)
+*Sequence Diagram*
+
+![UISequenceDiagram](diagrams/sequencediagram/UISD.png)
 
 ### ProcessCommand
 
@@ -76,9 +78,13 @@ How `ProcessCommand` works:
 
 **Diagrams**
 
+*Class Diagram*
+
+![ProcessCommandClassDiagram](diagrams/classdiagram/ProcessCommandCD.png)
+
 *Sequence Diagram*
 
-![ProcessCommand](diagrams/sequencediagram/ProcessCommand.png)
+![ProcessCommandSequenceDiagram](diagrams/sequencediagram/ProcessCommand.png)
 
 ### Storage
 
@@ -108,10 +114,6 @@ How `Exceptions` work:
 1. Throws an error message when the user enters an input that 
    has the wrong format and the user will be informed about their wrong format.
 2. Takes in an error message when thrown that can be printed.
-
-**Diagrams**
-
-
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -493,6 +495,8 @@ Given below are instructions on how to test the app manually.
    No expenditure should be shown when `e/ list/` is entered.
 
 ### GPA Calculator
+
+### Mathematical Graph Demo
 
 ### Timetable Tracker
 

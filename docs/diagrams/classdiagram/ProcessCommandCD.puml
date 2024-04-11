@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+hide circle
+skinparam classAttributeIconSize 0
+
+package GPA {
+    class GPACommand {
+        + {static} processGPACommand()
+    }
+
+    class ProcessListCommand {
+        + processModuleListCommand(): boolean
+    }
+}
+
+package processusercommands {
+    class ProcessCommand {
+        + processExpenditureUserCommand(command: String)
+        + processViewUserCommand(command: String)
+        + userCommand)input: String, expenses: ExpenditureList, timetable: TimetableList): boolean
+    }
+
+    class TimetableParser {
+        + {static} parseTimetable(command: String)
+    }
+}
+
+class ProcessGCCommand {
+    + processGCCommand(input: String): boolean
+}
+
+ProcessCommand ..> TimetableParser: uses
+ProcessCommand ..> GPACommand: uses
+ProcessCommand ..> ProcessGCCommand: uses
+ProcessCommand ..> ProcessListCommand: uses
+@enduml
