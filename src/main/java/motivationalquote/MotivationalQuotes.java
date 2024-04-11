@@ -43,7 +43,10 @@ public class MotivationalQuotes {
         "Don’t be pushed around by the fears in your mind. Be led by the dreams in your heart.\n"
     };
 
-
+    /**
+     *
+     * @return a randomly generated index from the MOTIVATIONALQUOTELIST array
+     */
     public static String getQuote() {
         Random rand = new Random();
         int index = rand.nextInt(MOTIVATIONALQUOTELIST.length);
