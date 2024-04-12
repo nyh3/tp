@@ -82,8 +82,8 @@ How `UI` works:
 
 ![UIClassDiagram](diagrams/classdiagram/UICD.png)
 
-The class diagram above illustrates that CantVasMain instantiates the UI class,
-while other classes have dependencies on UI, as they utilize its methods.
+The class diagram above illustrates that `CantVasMain` instantiates the `UI` class,
+while other classes have dependencies on `UI`, as they utilize its methods.
 
 *Sequence Diagram*
 
@@ -111,9 +111,15 @@ How `ProcessCommand` works:
 
 ![ProcessCommandClassDiagram](diagrams/classdiagram/ProcessCommandCD.png)
 
+The class diagram above showcases the various classes leveraged by 
+`ProcessCommand` to facilitate its task of parsing and executing commands.
+
 *Sequence Diagram*
 
 ![ProcessCommandSequenceDiagram](diagrams/sequencediagram/ProcessCommand.png)
+
+The sequence diagram above illustrates how user input is parsed 
+and executed when passed to `ProcessCommand`.
 
 ### Storage
 
@@ -124,11 +130,13 @@ How `Storage` works:
    All text will be in a folder called data for easy location.
 2. When `ProcessCommand` receives the `exit` command, `Storage` writes expenditure and
    timetable lists to their respective text file for saving.
-3. Reads in data from text file and process the data into strings to pass into
-   `addExpenditure`, `addModule` and `addClass` methods. 
+3. `Storage` will instantiate ExpenditureList, TimetableList and ModuleList to store data read
+   from the text file before passing it to other classes. 
 4. If a text file or the data directory is not found when trying to read,
-   `Storage` will create a new file/ directory and return an empty list to the caller.
-5. `PrintWriter` and `File` and `Scanner` classes are responsible 
+   `Storage` will create a new file/ directory and return an empty list to the caller. 
+5. Reads in data from text file and process the data into strings to pass into
+   `addExpenditure`, `addModule` and `addClass` methods.
+6. `PrintWriter` and `File` and `Scanner` classes are responsible 
    for the writing, opening and reading from files respectively.
 
 **Diagrams**
@@ -136,6 +144,8 @@ How `Storage` works:
 *Class Diagram*
 
 ![StorageClassDiagram](diagrams/classdiagram/StorageCD.png)
+
+The class diagram above illustrates the classes that is associated or is dependent on `Storage`.
 
 ### Exceptions
 
