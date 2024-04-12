@@ -61,7 +61,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 The bulk of the app's work is done by the following three components:
 
-- [`UI`](#ui): The UI of CantVas
+- [`UI`](#ui): The UI of CantVas.
 - [`ProcessCommand`](#processcommand): Parses user input and executes the command.
 - [`Storage`](#storage): Reads and write data to the respective text file for each feature.
 
@@ -78,9 +78,18 @@ How `UI` works:
 
 **Diagrams**
 
+*Class Diagram*
+
+![UIClassDiagram](diagrams/classdiagram/UICD.png)
+
+The class diagram above illustrates that CantVasMain instantiates the UI class,
+while other classes have dependencies on UI, as they utilize its methods.
+
 *Sequence Diagram*
 
 ![UISequenceDiagram](diagrams/sequencediagram/UISD.png)
+
+The Sequence diagram above illustrates the interaction between `CantVasMain` and `UI` when the program starts.
 
 ### ProcessCommand
 

@@ -36,7 +36,7 @@ expenses, organize your timetable and track your grades.
     - [List all class for the week](#view-all-class-for-the-week)
     - [List class for the day](#view-class-for-the-day)
     - [Delete class](#delete-class)
-  - [Motivational Quotes](#daily-motivational-quotes)
+  - [Motivational Quotes](#motivational-quotes)
 - [FAQ](#faq)
 - [Command Summary](#command-summary)
 
