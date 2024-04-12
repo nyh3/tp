@@ -2,12 +2,12 @@
 'https://plantuml.com/sequence-diagram
 
 autoactivate on
-participant "CantVasMain" as CantVasMain
-participant "UI" as UI
-participant "MotivationalQuotes" as MotivationalQuotes
+participant ":CantVasMain" as CantVasMain
+participant "ui:UI" as UI
+participant ":MotivationalQuotes" as MotivationalQuotes
 
 
-
+activate CantVasMain
 CantVasMain -> CantVasMain: run()
 
 

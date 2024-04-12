@@ -24,29 +24,33 @@ package cantvasui {
     }
 }
 
-package processusercommands {
-    class ProcessCommand {
+class CantVasMain {
+}
+
+class ProcessCommand {
+}
+
+package gpa{
+    class ProcessListCommand {
+    }
+
+    class GPACommand {
     }
 }
 
-package gpa {
-    class ProcessListCommand{
-    }
+
+class ProcessGCCommand {
 }
 
-package gc {
-    class ProcessGCCommand{
-    }
+
+class TimetableList {
 }
 
-package timetable {
-    class TimetableList {
-    }
-}
-
-ProcessCommand ..> UI: uses
-ProcessListCommand ..> UI: uses
-ProcessGCCommand ..> UI: uses
-TimetableList ..> UI: uses
+CantVasMain -> UI: creates and uses >
+ProcessCommand ..> UI: uses >
+ProcessListCommand ..> UI: uses >
+ProcessGCCommand ..> UI: uses >
+GPACommand ..> UI: uses >
+TimetableList ..> UI: uses >
 
 @enduml

@@ -32,6 +32,6 @@ class ProcessGCCommand {
 
 ProcessCommand ..> TimetableParser: uses >
 ProcessCommand ..> GPACommand: uses >
-ProcessCommand ..> ProcessGCCommand: uses >
-ProcessCommand ..> ProcessListCommand: uses >
+ProcessCommand -> ProcessGCCommand: creates and uses >
+ProcessCommand -> ProcessListCommand: creates and uses >
 @enduml

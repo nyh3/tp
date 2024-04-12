@@ -47,12 +47,25 @@ We used [PlantUML webpage](https://plantuml.com/) to understand PlantUML syntax
 
 ## Design
 
-The sequence diagrams for our main class, CantVasMain and its interactions with
-other classes.
-
 ### Architecture
 
 ![ArchitectureDiagram](diagrams/Architecture.png)
+
+The **Architecture Diagram** above explains the high-level design of CantVas.
+
+Given below is a quick overview of main components and how they interact with each other.
+
+**Main components of the architecture**
+
+`CantVasMain` is in charge of the launch and shut down of CantVas. 
+
+The bulk of the app's work is done by the following three components:
+
+- [`UI`](#ui): The UI of CantVas.
+- [`ProcessCommand`](#processcommand): Parses user input and executes the command.
+- [`Storage`](#storage): Reads and write data to the respective text file for each feature.
+
+[`Exceptions`](#exceptions) represents the exceptions used by other components.
 
 ### UI
 
@@ -65,9 +78,18 @@ How `UI` works:
 
 **Diagrams**
 
+*Class Diagram*
+
+![UIClassDiagram](diagrams/classdiagram/UICD.png)
+
+The class diagram above illustrates that `CantVasMain` instantiates the `UI` class,
+while other classes have dependencies on `UI`, as they utilize its methods.
+
 *Sequence Diagram*
 
 ![UISequenceDiagram](diagrams/sequencediagram/UISD.png)
+
+The Sequence diagram above illustrates the interaction between `CantVasMain` and `UI` when the program starts.
 
 ### ProcessCommand
 
@@ -89,9 +111,15 @@ How `ProcessCommand` works:
 
 ![ProcessCommandClassDiagram](diagrams/classdiagram/ProcessCommandCD.png)
 
+The class diagram above showcases the various classes leveraged by 
+`ProcessCommand` to facilitate its task of parsing and executing commands.
+
 *Sequence Diagram*
 
 ![ProcessCommandSequenceDiagram](diagrams/sequencediagram/ProcessCommand.png)
+
+The sequence diagram above illustrates how user input is parsed 
+and executed when passed to `ProcessCommand`.
 
 ### Storage
 
@@ -102,11 +130,13 @@ How `Storage` works:
    All text will be in a folder called data for easy location.
 2. When `ProcessCommand` receives the `exit` command, `Storage` writes expenditure and
    timetable lists to their respective text file for saving.
-3. Reads in data from text file and process the data into strings to pass into
-   `addExpenditure`, `addModule` and `addClass` methods. 
+3. `Storage` will instantiate ExpenditureList, TimetableList and ModuleList to store data read
+   from the text file before passing it to other classes. 
 4. If a text file or the data directory is not found when trying to read,
-   `Storage` will create a new file/ directory and return an empty list to the caller.
-5. `PrintWriter` and `File` and `Scanner` classes are responsible 
+   `Storage` will create a new file/ directory and return an empty list to the caller. 
+5. Reads in data from text file and process the data into strings to pass into
+   `addExpenditure`, `addModule` and `addClass` methods.
+6. `PrintWriter` and `File` and `Scanner` classes are responsible 
    for the writing, opening and reading from files respectively.
 
 **Diagrams**
@@ -114,6 +144,8 @@ How `Storage` works:
 *Class Diagram*
 
 ![StorageClassDiagram](diagrams/classdiagram/StorageCD.png)
+
+The class diagram above illustrates the classes that is associated or is dependent on `Storage`.
 
 ### Exceptions
 
@@ -129,10 +161,6 @@ How `Exceptions` work:
 ## Implementation
 
 ### Expenditure Tracker
-
-**API:**
-[`Expenditure.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/expenditure/Expenditure.java), 
-[`ExpenditureList.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/expenditure/ExpenditureList.java)
 
 The Expenditure Tracker simplifies expense tracking, allowing users
 to log daily spending. With filters for month, year, and type, it 
@@ -217,13 +245,6 @@ Example: e/ del/ 3
 ------------------------------------------------------------------------------------------
 
 ### GPA Calculator
-
-**API:** 
-[`GPACommand.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/GPACommand.java),
-[`GPAMain.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/GPAMain.java),
-[`Module.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/Module.java),
-[`ModuleList`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/ModuleList.java),
-[`ProcessListCommand`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gpa/ProcessListCommand.java)
 
 The GPA Calculator Module is a comprehensive component designed to facilitate the calculation 
 of a user's updated GPA based on their current academic standing and projected module grades.
@@ -312,12 +333,6 @@ Divide the total points by the new total credits (accumulated + new modules) to 
 
 ### Mathematical Graph Demo
 
-**API:** 
-[`ProcessGCCommand.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gc/ProcessGCCommand.java),
-[`YX.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gc/YX.java),
-[`YXsq.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gc/YXsq.java),
-[`YlogX.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/gc/YlogX.java)
-
 #### Overview
 
 The Graph Demo function uses JPanel , which is a simple GUI tool in javax.swing package.
@@ -327,11 +342,6 @@ mathematical formula with illustration.
 ------------------------------------------------------------------------------------------
 
 ### Timetable Tracker
-
-**API:**
-[`Class.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/timetable/Class.java),
-[`TimetableList.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/timetable/TimetableList.java)
-
 
 The timetable tracker facilitates the management of class schedules. It aims to provide users with a 
 convenient way to organize and track their classes throughout the week. Users can add, delete, 
@@ -386,10 +396,6 @@ View classes for a specific day.
 The Motivational module prints a randomly generated motivational quote from the fixed array for the user whenever the program starts.
 It uses inbuilt random class from java.util to randomly generate an index to select the motivational quote to display
 
-**API:** 
-
-[`MotivationalQuotes.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/motivationalquote/MotivationalQuotes.java)
-
 **Class Diagram**
 
 ![Motivationquote](diagrams/classdiagram/motivationalquoteCD.png)
@@ -397,10 +403,6 @@ It uses inbuilt random class from java.util to randomly generate an index to sel
 **SequenceDiagram**
 
 ![getQuote](diagrams/sequencediagram/MotivationalQuotes.png)
-
-
-
-
 
 ------------------------------------------------------------------------------------------
 

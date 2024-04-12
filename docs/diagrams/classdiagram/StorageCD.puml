@@ -3,6 +3,22 @@
 
 hide circle
 skinparam classAttributeIconSize 0
+left to right direction
+
+class Scanner {
+}
+
+class File {
+}
+
+class PrintWriter {
+}
+
+class CantVasMain {
+}
+
+class ProcessCommand {
+}
 
 class Storage {
     - {static} EXPENDITURE_FILE_PATH: String = "./data/expenditure.txt"
@@ -21,12 +37,14 @@ class Storage {
     - {static} writeDayTimetableToFile(fw: PrintWriter, timetable: Class[], day: int)
     - {static} writeHourTimetableToFile(fw: PrintWriter, timetable: Class, day: int)
     - {static} createDirectoryAndFile(directory: File, file: FIle)
-    }
-
-class CantVasMain {
 }
 
-class ProcessCommand {
+
+
+class TimetableList {
+}
+
+class ExpenditureList {
 }
 
 package gpa {
@@ -37,20 +55,15 @@ package gpa {
     }
 }
 
-class Scanner {
-}
-
-class File {
-}
-
-class PrintWriter {
-}
+Storage <-> ModuleList: creates and uses >
+TimetableList <- Storage: reads and writes <
+ExpenditureList -> Storage: reads and writes <
+Storage -> Scanner: creates and uses >
+Storage -> File: creates and uses >
+Storage -> PrintWriter: creates and uses >
 
 CantVasMain ..> Storage: uses >
 ProcessCommand ..> Storage: uses >
 ProcessListCommand ..> Storage: uses >
-ModuleList ..> Storage: uses >
-Storage ..> Scanner: uses >
-Storage ..> File: uses >
-Storage ..> PrintWriter: uses >
+
 @enduml
