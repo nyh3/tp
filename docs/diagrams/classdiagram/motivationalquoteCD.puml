@@ -1,20 +1,32 @@
 @startuml
+'https://plantuml.com/class-diagram
+hide circle
+skinparam classAttributeIconSize 0
+
 package "motivationalquote" {
+
+
+together {
     class MotivationalQuotes {
-        + MOTIVATIONALQUOTELIST: String[]
+        # MOTIVATIONALQUOTELIST: String[]
         + getQuote(): String
     }
+
     class Random {
         {static} + nextInt(int bound): int
     }
-    class UI {
-        + displayQuote(String quote)
-    }
-
 
     MotivationalQuotes --> Random
-    UI --> MotivationalQuotes: getQuote()
-    MotivationalQuotes --> UI: Selected Quote
-
+    }
 }
+
+    class UI {
+        + printMotivationQuote(String quote)
+
+    }
+
+    UI --> MotivationalQuotes: getQuote()
+    MotivationalQuotes "1" --> UI: Selected Quote
+
+
 @enduml
