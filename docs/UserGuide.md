@@ -258,7 +258,7 @@ that cut across midnight. Hence `24` is not an accepted value.
 
 --------------------------------------------------------------------------------------------------------------------
 
-### Daily Motivational Quotes
+### Motivational Quotes
 Feeling Down? Dread looking at your packed timetable?
 CantVas is here to save your day and uplift your spirits whenever you need it most
 (when looking at expenses and timetable)

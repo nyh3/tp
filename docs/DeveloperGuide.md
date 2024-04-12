@@ -352,7 +352,16 @@ View classes for a specific day.
 ------------------------------------------------------------------------------------------
 
 ### Motivational Quotes
-The Motivational module prints a randomly generated motivational quote for the user whenever the program starts
+The Motivational module prints a randomly generated motivational quote from the fixed array for the user whenever the program starts.
+It uses inbuilt random class from java.util to randomly generate an index to select the motivational quote to display
+
+**Class Diagram**
+
+![Motivationquote](diagrams/classdiagram/motivationalquoteCD.png)
+
+**SequenceDiagram**
+
+![getQuote](diagrams/sequencediagram/MotivationalQuotes.png)
 
 ------------------------------------------------------------------------------------------
 
