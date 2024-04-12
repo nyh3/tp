@@ -50,7 +50,7 @@ public class MotivationalQuotes {
      */
     public static String getQuote() {
         Random rand = new Random();
-        int index = rand.nextInt(MOTIVATIONALQUOTELIST.length);
+        int index = rand.nextInt(MOTIVATIONALQUOTELIST.length-1);
         return MOTIVATIONALQUOTELIST[index];
     }
 
