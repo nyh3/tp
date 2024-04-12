@@ -1,0 +1,20 @@
+@startuml
+package "motivationalquote" {
+    class MotivationalQuotes {
+        + MOTIVATIONALQUOTELIST: String[]
+        + getQuote(): String
+    }
+    class Random {
+        {static} + nextInt(int bound): int
+    }
+    class UI {
+        + displayQuote(String quote)
+    }
+
+
+    MotivationalQuotes --> Random
+    UI --> MotivationalQuotes: getQuote()
+    MotivationalQuotes --> UI: Selected Quote
+
+}
+@enduml

@@ -1,0 +1,23 @@
+@startuml
+title Motivational Quotes - getQuote() Sequence Diagram
+
+participant UI
+participant MotivationalQuotes
+participant Random
+
+UI -> MotivationalQuotes: getQuote()
+activate MotivationalQuotes
+MotivationalQuotes -> Random: new Random()
+activate Random
+Random --> MotivationalQuotes: Instance
+deactivate Random
+MotivationalQuotes -> Random: nextInt(MOTIVATIONALQUOTELIST.length)
+activate Random
+Random --> MotivationalQuotes: Random Index
+deactivate Random
+MotivationalQuotes -> MOTIVATIONALQUOTELIST: Access Random Index
+note right: Array access operation
+MOTIVATIONALQUOTELIST --> MotivationalQuotes: Selected Quote
+MotivationalQuotes --> UI: Selected Quote
+deactivate MotivationalQuotes
+@enduml
