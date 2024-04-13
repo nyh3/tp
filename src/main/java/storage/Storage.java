@@ -79,7 +79,7 @@ public class Storage {
             while (s.hasNext()) {
                 String line = s.nextLine();
                 String expenditure = processExpenditure(line);
-                if (!expenditure.equals("NULL")) {
+                if (expenditure != null) {
                     ExpenditureList.addExpenditure(expenditure, false);
                 }
             }
@@ -134,7 +134,9 @@ public class Storage {
             while (s.hasNext()) {
                 String line = s.nextLine();
                 String schedule = processTimetable(line);
-                TimetableList.addClass(schedule,false);
+                if (schedule != null) {
+                    TimetableList.addClass(schedule, false);
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error" + e.getMessage());
@@ -150,16 +152,11 @@ public class Storage {
      * @return The formatted expenditure string.
      */
     private static String processExpenditure(String line) {
-        try {
-            String[] parts = line.split("\\|");
-            if (parts.length < 4) {
-                throw new InvalidInputFormatException("Corrupted data in expenditure.txt file");
-            }
-            return ("d/" + parts[0] + "t/" + parts[1] + "amt/" + parts[2] + "date/" + parts[3]);
-        } catch (InvalidInputFormatException e) {
-            System.out.println(e.getMessage());
+        String[] parts = line.split("\\|");
+        if (parts.length < 4) {
+            return null;
         }
-        return "NULL";
+        return ("d/" + parts[0] + "t/" + parts[1] + "amt/" + parts[2] + "date/" + parts[3]);
     }
 
     /**
@@ -194,6 +191,9 @@ public class Storage {
      */
     private static String processTimetable(String line) {
         String[] parts = line.split("\\|");
+        if (parts.length < 5) {
+            return null;
+        }
         return ("day/" + parts[0] + "code/" + parts[1] +
                 "time/" + parts[2] + "duration/" + parts[3] + "location/" + parts[4]);
     }
