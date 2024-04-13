@@ -5,6 +5,33 @@ import static seedu.duke.CantVasMain.ui;
 
 public class GPACommand {
 
+    /**
+     * Handles the user interface for calculating an updated GPA in the GPA calculator. This method
+     * prompts the user to enter their current GPA, the number of accumulated modular credits (MCs),
+     * and the details for any additional modules they wish to add. It supports commands to start the
+     * process, enter module details, and exit at any point.
+     *
+     * The method operates as follows:
+     * 1. Prompts the user to start the GPA calculation or exit.
+     * 2. If the GPA calculation starts, it continuously requests the current GPA and total MCs until
+     *    valid inputs are provided.
+     * 3. It then asks for the number of new modules and their details (module name, credits, and expected grade).
+     * 4. For each module, it validates and processes the input.
+     * 5. Once all module data are collected, it calculates the new GPA considering the new modules and displays it.
+     * 6. The method loops back to the initial prompt allowing multiple GPA calculations or exits.
+     *
+     * Input validation includes checking for correct numerical and format inputs and ensuring GPA and MC values
+     * are within reasonable limits. The method uses assertions for additional validation checks.
+     *
+     * Commands:
+     * - 'GPA': Start the GPA calculation.
+     * - 'exit': Exit the GPA calculation and return to the main menu.
+     *
+     * The user interaction is command-line based, utilizing a loop to handle multiple requests.
+     *
+     * @throws NumberFormatException if non-numeric input is provided where a number is expected.
+     * @throws IllegalArgumentException if inputs do not match the required format or are out of expected range.
+     */
     public static void processGPACommand() {
 
         while (true) {
