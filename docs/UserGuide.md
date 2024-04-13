@@ -56,6 +56,7 @@ CantVas includes the following
 features:
 - Expenditure Tracker 
 - GPA Calculator
+- Math Graph Demo
 - Timetable Tracker
 - Daily Motivational Quotes
 
@@ -303,11 +304,16 @@ for the duration.
 
 **A**: Deleting that specified class code for the day will delete all instances of the specified class within the day, Users will have to re-enter the class they would like to keep
 
+**Q**: How do I transfer my data to another Computer?
+
+**A**: Download CantVas on the other computer and overwrite the empty text files created in the ./data directory with the text files from
+your original computer also found in the ./data directory.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
 
-| Action                       |                                       Format, Examples                                       |       
+| Action                       |                                            Format                                            |       
 |------------------------------|:--------------------------------------------------------------------------------------------:|
 | Add expenditure without type |                  `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`                   |
 | Add expenditure with type    |             `e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`              |
