@@ -395,7 +395,6 @@ How `Timetable` works:
 1. When a new class is added, `TimetableList` creates a new `Class` object with the provided details
 and adds it to the timetableList based on the day and time of the class. This is repeated with a decreasing 
 class duration and increasing class time until the class duration reaches 0.
-duration reaches 0.
 2. When a class is deleted, `TimetableList` iterates through the array for the day and looks for
 classes with the same class code as what the user input and deletes the `Class` object from the 2d array.
 3. When the timetable is listed for the whole week, `TimetableList` iterates through the 2d array starting from monday, 
