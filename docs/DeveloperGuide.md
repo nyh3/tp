@@ -29,6 +29,7 @@
     - [Help](#show-help)
     - [Expenditure Tracker](#expenditure-tracker-1)
     - [GPA Calculator](#gpa-calculator-1)
+    - [Math Graph Demo](#mathematical-graph-demo-1)
     - [Timetable Tracker](#timetable-tracker-1)
 
 --------------------------------------------------------------------------------------------------------------------
