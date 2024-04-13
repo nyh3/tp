@@ -9,6 +9,29 @@ import cantvasui.UI;
 import static seedu.duke.CantVasMain.ui;
 
 public class ProcessListCommand {
+
+    /**
+     * Processes user commands related to managing a list of academic modules and calculating GPA.
+     * This method acts as an interface for adding, deleting, and viewing modules, as well as calculating
+     * an updated GPA based on the current list of modules. It supports various commands and handles
+     * user interactions in a loop until the user decides to exit.
+     *
+     * Supported commands:
+     * - 'add': Prompts the user to enter the number of modules and their details to be added to the list.
+     * - 'del': Allows the user to delete specific modules from the list or clear all modules.
+     * - 'viewlist': Displays all the modules currently in the list.
+     * - 'gpa': Calculates and displays the updated GPA based on the current modules and user's input of current GPA
+     * and total credits.
+     * - 'exit': Exits the module list manager and returns to the main menu.
+     * - 'help': Displays help information related to the available commands.
+     *
+     * Each command guides the user through the required inputs and provides feedback on the success or
+     * failure of the operation. The method ensures that all inputs are validated and handles errors appropriately,
+     * including incorrect formats and out-of-range values.
+     *
+     * @return true if the user exits the module list manager; false if an operation like deleting a module does not
+     * lead to an exit.
+     */
     public boolean processModuleListCommand() {
         System.out.println("Welcome to the advanced gpa calculator page!");
         UI.gpaListHelpMessage();
