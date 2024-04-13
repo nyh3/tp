@@ -29,8 +29,9 @@ public class ProcessListCommand {
      * failure of the operation. The method ensures that all inputs are validated and handles errors appropriately,
      * including incorrect formats and out-of-range values.
      *
-     * @return true if the user exits the module list manager; false if an operation like deleting a module does not
-     * lead to an exit.
+     * @return true if the user exits the module list manager; false if an operation like deleting
+     * a module does not lead to an exit.
+     *
      */
     public boolean processModuleListCommand() {
         System.out.println("Welcome to the advanced gpa calculator page!");
