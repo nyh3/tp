@@ -94,8 +94,7 @@ The Sequence diagram above illustrates the interaction between `CantVasMain` and
 ### ProcessCommand
 
 **API:** 
-[`ProcessCommand.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/processusercommands/ProcessCommand.java), 
-[`TimetableParser.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/processusercommands/TimetableParser.java)
+[`ProcessCommand.java`](https://github.com/AY2324S2-CS2113-W13-3/tp/blob/master/src/main/java/processusercommands/ProcessCommand.java)
 
 How `ProcessCommand` works:
 1. `CantVasMain` receive the user input from `UI` and passes it to `ProcessCommand`.
@@ -254,7 +253,7 @@ Format: `e/ view/ t/ <type>`.
 
 ![ViewExpenditure.png](diagrams/sequencediagram/ViewExpenditure.png)
 
-The sequence diagram above illustrates how `ProcessCommand` determines which method to call in `ExpenditurList`.
+The sequence diagram above illustrates how `ProcessCommand` determines which method to call in `ExpenditureList`.
 
 #### Delete expenditure:
 Deleting an expenditure in numerical form, by referencing its index in the array.
@@ -378,43 +377,100 @@ enhancing the overall productivity and organization of users.
 The `TimetableParser` class is responsible for parsing commands related
 to timetable tracker and calling the respective methods in `timetableList`.
 
-The `timetableList` class is responsible for managing a collection of classes.
-It provides methods for adding, deleting and listing timetable.
+The `TimetableList` class is responsible for managing a collection of classes.
+It provides methods for adding, deleting and listing timetable. `TimetableList` makes
+use of a 2d array to store the classes, an array for each weekday and an internal array
+for each hour of the day.
 
-The `class` class represents individual class instance within the system.
+The `Class` class represents individual class instance within the system.
 Each class object contains key attributes such as code, time, duration and location.
+
+The class diagram below illustrates the relationship between `TimetableList` and `Class` class.
 
 **Class Diagram**
 
 ![TimetableClassDiagram](diagrams/classdiagram/TimetableCD.png)
 
+How `Timetable` works:
+1. When a new class is added, `TimetableList` creates a new `Class` object with the provided details
+and adds it to the timetableList based on the day and time of the class. This is repeated with a decreasing 
+class duration and increasing class time until the class duration reaches 0.
+duration reaches 0.
+2. When a class is deleted, `TimetableList` iterates through the array for the day and looks for
+classes with the same class code as what the user input and deletes the `Class` object from the 2d array.
+3. When the timetable is listed for the whole week, `TimetableList` iterates through the 2d array starting from monday, 
+00:00 and prints the details if there is a class.
+4. When the timetable is listed for a specific day, `TimetableList` iterates through the array for that day
+and prints the details if there is a class.
+5. The isSlotAvailable(), isValidDay(), isValidClassTime(), isValidClassCode() and isAbleToAddClass() methods in
+`TimetableList` are used to validate whether the user input is correct and whether there is any conflict with the
+existing timetable before the class is added or deleted from the array.
+
+**Design Considerations:** 
+
+**ASPECT:** What the timetable list is store in.
+
+- **Alternative 1 (Current Choice):** As a 2d array.
+  - Pros: Prevents Overlapping Classes: With a structured 2D array representing time slots, 
+  it's easier to enforce constraints to prevent overlapping classes.
+  - Cons: Fixed Size: It might be less flexible if the timetable size needs to be adjusted dynamically.
+  Not able to store timetable in half hours.
+
+- **Alternative 2:** As 5 array list, 1 for each day.
+  - Pros: Flexibility: Each day's timetable can be managed independently, 
+  providing more flexibility in adding, removing, or modifying classes.
+  - Cons: Indirect Access: Accessing elements might be slightly less efficient compared to 
+  direct indexing in a 2D array, as it involves traversing ArrayLists.
+
 #### Add Class
+
+Allows users to add classes to the timetable, provided there is no existing class already in the time slot.
+
+Format: `tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location>`.
 
 **SequenceDiagram**
 
 ![AddClass](diagrams/sequencediagram/AddClass.png)
 
+The sequence diagram above illustrates how `TimetableList` goes about validating user input and adding the new class.
+
 #### List Class
 
 View classes in order of day and time.
+
+Format: `tt/ list/`.
 
 **SequenceDiagram**
 
 ![ViewTimeTable](diagrams/sequencediagram/ViewTimeTable.png)
 
+The sequence diagram above illustrates how `TimetableList` iterates through the 2d array to list the timetable.
+
 #### List Class by day
 
 View classes for a specific day.
+
+Format: `tt/ list -d/ <day>`.
 
 **SequenceDiagram**
 
 ![ViewDay](diagrams/sequencediagram/ViewTimeTableByDay.png)
 
+The sequence diagram above illustrates how `TimetableList` iterates through the array for the day 
+to list the timetable for the day.
+
 #### Delete Class
+
+Deletes all class on the day that has the same class code as the user input.
+
+Format: `tt/ del/ day/ <day> code/ <code>`.
 
 **SequenceDiagram**
 
 ![DeleteClass](diagrams/sequencediagram/DeleteClass.png)
+
+The sequence diagram above illustrates how `TimetableList` iterates through the array for the day to check for
+similar class code before deleting the `Class` object from the array.
 
 ------------------------------------------------------------------------------------------
 
@@ -427,9 +483,13 @@ It uses inbuilt random class from java.util to randomly generate an index to sel
 
 ![Motivationquote](diagrams/classdiagram/motivationalquoteCD.png)
 
+The class diagram above illustrates the classes associated with `MotivationalQuites`.
+
 **SequenceDiagram**
 
 ![getQuote](diagrams/sequencediagram/MotivationalQuotes.png)
+
+The sequence diagram above illustrates how `MotivationalQuotes` gets a random quote from the quote list.
 
 ------------------------------------------------------------------------------------------
 
