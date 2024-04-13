@@ -276,6 +276,11 @@ you energy and encouragement to get through your day!
 **A**: Editing the list is not possible, in the event of erroneous input, please delete 
 and input the correct expense or class accordingly.
 
+**Q**: What if I mistakenly delete a class or expenditure entry?
+
+**A**: Once a class or expenditure entry is deleted, it cannot be recovered through CantVas itself. It's important to 
+confirm your actions before deleting any data. To prevent such mistakes, always double-check the details before executing a deletion command.
+
 **Q**: Why can't I find the expenditure I inputted via the `e/ view/ t/` function?
 
 **A**: Double check if you have inputted in the type of expenditure by using the list command 
@@ -313,6 +318,24 @@ your original computer also found in the ./data directory.
 
 **A**: CantVas will try to remove the corrupted entry when you exit the application. However in the case where
 CantVas does not recognise the entry as corrupted, you may remove the entry directly from the text file.
+
+**Q**: What should I do if CantVas crashes or freezes?
+
+**A**: If If CantVas crashes or freezes, restart the application. If the problem persists, ensure that your data files 
+are not corrupted and check if your system meets the software's requirements(Java 11). If necessary, reinstall CantVas 
+to resolve software glitches.
+
+**Q**: What should I do if I encounter an error saying File not found when accessing CantVas?
+
+**A**: This error typically occurs when CantVas cannot locate its data files in the ./data directory. Ensure that you 
+have not moved or deleted the ./data folder. If the problem continues, try reinstalling CantVas and make sure the 
+installation path is correct and accessible.
+
+**Q**: Is there a limit to the number of classes or expenditures I can input into CantVas?
+
+**A**: CantVas does not impose a specific limit on the number of classes or expenditures you can input. However,
+performance may vary based on your computer's capabilities, especially as the data files grow larger. The number of 
+classes is also limited by the number of hours/days in a week since the timetable is for one week.
 
 --------------------------------------------------------------------------------------------------------------------
 
