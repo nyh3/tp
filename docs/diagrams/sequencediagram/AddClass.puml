@@ -40,12 +40,14 @@ deactivate timetableList
 timetableList --> timetableList: boolean
 deactivate timetableList
 
-create class
-timetableList -> class: new Class(classCode, classTime, classDuration, classLocation)
-activate class
+loop classDuration > 0
+    create class
+    timetableList -> class: new Class(classCode, classTime, classDuration, classLocation)
+    activate class
 
-class --> timetableList:
-deactivate class
+    class --> timetableList:
+    deactivate class
+end
 
 timetableList -> timetableList: userAddedMessage(userAdded)
 activate timetableList

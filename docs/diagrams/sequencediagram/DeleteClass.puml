@@ -25,13 +25,18 @@ deactivate timetableList
 timetableList -> timetableList: isClassDeleted(classDay, classCode, classDeleted)
 activate timetableList
 
-timetableList -> class: getClassCode()
-activate class
+loop hour in HOURS_PER_DAY
+    timetableList -> class: getClassCode()
+    activate class
 
-timetableList <-- class: classCode
-deactivate class
+    timetableList <-- class: classCode
+    deactivate class
 
-timetableList -> class !! : deleted
+    alt classCode equals input classCode
+        timetableList -> class !! : deleted
+
+    end
+end
 
 timetableList --> timetableList: classDeleted
 deactivate timetableList

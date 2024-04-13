@@ -250,7 +250,8 @@ that cut across midnight. Hence `24` is not an accepted value.
 
 #### View class for the day
 - To view classes for the specific day of the week key in the following:  
-  `tt/ list -d/ <day>`
+  `tt/ list -d/ <day>`.
+  - Example: `tt/ list -d/ 2`.
 
 #### Delete class
 - Deleting saved classes. To do so, key in with the following format:   
