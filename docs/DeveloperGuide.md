@@ -8,7 +8,7 @@
 
 - [Acknowledgements](#acknowledgements)
 - [Design](#design)
-  - [Architecture]()
+  - [Architecture](#architecture)
   - [UI](#ui)
   - [ProcessCommand](#processcommand)
   - [Storage](#storage)
@@ -156,6 +156,8 @@ How `Exceptions` work:
    has the wrong format and the user will be informed about their wrong format.
 2. Takes in an error message when thrown that can be printed.
 
+###### [Back to table of contents](#table-of-contents)
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Implementation
@@ -267,6 +269,8 @@ Format: `e/ del/ <index>`.
 
 The sequence diagram above illustrates how the `Expenditure` object is deleted from the list.
 
+###### [Back to table of contents](#table-of-contents)
+
 ------------------------------------------------------------------------------------------
 
 ### GPA Calculator
@@ -356,6 +360,8 @@ For each new module, add to the total points based on the grade and credits.
 #### Calculate Updated GPA: 
 Divide the total points by the new total credits (accumulated + new modules) to get the updated GPA.
 
+###### [Back to table of contents](#table-of-contents)
+
 ------------------------------------------------------------------------------------------
 
 ### Mathematical Graph Demo
@@ -365,6 +371,8 @@ Divide the total points by the new total credits (accumulated + new modules) to 
 The Graph Demo function uses JPanel , which is a simple GUI tool in javax.swing package.
 With pre-written formula and defined size of parameters, therefore we can demonstrate the 
 mathematical formula with illustration.
+
+###### [Back to table of contents](#table-of-contents)
 
 ------------------------------------------------------------------------------------------
 
@@ -472,6 +480,8 @@ Format: `tt/ del/ day/ <day> code/ <code>`.
 The sequence diagram above illustrates how `TimetableList` iterates through the array for the day to check for
 similar class code before deleting the `Class` object from the array.
 
+###### [Back to table of contents](#table-of-contents)
+
 ------------------------------------------------------------------------------------------
 
 ### Motivational Quotes
@@ -491,6 +501,8 @@ The class diagram above illustrates the classes associated with `MotivationalQui
 
 The sequence diagram above illustrates how `MotivationalQuotes` gets a random quote from the quote list.
 
+###### [Back to table of contents](#table-of-contents)
+
 ------------------------------------------------------------------------------------------
 
 ## Development Notes
@@ -506,6 +518,8 @@ GUI Integration: Consider developing a graphical user interface for easier input
 Persistent Data: Implement functionality to save and retrieve historical GPA calculations.
 
 Expanded Grade Scale: Allow for customization of the grade to GPA points mapping to accommodate different institutions' grading scales.
+
+###### [Back to table of contents](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -551,6 +565,8 @@ capabilities and productivity.
 | v2.0    | detail-oriented student                 | edit the module list by deleting then adding                   | ensure the accuracy of my GPA calculation                                         |
 | v2.0    | student who overloaded                  | have a module list that keeps track of the modules I am taking | view the grades for each module                                                   |
 | v2.0    | student who forgot my basics            | see a graph demo                                               | so that I can remember how mathematical equations are like in graphical form      | 
+
+###### [Back to table of contents](#table-of-contents)
 
 ### Non-Functional Requirements
 
@@ -719,3 +735,4 @@ followed by `gpa` to start the calculator.
    Expected: The cs2113 class on friday should be deleted. 
    No cs2113 class should be shown when `tt/ list -d/ 5` is entered.
 
+###### [Back to table of contents](#table-of-contents)
