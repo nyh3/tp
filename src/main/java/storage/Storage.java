@@ -1,5 +1,6 @@
 package storage;
 
+import exceptions.InvalidInputFormatException;
 import expenditure.ExpenditureList;
 import gpa.ModuleList;
 import gpa.Module;
@@ -78,7 +79,9 @@ public class Storage {
             while (s.hasNext()) {
                 String line = s.nextLine();
                 String expenditure = processExpenditure(line);
-                ExpenditureList.addExpenditure(expenditure,false);
+                if (!expenditure.equals("NULL")) {
+                    ExpenditureList.addExpenditure(expenditure, false);
+                }
             }
         } catch (FileNotFoundException e) {
             System.out.println("Error" + e.getMessage());
@@ -147,8 +150,16 @@ public class Storage {
      * @return The formatted expenditure string.
      */
     private static String processExpenditure(String line) {
-        String[] parts = line.split("\\|");
-        return ("d/" + parts[0] + "t/" + parts[1] + "amt/" + parts[2] + "date/" + parts[3]);
+        try {
+            String[] parts = line.split("\\|");
+            if (parts.length < 4) {
+                throw new InvalidInputFormatException("Corrupted data in expenditure.txt file");
+            }
+            return ("d/" + parts[0] + "t/" + parts[1] + "amt/" + parts[2] + "date/" + parts[3]);
+        } catch (InvalidInputFormatException e) {
+            System.out.println(e.getMessage());
+        }
+        return "NULL";
     }
 
     /**
