@@ -173,74 +173,99 @@ expenditures. It provides methods for adding, deleting and listing expenditures.
 The `Expenditure` class represents individual expenditure instance within the system.
 Each expenditure object contains key attributes such as description, type, amount and date.
 
+The class diagram below illustrates the relationship between `ExpenditureList` and `Expenditure` class.
+
 *Class Diagram*
 
 ![Expenditure](diagrams/classdiagram/Expenditure.png)
 
 How `Expenditure` works:
-1. When a new expenditure is added, ExpenditureList.java creates a new
-   Expenditure object with the provided details and adds it to the expenditureList.
-2. When an expenditure is deleted, ExpenditureList.java removes the Expenditure object
+1. When a new expenditure is added, `ExpenditureList` creates a new
+   `Expenditure` object with the provided details and adds it to the expenditureList.
+2. When an expenditure is deleted, `ExpenditureList` removes the `Expenditure` object
    at the specified index from the expenditureList.
-3. When expenditures are listed, ExpenditureList.java iterates over the expenditureList
-   and calls the toString() method of each Expenditure object to get a string representation
+3. When expenditures are listed, `ExpenditureList` iterates over the expenditureList
+   and calls the toString() method of each `Expenditure` object to get a string representation
    of the expenditure.
-4. When expenditures are listed by month, year, or type, ExpenditureList.java filters the
-   expenditureList based on the specified criteria and returns a new list of Expenditure
+4. When expenditures are listed by month, year, or type, `ExpenditureList` filters the
+   expenditureList based on the specified criteria and returns a new list of `Expenditure`
    objects that match the criteria.
 5. The isValidDate(), isValidMonth(), isValidAmount(), isValidType(), and isValidDescription()
-   methods in ExpenditureList.java are used to validate the details of an expenditure before it
+   methods in `ExpenditureList` are used to validate the details of an expenditure before it
    is added to the expenditureList.
 
 #### Add expenditure
 
-How `add expenditure` behaves:
-1. 
+Allows user to add a new expenditure to the expenditure list, it is optional for the users to
+specify a type, the type would be left as NA should they choose not to add a type.
 
-Adding an expenditure in numerical form.
-Format: add n/DOLLARS_AND_CENTS d/DD.MM.YYYY
-Example: add n/3.22 d/31.01.2024
+Format without type: `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`. 
+
+Format with type: `e/ add/ d/ <description> t/ <type> amt/ <cost> date/ <dd.mm.yyyy>`.
 
 **SequenceDiagram**
 
 ![AddExpenditure.png](diagrams/sequencediagram/AddExpenditure.png)
 
-#### Viewing expenditures:
-Viewing an expenditure in numerical form, in sequence of when they are added.
-Format: list
-Example: list
+The sequence diagram above illustrates how `ExpenditureList` goes about validating user input
+and adding the new expenditure.
+
+**Design Considerations:**
+
+**Aspect:** How add expenditure with and without type is handled in processCommand.
+
+- **Alternative 1 (Current Choice):** As an optional input in add expenditure.
+  - Pros: Minimal Changes - Modifying the existing method requires fewer alterations to the codebase.
+  - Cons: Risk of Misuse - Users might overlook the optional input, leading to incorrect or incomplete data entry.
+
+- **Alternative 2:** A new method just to handle add expenditure with type.
+  - Pros: Enhanced Validation - A dedicated method can enforce stricter validation rules for expenditures with type.
+  - Cons: Complexity - Introducing a new method adds complexity to the codebase.
+
+#### Viewing all expenditures:
+
+Allows user to view their whole expenditure list.
+
+Format: `e/ list/`.
 
 **SequenceDiagram**
 
 ![ViewExpenditure.png](diagrams/sequencediagram/ListExpenditure.png)
 
+The sequence diagram above illustrates how `ExpenditureList` retrieve the information from
+`Expenditure` to print the list.
+
 #### Viewing expenditures by month:
 Viewing an expenditure in numerical form, filtered by month.
-Format: e/ view/ m/ MM.YYYY
-Example: e/ view/ m/ 01.2023
+
+Format: `e/ view/ m/ <mm.yyyy>`.
 
 #### View expenditure by year:
 Viewing an expenditure in numerical form, filtered by year.
-Format: e/ view/ y/ YEAR
-Example: e/ view/ y/ 2023
+
+Format: `e/ view/ y/ <yyyy>`.
 
 #### View expenditure by type:
 Viewing an expenditure in numerical form, filtered by type.
-Format: e/ view/ t/ TYPE
-Example: e/ view/ t/ food
+
+Format: `e/ view/ t/ <type>`.
 
 **SequenceDiagram**
 
 ![ViewExpenditure.png](diagrams/sequencediagram/ViewExpenditure.png)
 
+The sequence diagram above illustrates how `ProcessCommand` determines which method to call in `ExpenditurList`.
+
 #### Delete expenditure:
 Deleting an expenditure in numerical form, by referencing its index in the array.
-Format: e/ del/ INDEX
-Example: e/ del/ 3
+
+Format: `e/ del/ <index>`.
 
 **SequenceDiagram**
 
 ![DeleteExpenditure.png](diagrams/sequencediagram/DeleteExpenditure.png)
+
+The sequence diagram above illustrates how the `Expenditure` object is deleted from the list.
 
 ------------------------------------------------------------------------------------------
 
@@ -257,6 +282,7 @@ The module is divided into 5 classes dealing with 2 different calculation method
 Handles user input of module information: module name, module weightage and module grade.
 
 Here we demonstrate the Sequence Diagram with sample input CS1010 with 4 MC and A grade.
+
 ![Module.png](diagrams/sequencediagram/ModuleSD.png)
 
 #### ModuleList
@@ -264,6 +290,7 @@ This extends Module class, which is used to execute actions like add/delete/view
 module list.
 
 Here we demonstrate the Sequence Diagram with sample input CS1010 with 4 MC and A grade.
+
 ![ModuleListSD.png](diagrams/sequencediagram/ModuleListSD.png)
 
 #### GPACommand
