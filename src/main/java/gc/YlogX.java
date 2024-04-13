@@ -8,6 +8,26 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 public class YlogX extends JPanel {
+
+    /**
+     * Paints the component by drawing the mathematical graph of y = log(x) along with its axes.
+     * This method is responsible for rendering the graph, axes, and labels on the component.
+     *
+     * Steps performed in this method:
+     * 1. Clears the background by filling it with white color.
+     * 2. Draws the X and Y axes in black.
+     * 3. Labels the axes with 'X' and 'Y' at appropriate positions.
+     * 4. Plots the graph of y = log(x), scaling the graph to fit within the view. The graph is
+     *    drawn in blue from x = 0.01 to x = 10 to avoid undefined values at x = 0.
+     * 5. Labels the graph with the equation 'y = log(x)' in red at the top left of the component.
+     *
+     * The axes are centered, and the graph is scaled using scaleFactorX and scaleFactorY
+     * to properly fit within the component bounds. The Y-axis is inverted (negative scale factor)
+     * because the graphical y-axis increases downwards.
+     *
+     * @param g the Graphics object to protect. This is provided by the Swing framework and represents
+     *          the drawing area of this component.
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
