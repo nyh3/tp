@@ -19,11 +19,20 @@ public class ExpenditureList {
     private static final int MAX_TYPE_LENGTH = 20;
     private static ArrayList<Expenditure> expenditureList = new ArrayList<>();
 
+    /**
+     * Constructor for ExpenditureList.
+     */
     public ExpenditureList() {
         expenditureList = new ArrayList<>();
         expenditureCount = 0;
     }
 
+    /**
+     * Lists all expenditures for a specific month and year.
+     *
+     * @param monthYear The month and year in MM.yyyy format.
+     * @return A list of expenditures for the specified month and year.
+     */
     public static List<Expenditure> listExpensesByMonth(String monthYear) {
         assert monthYear.length() == MONTHYEARINPUTLENGTH;
         if (!monthYear.matches("\\d{2}\\.\\d{4}")) {
@@ -69,6 +78,12 @@ public class ExpenditureList {
         return filteredExpenses;
     }
 
+    /**
+     * Lists all expenditures for a specific year.
+     *
+     * @param year The year in yyyy format.
+     * @return A list of expenditures for the specified year.
+     */
     public static List<Expenditure> listExpensesByYear(String year) {
         List<Expenditure> filteredExpenses = new ArrayList<>();
 
@@ -107,6 +122,12 @@ public class ExpenditureList {
         return filteredExpenses;
     }
 
+    /**
+     * Lists all expenditures of a specific type.
+     *
+     * @param type The type of expenditure.
+     * @return A list of expenditures of the specified type.
+     */
     public static List<Expenditure> listExpensesByType(String type) {
         List<Expenditure> filteredExpenses = new ArrayList<>();
         for (Expenditure exp: expenditureList) {
@@ -135,7 +156,12 @@ public class ExpenditureList {
         return filteredExpenses;
     }
 
-
+    /**
+     * Adds a new expenditure to the list.
+     *
+     * @param expenditure The expenditure to add.
+     * @param isUserAdded Whether the expenditure was added by the user.
+     */
     public static void addExpenditure(String expenditure, Boolean isUserAdded) {
         try {
             String[] parts = expenditure.split("d/", 2);
@@ -189,12 +215,22 @@ public class ExpenditureList {
         }
     }
 
+    /**
+     * Prints a success message if an expenditure was added by the user.
+     *
+     * @param isUserAdded A boolean indicating whether the expenditure was added by the user.
+     */
     private static void userAddedMessage(Boolean isUserAdded) {
         if (isUserAdded){
             System.out.println("Expenditure added successfully.");
         }
     }
 
+    /**
+     * Deletes an expenditure from the list.
+     *
+     * @param index The index of the expenditure to delete.
+     */
     public static void deleteExpenditure(int index) {
         if (index < 1 || index > expenditureList.size() ) {
             System.out.println("Invalid number, please enter a valid number\n");
@@ -209,6 +245,9 @@ public class ExpenditureList {
         expenditureCount--;
     }
 
+    /**
+     * Clears the expenditure list.
+     */
     public static void clearlist() {
         if (expenditureList.isEmpty()) {
             System.out.println("The list is already empty!");
@@ -223,6 +262,9 @@ public class ExpenditureList {
         }
     }
 
+    /**
+     * Lists all expenditures.
+     */
     public static void listExpenses() {
         if (expenditureList.isEmpty()) {
             System.out.println("No expenses to display.");
@@ -245,6 +287,12 @@ public class ExpenditureList {
         System.out.println("Total expenses: $" + formattedTotal);
     }
 
+    /**
+     * Retrieves an expenditure from the list.
+     *
+     * @param index The index of the expenditure to retrieve.
+     * @return The expenditure at the specified index.
+     */
     public Expenditure getExpenditure(int index) {
         return expenditureList.get(index);
     }
@@ -274,6 +322,12 @@ public class ExpenditureList {
         return true;
     }
 
+    /**
+     * Checks if a month is valid.
+     *
+     * @param input The month to check.
+     * @return true if the month is valid, false otherwise.
+     */
     private static boolean isValidMonth(String input) {
         int month = Integer.parseInt(input);
         if (month > 12 ||  month < 1) {
@@ -283,6 +337,12 @@ public class ExpenditureList {
         return true;
     }
 
+    /**
+     * Checks if an amount is valid.
+     *
+     * @param amt The amount to check.
+     * @return true if the amount is valid, false otherwise.
+     */
     private static boolean isValidAmount(float amt) {
         String amtStr = String.valueOf(amt);
         String[] parts = amtStr.split("\\.");
@@ -300,6 +360,12 @@ public class ExpenditureList {
         return is2DecimalPlaces(parts);
     }
 
+    /**
+     * Checks if a number has at most two decimal places.
+     *
+     * @param parts The number to check, split into integer and decimal parts.
+     * @return true if the number has at most two decimal places, false otherwise.
+     */
     private static boolean is2DecimalPlaces(String[] parts) {
         if (parts.length < 2) {
             return true;
@@ -312,6 +378,12 @@ public class ExpenditureList {
         return true;
     }
 
+    /**
+     * Checks if a type is valid.
+     *
+     * @param type The type to check.
+     * @return true if the type is valid, false otherwise.
+     */
     private static boolean isValidType(String type) {
         if (type.length() > MAX_TYPE_LENGTH) {
             System.out.println("Type should be one word of maximum 20 characters.");
@@ -320,6 +392,12 @@ public class ExpenditureList {
         return true;
     }
 
+    /**
+     * Checks if a description is valid.
+     *
+     * @param description The description to check.
+     * @return true if the description is valid, false otherwise.
+     */
     private static boolean isValidDescription(String description) {
         if (description.length() > MAX_DESCRIPTION_LENGTH) {
             System.out.println("Description of expenditure should not be longer than 100 characters.");
