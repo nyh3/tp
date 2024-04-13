@@ -14,10 +14,10 @@ public class GCTest {
         assertNotNull(panel, "Panel should not be null");
         // Test preferred size set in constructor or any other initialization if any
         // Since YlogX does not explicitly set preferred size, we can't test it unless it is set.
-        // Let's assume you might add a preferred size for the sake of completeness.
-        panel.setPreferredSize(new Dimension(400, 400)); // This would need to be set somewhere in YlogX for a meaningful test.
+        panel.setPreferredSize(new Dimension(400, 400)); // This would need to be set somewhere in YlogX
 
-        assertEquals(new Dimension(400, 400), panel.getPreferredSize(), "Panel preferred size should be 400x400");
+        assertEquals(new Dimension(400, 400), panel.getPreferredSize(),
+                "Panel preferred size should be 400x400");
     }
 
     @Test
@@ -36,7 +36,8 @@ public class GCTest {
         assertNotNull(panel, "Panel should not be null");
         // Since no specific preferred size is set in YX, this test assumes you might set one like this:
         panel.setPreferredSize(new Dimension(400, 400));
-        assertEquals(new Dimension(400, 400), panel.getPreferredSize(), "Panel preferred size should be 400x400");
+        assertEquals(new Dimension(400, 400), panel.getPreferredSize(), "Panel preferred size " +
+                "should be 400x400");
     }
 
     @Test
@@ -55,7 +56,8 @@ public class GCTest {
         assertNotNull(panel, "Panel should not be null");
         // Since the size isn't explicitly set in YXsq, we assume you might set a size like this:
         panel.setPreferredSize(new Dimension(400, 400));
-        assertEquals(new Dimension(400, 400), panel.getPreferredSize(), "Panel preferred size should be 400x400");
+        assertEquals(new Dimension(400, 400), panel.getPreferredSize(), "Panel preferred size " +
+                "should be 400x400");
     }
 
     @Test
