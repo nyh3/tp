@@ -10,6 +10,25 @@ import java.awt.Dimension;
 
 public class YX extends JPanel {
 
+    /**
+     * Paints the component by drawing a line graph of the equation y = -x along with its axes.
+     * This method is responsible for rendering the graph, axes, and labels on the component.
+     *
+     * Steps performed in this method:
+     * 1. Clears the background by filling it with white color to ensure a clean drawing area.
+     * 2. Draws the X and Y axes in black, placing them in the center of the component.
+     * 3. Labels the axes with 'X' at the right end and 'Y' at the top, positioned near the axes.
+     * 4. Plots the graph of y = -x as a blue solid line that spans across the visible area of the
+     *    component. The line is drawn by connecting consecutive points from left to right.
+     * 5. Labels the graph with the equation 'y = -x' in red at the top left of the component,
+     *    making it easy to identify the graph being displayed.
+     *
+     * The method uses a loop to calculate and connect points along the graph based on the component's
+     * width. This makes the graph adapt dynamically to changes in the component's size.
+     *
+     * @param g the Graphics object to protect. This is provided by the Swing framework and represents
+     *          the drawing area of this component.
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

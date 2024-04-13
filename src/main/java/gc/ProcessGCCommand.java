@@ -6,6 +6,25 @@ import static seedu.duke.CantVasMain.ui;
 
 public class ProcessGCCommand {
 
+    /**
+     * Processes user commands in the Mathematics Graph Demo page. This method manages
+     * the interaction flow, allowing the user to execute graph-related commands such as
+     * displaying various types of mathematical graphs or exiting the graph demo.
+     *
+     * The method operates in a loop, prompting the user for commands until the 'exit'
+     * command is issued. It supports several commands:
+     * - 'yx': Displays a simple y = x graph.
+     * - 'ylogx': Displays a logarithmic y = log(x) graph.
+     * - 'yxsq': Displays a squared graph y = x^2.
+     * - 'exit': Exits the graph demo and returns to the main menu.
+     * - 'help': Displays available commands.
+     *
+     * If an unrecognized command is entered, the method prompts the user to try again,
+     * enter 'help' for assistance, or 'exit' to leave the graph demo.
+     *
+     * @param input the initial input command (not currently used in method implementation).
+     * @return true when the 'exit' command is issued, otherwise the loop continues indefinitely.
+     */
     public boolean processGCCommand(String input) {
         System.out.println("Welcome to the Mathematics Graph Demo page!\n");
         UI.gcHelpMessage();
