@@ -122,6 +122,8 @@ The features include:
   `e/ del/ <index>`.
   - Example: `e/ del/ 2`.
 
+###### [Back to table of contents](#table-of-contents)
+
 --------------------------------------------------------------------------------------------------------------------
 
 ### GPA Calculator
@@ -190,6 +192,8 @@ typing `del` to delete specific module or to delete the whole list.
 
 ![img_gpalist.png](images/illustration_gpalist.png)
 
+###### [Back to table of contents](#table-of-contents)
+
 --------------------------------------------------------------------------------------------------------------------
 
 ### Mathematical Graph Demo
@@ -211,6 +215,8 @@ You can select  which graph you would like to see by typing  `YX` or `YXsq` or `
 to view them in the pop-up window.
 
 ![gcdemo.png](images/gcdemo.png)
+
+###### [Back to table of contents](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -258,6 +264,8 @@ that cut across midnight. Hence `24` is not an accepted value.
  `tt/ del/ day/ <day> code/ <code>`. 
   - Example: `tt/ del/ day/ 3 code/ cs2113`.
 
+###### [Back to table of contents](#table-of-contents)
+
 --------------------------------------------------------------------------------------------------------------------
 
 ### Motivational Quotes
@@ -267,6 +275,8 @@ CantVas is here to save your day and uplift your spirits whenever you need it mo
 
 Everytime you start CantVas, we will provide you with a motivational quote to give 
 you energy and encouragement to get through your day!
+
+###### [Back to table of contents](#table-of-contents)
 
 --------------------------------------------------------------------------------------------------------------------
 
@@ -338,6 +348,8 @@ installation path is correct and accessible.
 performance may vary based on your computer's capabilities, especially as the data files grow larger. The number of 
 classes is also limited by the number of hours/days in a week since the timetable is for one week.
 
+###### [Back to table of contents](#table-of-contents)
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
@@ -361,3 +373,5 @@ classes is also limited by the number of hours/days in a week since the timetabl
 | Delete class                 |                              `tt/ del/ day/ <day> code/ <code>`                              |
 | Show help message            |                                            `help`                                            |
 | Exit CantVas                 |                                            `exit`                                            |
+
+###### [Back to table of contents](#table-of-contents)
