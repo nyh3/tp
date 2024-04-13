@@ -31,7 +31,7 @@ expenses, organize your timetable and track your grades.
     - [Method 1](#method-1-step-by-step-gpa-calculator)
     - [Method 2](#method-2-calculation-of-gpa-by-modulelist)
   - [Math Graph Demo](#mathematical-graph-demo)
-  - [Timetable](#timetable-tracker)
+  - [Timetable Tracker](#timetable-tracker)
     - [Add class](#add-class)
     - [List all class for the week](#view-all-class-for-the-week)
     - [List class for the day](#view-class-for-the-day)

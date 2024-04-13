@@ -41,7 +41,7 @@ We referenced [AddressBook_Level3](https://github.com/se-edu/addressbook-level3)
 
 We used [PlantUML integration](https://plantuml.com/starting) plugin to help us create our diagrams.
 
-We used [PlantUML webpage](https://plantuml.com/) to understand PlantUML syntax
+We used [PlantUML webpage](https://plantuml.com/) to understand PlantUML syntax.
 
 --------------------------------------------------------------------------------------------------------------------
 
