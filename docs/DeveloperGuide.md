@@ -528,27 +528,29 @@ capabilities and productivity.
 
 ### User Stories
 
-| Version | As a ...                                | I want to ...                                                        | So that I can ...                                                                 |
-|---------|-----------------------------------------|----------------------------------------------------------------------|-----------------------------------------------------------------------------------|
-| v1.0    | international student on a budget       | use CantVas to add my purchases                                      | meticulously record my expenses                                                   |
-| v1.0    | analytical student                      | view a breakdown of his expenditures                                 | focus on financial responsibility                                                 |
-| v1.0    | budget-conscious student                | view my expenses filtered by specific months and years               | track my progress towards financial goals and identify any trends over time       |
-| v1.0    | long-term planner                       | see an overview of my expenditures grouped by year                   | evaluate my financial health and plan for future expenses accordingly             |
-| v1.0    | student who wants to start fresh        | ability to delete all of my recorded expenditures                    | reset my financial tracking system and begin anew                                 |
-| v1.0    | careless user                           | delete wrong items in the expenditure tracker                        | add back the correct item in the expenditure tracker                              |
-| v1.0    | user who needs assistance               | be able to access help information within the application            | understand how to use its features effectively                                    |
-| v1.0    | user finished with my tasks             | be able to exit the application easily                               | close it and move on to other activities                                          |
-| v1.0    | Proactive business major                | calculate my course grades on CantVas step by step                   | see which mod I have to SU                                                        |
-| v1.0    | user who values user assistance         | access help information and exit the GPA calculator easily           | get assistance if needed and navigate the application seamlessly                  |
-| v2.0    | organized student                       | add my expenses by type                                              | understand where my money is going and make informed financial decisions          |
-| v2.0    | strategic spender                       | categorize and view my expenditures by type                          | identify areas where I can potentially cut costs or adjust my budget.             |
-| v2.0    | user seeking daily inspiration          | see motivational quotes and tips CantVas provides at startup         | stay motivated throughout her academic journey                                    |
-| v2.0    | student trying to organize my schedule  | input my classes into the timetable tracker                          | keep track of the classes I have                                                  |
-| v2.0    | student who needs to adjust my schedule | remove specific classes from my timetable                            | ensure the timetable accurately reflects my current commitments                   |
-| v2.0    | student planning for the upcoming week  | see all my classes scheduled for the week in one place               | plan my study and extracurricular activities efficiently                          |
-| v2.0    | student organizing my daily tasks       | check my classes for a specific day                                  | focus on the tasks and commitments for that day without feeling overwhelmed       |
-| v2.0    | meticulous user                         | add modules to the list by inputting their details                   | maintain a comprehensive record of all the modules I've taken for GPA calculation |
-| v2.0    | detail-oriented student                 | edit the module list, including adding, deleting, or viewing modules | ensure the accuracy of my GPA calculation                                         |
+| Version | As a ...                                | I want to ...                                                  | So that I can ...                                                                 |
+|---------|-----------------------------------------|----------------------------------------------------------------|-----------------------------------------------------------------------------------|
+| v1.0    | international student on a budget       | use CantVas to add my purchases                                | meticulously record my expenses                                                   |
+| v1.0    | analytical student                      | view a breakdown of his expenditures                           | focus on financial responsibility                                                 |
+| v1.0    | budget-conscious student                | view my expenses filtered by specific months and years         | track my progress towards financial goals and identify any trends over time       |
+| v1.0    | long-term planner                       | see an overview of my expenditures grouped by year             | evaluate my financial health and plan for future expenses accordingly             |
+| v1.0    | student who wants to start fresh        | ability to delete all of my recorded expenditures              | reset my financial tracking system and begin anew                                 |
+| v1.0    | careless user                           | delete wrong items in the expenditure tracker                  | add back the correct item in the expenditure tracker                              |
+| v1.0    | user who needs assistance               | be able to access help information within the application      | understand how to use its features effectively                                    |
+| v1.0    | user finished with my tasks             | be able to exit the application easily                         | close it and move on to other activities                                          |
+| v1.0    | Proactive business major                | calculate my course grades on CantVas step by step             | see which mod I have to SU                                                        |
+| v1.0    | user who values user assistance         | access help information and exit the GPA calculator easily     | get assistance if needed and navigate the application seamlessly                  |
+| v2.0    | organized student                       | add my expenses by type                                        | understand where my money is going and make informed financial decisions          |
+| v2.0    | strategic spender                       | categorize and view my expenditures by type                    | identify areas where I can potentially cut costs or adjust my budget.             |
+| v2.0    | user seeking daily inspiration          | see motivational quotes and tips CantVas provides at startup   | stay motivated throughout her academic journey                                    |
+| v2.0    | student trying to organize my schedule  | input my classes into the timetable tracker                    | keep track of the classes I have                                                  |
+| v2.0    | student who needs to adjust my schedule | remove specific classes from my timetable                      | ensure the timetable accurately reflects my current commitments                   |
+| v2.0    | student planning for the upcoming week  | see all my classes scheduled for the week in one place         | plan my study and extracurricular activities efficiently                          |
+| v2.0    | student organizing my daily tasks       | check my classes for a specific day                            | focus on the tasks and commitments for that day without feeling overwhelmed       |
+| v2.0    | meticulous user                         | add modules to the list by inputting their details             | maintain a comprehensive record of all the modules I've taken for GPA calculation |
+| v2.0    | detail-oriented student                 | edit the module list by deleting then adding                   | ensure the accuracy of my GPA calculation                                         |
+| v2.0    | student who overloaded                  | have a module list that keeps track of the modules I am taking | view the grades for each module                                                   |
+| v2.0    | student who forgot my basics            | see a graph demo                                               | so that I can remember how mathematical equations are like in graphical form      | 
 
 ### Non-Functional Requirements
 
@@ -562,7 +564,6 @@ capabilities and productivity.
 
 ## Glossary
 
-* *glossary item* - Definition
 * *Mainstream OS*: Windows, Linux, Unix, macOS
 
 ## Instructions for manual testing
@@ -635,7 +636,54 @@ Given below are instructions on how to test the app manually.
 
 ### GPA Calculator
 
+#### Method 1
+
+1. Prerequisites: Enter the step by step gpa calculator using `gpastep` 
+followed by `gpa` to start the calculator.
+2. Test case 1: Enter the following input for each prompt:
+   1. `4.00/24`
+   2. `1`
+   3. `n/CS1010 mc/4 gr/A+`
+
+   Expected: Your updated GPA is: 4.14.
+
+#### Method 2
+
+1. Prerequisites: Enter the advanced gpa calculator using `gpalist`
+2. Test case 1: `add`
+   - Enter the following input for each prompt:
+     - `2`
+     - `n/CS1010 mc/4 gr/A+`
+     - `n/CS1010 mc/4 gr/A+`
+     
+   Expected: 2 modules will be added.
+3. Test case 2: `viewlist`
+   
+   Expected: The 2 module just added should be seen.
+
+4. Test case 3: `del`, followed by `1`
+
+5. Test case 4: `gpa`
+   - Enter the following input for each prompt:
+        - `4`
+        - `24`
+     
+   Expected: Your GPA is: 4.14
+
 ### Mathematical Graph Demo
+
+1. Prerequisites: Enter the GC screen using `gc`
+2. Test case 1: `YX`
+
+   Expected: Graph of Y = X should appear in an external screen.
+
+3. Test case 2: `YlogX`
+
+   Expected: Graph of Y = log(X) should appear in an external screen.
+
+4. Test case 3: `YXsq`
+
+   Expected: Graph of Y = X^2 should appear in an external screen.
 
 ### Timetable Tracker
 
@@ -661,7 +709,7 @@ Given below are instructions on how to test the app manually.
 
 3. Test case 2: `tt/ list -d/ 5`
 
-    Expected: Friday timetable should be shown with the cs2113 class shown for 16:00 and 17:00.
+   Expected: Friday timetable should be shown with the cs2113 class shown for 16:00 and 17:00.
 
 #### Deleting class
 
