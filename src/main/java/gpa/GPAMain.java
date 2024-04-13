@@ -11,7 +11,8 @@ public class GPAMain {
      *
      * Steps to compute the new GPA:
      * 1. Convert the current GPA into total points by multiplying it with the total accumulated credits.
-     * 2. Iterate over the list of modules, converting grades to points and aggregating them along with their credit weights.
+     * 2. Iterate over the list of modules, converting grades to points and aggregating them along with their
+     * credit weights.
      * 3. Add the new credits to the accumulated credits to get a new total of credits.
      * 4. Divide the total points by the total number of credits to find the new GPA.
      *
