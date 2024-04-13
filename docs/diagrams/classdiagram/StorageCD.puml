@@ -57,7 +57,7 @@ package gpa {
 
 Storage <-> ModuleList: creates and uses >
 TimetableList <- Storage: reads and writes <
-ExpenditureList -> Storage: reads and writes <
+ExpenditureList <- Storage: reads and writes <
 Storage -> Scanner: creates and uses >
 Storage -> File: creates and uses >
 Storage -> PrintWriter: creates and uses >
