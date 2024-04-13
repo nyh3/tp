@@ -185,7 +185,7 @@ public class GPACommand {
 
 
             double updatedGPA = GPAMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, moduleList);
-            System.out.printf("Your updated GPA is: %.2f\n", updatedGPA);
+            System.out.println("Your updated GPA is: " + String.format("%.2f", updatedGPA));
         }
     }
 

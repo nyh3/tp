@@ -16,12 +16,13 @@ public class GPATest {
         moduleList.addModule("Module3", 4, "A");
         moduleList.addModule("Module4", 2, "A");
 
-        double expectedGPA = 4.10; // Ensure this expected value is correct based on your GPA calculation logic
+        double expectedGPA = 4.10;
         double resultGPA = GPAMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, moduleList);
 
-        assertEquals(expectedGPA, resultGPA, 0.01,
-                "The GPA calculated for all A's did not match the expected value");
+        assertEquals(expectedGPA, resultGPA, 0.01);
     }
+
+    @Test
     void testCalculateNewGPA_allBs() {
         double currentGPA = 4.0;
         int totalAccumulatedCredits = 120;
@@ -31,11 +32,10 @@ public class GPATest {
         moduleList.addModule("Module3", 4, "B");
         moduleList.addModule("Module4", 2, "B");
 
-        double expectedGPA = 3.95; // Ensure this expected value is correct based on your GPA calculation logic
+        double expectedGPA = 3.95;
         double resultGPA = GPAMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, moduleList);
 
-        assertEquals(expectedGPA, resultGPA, 0.01,
-                "The GPA calculated for all B's did not match the expected value");
+        assertEquals(expectedGPA, resultGPA, 0.01);
     }
 
     @Test
@@ -43,18 +43,15 @@ public class GPATest {
         double currentGPA = 3.5;
         int totalCredits = 60;
         ModuleList moduleList = new ModuleList();
-        // Assuming the calculatePointsForGrade logic and GPA calculation logic is correctly implemented
         moduleList.addModule("Module1", 4, "A");
         moduleList.addModule("Module2", 4, "C");
         moduleList.addModule("Module3", 4, "B");
         moduleList.addModule("Module4", 2, "F");
 
-        // Calculate expectedGPA based on your logic for GPA calculation
         double expectedGPA = 3.41;
         double resultGPA = GPAMain.calculateUpdatedGPA(currentGPA, totalCredits, moduleList);
 
-        assertEquals(expectedGPA, resultGPA, 0.01,
-                "The GPA calculated for mixed grades did not match the expected value");
+        assertEquals(expectedGPA, resultGPA, 0.01);
     }
 
     @Test
@@ -62,19 +59,32 @@ public class GPATest {
         double currentGPA = 3.5;
         int totalAccumulatedCredits = 60;
         ModuleList moduleList = new ModuleList();
-
-        // Adding modules with valid and invalid (unrecognized) grades
         moduleList.addModule("ValidModule1", 4, "A");
         moduleList.addModule("InvalidModule1",
-                4, "Z"); // Unrecognized grade
+                4, "Z");
 
-        // Expected GPA calculation considering "Z" as 0.00
-        // Ensure this expected value is correct based on your GPA calculation logic,
-        // considering unrecognized grades as 0.00 in the calculation
         double expectedGPA = 3.38;
         double resultGPA = GPAMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, moduleList);
 
-        assertEquals(expectedGPA, resultGPA, 0.01,
-                "The GPA calculation did not handle an unrecognized grade as expected.");
+        assertEquals(expectedGPA, resultGPA, 0.01);
     }
+
+    @Test
+    void testCalculateNewGPA_allFailingGrades() {
+        double currentGPA = 3.5;
+        int totalAccumulatedCredits = 60;
+        ModuleList moduleList = new ModuleList();
+        moduleList.addModule("Module1", 4, "F");
+        moduleList.addModule("Module2", 4, "F");
+        moduleList.addModule("Module3", 4, "F");
+        moduleList.addModule("Module4", 2, "F");
+
+        double expectedGPA = 2.83;
+        double resultGPA = GPAMain.calculateNewGPA(currentGPA, totalAccumulatedCredits, moduleList);
+
+        assertEquals(expectedGPA, resultGPA, 0.01);
+    }
+
+
+
 }
