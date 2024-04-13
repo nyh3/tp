@@ -309,6 +309,11 @@ for the duration.
 **A**: Download CantVas on the other computer and overwrite the empty text files created in the ./data directory with the text files from
 your original computer also found in the ./data directory.
 
+**Q**: What happens if there are corrupted file entry?
+
+**A**: CantVas will try to remove the corrupted entry when you exit the application. However in the case where
+CantVas does not recognise the entry as corrupted, you may remove the entry directly from the text file.
+
 --------------------------------------------------------------------------------------------------------------------
 
 ## Command Summary
