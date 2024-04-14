@@ -39,6 +39,6 @@ class ExpenditureList {
     +getExpenditure(index: int): Expenditure
 }
 
-ExpenditureList "1" -- "0..*" Expenditure
+ExpenditureList "1" --> "0..*" Expenditure
 
 @enduml
