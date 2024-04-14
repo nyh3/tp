@@ -13,7 +13,6 @@ and productivity.
 
 ### Features implemented
 **1. Functionality to View Filtered Expenditures**
-
 [#22](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/22)
 [#117](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/117)
 
@@ -23,16 +22,16 @@ Allows users to view expenditures filtered by the desired month and year values 
 Refactored function inputs from using `-` to `/` for consistency. Added `e/` prefix to function calls for
 distinction from GPA and Timetable calculations.
 
-**2. J-unit Tests for Adding Expenditures**
-
+**2. J-unit Tests for ExpenditureList and TimetableList Class**
 [#100](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/100)
+[#202](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/202)
+[#221](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/221)
 
 #### What it does:
 
 Developed tests for invalid inputs, non-compliant inputs, and edge cases related to string splitting.
 
 **3. Timetable Listing**
-
 [#101](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/101)
 
 #### What it does:
@@ -40,7 +39,6 @@ Developed tests for invalid inputs, non-compliant inputs, and edge cases related
 Allow users to see the stored timetable in ascending time format, separated by the days of the week.
 
 **4. Handling Edge Cases in TimetableList Class**
-
 [#182](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/182)
 [#191](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/191)
 
@@ -49,17 +47,7 @@ Allow users to see the stored timetable in ascending time format, separated by t
 Implemented exception handling for lengthy inputs and overnight classes. 
 Classes are now restricted from midnight to 11pm.
 
-**5. J-unit Tests for Timetable Class**
-
-[#202](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/202)
-[#221](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/221)
-
-#### What it does:
-
-Developed tests for invalid inputs, operations, and long inputs to ensure program robustness.
-
-**6. Made TimetableList and ExpenditureList Class More Robust**
-
+**5. Made TimetableList and ExpenditureList Class More Robust**
 [#222](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/222)
 [#221](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/221)
 [#217](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/217)
@@ -69,8 +57,7 @@ Developed tests for invalid inputs, operations, and long inputs to ensure progra
 Imposes character limit on user inputs, validates input range, and provides specific 
 error messages for invalid inputs.
 
-**7. JavaDoc Enhancement**
-
+**6. JavaDoc Enhancement**
 [#269](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/269)
 [#268](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/268)
 
