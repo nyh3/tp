@@ -1,4 +1,1 @@
-Module1|4|B
-Module2|4|B
-Module3|4|B
-Module4|2|B
+CS1020|2|B
