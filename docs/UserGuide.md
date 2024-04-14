@@ -67,6 +67,10 @@ The expenditure tracker allows you to store, view, delete and filter the
 expenditures you have entered. Making it a good way to track your 
 expenses.
 
+<span style="color:red; font-weight:bold">
+Please remember to include spaces between each input when using the commands to ensure proper functionality.
+</span>
+
 The features include:
 
 #### Adding expenditure without type
@@ -129,6 +133,10 @@ The features include:
 ### GPA Calculator
 The GPA calculator allows you to calculate your GPA, based on your previous GPA
 and your new modules' grades and module credit numbers.
+
+<span style="color:red; font-weight:bold">
+Please remember to include spaces between each input when using the commands to ensure proper functionality.
+</span>
 
 In CantVas, we provide 2 methods of GPA calculation.
 
@@ -225,6 +233,10 @@ The timetable tracker allows you to store, view and delete classes you
 have entered for the current semester. Making it a good way to track what
 are the classes, where are the classes and the class durations from monday
 to friday respectively.
+
+<span style="color:red; font-weight:bold">
+Please remember to include spaces between each input when using the commands to ensure proper functionality.
+</span>
 
 The features include:
 
