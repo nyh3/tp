@@ -41,17 +41,20 @@ public class ExpenditureListTest {
         System.setOut(new PrintStream(outContent));
 
         ExpenditureList.addExpenditure("d movie", true);
-        assertEquals("Invalid input format for description.", outContent.toString().trim());
+        assertEquals("Invalid input format. Please ensure spaces " +
+                "or `/` is used or refer to the help list by using `help`.", outContent.toString().trim());
 
         outContent.reset();
 
         ExpenditureList.addExpenditure("d/ movie", true);
-        assertEquals("Invalid input format for amount.", outContent.toString().trim());
+        assertEquals("Invalid input format. Please ensure spaces " +
+                "or `/` is used or refer to the help list by using `help`.", outContent.toString().trim());
 
         outContent.reset();
 
         ExpenditureList.addExpenditure("d/ movie amt/ 5", true);
-        assertEquals("Invalid input format for date.", outContent.toString().trim());
+        assertEquals("Invalid input format. Please ensure spaces " +
+                "or `/` is used or refer to the help list by using `help`.", outContent.toString().trim());
 
         outContent.reset();
 
