@@ -65,8 +65,27 @@ public class YX extends JPanel {
         g.drawString("y = x", 20, 20);
     }
 
-
-
+    /**
+     * Initializes and displays a JFrame showcasing a graphical representation of the function Y = X.
+     *
+     * <p>This method sets up the graphical user interface in the Event Dispatch Thread using
+     * {@link SwingUtilities#invokeLater}.
+     * It creates a JFrame titled "Graph of Y = X" and adds a custom component that
+     * presumably plots the function Y = X.
+     * The frame is set to close on operation HIDE_ON_CLOSE, meaning the window will be hidden but the
+     * application will continue running when the window's close button is clicked.</p>
+     *
+     * <p>The content pane of the JFrame is set to include an instance of {@code YX}, which is a custom component
+     * expected to handle the rendering of the specified mathematical function. The frame is sized to 400x400 pixels
+     * and positioned to appear centered relative to the screen.</p>
+     *
+     * <p>This setup is ideal for demonstrating simple graphical applications or for educational purposes
+     * to illustrate
+     * the behavior of linear functions.</p>
+     *
+     * @see SwingUtilities#invokeLater(Runnable)  To understand the importance of invoking GUI updates on the EDT.
+     * @see JFrame  For more details about JFrame functionalities and properties.
+     */
     public static void main() {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Graph of Y = X");

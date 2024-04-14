@@ -68,6 +68,29 @@ public class YlogX extends JPanel {
         g.drawString("y = log(x)", 20, 20);
     }
 
+    /**
+     * Launches a graphical application that displays a plot of the function Y = log(X).
+     * <p>
+     * This method schedules the creation and display of a JFrame on the Swing Event Dispatch Thread (EDT) to ensure
+     * thread safety. The JFrame, titled "Graph of Y = log(X)", visualizes the logarithmic function Y = log(X) using
+     * a custom component class {@code YlogX}.
+     * </p>
+     * <p>
+     * Key features of the JFrame setup include:
+     * - Setting the close operation to {@link JFrame#HIDE_ON_CLOSE} which hides the JFrame but keeps
+     * the application running.
+     * - Adding an instance of {@code YlogX} to the content pane, which is responsible for rendering
+     * the function graph.
+     * - Defining the frame's size as 400x400 pixels and positioning it centrally relative to the screen.
+     * </p>
+     * <p>
+     * This setup is particularly useful for educational purposes or for demonstrations of graphical data representation
+     * in Java using Swing.
+     * </p>
+     *
+     * @see SwingUtilities#invokeLater(Runnable)  To understand the importance of invoking GUI updates on the EDT.
+     * @see JFrame  For more details about JFrame functionalities and properties.
+     */
     public static void main() {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Graph of Y = log(X)");
