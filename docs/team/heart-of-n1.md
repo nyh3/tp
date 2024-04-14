@@ -97,5 +97,5 @@ jointly with other teammates.
 - Assigned improvement tasks of different features to group members.
 - Refactored codes or other members to adhere to more OOP approaches.
 - Active debugging for source-tree related problems that are encountered by other teammates.
-- Addressed and resolved issues raised during PED. Such as 
+- Addressed and resolved issues raised during PED. Helped other members address issues as well. Such as 
   [#149](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/195/commits).
