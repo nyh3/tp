@@ -380,21 +380,27 @@ mathematical formula with illustration.
 
 **Class Diagram**
 
-![GCCG](diagrams/classdiagram/GCCD.png)
+![GCCD](diagrams/classdiagram/GCCD.png)
 
 #### Classes and Methods:
-- ProcessGCCommand: Manages user commands to trigger specific graphical displays or other functionalities.
-- UI: Provides a method to get user commands from the console.
-- YX, YlogX, YXsq: Each of these classes extends JPanel and includes methods to paint specific mathematical graphs 
+- `ProcessGCCommand`: Manages user commands to trigger specific graphical displays or other functionalities.
+- `UI`: Provides a method to get user commands from the console.
+- `YX`, `YlogX`, `YXsq`: Each of these classes extends JPanel and includes methods to paint specific 
+mathematical graphs 
 (y = x, y = log(x), and y = x^2, respectively) and a main method to create and show a JFrame displaying the graph.
 
 #### Relationships:
 - Dependency: ProcessGCCommand depends on UI to receive user input.
-- Association: Indicates that ProcessGCCommand can call methods in the YX, YlogX, and YXsq classes based on user input.
+- Association: Indicates that ProcessGCCommand can call methods in the `YX`, `YlogX`, and `YXsq` classes based 
+on user input.
 
 #### Inheritance:
-- Each graph class (YX, YlogX, YXsq) is shown to inherit from JPanel, signifying that they are specialized panels 
+- Each graph class (`YX`, `YlogX`, `YXsq`) is shown to inherit from JPanel, signifying that they are specialized panels 
 used for drawing specific types of graphs.
+
+**Sequence Diagram**
+
+![GCSD](diagrams/sequencediagram/GCSD.png)
 
 
 How `GC` works:

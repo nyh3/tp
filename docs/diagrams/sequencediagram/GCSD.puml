@@ -1,0 +1,43 @@
+@startuml
+
+actor User
+participant "ui : UI" as UI
+participant "processGCCommand : ProcessGCCommand" as ProcessGCCommand
+participant "yx : YX" as YX
+participant "ylogX : YlogX" as YlogX
+participant "yxsq : YXsq" as YXsq
+
+User -> ProcessGCCommand : start()
+activate ProcessGCCommand
+
+loop until command = "exit"
+    ProcessGCCommand -> UI : getUserCommand()
+    activate UI
+    UI --> ProcessGCCommand : command
+    deactivate UI
+
+    alt command = "yx"
+        ProcessGCCommand -> YX : main()
+        activate YX
+        YX --> ProcessGCCommand : display "Graph of Y = X"
+        deactivate YX
+    else command = "ylogx"
+        ProcessGCCommand -> YlogX : main()
+        activate YlogX
+        YlogX --> ProcessGCCommand : display "Graph of Y = log(X)"
+        deactivate YlogX
+    else command = "yxsq"
+        ProcessGCCommand -> YXsq : main()
+        activate YXsq
+        YXsq --> ProcessGCCommand : display "Graph of Y = X^2"
+        deactivate YXsq
+    else command = "help"
+        ProcessGCCommand -> ProcessGCCommand : displayHelp()
+    else
+        ProcessGCCommand -> ProcessGCCommand : display "Unknown command"
+end
+
+ProcessGCCommand --> User : exit application
+deactivate ProcessGCCommand
+
+@enduml
