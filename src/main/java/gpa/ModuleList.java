@@ -31,7 +31,8 @@ public class ModuleList {
      * Clears all modules from the module list and resets the module count.
      *
      * This method removes all entries from the modules list, sets the module count to zero, and updates the storage
-     * to ensure that the changes are persisted. It is typically used to reset the state of the module list, for example,
+     * to ensure that the changes are persisted. It is typically used to reset the state of the module list,
+     * for example,
      * at the start of a new term or when clearing user data.
      *
      * After clearing the modules, it calls {@link Storage#writeModuleListToFile} to save the now empty module list
