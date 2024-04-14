@@ -54,7 +54,7 @@ they have on a specific day.
 
 - Wrote Quick Start for the User Guide. [#92](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/92)
 - Wrote Table of Contents for User Guide. [#206](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/206)
-- Wrote Command Summary for User Guide.
+- Wrote Command Summary for User Guide. [#242](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/242)
 
 ### Contributions to Developer Guide
 
@@ -62,11 +62,14 @@ they have on a specific day.
 [#69](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/69)
 - Wrote Table of contents and appendix for Developer Guide and reorganized the structure.
 [#220](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/220)
-- Created some sequence and class diagrams for developer guide and added explanations.
+[#270](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/270)
+- Created some architecture, sequence and class diagrams for developer guide and added explanations.
 [#225](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/225)
 [#227](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/227)
 [#228](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/228)
 [#237](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/237)
+[#242](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/242)
+[#247](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/247)
 
 ### Contributions to team-based tasks
 
@@ -77,3 +80,4 @@ they have on a specific day.
 [#53](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/53)
 - Uploaded V2.0 User Guide in pdf form to V2.0 release.
 - Contributed to JUNIT testing. [#91](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/91)
+- Fix bug from PED. [#200](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/200)
