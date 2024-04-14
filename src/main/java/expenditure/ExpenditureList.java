@@ -388,6 +388,10 @@ public class ExpenditureList {
      * @return true if the type is valid, false otherwise.
      */
     private static boolean isValidType(String type) {
+        if (type.contains("AMT/")) {
+            System.out.println("Invalid type format! Please ensure you use `/` and  spaces.");
+            return false;
+        }
         if (type.length() > MAX_TYPE_LENGTH) {
             System.out.println("Type should be one word of maximum 20 characters.");
             return false;
