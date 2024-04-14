@@ -45,7 +45,7 @@ Allow users to see the stored timetable in ascending time format, separated by t
 #### What it does:
 
 Implemented exception handling for lengthy inputs and overnight classes. 
-Classes are now restricted from midnight to 11pm.
+Classes are now restricted from midnight to 11 pm.
 
 **5. Made TimetableList and ExpenditureList Class More Robust**
 [#222](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/222)
@@ -73,14 +73,14 @@ Enhanced JavaDoc comments for better code understanding and maintainability.
 - Highlighted information that users need to pay particular attention to when using our program.
   [#198](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/198)
   [#187](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/187)
-- Creation of more understandable and specific description of expenditure-related functions.
+- Creation of a more understandable and specific description of expenditure-related functions.
   [#184](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/184)
 - Included the command summaries of all available commands in our program.
   [#181](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/181)
 
 ### Contributions to Developer Guide
 
-Wrote user stories and created sequence diagram for the CantVasMain class and PrcoessCommand class
+Wrote user stories and created sequence diagrams for the CantVasMain class and PrcoessCommand class
 jointly with other teammates.
 [#238](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/238)
 [#236](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/236)
@@ -96,6 +96,6 @@ jointly with other teammates.
   [#42](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/42)
 - Assigned improvement tasks of different features to group members.
 - Refactored codes or other members to adhere to more OOP approaches.
-- Active debugging for source-tree related problems that are encountered by other teammates.
+- Active debugging for source-tree-related problems that are encountered by other teammates.
 - Addressed and resolved issues raised during PED. Helped other members address issues as well. Such as 
-  [#149](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/195/commits).
+  [#195](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/195/commits).
