@@ -282,6 +282,13 @@ This guide will walk developers through the architecture, functionality, and cor
 #### Overview
 The module is divided into 5 classes dealing with 2 different calculation methods.
 
+*Class Diagram*
+![GPAClass.png](diagrams/classdiagram/GPAClass.png)
+
+ModuleList and Module: The diagram shows a composition relationship between ModuleList and Module, denoted by a 
+solid diamond and a line. This indicates that ModuleList contains Module instances and manages their lifecycle. 
+The "0..*" next to Module implies that a ModuleList can contain zero or more Module instances.
+
 #### Module
 Handles user input of module information: module name, module weightage and module grade.
 

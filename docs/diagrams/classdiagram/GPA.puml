@@ -1,0 +1,45 @@
+@startuml
+
+package gpa {
+    class GPACommand {
+        + {static} processGPACommand() : void
+    }
+
+    class ModuleList {
+        - ArrayList<Module> modules
+        - static int moduleCount
+
+        + ModuleList()
+        + addModule(String, int, String) : void
+        + getModules() : ArrayList<Module>
+        + {static} getModuleCount() : int
+        + clearModules() : void
+        + removeModule(int) : void
+        + getTotalModularCredits() : int
+    }
+
+    class Module {
+        - String moduleName
+        - int modularCredit
+        - String expectedGrade
+
+        + Module(String, int, String)
+        + getModuleName() : String
+        + getModularCredit() : int
+        + getExpectedGrade() : String
+    }
+
+    class CantVasMain {
+        + {static} ui : UI
+    }
+
+    class UI {
+        + static getUserCommand() : String
+    }
+}
+
+GPACommand .down.> UI : uses <<
+GPACommand .right.> ModuleList : uses
+ModuleList "0..*" -- "1..*" Module : contains
+
+@enduml
