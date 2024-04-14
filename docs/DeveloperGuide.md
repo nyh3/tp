@@ -637,6 +637,10 @@ capabilities and productivity.
 
 Given below are instructions on how to test the app manually.
 
+<span style="color:red; font-weight:bold">
+Please remember to include spaces between each input when using the commands to ensure proper functionality.
+</span>
+
 ### Launch and Shutdown
 
 1. Initial launch

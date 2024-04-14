@@ -54,6 +54,7 @@ they have on a specific day.
 
 - Wrote Quick Start for the User Guide. [#92](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/92)
 - Wrote Table of Contents for User Guide. [#206](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/206)
+- Wrote Command Summary for User Guide.
 
 ### Contributions to Developer Guide
 
@@ -61,7 +62,7 @@ they have on a specific day.
 [#69](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/69)
 - Wrote Table of contents and appendix for Developer Guide and reorganized the structure.
 [#220](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/220)
-- Created some sequence and class diagrams for developer guide.
+- Created some sequence and class diagrams for developer guide and added explanations.
 [#225](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/225)
 [#227](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/227)
 [#228](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/228)
