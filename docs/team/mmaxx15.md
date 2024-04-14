@@ -57,7 +57,8 @@ Deletes the classes based on class codespecified by the user. All instances of t
     [#73](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/73)
 
 - Fixed bugs in CantVas
-  - [#248](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/248)
+  - [#292](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/292)
+    [#248](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/248)
     [#197](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/197)
     [#194](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/194)
     [#190](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/190)
@@ -69,7 +70,9 @@ Deletes the classes based on class codespecified by the user. All instances of t
     [#51](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/51)
   
 - JUNIT testing
-  - [#241](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/241)
+  - [#280](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/280)
+    [#278](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/278)
+    [#241](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/241)
     [#219](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/219)
     [#88](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/88)
     [#86](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/86)
