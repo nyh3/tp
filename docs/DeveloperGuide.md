@@ -374,10 +374,48 @@ Divide the total points by the new total credits (accumulated + new modules) to 
 ### Mathematical Graph Demo
 
 #### Overview
-
 The Graph Demo function uses JPanel , which is a simple GUI tool in javax.swing package.
-With pre-written formula and defined size of parameters, therefore we can demonstrate the 
+With pre-written formula and defined size of parameters, therefore we can demonstrate the
 mathematical formula with illustration.
+
+**Class Diagram**
+
+![GCCG](diagrams/classdiagram/GCCD.png)
+
+#### Classes and Methods:
+- ProcessGCCommand: Manages user commands to trigger specific graphical displays or other functionalities.
+- UI: Provides a method to get user commands from the console.
+- YX, YlogX, YXsq: Each of these classes extends JPanel and includes methods to paint specific mathematical graphs 
+(y = x, y = log(x), and y = x^2, respectively) and a main method to create and show a JFrame displaying the graph.
+
+#### Relationships:
+- Dependency: ProcessGCCommand depends on UI to receive user input.
+- Association: Indicates that ProcessGCCommand can call methods in the YX, YlogX, and YXsq classes based on user input.
+
+#### Inheritance:
+- Each graph class (YX, YlogX, YXsq) is shown to inherit from JPanel, signifying that they are specialized panels 
+used for drawing specific types of graphs.
+
+
+How `GC` works:
+1. `ProcessGCCommand` utilizes the UI class to continuously fetch user commands. 
+2. Inside the `ProcessGCCommand`, a loop runs awaiting commands from the `UI`. 
+3. Once a command is received, it's processed in a switch-case structure:
+   - `yx`: If the command is `yx`, the `ProcessGCCommand` invokes `YX.main()`, which sets up and displays a JFrame 
+   with the graph y = x.
+   - `ylogx`: If the command is `ylogx`, it calls `YlogX.main()`, which displays the graph y = log(x).
+   - `yxsq`: If the command is `yxsq`, it triggers `YXsq.main()`, showing the graph y = x^2.
+   - `exit`: The `exit` command breaks the loop and typically closes the application or returns to a previous menu.
+   - `help`: Displays available commands, which helps users understand what commands are available.
+4. Each graph class (`YX`, `YlogX`, `YXsq`) extends JPanel, which is crucial for drawing the graphs. 
+They override the `paintComponent(Graphics g)` method where the actual drawing logic is implemented:
+   - These methods set up the graph axes and draw the respective mathematical functions using Java's Graphics API.
+   - When `main()` is called on any of these classes, a JFrame is instantiated, the respective JPanel (graph) is added, 
+   and the frame is displayed.
+5. Users see the JFrame pop up with the desired graph and can close it or return to enter another command.
+This cycle continues until the `exit` command is processed
+
+
 
 ###### [Back to table of contents](#table-of-contents)
 
