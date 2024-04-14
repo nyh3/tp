@@ -19,9 +19,9 @@ loop day in NUM_DAYS
         deactivate timetableList
 
         alt classAtTime is not null
-            timetableList -> user: print(classAtTime)
+            timetableList --> user: print(classAtTime)
         else
-            timetableList -> user: print("No classes scheduled.")
+            timetableList --> user: print("No classes scheduled.")
         end
     end loop
 

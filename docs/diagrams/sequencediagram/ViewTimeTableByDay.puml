@@ -15,15 +15,15 @@ timetableList --> timetableList: isValid
 deactivate timetableList
 
 alt isValid is true and classCountDay[classDay - 1] > 0
-    timetableList -> user: print(daysOfWeek[classDay - 1])
+    timetableList --> user: print(daysOfWeek[classDay - 1])
     timetableList -> ui: printTimetableByDay(timetable[classDay - 1])
     activate ui
     ui --> timetableList
     deactivate ui
 else isValid is true and classCountDay[classDay - 1] == 0
-    timetableList -> user: print("No class on that day.")
+    timetableList --> user: print("No class on that day.")
 else isValid is false
-    timetableList -> user: print("Invalid day.")
+    timetableList --> user: print("Invalid day.")
 end
 
 deactivate timetableList
