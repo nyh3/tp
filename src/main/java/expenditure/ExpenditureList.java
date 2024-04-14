@@ -166,7 +166,8 @@ public class ExpenditureList {
         try {
             String[] parts = expenditure.split("d/", 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for description.");
+                throw new InvalidInputFormatException("Invalid input format. Please ensure spaces " +
+                        "or `/` is used or refer to the help list by using `help`.");
             }
 
             String descriptionPart = parts[1].trim();
@@ -183,7 +184,8 @@ public class ExpenditureList {
 
             parts = descriptionPart.split(" amt/", 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for amount.");
+                throw new InvalidInputFormatException("Invalid input format. Please ensure spaces " +
+                        "or `/` is used or refer to the help list by using `help`.");
             }
             if (type.isEmpty()) {
                 type = parts[0].trim().toUpperCase();
@@ -194,7 +196,8 @@ public class ExpenditureList {
 
             parts = amountAndDate.split(" date/", 2);
             if (parts.length < 2) {
-                throw new InvalidInputFormatException("Invalid input format for date.");
+                throw new InvalidInputFormatException("Invalid input format. Please ensure spaces " +
+                        "or `/` is used or refer to the help list by using `help`.");
             }
 
             String amount = parts[0].trim();
