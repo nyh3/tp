@@ -15,6 +15,7 @@ component {
 
 User ..> [UI]
 [UI] --> [CantVasMain]
+[CantVasMain] --> [UI]
 [CantVasMain] --> [ProcessCommand]
 [Storage] --> [CantVasMain]
 [ProcessCommand] --> [Storage]
