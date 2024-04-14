@@ -77,6 +77,29 @@ public class YXsq extends JPanel {
         g.drawString("y = x^2", 20, 20);
     }
 
+    /**
+     * Initializes and displays a JFrame containing a graphical representation of the equation Y = X^2.
+     * <p>
+     * This method sets up the graphical user interface in the Event Dispatch Thread using
+     * {@link SwingUtilities#invokeLater}.
+     * It creates a JFrame titled "Graph of Y = X^2" and adds a custom component that presumably plots the
+     * function Y = X^2.
+     * The frame is set to close on operation HIDE_ON_CLOSE, meaning the window will be hidden but the
+     * application will continue running when the window's close button is clicked.
+     * </p>
+     * <p>
+     * The content pane of the JFrame is set to include an instance of {@code YXsq}, which is a custom component
+     * expected to handle the rendering of the specified mathematical function. The frame is sized to 400x400 pixels
+     * and positioned to appear centered relative to the screen.
+     * </p>
+     * <p>
+     * This setup is ideal for demonstrating simple graphical applications or for educational purposes to illustrate
+     * the behavior of quadratic functions.
+     * </p>
+     *
+     * @see SwingUtilities#invokeLater(Runnable)
+     * @see JFrame
+     */
     public static void main() {
         SwingUtilities.invokeLater(() -> {
             JFrame frame = new JFrame("Graph of Y = X^2");
