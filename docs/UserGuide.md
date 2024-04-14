@@ -380,7 +380,7 @@ Please remember to include spaces between each input when using the commands to 
 | View expenditure by type     |                                     `e/ view/ t/ <type>`                                     |
 | Clear all expenditure        |                                       `e/ clearlist/`                                        |
 | Delete expenditure by index  |                                      `e/ del/ <index>`                                       |
-| GPA calculator method 1      |                                            `gpa`                                             |
+| GPA calculator method 1      |                                          `gpastep`                                           |
 | GPA calculator method 2      |                                          `gpalist`                                           |
 | Mathematical Graph Demo      |                                             `gc`                                             |
 | Add class                    | `tt/ add/ day/ <day> code/ <classCode> time/ <hh> duration/ <duration> location/ <location>` |
