@@ -1,0 +1,36 @@
+@startuml
+
+class ProcessGCCommand {
+    -ui : UI
+    +processGCCommand(input : String) : boolean
+}
+
+class UI {
+    +getUserCommand() : String
+}
+
+class YX {
+    +paintComponent(g : Graphics) : void
+    +main() : void
+}
+
+class YlogX {
+    +paintComponent(g : Graphics) : void
+    +main() : void
+}
+
+class YXsq {
+    +paintComponent(g : Graphics) : void
+    +main() : void
+}
+
+ProcessGCCommand .down.> UI : uses
+ProcessGCCommand ..> YX : calls
+ProcessGCCommand ..> YlogX : calls
+ProcessGCCommand ..> YXsq : calls
+
+YX --|> JPanel : extends
+YlogX --|> JPanel : extends
+YXsq --|> JPanel : extends
+
+@enduml
