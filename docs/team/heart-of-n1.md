@@ -19,8 +19,6 @@ and productivity.
 #### What it does:
 
 Allows users to view expenditures filtered by the desired month and year values inputted by the user.
-After listing out every expenditure that fit the requirements, a final amount (displayed up to 2 decimal
-places) will be shown for clearer understanding of expenditure breakdown.
 
 **2. Refactored View by Month and View by Year Functions**
 
@@ -28,9 +26,8 @@ places) will be shown for clearer understanding of expenditure breakdown.
 
 #### What it does:
 
-Changed the inputs calling the function from using dashes `-` to using `/`, which fits more smoothly
-with the rest of the codes. In addition, users are now required to have a `e/` in front of the function 
-calls to distinguish said functions with the other features such as GPA and Timetalbe calculations.
+Refactored function inputs from using - to / for consistency. Added e/ prefix to function calls for 
+distinction from GPA and Timetable calculations.
 
 **3. J-unit Tests for Adding Expenditures**
 
@@ -56,9 +53,8 @@ Allow users to see the stored timetable in ascending time format, separated by t
 
 #### What it does:
 
-Added exception handling for extremely long user inputs. Where users will be prompted with an error
-message. As well as an exception which handles user inputs where classes last overnight. Now classes
-are only allowed to start after midnight and end before 11pm.
+Implemented exception handling for lengthy inputs and overnight classes. 
+Classes are now restricted from midnight to 11pm.
 
 **6. J-unit Tests for Timetable Class**
 
@@ -67,10 +63,9 @@ are only allowed to start after midnight and end before 11pm.
 
 #### What it does:
 
-Created test cases to test for invalid inputs pertaining to the usage of negative or non-integer inputs;
-test cases pertaining to invalid class durations, start hours and day of the week; as well as test cases
-pertaining to normal operations such as addition, deletion and conflicting class inputs. In addition, test
-cases pertaining to extremely long inputs are also tested to ensure robustness of the program.
+Created tests for invalid inputs, including negative or non-integer values, 
+invalid class durations, start hours, and days. Also tested normal operations 
+and extremely long inputs for program robustness.
 
 **7. Made TimetableList Class More Robust**
 
@@ -79,9 +74,8 @@ cases pertaining to extremely long inputs are also tested to ensure robustness o
 
 #### What it does:
 
-Restricts user inputs to certain number of characters, and ensures that the user inputs are within the 
-expected range. In addition, the class now has a more robust error handling system, which will prompt 
-users with specific error messages when they input specific invalid inputs.
+Imposes character limit on user inputs, validates input range, and provides specific 
+error messages for invalid inputs.
 
 **8. Made ExpenditureList Class More Robust**
 
@@ -89,9 +83,8 @@ users with specific error messages when they input specific invalid inputs.
 
 #### What it does:
 
-Added restrictions on the number of characters a user can enter for each part of the expenditure input.
-J-unit tests that emphasizes on lengthy inputs are also created to stress test the program and ensure
-no undefined behavior occurs.
+Implemented character limit on expenditure input and created J-unit tests for lengthy 
+inputs to ensure program robustness.
 
 **9. JavaDoc Enhancement**
 
@@ -100,9 +93,7 @@ no undefined behavior occurs.
 
 #### What it does:
 
-Added JavaDoc comments to classes and methods to provide a more detailed explanation of the methods
-used. This will help future developers understand the code better and make it easier for them to maintain
-and improve the program.
+Enhanced JavaDoc comments for better code understanding and maintainability.
 
 ### Contributions to User Guide
 
