@@ -1,5 +1,8 @@
 @startuml
 
+hide circle
+skinparam classAttributeIconSize 0
+
 class ProcessGCCommand {
     -ui : UI
     +processGCCommand(input : String) : boolean
@@ -24,13 +27,13 @@ class YXsq {
     +main() : void
 }
 
-ProcessGCCommand .down.> UI : uses
-ProcessGCCommand ..> YX : calls
-ProcessGCCommand ..> YlogX : calls
-ProcessGCCommand ..> YXsq : calls
+ProcessGCCommand .down.> UI : uses >
+ProcessGCCommand ..> YX : calls >
+ProcessGCCommand ..> YlogX : calls >
+ProcessGCCommand ..> YXsq : calls >
 
-YX --|> JPanel : extends
-YlogX --|> JPanel : extends
-YXsq --|> JPanel : extends
+YX --|> JPanel : extends >
+YlogX --|> JPanel : extends >
+YXsq --|> JPanel : extends >
 
 @enduml

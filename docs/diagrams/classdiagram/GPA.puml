@@ -1,5 +1,8 @@
 @startuml
 
+hide circle
+skinparam classAttributeIconSize 0
+
 package gpa {
     class GPACommand {
         + {static} processGPACommand() : void
@@ -38,8 +41,8 @@ package gpa {
     }
 }
 
-GPACommand .down.> UI : uses <<
-GPACommand .right.> ModuleList : uses
-ModuleList "0..*" -- "1..*" Module : contains
+GPACommand .down.> UI : uses >
+GPACommand .right.> ModuleList : uses>
+ModuleList "0..*" --> "1..*" Module : contains
 
 @enduml

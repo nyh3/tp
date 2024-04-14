@@ -62,7 +62,7 @@ Given below is a quick overview of main components and how they interact with ea
 
 The bulk of the app's work is done by the following three components:
 
-- [`UI`](#ui): The UI of CantVas.
+- [`UI`](#ui): The UI of CantVas, in charge of interactions between the user and CantVas.
 - [`ProcessCommand`](#processcommand): Parses user input and executes the command.
 - [`Storage`](#storage): Reads and write data to the respective text file for each feature.
 
@@ -283,6 +283,7 @@ This guide will walk developers through the architecture, functionality, and cor
 The module is divided into 5 classes dealing with 2 different calculation methods.
 
 *Class Diagram*
+
 ![GPAClass.png](diagrams/classdiagram/GPAClass.png)
 
 ModuleList and Module: The diagram shows a composition relationship between ModuleList and Module, denoted by a 
