@@ -5,7 +5,8 @@ import gpa.ModuleList;
 import gpa.Module;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import org.junit.jupiter.api.BeforeEach;
+
+
 
 public class GPATest {
     @Test
@@ -107,11 +108,6 @@ public class GPATest {
         assertEquals(6, totalCredits, "Total credits should be the sum of module credits.");
     }
 
-    @BeforeEach
-    void setUp() {
-        ModuleList moduleList = new ModuleList();
-    }
-
     @Test
     void testGetModuleCountInitially() {
         assertEquals(0, ModuleList.getModuleCount(), "Initially, module count should be 0.");
@@ -145,5 +141,6 @@ public class GPATest {
         assertEquals(0, ModuleList.getModuleCount(), "Module count should be 0 after clearing " +
                 "all modules.");
     }
+
 
 }
