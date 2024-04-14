@@ -42,7 +42,7 @@ package gpa {
 }
 
 GPACommand .down.> UI : uses >
-GPACommand .right.> ModuleList : uses>
-ModuleList "0..*" --> "1..*" Module : contains
+GPACommand .right.> ModuleList : uses >
+ModuleList "0..*" --> "1..*" Module : contains >
 
 @enduml
