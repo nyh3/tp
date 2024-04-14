@@ -15,30 +15,23 @@ and productivity.
 **1. Functionality to View Filtered Expenditures**
 
 [#22](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/22)
-
-#### What it does:
-
-Allows users to view expenditures filtered by the desired month and year values inputted by the user.
-
-**2. Refactored View by Month and View by Year Functions**
-
 [#117](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/117)
 
 #### What it does:
 
-Refactored function inputs from using - to / for consistency. Added e/ prefix to function calls for 
+Allows users to view expenditures filtered by the desired month and year values inputted by the user.
+Refactored function inputs from using `-` to `/` for consistency. Added `e/` prefix to function calls for
 distinction from GPA and Timetable calculations.
 
-**3. J-unit Tests for Adding Expenditures**
+**2. J-unit Tests for Adding Expenditures**
 
 [#100](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/100)
 
 #### What it does:
 
-Created test cases to test for invalid inputs pertaining to illegal characters, inputs that are not
-compliant with program's expected inputs, as well as edges cases pertaining to string splitting.
+Developed tests for invalid inputs, non-compliant inputs, and edge cases related to string splitting.
 
-**4. Timetable Listing**
+**3. Timetable Listing**
 
 [#101](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/101)
 
@@ -46,7 +39,7 @@ compliant with program's expected inputs, as well as edges cases pertaining to s
 
 Allow users to see the stored timetable in ascending time format, separated by the days of the week.
 
-**5. Handling Edge Cases**
+**4. Handling Edge Cases in TimetableList Class**
 
 [#182](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/182)
 [#191](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/191)
@@ -56,37 +49,27 @@ Allow users to see the stored timetable in ascending time format, separated by t
 Implemented exception handling for lengthy inputs and overnight classes. 
 Classes are now restricted from midnight to 11pm.
 
-**6. J-unit Tests for Timetable Class**
+**5. J-unit Tests for Timetable Class**
 
 [#202](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/202)
 [#221](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/221)
 
 #### What it does:
 
-Created tests for invalid inputs, including negative or non-integer values, 
-invalid class durations, start hours, and days. Also tested normal operations 
-and extremely long inputs for program robustness.
+Developed tests for invalid inputs, operations, and long inputs to ensure program robustness.
 
-**7. Made TimetableList Class More Robust**
+**6. Made TimetableList and ExpenditureList Class More Robust**
 
 [#222](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/222)
 [#221](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/221)
+[#217](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/217)
 
 #### What it does:
 
 Imposes character limit on user inputs, validates input range, and provides specific 
 error messages for invalid inputs.
 
-**8. Made ExpenditureList Class More Robust**
-
-[#217](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/217)
-
-#### What it does:
-
-Implemented character limit on expenditure input and created J-unit tests for lengthy 
-inputs to ensure program robustness.
-
-**9. JavaDoc Enhancement**
+**7. JavaDoc Enhancement**
 
 [#269](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/269)
 [#268](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/268)
@@ -97,13 +80,11 @@ Enhanced JavaDoc comments for better code understanding and maintainability.
 
 ### Contributions to User Guide
 
-- Standardised description formats for User Guide.
-  [#183](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/183)
 - Reformatted and updated all components of the User Guide to adhere to cohesiveness.
   [#196](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/196)
+  [#183](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/183)
 - Highlighted information that users need to pay particular attention to when using our program.
   [#198](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/198)
-- Creation of clearer descriptions for timetable-related functions available in our program.
   [#187](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/187)
 - Creation of more understandable and specific description of expenditure-related functions.
   [#184](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/184)
@@ -117,7 +98,7 @@ jointly with other teammates.
 [#238](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/238)
 [#236](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/236)
 [#234](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/234)
-[232](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/232)
+[#232](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/232)
 
 
 ### Contributions to team-based tasks
@@ -129,7 +110,5 @@ jointly with other teammates.
 - Assigned improvement tasks of different features to group members.
 - Refactored codes or other members to adhere to more OOP approaches.
 - Active debugging for source-tree related problems that are encountered by other teammates.
-- Inspected and reviewed the code of other teammates to ensure that the code is up to standard.
-- Helped to resolve merge conflicts that occurred during the merging of different branches.
 - Addressed and resolved issues raised during PED. Such as 
   [#149](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/195/commits).
