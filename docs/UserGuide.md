@@ -366,6 +366,10 @@ classes is also limited by the number of hours/days in a week since the timetabl
 
 ## Command Summary
 
+<span style="color:red; font-weight:bold">
+Please remember to include spaces between each input when using the commands to ensure proper functionality.
+</span>
+
 | Action                       |                                            Format                                            |       
 |------------------------------|:--------------------------------------------------------------------------------------------:|
 | Add expenditure without type |                  `e/ add/ d/ <description> amt/ <cost> date/ <dd.mm.yyyy>`                   |
