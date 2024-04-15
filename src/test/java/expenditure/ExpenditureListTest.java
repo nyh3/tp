@@ -31,7 +31,7 @@ public class ExpenditureListTest {
         int initialCount = ExpenditureList.expenditureCount;
         ExpenditureList.addExpenditure("d/ Grocery Shopping t/ Food amt/ " +
                 "45.75 date/ 15.04.2024", true);
-        assertEquals(initialCount, ExpenditureList.expenditureCount);
+        assertEquals(initialCount+1, ExpenditureList.expenditureCount);
     }
 
     @Test
