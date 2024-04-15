@@ -103,7 +103,7 @@ How `ProcessCommand` works:
    1. `processExpenditureUserCommand` or `TimetableParser` if the command is for expenditure 
    and timetable to further parse the command.
    2. `GPACommand` or `ProcessListCommand` for GPA calculator to receive more user inputs.
-3. Returns true to `CantVAsMain` when the `exit` command is entered, ends CantVas.
+3. Returns true to `CantVasMain` when the `exit` command is entered, ends CantVas.
 
 **Diagrams**
 
