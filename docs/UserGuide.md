@@ -152,9 +152,9 @@ In the format of:
 n/<Module_Name> mc/<Module_Credit> gr/<Expected_Grade>.
 Example: `n/CS1010 mc/4 gr/A+` or  `n/CS2113 mc/4 gr/F`
 6. Your GPA will be automatically calculated afterward.
+7. You have the flexibility to leave the GPA calculator at any point by simply typing `exit`.
 > Modular credit should be a non-negative integer value between
 0 and 12.
-
 
 #### Method 2: Calculation of GPA by ModuleList
 This method is for user who are more familiar with GPA calculation mechanism or 
