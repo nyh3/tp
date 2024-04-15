@@ -1,5 +1,7 @@
 package gpa;
 
+import storage.Storage;
+
 import static seedu.duke.CantVasMain.ui;
 
 
@@ -128,7 +130,7 @@ public class GPACommand {
 
             int[] moduleCredits = new int[numOfModules];
             String[] moduleGrades = new String[numOfModules];
-            ModuleList moduleList = new ModuleList();
+            ModuleList moduleList = Storage.readGPAFile();
 
 
             for (int i = 0; i < numOfModules; i++) {
