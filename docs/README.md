@@ -1,6 +1,6 @@
 # CantVas
 
-![logo.png](images/logo.png)
+![logo.png](images/Ui.png)
 
 
 Introducing CantVas - The Ultimate Student Companion!

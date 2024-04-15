@@ -15,6 +15,7 @@ public class TimetableList {
     private static final String DURATION_KEYWORD = " duration/";
     private static final String LOCATION_KEYWORD = " location/";
     private static final String[] daysOfWeek = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday"};
+    private static final int MAX_CLASS_CODE_LENGTH = 7;
 
     public TimetableList() {
         timetable = new Class[NUM_DAYS][HOURS_PER_DAY];
@@ -141,7 +142,11 @@ public class TimetableList {
      * @return True if the class code is valid, otherwise False.
      */
     private static boolean isValidClassCode(String classCode) {
-        if (classCode.length() > 7) {
+        if (classCode.contains("TIME/")) {
+            System.out.println("Error! Invalid class Code.");
+            return false;
+        }
+        if (classCode.length() > MAX_CLASS_CODE_LENGTH) {
             System.out.println("Class code should be within 7 characters.");
             return false;
         }

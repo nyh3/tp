@@ -34,6 +34,8 @@ public class ProcessListCommand {
     public boolean processModuleListCommand() {
         System.out.println("Welcome to the advanced gpa calculator page!");
         UI.gpaListHelpMessage();
+
+        command_loop:
         while (true) {
             System.out.println("Please enter a command (or type 'exit' to return):");
             String command = ui.getUserCommand().trim().toLowerCase();
@@ -45,8 +47,8 @@ public class ProcessListCommand {
                     System.out.println("Enter the number of mods you want to add (format: NUMBER_OF_MODS):");
                     String modsInput = ui.getUserCommand();
                     if ("exit".equalsIgnoreCase(modsInput.trim())) {
-                        System.out.println("Exiting the GPA calculator. Thank you for using it!");
-                        return true; // Use return to exit the method immediately
+                        System.out.println("Exiting Module Entry. Going back to command menu....");
+                        continue command_loop; // Use return to exit the method immediately
                     }
 
                     try {
@@ -68,7 +70,7 @@ public class ProcessListCommand {
 
                 int[] moduleCredits = new int[numOfModules];
                 String[] moduleGrades = new String[numOfModules];
-                ModuleList moduleList = new ModuleList();
+                ModuleList moduleList = readGPAFile();
 
 
                 for (int i = 0; i < numOfModules; i++) {
@@ -78,9 +80,11 @@ public class ProcessListCommand {
                                 " in the format: n/MODULE_NAME mc/MODULAR_CREDIT gr/EXPECTED_GRADE. \n" +
                                 "Example: n/CS1010 mc/4 gr/A+");
                         String moduleInput = ui.getUserCommand().trim();
+
+                        //enabling the following 4 lines allows user to exit from the gpa calculator anytime
                         if ("exit".equalsIgnoreCase(moduleInput)) {
-                            System.out.println("Exiting the GPA calculator. Thank you for using it!");
-                            return true;
+                            System.out.println("Exiting module entry!");
+                            continue command_loop;
                         }
 
                         // Splitting the input by spaces to get each part of the input
@@ -146,8 +150,9 @@ public class ProcessListCommand {
                     String delCommand = ui.getUserCommand();
 
                     if ("exit".equalsIgnoreCase(delCommand)) {
-                        System.out.println("Exiting the GPA calculator. Thank you for using it!");
-                        return false;
+                        System.out.println("Exiting delete function." +
+                                "Going back to the command menu....");
+                        continue command_loop;
                     } else if ("clear".equalsIgnoreCase(delCommand)) {
                         modules.clearModules(); // Assuming ModuleList has a clearModules() method to clear the list
                         System.out.println("All modules have been deleted.");
