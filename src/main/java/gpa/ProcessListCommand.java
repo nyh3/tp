@@ -236,11 +236,11 @@ public class ProcessListCommand {
                 System.out.println("Unknown function: '" + command + "'. \n" +
                         "Please try again or type 'exit' to return to the main menu. \n" +
                         "or type 'help' to view available commands");
-                command = ui.getUserCommand(); // Re-prompt the user for command
-                if ("exit".equalsIgnoreCase(command.trim())) {
-                    System.out.println("Exiting the GPA calculator. Thank you for using it!");
-                    return true; // Use true to indicate exit
-                }
+                //command = ui.getUserCommand(); // Re-prompt the user for command
+                //if ("exit".equalsIgnoreCase(command.trim())) {
+                //    System.out.println("Exiting the GPA calculator. Thank you for using it!");
+                //    continue command_loop;
+                //}
                 break;
             }
 
