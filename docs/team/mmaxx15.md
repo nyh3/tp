@@ -49,7 +49,8 @@ Deletes the classes based on class codespecified by the user. All instances of t
 - Manage the adding of due date and closing of milestones.
   - Finalising and Closing of V2.0
 - Fit Java Coding Standards by refactoring into packages, removing magic numbers, adding JavaDocs, reducing nesting 
-  - [#240](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/240)
+  - [#304](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/304)
+    [#240](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/240)
     [#218](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/218)
     [#209](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/209)
     [#115](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/115)
@@ -57,7 +58,8 @@ Deletes the classes based on class codespecified by the user. All instances of t
     [#73](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/73)
 
 - Fixed bugs in CantVas
-  - [#292](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/292)
+  - [#304](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/304)
+    [#292](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/292)
     [#248](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/248)
     [#197](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/197)
     [#194](https://github.com/AY2324S2-CS2113-W13-3/tp/pull/194)
