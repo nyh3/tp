@@ -234,6 +234,9 @@ have entered for the current semester. Making it a good way to track what
 are the classes, where are the classes and the class durations from monday
 to friday respectively.
 
+> For any of the features below, if there exist multiple errors, the program will only return one of them.
+Specifically, the program returns missing input errors over valid input format errors.
+
 <span style="color:red; font-weight:bold">
 Please remember to include spaces between each input when using the commands to ensure proper functionality.
 </span>
